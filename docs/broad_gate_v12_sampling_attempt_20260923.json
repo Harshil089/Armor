@@ -1,0 +1,23 @@
+{
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "method": "holdout construction attempt; no set emitted because no candidates survived exact exclusion, training near-duplicate filter (cosine >= 0.98), and prior broad-gate near-duplicate filter (cosine >= 0.98)",
+  "seed": 20260923,
+  "eligible_exact_disjoint": 302,
+  "eligible_after_train_cosine_0.98": 279,
+  "selected_n": 0,
+  "selected_predicted_action_counts": {
+    "allow": 0,
+    "flag": 0,
+    "block": 0,
+    "review": 0
+  },
+  "previous_gate_near_duplicate_threshold": 0.98,
+  "prior_content_count_embedded": 562,
+  "selected_confidence_margins": [],
+  "training_cosine_threshold": 0.98,
+  "within_queue_cosine_threshold": 0.93,
+  "selected_ids": [],
+  "eligible_after_training_and_prior_filters": 0,
+  "candidate_status": "no v12 queue: stop and source genuinely new examples before another broad holdout"
+}

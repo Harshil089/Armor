@@ -1,0 +1,50 @@
+{
+  "version": "v12-synthetic-boundary-gate",
+  "human_ground_truth": false,
+  "selection": "hand-authored scenario families; split by design stratum before labeling; reviewers saw shuffled sample_id/content only",
+  "n": 96,
+  "split_counts": {
+    "train": 48,
+    "holdout": 48
+  },
+  "design_strata": {
+    "allow": 24,
+    "flag_candidate": 24,
+    "block": 24,
+    "review_candidate": 24
+  },
+  "per_split_per_design_stratum": 12,
+  "reviewers": {
+    "reviewer_ai_a": "fresh blind AI subagent",
+    "reviewer_ai_b": "Jev via TypeSafe"
+  },
+  "rubric_version": "v1.2-proposal-full",
+  "overlap_filter": {
+    "exact_queue_overlap_with_training_or_prior_gates": 0,
+    "cosine_threshold": 0.98,
+    "max_similarity": 0.9791598916053772,
+    "count_at_or_above_threshold": 0,
+    "reference_text_count": 1650
+  },
+  "reviewer_label_counts": {
+    "holdout": {
+      "reviewer_ai_a": {
+        "allow": 24,
+        "block": 13,
+        "review": 11
+      },
+      "reviewer_ai_b": {
+        "allow": 22,
+        "flag": 2,
+        "block": 13,
+        "review": 11
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic and reviewer-labeled; not human ground truth.",
+    "Design strata are not labels.",
+    "Holdout consensus has zero flag support; it cannot confirm flag recall.",
+    "The stale TypeSafe watcher wrote 39 holdout corrections into logs.db with the wrong human provenance default; corrected to pseudo_model and excluded from candidate training."
+  ]
+}

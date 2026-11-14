@@ -1,0 +1,116 @@
+{
+  "curriculum_id": "armor_long_context_training_v1_20260925",
+  "created_at": "2026-09-25",
+  "seed": 20260925,
+  "rows": 20153,
+  "training_example_sha256": "c1cbef17ce4ff1037656e717346e0a21993d5b75603c4ffd8628265efa871470",
+  "label_source": "inherited from existing training sources; augmented text itself is synthetic",
+  "original_training_rows_by_source": {
+    "registered_public_sources": 2390,
+    "synthetic_pii": 800,
+    "agentharm": 416,
+    "agentdojo": 116,
+    "agent_safety_bench": 287,
+    "civil_comments": 5000,
+    "coedit_noisy_negatives": 800,
+    "harmbench": 233,
+    "injecagent": 79,
+    "synthetic_dangerous_tool_action": 400,
+    "synthetic_destructive_tool_action": 200,
+    "synthetic_external_communication_action": 80,
+    "synthetic_obfuscation": 1000,
+    "toolsafety": 500,
+    "toolemu": 322,
+    "jailbreak_wild": 1200,
+    "synthetic_jailbreak_canonical": 300,
+    "synthetic_harmful_content": 300,
+    "aegis": 800,
+    "oasst_chat_negatives": 4000,
+    "synthetic_short_negatives": 150,
+    "synthetic_long_negatives": 480,
+    "synthetic_topic_adjacent_negatives": 300
+  },
+  "original_length_min": 3,
+  "original_length_max": 4674,
+  "original_rows_over_512": 663,
+  "bucket_target_shares": {
+    "<=512": 0.4,
+    "513-1024": 0.25,
+    "1025-2048": 0.15,
+    "2049-4096": 0.1,
+    "4097-6144": 0.07,
+    "6145-8192": 0.03
+  },
+  "bucket_counts": {
+    "<=512": 8061,
+    "2049-4096": 2015,
+    "1025-2048": 3023,
+    "513-1024": 5038,
+    "4097-6144": 1411,
+    "6145-8192": 605
+  },
+  "actual_token_ranges": {
+    "<=512": [
+      3,
+      510
+    ],
+    "513-1024": [
+      513,
+      1022
+    ],
+    "1025-2048": [
+      1031,
+      2022
+    ],
+    "2049-4096": [
+      2050,
+      3211
+    ],
+    "4097-6144": [
+      4674,
+      5212
+    ],
+    "6145-8192": [
+      7194,
+      7276
+    ]
+  },
+  "positioned_augmented_rows": 11429,
+  "requested_payload_position_counts": {
+    "100": 5463,
+    "700": 3566,
+    "1500": 1321,
+    "3000": 664,
+    "5000": 331,
+    "7000": 84
+  },
+  "supervised_positive_counts": {
+    "obfuscation_encoding": 450,
+    "harmful_content": 2883,
+    "prompt_injection": 842,
+    "dangerous_tool_action": 1437,
+    "jailbreak": 1277,
+    "sensitive_data_exposure": 400
+  },
+  "supervised_masked_row_counts": {
+    "prompt_injection": 3316,
+    "obfuscation_encoding": 3893,
+    "harmful_content": 6514,
+    "dangerous_tool_action": 2536,
+    "sensitive_data_exposure": 2881,
+    "jailbreak": 2613
+  },
+  "carrier_dataset": "OpenAssistant/oasst1",
+  "carrier_revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+  "carrier_filter": "assistant; accepted; not deleted; >=2 reviewers; toxicity <0.05; Armor DLP-clean",
+  "carrier_message_id_count": 9775,
+  "carrier_text_not_adjudicated_for_full_Armor_taxonomy": true,
+  "full_depth_candidate_only": true,
+  "same_existing_model_only": true,
+  "cache_path": "/tmp/armor_long_context_training_v1_20260925.jsonl.gz",
+  "cache_is_local_ephemeral": true,
+  "prepare_only": true,
+  "training_status": "superseded_before_training",
+  "cache_sha256": "9022e07a6d4f45bed5033c355fadad1189cfcae2613ca79fe5553c4a223ad712",
+  "superseded_reason": "Prepared curriculum clustered 6K\u20138K examples near 7.2K and did not cover the upper serving range; no model training used this draft."
+}

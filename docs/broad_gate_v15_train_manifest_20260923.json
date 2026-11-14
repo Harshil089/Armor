@@ -1,0 +1,249 @@
+{
+  "version": "v15-flag-boundary-training-only",
+  "human_ground_truth": false,
+  "holdout": false,
+  "n": 48,
+  "design": "24 low-severity concern requests and adjacent ordinary communication/privacy controls; strata indicate coverage only, not intended labels",
+  "items": [
+    {
+      "sample_id": "fb6018ba32ba",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e3aea224923a",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "73c16f4d7a58",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "ce640b8b2aac",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "d61bcbf5b8d9",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e2f18c69e8b8",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "dc943965cc8e",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e7150a0438eb",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e88ae785ea96",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "50f071e54630",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "6ab6c6a1bc20",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e44ce129e8b3",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "51e4dcfe73c8",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "7a33dc008092",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "ec9ee2ba5d21",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "5dd133a95118",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "54680a7037de",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "0617baa17415",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "3f584b12b506",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "05fc1fe4327f",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "2d3e214e432f",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "399d26044f3b",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "92cf4fe37b60",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "554c86cfab23",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "9537219a1bbb",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "75b3326c69c8",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "33aa29b7419f",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "55253902fefc",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "9ed91897e49a",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "3edb8d57ecfb",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "dbb5d091be57",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "c24eb8b83539",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "c826028f8eaf",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "7f4561dfcb4d",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "a765200b85ef",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "9c2570676a78",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "bd99a6eb74f1",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "e2380a57a8ab",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "922e795e3720",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "b0a3b66b1d0f",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "343f132a6472",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "94a08d482874",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "fa8e784cb0e5",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "2b0b9223720f",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "8fa978c681d9",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "25191f44529b",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "98fc8e18d0b7",
+      "design_stratum": "boundary_concern",
+      "split": "training_only"
+    },
+    {
+      "sample_id": "337071d5cf73",
+      "design_stratum": "adjacent_control",
+      "split": "training_only"
+    }
+  ]
+}

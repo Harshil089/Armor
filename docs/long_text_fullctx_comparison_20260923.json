@@ -1,0 +1,4619 @@
+{
+  "gate_version": "long_text_gate_v1",
+  "human_ground_truth": false,
+  "training": "836 leak-free baseline rows plus 68 AI-reviewed long rows, same seed/10 epochs/inverse-frequency weights; production unchanged",
+  "results": {
+    "long_gate_all_33": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 20,
+              "flag": 0,
+              "block": 8,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 1,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9523809523809523,
+              "recall": 0.7142857142857143,
+              "f1": 0.8163265306122449,
+              "support": 28
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.3333333333333333,
+              "recall": 0.8,
+              "f1": 0.47058823529411764,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.32172869147659067,
+          "accuracy": 0.7272727272727273,
+          "block_false_negative_count": 1,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 18,
+              "flag": 0,
+              "block": 6,
+              "review": 4
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 1,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9473684210526315,
+              "recall": 0.6428571428571429,
+              "f1": 0.7659574468085106,
+              "support": 28
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.4,
+              "recall": 0.8,
+              "f1": 0.5333333333333333,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.324822695035461,
+          "accuracy": 0.6666666666666666,
+          "block_false_negative_count": 1,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.12121212121212122,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "02f9a4a031ed23fe",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.9563,
+            "margin": 0.912601
+          },
+          {
+            "sample_id": "308e77b1747a27e5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999967,
+            "margin": 0.999935
+          },
+          {
+            "sample_id": "4e333271e88ec064",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998948,
+            "margin": 0.997896
+          },
+          {
+            "sample_id": "61b4cf8c045019b9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.530871,
+            "margin": 0.061746
+          },
+          {
+            "sample_id": "657e8d6aca923169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "91b8cf157742c61a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99997,
+            "margin": 0.999948
+          },
+          {
+            "sample_id": "955c878385fe4da7",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999998,
+            "margin": 0.999996
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.917852,
+            "margin": 0.835707
+          },
+          {
+            "sample_id": "9a29f86ecd7d5c8c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "a8b5bdcf970779f9",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.895661,
+            "margin": 0.791323
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999325,
+            "margin": 0.99865
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999914,
+            "margin": 0.999828
+          },
+          {
+            "sample_id": "eda03e38488b4254",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999999,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "04296db53013136b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999932,
+            "margin": 0.999865
+          },
+          {
+            "sample_id": "05cae4228b935ba5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.89552,
+            "margin": 0.814378
+          },
+          {
+            "sample_id": "082fde60b3c4ec69",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999684,
+            "margin": 0.999457
+          },
+          {
+            "sample_id": "12c8666e5ff0672a",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.518761,
+            "margin": 0.05587
+          },
+          {
+            "sample_id": "152b512f910ef736",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.976642,
+            "margin": 0.960954
+          },
+          {
+            "sample_id": "1b60e830d8d6d996",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.903886,
+            "margin": 0.807911
+          },
+          {
+            "sample_id": "1c0464b47ed80d33",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.697399,
+            "margin": 0.416487
+          },
+          {
+            "sample_id": "28a94daec6921b19",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991794,
+            "margin": 0.985416
+          },
+          {
+            "sample_id": "2ce4c5d15b411323",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.521319,
+            "margin": 0.042927
+          },
+          {
+            "sample_id": "31f38753d03f5dac",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.92768,
+            "margin": 0.86227
+          },
+          {
+            "sample_id": "33e98516a9e5dfc9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.996243,
+            "margin": 0.992488
+          },
+          {
+            "sample_id": "38f3ba8d1697b5cd",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.98439,
+            "margin": 0.968781
+          },
+          {
+            "sample_id": "3cf7fd921c13f3c0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.979002,
+            "margin": 0.958188
+          },
+          {
+            "sample_id": "3f7c3a224faa7e06",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.618868,
+            "margin": 0.263984
+          },
+          {
+            "sample_id": "403d5c3567a08c10",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991096,
+            "margin": 0.984741
+          },
+          {
+            "sample_id": "42947d6a2c228136",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.984142,
+            "margin": 0.974257
+          },
+          {
+            "sample_id": "4e368486bd594fa0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.988726,
+            "margin": 0.977554
+          },
+          {
+            "sample_id": "4e99e439e2c7e041",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.96601,
+            "margin": 0.944831
+          },
+          {
+            "sample_id": "4f60571288ad579f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.96957,
+            "margin": 0.939252
+          },
+          {
+            "sample_id": "507b591c0498d1f2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.697057,
+            "margin": 0.514768
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 23,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.8214285714285714,
+              "f1": 0.9019607843137255,
+              "support": 28
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.39215686274509803,
+          "accuracy": 0.8484848484848485,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 23,
+              "flag": 0,
+              "block": 4,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.8214285714285714,
+              "f1": 0.9019607843137255,
+              "support": 28
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.5555555555555556,
+              "recall": 1.0,
+              "f1": 0.7142857142857143,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.40406162464985995,
+          "accuracy": 0.8484848484848485,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.030303030303030304,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "02f9a4a031ed23fe",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.614832,
+            "margin": 0.229664
+          },
+          {
+            "sample_id": "308e77b1747a27e5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999995,
+            "margin": 0.99999
+          },
+          {
+            "sample_id": "4e333271e88ec064",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99999,
+            "margin": 0.99998
+          },
+          {
+            "sample_id": "61b4cf8c045019b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.990234,
+            "margin": 0.980467
+          },
+          {
+            "sample_id": "657e8d6aca923169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999908,
+            "margin": 0.999816
+          },
+          {
+            "sample_id": "91b8cf157742c61a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999774,
+            "margin": 0.999548
+          },
+          {
+            "sample_id": "955c878385fe4da7",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999906,
+            "margin": 0.999812
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999507,
+            "margin": 0.999015
+          },
+          {
+            "sample_id": "9a29f86ecd7d5c8c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "a8b5bdcf970779f9",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.749018,
+            "margin": 0.498037
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998753,
+            "margin": 0.997507
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.985794,
+            "margin": 0.971588
+          },
+          {
+            "sample_id": "eda03e38488b4254",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "04296db53013136b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "05cae4228b935ba5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999841,
+            "margin": 0.999683
+          },
+          {
+            "sample_id": "082fde60b3c4ec69",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999985,
+            "margin": 0.99997
+          },
+          {
+            "sample_id": "12c8666e5ff0672a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.860354,
+            "margin": 0.720772
+          },
+          {
+            "sample_id": "152b512f910ef736",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99976,
+            "margin": 0.999528
+          },
+          {
+            "sample_id": "1b60e830d8d6d996",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.736045,
+            "margin": 0.472103
+          },
+          {
+            "sample_id": "1c0464b47ed80d33",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.992726,
+            "margin": 0.98546
+          },
+          {
+            "sample_id": "28a94daec6921b19",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999984,
+            "margin": 0.999969
+          },
+          {
+            "sample_id": "2ce4c5d15b411323",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991017,
+            "margin": 0.982035
+          },
+          {
+            "sample_id": "31f38753d03f5dac",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.881054,
+            "margin": 0.764404
+          },
+          {
+            "sample_id": "33e98516a9e5dfc9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998571,
+            "margin": 0.997142
+          },
+          {
+            "sample_id": "38f3ba8d1697b5cd",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.977645,
+            "margin": 0.955291
+          },
+          {
+            "sample_id": "3cf7fd921c13f3c0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.977783,
+            "margin": 0.955567
+          },
+          {
+            "sample_id": "3f7c3a224faa7e06",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999992,
+            "margin": 0.999983
+          },
+          {
+            "sample_id": "403d5c3567a08c10",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994391,
+            "margin": 0.988792
+          },
+          {
+            "sample_id": "42947d6a2c228136",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99979,
+            "margin": 0.99958
+          },
+          {
+            "sample_id": "4e368486bd594fa0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999924,
+            "margin": 0.999848
+          },
+          {
+            "sample_id": "4e99e439e2c7e041",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.794818,
+            "margin": 0.589874
+          },
+          {
+            "sample_id": "4f60571288ad579f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999923,
+            "margin": 0.999846
+          },
+          {
+            "sample_id": "507b591c0498d1f2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994142,
+            "margin": 0.988294
+          }
+        ]
+      }
+    },
+    "long_gate_traffic_13": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 7,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 1,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.875,
+              "recall": 0.875,
+              "f1": 0.875,
+              "support": 8
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1": 0.8000000000000002,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.41875000000000007,
+          "accuracy": 0.8461538461538461,
+          "block_false_negative_count": 1,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 7,
+              "flag": 0,
+              "block": 0,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 1,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.875,
+              "recall": 0.875,
+              "f1": 0.875,
+              "support": 8
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1": 0.888888888888889,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.4409722222222222,
+          "accuracy": 0.8461538461538461,
+          "block_false_negative_count": 1,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.07692307692307693,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "02f9a4a031ed23fe",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.9563,
+            "margin": 0.912601
+          },
+          {
+            "sample_id": "308e77b1747a27e5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999967,
+            "margin": 0.999935
+          },
+          {
+            "sample_id": "4e333271e88ec064",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998948,
+            "margin": 0.997896
+          },
+          {
+            "sample_id": "61b4cf8c045019b9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.530871,
+            "margin": 0.061746
+          },
+          {
+            "sample_id": "657e8d6aca923169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "91b8cf157742c61a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99997,
+            "margin": 0.999948
+          },
+          {
+            "sample_id": "955c878385fe4da7",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999998,
+            "margin": 0.999996
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.917852,
+            "margin": 0.835707
+          },
+          {
+            "sample_id": "9a29f86ecd7d5c8c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "a8b5bdcf970779f9",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.895661,
+            "margin": 0.791323
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999325,
+            "margin": 0.99865
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999914,
+            "margin": 0.999828
+          },
+          {
+            "sample_id": "eda03e38488b4254",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999999,
+            "margin": 0.999999
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 7,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333,
+              "support": 8
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1": 0.9090909090909091,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.4606060606060606,
+          "accuracy": 0.9230769230769231,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 7,
+              "flag": 0,
+              "block": 0,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333,
+              "support": 8
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 5
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.48333333333333334,
+          "accuracy": 0.9230769230769231,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.07692307692307693,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "02f9a4a031ed23fe",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.614832,
+            "margin": 0.229664
+          },
+          {
+            "sample_id": "308e77b1747a27e5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999995,
+            "margin": 0.99999
+          },
+          {
+            "sample_id": "4e333271e88ec064",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99999,
+            "margin": 0.99998
+          },
+          {
+            "sample_id": "61b4cf8c045019b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.990234,
+            "margin": 0.980467
+          },
+          {
+            "sample_id": "657e8d6aca923169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999908,
+            "margin": 0.999816
+          },
+          {
+            "sample_id": "91b8cf157742c61a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999774,
+            "margin": 0.999548
+          },
+          {
+            "sample_id": "955c878385fe4da7",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999906,
+            "margin": 0.999812
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999507,
+            "margin": 0.999015
+          },
+          {
+            "sample_id": "9a29f86ecd7d5c8c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "a8b5bdcf970779f9",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.749018,
+            "margin": 0.498037
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998753,
+            "margin": 0.997507
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.985794,
+            "margin": 0.971588
+          },
+          {
+            "sample_id": "eda03e38488b4254",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 0.999999
+          }
+        ]
+      }
+    },
+    "long_gate_oasst_20": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 13,
+              "flag": 0,
+              "block": 7,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.65,
+              "f1": 0.787878787878788,
+              "support": 20
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.196969696969697,
+          "accuracy": 0.65,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 11,
+              "flag": 0,
+              "block": 6,
+              "review": 3
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.55,
+              "f1": 0.7096774193548387,
+              "support": 20
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.1774193548387097,
+          "accuracy": 0.55,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.15,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "04296db53013136b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999932,
+            "margin": 0.999865
+          },
+          {
+            "sample_id": "05cae4228b935ba5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.89552,
+            "margin": 0.814378
+          },
+          {
+            "sample_id": "082fde60b3c4ec69",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999684,
+            "margin": 0.999457
+          },
+          {
+            "sample_id": "12c8666e5ff0672a",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.518761,
+            "margin": 0.05587
+          },
+          {
+            "sample_id": "152b512f910ef736",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.976642,
+            "margin": 0.960954
+          },
+          {
+            "sample_id": "1b60e830d8d6d996",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.903886,
+            "margin": 0.807911
+          },
+          {
+            "sample_id": "1c0464b47ed80d33",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.697399,
+            "margin": 0.416487
+          },
+          {
+            "sample_id": "28a94daec6921b19",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991794,
+            "margin": 0.985416
+          },
+          {
+            "sample_id": "2ce4c5d15b411323",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.521319,
+            "margin": 0.042927
+          },
+          {
+            "sample_id": "31f38753d03f5dac",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.92768,
+            "margin": 0.86227
+          },
+          {
+            "sample_id": "33e98516a9e5dfc9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.996243,
+            "margin": 0.992488
+          },
+          {
+            "sample_id": "38f3ba8d1697b5cd",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.98439,
+            "margin": 0.968781
+          },
+          {
+            "sample_id": "3cf7fd921c13f3c0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.979002,
+            "margin": 0.958188
+          },
+          {
+            "sample_id": "3f7c3a224faa7e06",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.618868,
+            "margin": 0.263984
+          },
+          {
+            "sample_id": "403d5c3567a08c10",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991096,
+            "margin": 0.984741
+          },
+          {
+            "sample_id": "42947d6a2c228136",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.984142,
+            "margin": 0.974257
+          },
+          {
+            "sample_id": "4e368486bd594fa0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.988726,
+            "margin": 0.977554
+          },
+          {
+            "sample_id": "4e99e439e2c7e041",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.96601,
+            "margin": 0.944831
+          },
+          {
+            "sample_id": "4f60571288ad579f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.96957,
+            "margin": 0.939252
+          },
+          {
+            "sample_id": "507b591c0498d1f2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.697057,
+            "margin": 0.514768
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 16,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1": 0.888888888888889,
+              "support": 20
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.22222222222222224,
+          "accuracy": 0.8,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 16,
+              "flag": 0,
+              "block": 4,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1": 0.888888888888889,
+              "support": 20
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "block": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.22222222222222224,
+          "accuracy": 0.8,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "04296db53013136b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "05cae4228b935ba5",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999841,
+            "margin": 0.999683
+          },
+          {
+            "sample_id": "082fde60b3c4ec69",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999985,
+            "margin": 0.99997
+          },
+          {
+            "sample_id": "12c8666e5ff0672a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.860354,
+            "margin": 0.720772
+          },
+          {
+            "sample_id": "152b512f910ef736",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99976,
+            "margin": 0.999528
+          },
+          {
+            "sample_id": "1b60e830d8d6d996",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.736045,
+            "margin": 0.472103
+          },
+          {
+            "sample_id": "1c0464b47ed80d33",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.992726,
+            "margin": 0.98546
+          },
+          {
+            "sample_id": "28a94daec6921b19",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999984,
+            "margin": 0.999969
+          },
+          {
+            "sample_id": "2ce4c5d15b411323",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991017,
+            "margin": 0.982035
+          },
+          {
+            "sample_id": "31f38753d03f5dac",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.881054,
+            "margin": 0.764404
+          },
+          {
+            "sample_id": "33e98516a9e5dfc9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998571,
+            "margin": 0.997142
+          },
+          {
+            "sample_id": "38f3ba8d1697b5cd",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.977645,
+            "margin": 0.955291
+          },
+          {
+            "sample_id": "3cf7fd921c13f3c0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.977783,
+            "margin": 0.955567
+          },
+          {
+            "sample_id": "3f7c3a224faa7e06",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999992,
+            "margin": 0.999983
+          },
+          {
+            "sample_id": "403d5c3567a08c10",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994391,
+            "margin": 0.988792
+          },
+          {
+            "sample_id": "42947d6a2c228136",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99979,
+            "margin": 0.99958
+          },
+          {
+            "sample_id": "4e368486bd594fa0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999924,
+            "margin": 0.999848
+          },
+          {
+            "sample_id": "4e99e439e2c7e041",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.794818,
+            "margin": 0.589874
+          },
+          {
+            "sample_id": "4f60571288ad579f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999923,
+            "margin": 0.999846
+          },
+          {
+            "sample_id": "507b591c0498d1f2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994142,
+            "margin": 0.988294
+          }
+        ]
+      }
+    },
+    "new_blind_ai_v1_1_holdout": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 11,
+              "flag": 1,
+              "block": 1,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "review": {
+              "allow": 1,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9166666666666666,
+              "recall": 0.8461538461538461,
+              "f1": 0.8799999999999999,
+              "support": 13
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.2,
+              "recall": 1.0,
+              "f1": 0.33333333333333337,
+              "support": 1
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            }
+          },
+          "macro_f1": 0.30333333333333334,
+          "accuracy": 0.6666666666666666,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 10,
+              "flag": 1,
+              "block": 1,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 1
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "review": {
+              "allow": 1,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9090909090909091,
+              "recall": 0.7692307692307693,
+              "f1": 0.8333333333333333,
+              "support": 13
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.25,
+              "recall": 1.0,
+              "f1": 0.4,
+              "support": 1
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            }
+          },
+          "macro_f1": 0.30833333333333335,
+          "accuracy": 0.6111111111111112,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.1111111111111111,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "15f175828c69dda0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.659002,
+            "margin": 0.339457
+          },
+          {
+            "sample_id": "252a18d59b0e9169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999986,
+            "margin": 0.999971
+          },
+          {
+            "sample_id": "5239f8fe14427e0a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999522,
+            "margin": 0.999047
+          },
+          {
+            "sample_id": "61367f40d3f1effc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.993109,
+            "margin": 0.988648
+          },
+          {
+            "sample_id": "839f1e116e130eea",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.72462,
+            "margin": 0.55493
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.917852,
+            "margin": 0.835707
+          },
+          {
+            "sample_id": "a013912b1c066fda",
+            "reference_label": "allow",
+            "prediction": "flag",
+            "abstained_prediction": "flag",
+            "confidence": 0.625515,
+            "margin": 0.404937
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999325,
+            "margin": 0.99865
+          },
+          {
+            "sample_id": "b5955291973fecf9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.543664,
+            "margin": 0.105718
+          },
+          {
+            "sample_id": "b78305b1e645d7fd",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.976703,
+            "margin": 0.953758
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999914,
+            "margin": 0.999828
+          },
+          {
+            "sample_id": "f285bd526e3539ad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.997448,
+            "margin": 0.996411
+          },
+          {
+            "sample_id": "fda564ba3f7a0f02",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998308,
+            "margin": 0.997629
+          },
+          {
+            "sample_id": "bf5a318a47ef055a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999851,
+            "margin": 0.999721
+          },
+          {
+            "sample_id": "7e20a7c2080c54f4",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.355865,
+            "margin": 0.012654
+          },
+          {
+            "sample_id": "7d51bfa3bf4b94e9",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999991,
+            "margin": 0.999981
+          },
+          {
+            "sample_id": "d3b720e07240468a",
+            "reference_label": "review",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.957803,
+            "margin": 0.915607
+          },
+          {
+            "sample_id": "f8aef88d68454f90",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999898,
+            "margin": 0.999804
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 9,
+              "flag": 2,
+              "block": 2,
+              "review": 0
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 3,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.6923076923076923,
+              "f1": 0.8181818181818181,
+              "support": 13
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.14285714285714285,
+              "recall": 1.0,
+              "f1": 0.25,
+              "support": 1
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 3
+            }
+          },
+          "macro_f1": 0.26704545454545453,
+          "accuracy": 0.5555555555555556,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 8,
+              "flag": 2,
+              "block": 2,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 1
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 2,
+              "review": 1
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 1.0,
+              "recall": 0.6153846153846154,
+              "f1": 0.761904761904762,
+              "support": 13
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.2,
+              "recall": 1.0,
+              "f1": 0.33333333333333337,
+              "support": 1
+            },
+            "review": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3333333333333333,
+              "f1": 0.3333333333333333,
+              "support": 3
+            }
+          },
+          "macro_f1": 0.35714285714285715,
+          "accuracy": 0.5555555555555556,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 0,
+          "review_rate": 0.16666666666666666,
+          "review_precision": 0.3333333333333333
+        },
+        "rows": [
+          {
+            "sample_id": "15f175828c69dda0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.834662,
+            "margin": 0.677501
+          },
+          {
+            "sample_id": "252a18d59b0e9169",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999513,
+            "margin": 0.999027
+          },
+          {
+            "sample_id": "5239f8fe14427e0a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.997239,
+            "margin": 0.994482
+          },
+          {
+            "sample_id": "61367f40d3f1effc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.812537,
+            "margin": 0.634841
+          },
+          {
+            "sample_id": "839f1e116e130eea",
+            "reference_label": "allow",
+            "prediction": "flag",
+            "abstained_prediction": "flag",
+            "confidence": 0.734466,
+            "margin": 0.569509
+          },
+          {
+            "sample_id": "960f4a4b3889fb05",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999507,
+            "margin": 0.999015
+          },
+          {
+            "sample_id": "a013912b1c066fda",
+            "reference_label": "allow",
+            "prediction": "flag",
+            "abstained_prediction": "flag",
+            "confidence": 0.674868,
+            "margin": 0.378326
+          },
+          {
+            "sample_id": "adfc7e81c0f068ca",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998753,
+            "margin": 0.997507
+          },
+          {
+            "sample_id": "b5955291973fecf9",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.965645,
+            "margin": 0.944233
+          },
+          {
+            "sample_id": "b78305b1e645d7fd",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.64858,
+            "margin": 0.297371
+          },
+          {
+            "sample_id": "cb2d9c882458e4fc",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.985794,
+            "margin": 0.971588
+          },
+          {
+            "sample_id": "f285bd526e3539ad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.945534,
+            "margin": 0.896251
+          },
+          {
+            "sample_id": "fda564ba3f7a0f02",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.982102,
+            "margin": 0.967627
+          },
+          {
+            "sample_id": "bf5a318a47ef055a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99997,
+            "margin": 0.999949
+          },
+          {
+            "sample_id": "7e20a7c2080c54f4",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.595617,
+            "margin": 0.212382
+          },
+          {
+            "sample_id": "7d51bfa3bf4b94e9",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999981,
+            "margin": 0.999967
+          },
+          {
+            "sample_id": "d3b720e07240468a",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.620558,
+            "margin": 0.241116
+          },
+          {
+            "sample_id": "f8aef88d68454f90",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999569,
+            "margin": 0.999373
+          }
+        ]
+      }
+    },
+    "guided_v1_25": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 3,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            },
+            "flag": {
+              "allow": 1,
+              "flag": 2,
+              "block": 3,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 3,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.42857142857142855,
+              "recall": 0.6,
+              "f1": 0.5,
+              "support": 5
+            },
+            "flag": {
+              "precision": 1.0,
+              "recall": 0.3333333333333333,
+              "f1": 0.5,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.375,
+              "recall": 1.0,
+              "f1": 0.5454545454545454,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.38636363636363635,
+          "accuracy": 0.44,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 1,
+          "flag_to_block_errors": 3,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 3,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            },
+            "flag": {
+              "allow": 1,
+              "flag": 0,
+              "block": 3,
+              "review": 2
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 2,
+              "flag": 0,
+              "block": 4,
+              "review": 2
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.5,
+              "recall": 0.6,
+              "f1": 0.5454545454545454,
+              "support": 5
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714285714285715,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.5,
+              "recall": 0.25,
+              "f1": 0.3333333333333333,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.3625541125541126,
+          "accuracy": 0.44,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 1,
+          "flag_to_block_errors": 3,
+          "review_rate": 0.16,
+          "review_precision": 0.5
+        },
+        "rows": [
+          {
+            "sample_id": "829d926a5976c579",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.751303,
+            "margin": 0.619943
+          },
+          {
+            "sample_id": "2312574e8a7f8fee",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.721075,
+            "margin": 0.485269
+          },
+          {
+            "sample_id": "5f1649929110a4c2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.892263,
+            "margin": 0.840327
+          },
+          {
+            "sample_id": "42275f34f2e8d97e",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999924,
+            "margin": 0.999853
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.965067,
+            "margin": 0.931349
+          },
+          {
+            "sample_id": "a2992965c07d887c",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.913726,
+            "margin": 0.832312
+          },
+          {
+            "sample_id": "194516f09a7ac051",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99819,
+            "margin": 0.996392
+          },
+          {
+            "sample_id": "949c3c1f119939bf",
+            "reference_label": "flag",
+            "prediction": "flag",
+            "abstained_prediction": "review",
+            "confidence": 0.514092,
+            "margin": 0.138116
+          },
+          {
+            "sample_id": "cb86b453759a8941",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.993879,
+            "margin": 0.988557
+          },
+          {
+            "sample_id": "ec6f2107ee0459b9",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999957,
+            "margin": 0.99992
+          },
+          {
+            "sample_id": "e00f6c91f50555c3",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999998,
+            "margin": 0.999996
+          },
+          {
+            "sample_id": "5332edd558a7e178",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.910141,
+            "margin": 0.820389
+          },
+          {
+            "sample_id": "ed150ce0712dd7f0",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "503dd5db1efda26b",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999999,
+            "margin": 0.999998
+          },
+          {
+            "sample_id": "c544c879c5a32193",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999075,
+            "margin": 0.998342
+          },
+          {
+            "sample_id": "baa15c6047166c85",
+            "reference_label": "flag",
+            "prediction": "flag",
+            "abstained_prediction": "review",
+            "confidence": 0.356314,
+            "margin": 0.026404
+          },
+          {
+            "sample_id": "446c414e966f7a80",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.997089,
+            "margin": 0.995822
+          },
+          {
+            "sample_id": "80bb3829a8aabb9b",
+            "reference_label": "review",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.769897,
+            "margin": 0.609967
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999994,
+            "margin": 0.999989
+          },
+          {
+            "sample_id": "b82c6201824af239",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.610608,
+            "margin": 0.255037
+          },
+          {
+            "sample_id": "4211325af2707ef5",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998984,
+            "margin": 0.998091
+          },
+          {
+            "sample_id": "dc6d6bd1e71857b0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.997866,
+            "margin": 0.995979
+          },
+          {
+            "sample_id": "d3a03e9b233c1bef",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.938975,
+            "margin": 0.878924
+          },
+          {
+            "sample_id": "054edfcb4ade18f9",
+            "reference_label": "review",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.769817,
+            "margin": 0.630568
+          },
+          {
+            "sample_id": "f31e07ee5b34cccf",
+            "reference_label": "review",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.414297,
+            "margin": 0.057083
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 1,
+              "flag": 1,
+              "block": 2,
+              "review": 1
+            },
+            "flag": {
+              "allow": 2,
+              "flag": 1,
+              "block": 3,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 3,
+              "block": 4,
+              "review": 1
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.3333333333333333,
+              "recall": 0.2,
+              "f1": 0.25,
+              "support": 5
+            },
+            "flag": {
+              "precision": 0.2,
+              "recall": 0.16666666666666666,
+              "f1": 0.1818181818181818,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714285714285715,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.5,
+              "recall": 0.125,
+              "f1": 0.2,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.3008116883116883,
+          "accuracy": 0.36,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 2,
+          "flag_to_block_errors": 3,
+          "review_rate": 0.08,
+          "review_precision": 0.5
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 1,
+              "flag": 1,
+              "block": 2,
+              "review": 1
+            },
+            "flag": {
+              "allow": 1,
+              "flag": 1,
+              "block": 3,
+              "review": 1
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 4,
+              "review": 4
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.5,
+              "recall": 0.2,
+              "f1": 0.28571428571428575,
+              "support": 5
+            },
+            "flag": {
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.4,
+              "recall": 1.0,
+              "f1": 0.5714285714285715,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.6666666666666666,
+              "recall": 0.5,
+              "f1": 0.5714285714285715,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.4196428571428572,
+          "accuracy": 0.48,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 1,
+          "flag_to_block_errors": 3,
+          "review_rate": 0.24,
+          "review_precision": 0.6666666666666666
+        },
+        "rows": [
+          {
+            "sample_id": "829d926a5976c579",
+            "reference_label": "allow",
+            "prediction": "review",
+            "abstained_prediction": "review",
+            "confidence": 0.445783,
+            "margin": 0.155075
+          },
+          {
+            "sample_id": "2312574e8a7f8fee",
+            "reference_label": "allow",
+            "prediction": "flag",
+            "abstained_prediction": "flag",
+            "confidence": 0.654507,
+            "margin": 0.376452
+          },
+          {
+            "sample_id": "5f1649929110a4c2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.730048,
+            "margin": 0.593726
+          },
+          {
+            "sample_id": "42275f34f2e8d97e",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999977,
+            "margin": 0.999955
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.915132,
+            "margin": 0.830619
+          },
+          {
+            "sample_id": "a2992965c07d887c",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991288,
+            "margin": 0.982631
+          },
+          {
+            "sample_id": "194516f09a7ac051",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999411,
+            "margin": 0.998841
+          },
+          {
+            "sample_id": "949c3c1f119939bf",
+            "reference_label": "flag",
+            "prediction": "flag",
+            "abstained_prediction": "flag",
+            "confidence": 0.707729,
+            "margin": 0.475838
+          },
+          {
+            "sample_id": "cb86b453759a8941",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.984897,
+            "margin": 0.972797
+          },
+          {
+            "sample_id": "ec6f2107ee0459b9",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99999,
+            "margin": 0.999985
+          },
+          {
+            "sample_id": "e00f6c91f50555c3",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99999,
+            "margin": 0.99998
+          },
+          {
+            "sample_id": "5332edd558a7e178",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.890971,
+            "margin": 0.783814
+          },
+          {
+            "sample_id": "ed150ce0712dd7f0",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999997,
+            "margin": 0.999995
+          },
+          {
+            "sample_id": "503dd5db1efda26b",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "c544c879c5a32193",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.997733,
+            "margin": 0.995553
+          },
+          {
+            "sample_id": "baa15c6047166c85",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.466951,
+            "margin": 0.213196
+          },
+          {
+            "sample_id": "446c414e966f7a80",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99744,
+            "margin": 0.995742
+          },
+          {
+            "sample_id": "80bb3829a8aabb9b",
+            "reference_label": "review",
+            "prediction": "flag",
+            "abstained_prediction": "review",
+            "confidence": 0.590588,
+            "margin": 0.291716
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "b82c6201824af239",
+            "reference_label": "review",
+            "prediction": "flag",
+            "abstained_prediction": "review",
+            "confidence": 0.497807,
+            "margin": 0.084824
+          },
+          {
+            "sample_id": "4211325af2707ef5",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999349,
+            "margin": 0.998866
+          },
+          {
+            "sample_id": "dc6d6bd1e71857b0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.996921,
+            "margin": 0.993927
+          },
+          {
+            "sample_id": "d3a03e9b233c1bef",
+            "reference_label": "review",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.994366,
+            "margin": 0.990888
+          },
+          {
+            "sample_id": "054edfcb4ade18f9",
+            "reference_label": "review",
+            "prediction": "flag",
+            "abstained_prediction": "review",
+            "confidence": 0.417736,
+            "margin": 0.141601
+          },
+          {
+            "sample_id": "f31e07ee5b34cccf",
+            "reference_label": "review",
+            "prediction": "review",
+            "abstained_prediction": "review",
+            "confidence": 0.656982,
+            "margin": 0.427384
+          }
+        ]
+      }
+    },
+    "regression_action_84": {
+      "baseline": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 44,
+              "flag": 0,
+              "block": 23,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 3,
+              "flag": 0,
+              "block": 12,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9361702127659575,
+              "recall": 0.6470588235294118,
+              "f1": 0.7652173913043478,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.3333333333333333,
+              "recall": 0.8,
+              "f1": 0.47058823529411764,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.3089514066496164,
+          "accuracy": 0.6666666666666666,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.011904761904761904,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 41,
+              "flag": 0,
+              "block": 21,
+              "review": 6
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 3,
+              "flag": 0,
+              "block": 12,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9318181818181818,
+              "recall": 0.6029411764705882,
+              "f1": 0.7321428571428571,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.35294117647058826,
+              "recall": 0.8,
+              "f1": 0.489795918367347,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.305484693877551,
+          "accuracy": 0.6309523809523809,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.07142857142857142,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "6020880c41c85788",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.996571,
+            "margin": 0.99343
+          },
+          {
+            "sample_id": "ab17f02a362c3c50",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.822123,
+            "margin": 0.653479
+          },
+          {
+            "sample_id": "36e1df4d76b2f900",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.881686,
+            "margin": 0.770331
+          },
+          {
+            "sample_id": "3248943a2d7569e0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.779481,
+            "margin": 0.567049
+          },
+          {
+            "sample_id": "b2587ebeaa65b19d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.676157,
+            "margin": 0.357083
+          },
+          {
+            "sample_id": "a44e632b9fb558dc",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.884507,
+            "margin": 0.787841
+          },
+          {
+            "sample_id": "4bf59cdec52aadb7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.413051,
+            "margin": 0.099432
+          },
+          {
+            "sample_id": "476c36d471d75f84",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.995198,
+            "margin": 0.992844
+          },
+          {
+            "sample_id": "b7b6200bfd017b5b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998468,
+            "margin": 0.996956
+          },
+          {
+            "sample_id": "9fbbc28eb7708046",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.964587,
+            "margin": 0.942277
+          },
+          {
+            "sample_id": "c2b77a0e1494c385",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999425,
+            "margin": 0.998868
+          },
+          {
+            "sample_id": "383bc9ebed29c519",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.920473,
+            "margin": 0.852155
+          },
+          {
+            "sample_id": "fd14f4444ab73940",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998263,
+            "margin": 0.996818
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999994,
+            "margin": 0.999989
+          },
+          {
+            "sample_id": "2b99484b86d448de",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999436,
+            "margin": 0.998994
+          },
+          {
+            "sample_id": "26b1af7e7e145234",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999972,
+            "margin": 0.999944
+          },
+          {
+            "sample_id": "bfb991e39b6d9c5c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999929,
+            "margin": 0.999872
+          },
+          {
+            "sample_id": "67a184c070be907c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999227,
+            "margin": 0.998801
+          },
+          {
+            "sample_id": "f8123e447c5f7cce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.900967,
+            "margin": 0.811912
+          },
+          {
+            "sample_id": "36f58010f07eed78",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.991935,
+            "margin": 0.986558
+          },
+          {
+            "sample_id": "2674ae5c10d8995b",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999255,
+            "margin": 0.998627
+          },
+          {
+            "sample_id": "ec2d1e04425fc022",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.990566,
+            "margin": 0.983628
+          },
+          {
+            "sample_id": "5080dfb9914af098",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.571457,
+            "margin": 0.143704
+          },
+          {
+            "sample_id": "d08c103248d9401a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.70561,
+            "margin": 0.421256
+          },
+          {
+            "sample_id": "b760666511219656",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998953,
+            "margin": 0.99796
+          },
+          {
+            "sample_id": "8aa153d227e82d14",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998545,
+            "margin": 0.99777
+          },
+          {
+            "sample_id": "4b41c087c37b690a",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.97507,
+            "margin": 0.950148
+          },
+          {
+            "sample_id": "de756477b0ebebc7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.995964,
+            "margin": 0.991941
+          },
+          {
+            "sample_id": "d96f2f71920bbd82",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999992,
+            "margin": 0.999985
+          },
+          {
+            "sample_id": "5f3be90810ffe7f0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999414,
+            "margin": 0.999148
+          },
+          {
+            "sample_id": "ca59b5255b4eb213",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.948164,
+            "margin": 0.901992
+          },
+          {
+            "sample_id": "e74e72adc0cb9336",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999887,
+            "margin": 0.999775
+          },
+          {
+            "sample_id": "7bf794881649258e",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.958457,
+            "margin": 0.937577
+          },
+          {
+            "sample_id": "2e88b3297ee05abb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.956128,
+            "margin": 0.918046
+          },
+          {
+            "sample_id": "1139c8893722cb90",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.697899,
+            "margin": 0.434386
+          },
+          {
+            "sample_id": "26e328cab6e60be2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.468141,
+            "margin": 0.233143
+          },
+          {
+            "sample_id": "02f2e7a7052f2b2c",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.946944,
+            "margin": 0.893905
+          },
+          {
+            "sample_id": "48dc9d2251d8cd86",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998497,
+            "margin": 0.997837
+          },
+          {
+            "sample_id": "100eff4a07dedd70",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999394,
+            "margin": 0.998841
+          },
+          {
+            "sample_id": "e966a2df4176d0e7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.992924,
+            "margin": 0.989598
+          },
+          {
+            "sample_id": "d2bf33a495ab5b5b",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.992201,
+            "margin": 0.986183
+          },
+          {
+            "sample_id": "d43b7ab3eb16a1f4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998937,
+            "margin": 0.998024
+          },
+          {
+            "sample_id": "90077472641e67ce",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.793055,
+            "margin": 0.590806
+          },
+          {
+            "sample_id": "32c415303e3cdc4d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.961967,
+            "margin": 0.924323
+          },
+          {
+            "sample_id": "e2a5c0a2c2b2ea2f",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999343,
+            "margin": 0.99882
+          },
+          {
+            "sample_id": "b707f4f909a7b908",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.916193,
+            "margin": 0.872952
+          },
+          {
+            "sample_id": "c07896f48d419ee7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.843826,
+            "margin": 0.745726
+          },
+          {
+            "sample_id": "7a265b04999fb864",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.876395,
+            "margin": 0.820343
+          },
+          {
+            "sample_id": "ad2236ec511461cf",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.977671,
+            "margin": 0.956085
+          },
+          {
+            "sample_id": "dde02b7f2bcb819c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.87187,
+            "margin": 0.749573
+          },
+          {
+            "sample_id": "8a40398d6277b710",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.60542,
+            "margin": 0.224007
+          },
+          {
+            "sample_id": "80e035a8e69efd9a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.986924,
+            "margin": 0.973884
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.965067,
+            "margin": 0.931349
+          },
+          {
+            "sample_id": "24745a674163fae8",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998084,
+            "margin": 0.996856
+          },
+          {
+            "sample_id": "0659e474756e7dad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99885,
+            "margin": 0.997898
+          },
+          {
+            "sample_id": "051568a7dfd524cb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.944225,
+            "margin": 0.891907
+          },
+          {
+            "sample_id": "a4dfa7151b551a3d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999761,
+            "margin": 0.999523
+          },
+          {
+            "sample_id": "06aafecab8686d11",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.738548,
+            "margin": 0.481928
+          },
+          {
+            "sample_id": "c1dbe7264aea63e2",
+            "reference_label": "allow",
+            "prediction": "review",
+            "abstained_prediction": "review",
+            "confidence": 0.737517,
+            "margin": 0.58913
+          },
+          {
+            "sample_id": "b48146653ddd9e99",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.630424,
+            "margin": 0.451387
+          },
+          {
+            "sample_id": "629ef0cd1bea05a2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.992043,
+            "margin": 0.987343
+          },
+          {
+            "sample_id": "d60d8860d46ee3b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999948,
+            "margin": 0.999906
+          },
+          {
+            "sample_id": "df3ab73158b5afc4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.98971,
+            "margin": 0.981424
+          },
+          {
+            "sample_id": "f2ecbb99c5995593",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.886535,
+            "margin": 0.773985
+          },
+          {
+            "sample_id": "f5454dcfd29e444a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999961,
+            "margin": 0.999941
+          },
+          {
+            "sample_id": "3818bb88055c70a4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.951927,
+            "margin": 0.905841
+          },
+          {
+            "sample_id": "8553210b85391395",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.985961,
+            "margin": 0.971923
+          },
+          {
+            "sample_id": "4021264d73f88a71",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999492,
+            "margin": 0.999201
+          },
+          {
+            "sample_id": "30b579c79e65ef74",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.830455,
+            "margin": 0.662451
+          },
+          {
+            "sample_id": "662117c1b5ce6790",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.938025,
+            "margin": 0.902018
+          },
+          {
+            "sample_id": "e7e6da388a9d600f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999801,
+            "margin": 0.999603
+          },
+          {
+            "sample_id": "baa5007a90b1e70e",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99994,
+            "margin": 0.999898
+          },
+          {
+            "sample_id": "d947d539df08f40d",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.805148,
+            "margin": 0.614972
+          },
+          {
+            "sample_id": "83893bc63d6a1794",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.955512,
+            "margin": 0.911176
+          },
+          {
+            "sample_id": "a4c3ed04a95a3da1",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999968,
+            "margin": 0.999937
+          },
+          {
+            "sample_id": "d6edf9e6671cc443",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999926,
+            "margin": 0.999852
+          },
+          {
+            "sample_id": "c23b31a0179b550f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "ca3704aa0b06f595",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.827394,
+            "margin": 0.671423
+          },
+          {
+            "sample_id": "c13ba5bd3aed190c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.948513,
+            "margin": 0.897056
+          },
+          {
+            "sample_id": "fafe97f7def328bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "72745579158ed723",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.812506,
+            "margin": 0.626281
+          },
+          {
+            "sample_id": "9df113686f25e8bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.608905,
+            "margin": 0.233219
+          },
+          {
+            "sample_id": "65da6ca77f0e60f6",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.685996,
+            "margin": 0.398206
+          },
+          {
+            "sample_id": "c06fc555902938b4",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.666283,
+            "margin": 0.34496
+          }
+        ]
+      },
+      "long49_fullctx": {
+        "argmax": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 40,
+              "flag": 0,
+              "block": 27,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 3,
+              "flag": 0,
+              "block": 12,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9302325581395349,
+              "recall": 0.5882352941176471,
+              "f1": 0.7207207207207207,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.3,
+              "recall": 0.8,
+              "f1": 0.4363636363636363,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.28927108927108924,
+          "accuracy": 0.6190476190476191,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.011904761904761904,
+          "review_precision": 0.0
+        },
+        "with_abstention": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 36,
+              "flag": 0,
+              "block": 23,
+              "review": 9
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 2,
+              "flag": 0,
+              "block": 12,
+              "review": 1
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9473684210526315,
+              "recall": 0.5294117647058824,
+              "f1": 0.679245283018868,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.3333333333333333,
+              "recall": 0.8,
+              "f1": 0.47058823529411764,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.2874583795782464,
+          "accuracy": 0.5714285714285714,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.11904761904761904,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "6020880c41c85788",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99836,
+            "margin": 0.996736
+          },
+          {
+            "sample_id": "ab17f02a362c3c50",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.876398,
+            "margin": 0.752978
+          },
+          {
+            "sample_id": "36e1df4d76b2f900",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.949127,
+            "margin": 0.898987
+          },
+          {
+            "sample_id": "3248943a2d7569e0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.667851,
+            "margin": 0.399486
+          },
+          {
+            "sample_id": "b2587ebeaa65b19d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.498961,
+            "margin": 0.04179
+          },
+          {
+            "sample_id": "a44e632b9fb558dc",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.540089,
+            "margin": 0.081504
+          },
+          {
+            "sample_id": "4bf59cdec52aadb7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.619922,
+            "margin": 0.394722
+          },
+          {
+            "sample_id": "476c36d471d75f84",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.679885,
+            "margin": 0.511121
+          },
+          {
+            "sample_id": "b7b6200bfd017b5b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.920551,
+            "margin": 0.841437
+          },
+          {
+            "sample_id": "9fbbc28eb7708046",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.561184,
+            "margin": 0.297714
+          },
+          {
+            "sample_id": "c2b77a0e1494c385",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994743,
+            "margin": 0.98951
+          },
+          {
+            "sample_id": "383bc9ebed29c519",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.993361,
+            "margin": 0.990002
+          },
+          {
+            "sample_id": "fd14f4444ab73940",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.997453,
+            "margin": 0.995218
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "2b99484b86d448de",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.985518,
+            "margin": 0.973115
+          },
+          {
+            "sample_id": "26b1af7e7e145234",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999997,
+            "margin": 0.999994
+          },
+          {
+            "sample_id": "bfb991e39b6d9c5c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.99997,
+            "margin": 0.999946
+          },
+          {
+            "sample_id": "67a184c070be907c",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.997088,
+            "margin": 0.99441
+          },
+          {
+            "sample_id": "f8123e447c5f7cce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.562627,
+            "margin": 0.214916
+          },
+          {
+            "sample_id": "36f58010f07eed78",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.898974,
+            "margin": 0.810882
+          },
+          {
+            "sample_id": "2674ae5c10d8995b",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999783,
+            "margin": 0.9996
+          },
+          {
+            "sample_id": "ec2d1e04425fc022",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.993976,
+            "margin": 0.98867
+          },
+          {
+            "sample_id": "5080dfb9914af098",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.987721,
+            "margin": 0.97547
+          },
+          {
+            "sample_id": "d08c103248d9401a",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.628074,
+            "margin": 0.270061
+          },
+          {
+            "sample_id": "b760666511219656",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999025,
+            "margin": 0.998184
+          },
+          {
+            "sample_id": "8aa153d227e82d14",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.997989,
+            "margin": 0.996887
+          },
+          {
+            "sample_id": "4b41c087c37b690a",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.616584,
+            "margin": 0.236646
+          },
+          {
+            "sample_id": "de756477b0ebebc7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998946,
+            "margin": 0.997949
+          },
+          {
+            "sample_id": "d96f2f71920bbd82",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.998324,
+            "margin": 0.996797
+          },
+          {
+            "sample_id": "5f3be90810ffe7f0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999211,
+            "margin": 0.998545
+          },
+          {
+            "sample_id": "ca59b5255b4eb213",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.993202,
+            "margin": 0.987936
+          },
+          {
+            "sample_id": "e74e72adc0cb9336",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999968,
+            "margin": 0.999936
+          },
+          {
+            "sample_id": "7bf794881649258e",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.887185,
+            "margin": 0.777623
+          },
+          {
+            "sample_id": "2e88b3297ee05abb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.83888,
+            "margin": 0.679618
+          },
+          {
+            "sample_id": "1139c8893722cb90",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.982886,
+            "margin": 0.969746
+          },
+          {
+            "sample_id": "26e328cab6e60be2",
+            "reference_label": "allow",
+            "prediction": "review",
+            "abstained_prediction": "review",
+            "confidence": 0.457204,
+            "margin": 0.133314
+          },
+          {
+            "sample_id": "02f2e7a7052f2b2c",
+            "reference_label": "block",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.979882,
+            "margin": 0.961116
+          },
+          {
+            "sample_id": "48dc9d2251d8cd86",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.988724,
+            "margin": 0.97792
+          },
+          {
+            "sample_id": "100eff4a07dedd70",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999823,
+            "margin": 0.999652
+          },
+          {
+            "sample_id": "e966a2df4176d0e7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.9651,
+            "margin": 0.9374
+          },
+          {
+            "sample_id": "d2bf33a495ab5b5b",
+            "reference_label": "flag",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.738607,
+            "margin": 0.480738
+          },
+          {
+            "sample_id": "d43b7ab3eb16a1f4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.99934,
+            "margin": 0.998733
+          },
+          {
+            "sample_id": "90077472641e67ce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.67348,
+            "margin": 0.349361
+          },
+          {
+            "sample_id": "32c415303e3cdc4d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.717809,
+            "margin": 0.499615
+          },
+          {
+            "sample_id": "e2a5c0a2c2b2ea2f",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998929,
+            "margin": 0.998391
+          },
+          {
+            "sample_id": "b707f4f909a7b908",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.771551,
+            "margin": 0.56836
+          },
+          {
+            "sample_id": "c07896f48d419ee7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.833913,
+            "margin": 0.767433
+          },
+          {
+            "sample_id": "7a265b04999fb864",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.968408,
+            "margin": 0.953966
+          },
+          {
+            "sample_id": "ad2236ec511461cf",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.912018,
+            "margin": 0.824466
+          },
+          {
+            "sample_id": "dde02b7f2bcb819c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.990542,
+            "margin": 0.982921
+          },
+          {
+            "sample_id": "8a40398d6277b710",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.647269,
+            "margin": 0.320539
+          },
+          {
+            "sample_id": "80e035a8e69efd9a",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.999802,
+            "margin": 0.999702
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.915132,
+            "margin": 0.830619
+          },
+          {
+            "sample_id": "24745a674163fae8",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.971691,
+            "margin": 0.952707
+          },
+          {
+            "sample_id": "0659e474756e7dad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999403,
+            "margin": 0.998827
+          },
+          {
+            "sample_id": "051568a7dfd524cb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.825385,
+            "margin": 0.65963
+          },
+          {
+            "sample_id": "a4dfa7151b551a3d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.998309,
+            "margin": 0.996645
+          },
+          {
+            "sample_id": "06aafecab8686d11",
+            "reference_label": "block",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.934505,
+            "margin": 0.900656
+          },
+          {
+            "sample_id": "c1dbe7264aea63e2",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "review",
+            "confidence": 0.500138,
+            "margin": 0.07734
+          },
+          {
+            "sample_id": "b48146653ddd9e99",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.775697,
+            "margin": 0.562364
+          },
+          {
+            "sample_id": "629ef0cd1bea05a2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.960443,
+            "margin": 0.927162
+          },
+          {
+            "sample_id": "d60d8860d46ee3b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999385,
+            "margin": 0.998804
+          },
+          {
+            "sample_id": "df3ab73158b5afc4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.63538,
+            "margin": 0.318139
+          },
+          {
+            "sample_id": "f2ecbb99c5995593",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.909915,
+            "margin": 0.831054
+          },
+          {
+            "sample_id": "f5454dcfd29e444a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.999656,
+            "margin": 0.999317
+          },
+          {
+            "sample_id": "3818bb88055c70a4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.975698,
+            "margin": 0.951746
+          },
+          {
+            "sample_id": "8553210b85391395",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.922403,
+            "margin": 0.844861
+          },
+          {
+            "sample_id": "4021264d73f88a71",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.994182,
+            "margin": 0.990832
+          },
+          {
+            "sample_id": "30b579c79e65ef74",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.84823,
+            "margin": 0.69668
+          },
+          {
+            "sample_id": "662117c1b5ce6790",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.52542,
+            "margin": 0.07506
+          },
+          {
+            "sample_id": "e7e6da388a9d600f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.939134,
+            "margin": 0.878272
+          },
+          {
+            "sample_id": "baa5007a90b1e70e",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.992019,
+            "margin": 0.984152
+          },
+          {
+            "sample_id": "d947d539df08f40d",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.683941,
+            "margin": 0.370017
+          },
+          {
+            "sample_id": "83893bc63d6a1794",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.717811,
+            "margin": 0.437165
+          },
+          {
+            "sample_id": "a4c3ed04a95a3da1",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 0.999999
+          },
+          {
+            "sample_id": "d6edf9e6671cc443",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.996921,
+            "margin": 0.993953
+          },
+          {
+            "sample_id": "c23b31a0179b550f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "ca3704aa0b06f595",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.851779,
+            "margin": 0.713693
+          },
+          {
+            "sample_id": "c13ba5bd3aed190c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 0.965937,
+            "margin": 0.931884
+          },
+          {
+            "sample_id": "fafe97f7def328bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "allow",
+            "confidence": 1.0,
+            "margin": 1.0
+          },
+          {
+            "sample_id": "72745579158ed723",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.939381,
+            "margin": 0.880873
+          },
+          {
+            "sample_id": "9df113686f25e8bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "abstained_prediction": "review",
+            "confidence": 0.525263,
+            "margin": 0.056445
+          },
+          {
+            "sample_id": "65da6ca77f0e60f6",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.738129,
+            "margin": 0.492824
+          },
+          {
+            "sample_id": "c06fc555902938b4",
+            "reference_label": "allow",
+            "prediction": "block",
+            "abstained_prediction": "block",
+            "confidence": 0.739635,
+            "margin": 0.48721
+          }
+        ]
+      }
+    }
+  }
+}

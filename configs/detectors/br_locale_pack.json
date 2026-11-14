@@ -1,0 +1,12 @@
+{
+  "_comment": "Brazil locale pack. CPF has a real two-digit weighted mod-11 checksum.",
+  "entities": [
+    {
+      "entity_id": "br_cpf",
+      "locale": "BR",
+      "pattern": "\\b\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}\\b",
+      "severity": "high",
+      "validator": "cpf_mod11"
+    }
+  ]
+}

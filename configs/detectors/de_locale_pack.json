@@ -1,0 +1,12 @@
+{
+  "_comment": "Germany locale pack. Steuer-ID: check-digit algorithm AND the digit-repetition structural rule, both enforced in validators.py._de_steuerid.",
+  "entities": [
+    {
+      "entity_id": "de_steuerid",
+      "locale": "DE",
+      "pattern": "\\b\\d{11}\\b",
+      "severity": "high",
+      "validator": "de_steuerid"
+    }
+  ]
+}

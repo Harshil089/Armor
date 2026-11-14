@@ -1,0 +1,65 @@
+{
+  "_comment": "Proxy provider registry (armor/proxy/config.py). Data, not code \u2014 add a provider by adding a row here, no adapter file needed unless its wire format genuinely differs from both listed adapter types. 'adapter' names a wire-shape adapter type (armor/proxy/adapters/), not the provider itself: most providers here share \"openai\" because they expose an OpenAI-/v1/chat/completions/-compatible endpoint. base_url has no trailing /v1 \u2014 the caller's own request path (after /proxy/<provider>/) supplies the version and route, matching how openai/anthropic already work. Base URLs verified against each provider's own API docs (2026-09-20), not guessed.",
+  "providers": [
+    {
+      "name": "openai",
+      "base_url": "https://api.openai.com",
+      "adapter": "openai"
+    },
+    {
+      "name": "anthropic",
+      "base_url": "https://api.anthropic.com",
+      "adapter": "anthropic"
+    },
+    {
+      "name": "groq",
+      "base_url": "https://api.groq.com/openai",
+      "adapter": "openai"
+    },
+    {
+      "name": "together",
+      "base_url": "https://api.together.xyz",
+      "adapter": "openai"
+    },
+    {
+      "name": "fireworks",
+      "base_url": "https://api.fireworks.ai/inference",
+      "adapter": "openai"
+    },
+    {
+      "name": "mistral",
+      "base_url": "https://api.mistral.ai",
+      "adapter": "openai"
+    },
+    {
+      "name": "deepseek",
+      "base_url": "https://api.deepseek.com",
+      "adapter": "openai"
+    },
+    {
+      "name": "openrouter",
+      "base_url": "https://openrouter.ai/api",
+      "adapter": "openai"
+    },
+    {
+      "name": "gemini",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "adapter": "openai"
+    },
+    {
+      "name": "perplexity",
+      "base_url": "https://api.perplexity.ai",
+      "adapter": "openai"
+    },
+    {
+      "name": "cerebras",
+      "base_url": "https://api.cerebras.ai",
+      "adapter": "openai"
+    },
+    {
+      "name": "xai",
+      "base_url": "https://api.x.ai",
+      "adapter": "openai"
+    }
+  ]
+}

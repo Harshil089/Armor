@@ -1,0 +1,418 @@
+{
+  "version": "v16-broad-four-action-holdout",
+  "human_ground_truth": false,
+  "holdout": true,
+  "n": 80,
+  "design": "20 prompts per internal coverage stratum for neutral assistance, bounded concern, severe harmful request, and consequential context-dependent action; stratum is not a target label; prompts shuffled before blind review",
+  "items": [
+    {
+      "sample_id": "ec3416f7e810",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "0236a67fe67e",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "02e25ee3ad06",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "75e2cbd8f7da",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "249f03806686",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "b986594fc1f0",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "04d89ae5b34f",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "78534f7ca921",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "754d4de4105d",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c870fc85da49",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "935df8e56ee9",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7fbb89f4e7ef",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3fe4ca3bc30a",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "fb3cf09f2a2e",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "debcea5ac0d5",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "873e2e47cc46",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "92a077b56adb",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "54c18b5334c0",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "2abde7758def",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "13aac31e3aa7",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7f4e5412dd88",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "580f71a06ee8",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "447d776c39fd",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e94b29778ee4",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "181c56d166b2",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "1a7e57b41ee8",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f3404084d149",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e8a43c6535e8",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "09e6318a47f9",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "104dc034536d",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f63138f04bef",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f076e7f8f445",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "dfdffc7014f7",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6b75408728e5",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3517e7f522f7",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "483631bb9972",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4e3e2761bfc1",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "a0edec30b125",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "ff9f584066a1",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "adb43f7f6c05",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e0b2c4079812",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7d9f02892e29",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "438f705b8778",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "43324af1d1fa",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "362c411f6b19",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4cc305a5ede3",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e902434030a4",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "5e1c8887effc",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d2b0e79bae71",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "220d1c123494",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "625077c3e3eb",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "35b7bf9cade6",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "618fabb9c70c",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "661fae352874",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "19d4f31f0dae",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7b15670f1f76",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3872e3349909",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "28a16670a87c",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e8330a4192ba",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "654a8ed81a34",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "faff291e1a71",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "0fec59f6add1",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3feb151ed853",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "762686f01af4",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "dc3e5abddf46",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "a3ada4afc345",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "ecebd4a482cb",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "b28c70395d94",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f8ed7ec359a9",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "bf76d88b9dfa",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "84c40dc64032",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c257dc935fe2",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "43aecea01f0d",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "5da797238196",
+      "design_stratum": "allow_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "24bf5cbbc658",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "8cd923b34cd9",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "2eb12bf0631d",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "66c51d577553",
+      "design_stratum": "block_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "bff3159c1cf4",
+      "design_stratum": "review_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "958a810a67f7",
+      "design_stratum": "flag_candidate",
+      "split": "holdout"
+    }
+  ],
+  "overlap_screen": {
+    "pending": false,
+    "reference_items": 1746,
+    "exact_overlaps": 0,
+    "semantic_threshold_cosine": 0.98,
+    "max_cosine": 0.9789877533912659,
+    "items_at_or_above_threshold": 0,
+    "replaced_initial_high_similarity_items": 9
+  }
+}

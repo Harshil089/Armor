@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-09-23",
+  "source_database": "armor/observability/logs.db",
+  "valid_action_rows": 1118,
+  "unique_texts": 979,
+  "action_counts": {
+    "allow": 349,
+    "block": 588,
+    "flag": 109,
+    "review": 72
+  },
+  "label_source_counts": {
+    "pseudo_model": 1047,
+    "human": 71
+  },
+  "duplicate_texts_with_conflicting_actions": 5,
+  "quality_signals_row_counts": {
+    "armor_block_marker": 0,
+    "role_transcript_markers": 3,
+    "embedded_tool_transcripts": 0,
+    "very_long_over_4000_chars": 6,
+    "very_short_under_4_words": 33
+  },
+  "human_ground_truth_claim": false
+}

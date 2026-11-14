@@ -1,0 +1,146 @@
+{
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "method": "stratified from corrected prompt texts; existing actions used only as hidden sampling strata; conflicting-action exact duplicates excluded; diverse within class by BERT embedding cosine",
+  "seed": 20260934,
+  "candidate_pool": 513,
+  "requested_per_class": 12,
+  "selected_counts": {
+    "allow": 12,
+    "flag": 1,
+    "block": 12,
+    "review": 1
+  },
+  "selected": [
+    {
+      "sample_id": "b7b6200bfd017b5b",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "5c2c2b0e75adf608",
+      "sampling_stratum": "allow",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "051568a7dfd524cb",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "65da6ca77f0e60f6",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9901337b86f6f667",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "fa6647cf59df6531",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "8f434346648f6b96",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "5c315ca9a6c62c7a",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "2b99484b86d448de",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "b48146653ddd9e99",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ad69caf47ea705ea",
+      "sampling_stratum": "allow",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "de756477b0ebebc7",
+      "sampling_stratum": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "d2bf33a495ab5b5b",
+      "sampling_stratum": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "bda8b8a0164d01b0",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "fdaa9e57519f4b3d",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c84e33c12fc302b2",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "41cac4ea09c7a66e",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "e2a5c0a2c2b2ea2f",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "55de4b67d7411e86",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c7b675f1ec5b81f1",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "29cd86d0861db43e",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "20bc601285aed116",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "68dde239aa5e4b30",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "508c2136cb2049fe",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ac27bbad4cf78150",
+      "sampling_stratum": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "4b292b341fc700c5",
+      "sampling_stratum": "review",
+      "label_source": "human"
+    }
+  ]
+}

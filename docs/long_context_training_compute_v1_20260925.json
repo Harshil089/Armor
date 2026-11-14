@@ -1,0 +1,77 @@
+{
+  "measured_at": "2026-09-25",
+  "device": "MPS",
+  "backend": "PyTorch",
+  "purpose": "frozen encoder feature extraction feasibility; not serving backend",
+  "model": "existing ArmorBase / ModernBERT only",
+  "checkpoint_loaded": true,
+  "measured_forward_passes_per_bucket": 1,
+  "warmup_passes_excluded": 1,
+  "measurements": {
+    "512": {
+      "tokens": 512,
+      "total_forward_ms": 93.64829200785607,
+      "encoder_ms": 6.462416029535234,
+      "tokenization_ms": 1.3839169987477362
+    },
+    "1k": {
+      "tokens": 1027,
+      "total_forward_ms": 231.47512500872836,
+      "encoder_ms": 14.494000002741814,
+      "tokenization_ms": 3.867790976073593
+    },
+    "2k": {
+      "tokens": 2059,
+      "total_forward_ms": 576.027041010093,
+      "encoder_ms": 13.753041974268854,
+      "tokenization_ms": 5.732167046517134
+    },
+    "4k": {
+      "tokens": 4126,
+      "total_forward_ms": 1718.5384589829482,
+      "encoder_ms": 59.840999951120466,
+      "tokenization_ms": 10.201833967585117
+    },
+    "6k": {
+      "tokens": 6192,
+      "total_forward_ms": 3473.675499961246,
+      "encoder_ms": 336.51325001847,
+      "tokenization_ms": 37.486332992557436
+    },
+    "8k": {
+      "tokens": 7882,
+      "total_forward_ms": 5393.582582997624,
+      "encoder_ms": 364.6240829839371,
+      "tokenization_ms": 66.10799999907613
+    }
+  },
+  "source_training_rows": 20153,
+  "source_length_distribution": {
+    "mean": 117.8,
+    "median": 42,
+    "p90": 326,
+    "p95": 422,
+    "p99": 873,
+    "over_512": 663,
+    "over_2048": 17,
+    "max": 4674
+  },
+  "illustrative_curriculum": {
+    "<=512": 0.4,
+    "513-1024": 0.25,
+    "1025-2048": 0.15,
+    "2049-4096": 0.1,
+    "4097-6144": 0.07,
+    "6145-8192": 0.03
+  },
+  "illustrative_rows_per_bucket": {
+    "<=512": 8061,
+    "513-1024": 5038,
+    "1025-2048": 3023,
+    "2049-4096": 2015,
+    "4097-6144": 1411,
+    "6145-8192": 605
+  },
+  "estimated_single_pass_wall_clock_hours": 4.247146915181204,
+  "estimate_limit": "One sample per length; deliberately conservative sequential extrapolation of synchronized full-forward latency (not the unsynchronized MPS encoder timer). Excludes batching speedup, data assembly, backward work, validation, and retries; long-bucket variance may be substantial."
+}

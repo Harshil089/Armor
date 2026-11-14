@@ -1,0 +1,12 @@
+{
+  "_comment": "Australia locale pack. TFN weighted mod-11 checksum. Covers modern 9-digit and legacy 8-digit formats.",
+  "entities": [
+    {
+      "entity_id": "au_tfn",
+      "locale": "AU",
+      "pattern": "\\b(?:\\d{3}[ -]?\\d{3}[ -]?\\d{3}|\\d{2}[ -]?\\d{3}[ -]?\\d{3})\\b",
+      "severity": "high",
+      "validator": "au_tfn_mod11"
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "method": "five-source active selection (policy boundary, reference-bank disagreement, flag similarity, OOD novelty, embedding-cluster diversity); labels and old actions hidden",
+  "pool_size": 346,
+  "training_excluded_exact_texts": 977,
+  "candidate_sources_excluded": 963,
+  "selection_sources": [
+    "boundary_margin",
+    "reference_bank_disagreement",
+    "rare_flag_similarity",
+    "novelty",
+    "cluster_diversity"
+  ],
+  "selected": [
+    {
+      "sample_id": "d4fd7e28acbc6f3a",
+      "priority": 0.7417544648051262,
+      "signals": {
+        "boundary": 0.9776333272457123,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9610488414764404,
+        "novelty": 0.02833569049835205
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "87ffdbf859a3e437",
+      "priority": 0.7416170835494995,
+      "signals": {
+        "boundary": 0.9664683938026428,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9528533220291138,
+        "novelty": 0.047146618366241455
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "6a0b78d3f906d6a3",
+      "priority": 0.7381015419960022,
+      "signals": {
+        "boundary": 0.9590122103691101,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9665830135345459,
+        "novelty": 0.026810944080352783
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "ca7baa0b0fc055ca",
+      "priority": 0.7372265234589577,
+      "signals": {
+        "boundary": 0.9497039616107941,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9543794989585876,
+        "novelty": 0.044822633266448975
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "fa8a05972ba695a4",
+      "priority": 0.7322394475340843,
+      "signals": {
+        "boundary": 0.9370754063129425,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9592576026916504,
+        "novelty": 0.032624781131744385
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "0995fc4b0b364c67",
+      "priority": 0.7284720316529274,
+      "signals": {
+        "boundary": 0.9518435299396515,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9185296297073364,
+        "novelty": 0.04351496696472168
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "7c64eae3442bf614",
+      "priority": 0.7281306982040405,
+      "signals": {
+        "boundary": 0.9235230088233948,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9703966975212097,
+        "novelty": 0.018603086471557617
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "bbb96b8367466b8c",
+      "priority": 0.7258071526885033,
+      "signals": {
+        "boundary": 0.9042855799198151,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9456984996795654,
+        "novelty": 0.05324453115463257
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "db5c3dd1f0f1b533",
+      "priority": 0.7201107516884804,
+      "signals": {
+        "boundary": 0.8865765631198883,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.946239709854126,
+        "novelty": 0.04762673377990723
+      },
+      "model_prediction_hidden_from_reviewer": "review"
+    },
+    {
+      "sample_id": "94506497ecae8e34",
+      "priority": 0.698521614074707,
+      "signals": {
+        "boundary": 0.8137615323066711,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9358038902282715,
+        "novelty": 0.0445210337638855
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "43e635e0ae217e23",
+      "priority": 0.6923068538308144,
+      "signals": {
+        "boundary": 0.805955559015274,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9403105974197388,
+        "novelty": 0.02296125888824463
+      },
+      "model_prediction_hidden_from_reviewer": "review"
+    },
+    {
+      "sample_id": "b2120a14b22bcbdc",
+      "priority": 0.6771973296999931,
+      "signals": {
+        "boundary": 0.7145731747150421,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9472917318344116,
+        "novelty": 0.0469244122505188
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "5cc9e115e7a8e406",
+      "priority": 0.6736606881022453,
+      "signals": {
+        "boundary": 0.6960202157497406,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9481053352355957,
+        "novelty": 0.05051720142364502
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "85f6fdd3092474bd",
+      "priority": 0.6567411571741104,
+      "signals": {
+        "boundary": 0.6453664302825928,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9225255846977234,
+        "novelty": 0.05907261371612549
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "66f1c790e257f16b",
+      "priority": 0.6324605382978916,
+      "signals": {
+        "boundary": 0.5308426767587662,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9630212783813477,
+        "novelty": 0.03597819805145264
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "01f1effa50eef439",
+      "priority": 0.6081031188368797,
+      "signals": {
+        "boundary": 0.4548030197620392,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.91619873046875,
+        "novelty": 0.061410725116729736
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "03bf102f48c9f947",
+      "priority": 0.6015681177377701,
+      "signals": {
+        "boundary": 0.4124554991722107,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9389441609382629,
+        "novelty": 0.05487281084060669
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "f86376dfa4769f8b",
+      "priority": 0.5793554224073887,
+      "signals": {
+        "boundary": 0.35652758181095123,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9209259152412415,
+        "novelty": 0.03996819257736206
+      },
+      "model_prediction_hidden_from_reviewer": "flag"
+    },
+    {
+      "sample_id": "4815783566fd6862",
+      "priority": 0.5572410877794027,
+      "signals": {
+        "boundary": 0.2399536594748497,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9318324327468872,
+        "novelty": 0.05717825889587402
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "c023b27233ec54f1",
+      "priority": 0.5353982746601105,
+      "signals": {
+        "boundary": 0.14159297943115234,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9311345219612122,
+        "novelty": 0.06886559724807739
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "ef472191b3b6e4d0",
+      "priority": 0.5189632102847099,
+      "signals": {
+        "boundary": 0.08021673560142517,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9484085440635681,
+        "novelty": 0.047227561473846436
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "2d02ca91742524fd",
+      "priority": 0.5170199829153717,
+      "signals": {
+        "boundary": 0.06808005087077618,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9288491010665894,
+        "novelty": 0.0711507797241211
+      },
+      "model_prediction_hidden_from_reviewer": "review"
+    },
+    {
+      "sample_id": "022179e4c860c005",
+      "priority": 0.5166714582592249,
+      "signals": {
+        "boundary": 0.07005832344293594,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9580672979354858,
+        "novelty": 0.03856021165847778
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "6d39fa90868943ea",
+      "priority": 0.5166618945077062,
+      "signals": {
+        "boundary": 0.09204279258847237,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9398835301399231,
+        "novelty": 0.0347212553024292
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "6c17c571e482bcb2",
+      "priority": 0.5117869954556227,
+      "signals": {
+        "boundary": 0.04714792221784592,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9534031748771667,
+        "novelty": 0.04659688472747803
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "8b362fb2b20e7adb",
+      "priority": 0.5062215831130743,
+      "signals": {
+        "boundary": 0.039257071912288666,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9374275207519531,
+        "novelty": 0.04820173978805542
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "c0551e0ddca93de2",
+      "priority": 0.5041681998409331,
+      "signals": {
+        "boundary": 0.023461589589715004,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9594672322273254,
+        "novelty": 0.033743977546691895
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "41e268e2b96a1f04",
+      "priority": 0.5000027311616577,
+      "signals": {
+        "boundary": 0.002738075563684106,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9616960287094116,
+        "novelty": 0.035576820373535156
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "a22fcbb65dbf6023",
+      "priority": 0.49910851230379194,
+      "signals": {
+        "boundary": 0.00343008479103446,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9511035680770874,
+        "novelty": 0.0419003963470459
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "d94aaca21600fbfc",
+      "priority": 0.49743004829224446,
+      "signals": {
+        "boundary": 3.1915924409986474e-05,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9569892883300781,
+        "novelty": 0.032698988914489746
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "6431e9fd97d5ad79",
+      "priority": 0.49583189238728664,
+      "signals": {
+        "boundary": 0.00020843941456405446,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.9092532992362976,
+        "novelty": 0.07386583089828491
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "74583195d4401641",
+      "priority": 0.47285105288028717,
+      "signals": {
+        "boundary": 0.0,
+        "disagreement": 1.0,
+        "rare_flag_similarity": 0.3536492586135864,
+        "novelty": 0.5377549529075623
+      },
+      "model_prediction_hidden_from_reviewer": "allow"
+    },
+    {
+      "sample_id": "70a651ebce7b286d",
+      "priority": 0.4003080800175667,
+      "signals": {
+        "boundary": 0.607288271188736,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9449509382247925,
+        "novelty": 0.04899311065673828
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "ab74c52797e98901",
+      "priority": 0.2734886612743139,
+      "signals": {
+        "boundary": 0.10395707935094833,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9563414454460144,
+        "novelty": 0.03365612030029297
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "f4f33012c2626689",
+      "priority": 0.24996131006628275,
+      "signals": {
+        "boundary": 0.021591637283563614,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9450483322143555,
+        "novelty": 0.033205270767211914
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "03c802f066b10944",
+      "priority": 0.24806848398338843,
+      "signals": {
+        "boundary": 2.6354451620136388e-05,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9701988697052002,
+        "novelty": 0.0220487117767334
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "165d2d242f8cc7e2",
+      "priority": 0.24786091595888138,
+      "signals": {
+        "boundary": 0.002619415521621704,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9604177474975586,
+        "novelty": 0.028406500816345215
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "a97c41fded647b54",
+      "priority": 0.24744959045528958,
+      "signals": {
+        "boundary": 0.0001643844079808332,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9580729603767395,
+        "novelty": 0.03156101703643799
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "b0ffe3d3130509bd",
+      "priority": 0.24712891487615707,
+      "signals": {
+        "boundary": 0.00015751951286802068,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9409318566322327,
+        "novelty": 0.04742628335952759
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "5a1816336b2e1127",
+      "priority": 0.24707304623754567,
+      "signals": {
+        "boundary": 3.722788164850499e-06,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9555214047431946,
+        "novelty": 0.03276705741882324
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "fdda5a77f3e401af",
+      "priority": 0.24648307926491952,
+      "signals": {
+        "boundary": 1.3974124613014283e-06,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.951163649559021,
+        "novelty": 0.0347672700881958
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "124f93d531703d5f",
+      "priority": 0.24537893596698268,
+      "signals": {
+        "boundary": 9.767069059307687e-05,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9603480100631714,
+        "novelty": 0.02107006311416626
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "ede04ca6e2a4f235",
+      "priority": 0.2450791316141563,
+      "signals": {
+        "boundary": 6.719381495656762e-09,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.93822181224823,
+        "novelty": 0.04209470748901367
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "be77204ad4a3b8ef",
+      "priority": 0.24470973017681885,
+      "signals": {
+        "boundary": 1.1401368738006568e-10,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.947312593460083,
+        "novelty": 0.03152632713317871
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "955c878385fe4da7",
+      "priority": 0.24395507728291932,
+      "signals": {
+        "boundary": 6.443470056183287e-06,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9333998560905457,
+        "novelty": 0.04241400957107544
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "d858f8b9f4391a24",
+      "priority": 0.24260648627370074,
+      "signals": {
+        "boundary": 3.0811345368420007e-06,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9475097060203552,
+        "novelty": 0.02291315793991089
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "91bbbdb2083fb7e3",
+      "priority": 0.24233094194959648,
+      "signals": {
+        "boundary": 4.903249362087081e-07,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9109827280044556,
+        "novelty": 0.05834054946899414
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "d314d30a8d7cfc12",
+      "priority": 0.24175867717713118,
+      "signals": {
+        "boundary": 0.004501473158597946,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9373505711555481,
+        "novelty": 0.025182664394378662
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "c41b9aba5b17a079",
+      "priority": 0.24153154181374248,
+      "signals": {
+        "boundary": 1.5043693110783352e-05,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9531354904174805,
+        "novelty": 0.012975633144378662
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "8b497f0f69f33eac",
+      "priority": 0.2386884757363532,
+      "signals": {
+        "boundary": 2.6491675271245185e-05,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9330008029937744,
+        "novelty": 0.021726608276367188
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "f31110f97bf8a892",
+      "priority": 0.23772797753792752,
+      "signals": {
+        "boundary": 3.061222031419675e-08,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.931259036064148,
+        "novelty": 0.019652843475341797
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    },
+    {
+      "sample_id": "9092ae01110c8743",
+      "priority": 0.23592153289498974,
+      "signals": {
+        "boundary": 1.8273123458811824e-07,
+        "disagreement": 0.0,
+        "rare_flag_similarity": 0.9243553280830383,
+        "novelty": 0.019330620765686035
+      },
+      "model_prediction_hidden_from_reviewer": "block"
+    }
+  ]
+}

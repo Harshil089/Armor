@@ -1,0 +1,622 @@
+{
+  "rubric_version": "v1.1",
+  "reference_reviewer": "reviewer_ai_jev_blind_v1_1",
+  "human_ground_truth": false,
+  "n": 48,
+  "development_holdout": true,
+  "selection_bias": "stratified by prior action from uncorrected logs; not a traffic prevalence estimate",
+  "label_counts": {
+    "allow": 20,
+    "flag": 5,
+    "block": 20,
+    "review": 3
+  },
+  "base_threshold_metrics": {
+    "confusion_matrix": {
+      "allow": {
+        "allow": 12,
+        "flag": 7,
+        "block": 1,
+        "review": 0
+      },
+      "flag": {
+        "allow": 1,
+        "flag": 3,
+        "block": 1,
+        "review": 0
+      },
+      "block": {
+        "allow": 1,
+        "flag": 4,
+        "block": 15,
+        "review": 0
+      },
+      "review": {
+        "allow": 0,
+        "flag": 2,
+        "block": 1,
+        "review": 0
+      }
+    },
+    "per_class": {
+      "allow": {
+        "precision": 0.8571428571428571,
+        "recall": 0.6,
+        "f1": 0.7058823529411764,
+        "support": 20
+      },
+      "flag": {
+        "precision": 0.1875,
+        "recall": 0.6,
+        "f1": 0.2857142857142857,
+        "support": 5
+      },
+      "block": {
+        "precision": 0.8333333333333334,
+        "recall": 0.75,
+        "f1": 0.7894736842105262,
+        "support": 20
+      },
+      "review": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      }
+    },
+    "macro_f1": 0.4452675807164971,
+    "accuracy": 0.625,
+    "block_false_negative_count": 5,
+    "flag_to_allow_errors": 1,
+    "flag_to_block_errors": 1,
+    "review_rate": 0.0,
+    "review_precision": 0.0
+  },
+  "bert_policy_head_metrics": {
+    "confusion_matrix": {
+      "allow": {
+        "allow": 14,
+        "flag": 3,
+        "block": 3,
+        "review": 0
+      },
+      "flag": {
+        "allow": 1,
+        "flag": 3,
+        "block": 1,
+        "review": 0
+      },
+      "block": {
+        "allow": 3,
+        "flag": 3,
+        "block": 14,
+        "review": 0
+      },
+      "review": {
+        "allow": 0,
+        "flag": 2,
+        "block": 1,
+        "review": 0
+      }
+    },
+    "per_class": {
+      "allow": {
+        "precision": 0.7777777777777778,
+        "recall": 0.7,
+        "f1": 0.7368421052631577,
+        "support": 20
+      },
+      "flag": {
+        "precision": 0.2727272727272727,
+        "recall": 0.6,
+        "f1": 0.37499999999999994,
+        "support": 5
+      },
+      "block": {
+        "precision": 0.7368421052631579,
+        "recall": 0.7,
+        "f1": 0.717948717948718,
+        "support": 20
+      },
+      "review": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      }
+    },
+    "macro_f1": 0.4574477058029689,
+    "accuracy": 0.6458333333333334,
+    "block_false_negative_count": 6,
+    "flag_to_allow_errors": 1,
+    "flag_to_block_errors": 1,
+    "review_rate": 0.0,
+    "review_precision": 0.0
+  },
+  "rows": [
+    {
+      "sample_id": "0c92f35bf0d2270a",
+      "reference_label": "allow",
+      "label_confidence": 0.92,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 61.925999994855374
+    },
+    {
+      "sample_id": "4c5c67b51b7037e2",
+      "reference_label": "allow",
+      "label_confidence": 0.22,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.25533296866342425
+    },
+    {
+      "sample_id": "66ed01f750c39f96",
+      "reference_label": "block",
+      "label_confidence": 1.0,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.2697500167414546
+    },
+    {
+      "sample_id": "d21b46ba3c706c9d",
+      "reference_label": "block",
+      "label_confidence": 0.99,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.38612500112504
+    },
+    {
+      "sample_id": "35a4588a60320ee6",
+      "reference_label": "block",
+      "label_confidence": 0.34,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.3517079749144614
+    },
+    {
+      "sample_id": "ccca27e34f944e32",
+      "reference_label": "block",
+      "label_confidence": 0.99,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.24858297547325492
+    },
+    {
+      "sample_id": "f5f67be101313eca",
+      "reference_label": "review",
+      "label_confidence": 0.41,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.32133294735103846
+    },
+    {
+      "sample_id": "ee9c41f229bdfcb4",
+      "reference_label": "allow",
+      "label_confidence": 0.89,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 37.97783300979063
+    },
+    {
+      "sample_id": "b2db6534c7698e6f",
+      "reference_label": "block",
+      "label_confidence": 0.79,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 52.10845801047981
+    },
+    {
+      "sample_id": "8ca516c56c7c0426",
+      "reference_label": "block",
+      "label_confidence": 0.64,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 50.7752500125207
+    },
+    {
+      "sample_id": "0fd549e721a014cc",
+      "reference_label": "block",
+      "label_confidence": 0.93,
+      "sampling_stratum": "flag",
+      "baseline_decision": "block",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 37.94012498110533
+    },
+    {
+      "sample_id": "c4ba9e91961967b8",
+      "reference_label": "allow",
+      "label_confidence": 0.97,
+      "sampling_stratum": "allow",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 51.67458299547434
+    },
+    {
+      "sample_id": "a1b01ddbc40b376b",
+      "reference_label": "block",
+      "label_confidence": 0.52,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 51.08075001044199
+    },
+    {
+      "sample_id": "4e59bcef85f82e8c",
+      "reference_label": "allow",
+      "label_confidence": 0.9,
+      "sampling_stratum": "allow",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 39.01800001040101
+    },
+    {
+      "sample_id": "2025b6b91fd9540f",
+      "reference_label": "flag",
+      "label_confidence": 0.17,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.3078749869018793
+    },
+    {
+      "sample_id": "274d34e388aebccf",
+      "reference_label": "allow",
+      "label_confidence": 0.13,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 102.52154100453481
+    },
+    {
+      "sample_id": "c0c5a96264114e03",
+      "reference_label": "block",
+      "label_confidence": 0.76,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 50.97645800560713
+    },
+    {
+      "sample_id": "489cc1894211ab77",
+      "reference_label": "block",
+      "label_confidence": 0.88,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.3225000109523535
+    },
+    {
+      "sample_id": "5109d89a24acba61",
+      "reference_label": "flag",
+      "label_confidence": 0.47,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.23829098790884018
+    },
+    {
+      "sample_id": "6b23cf61759eab5c",
+      "reference_label": "block",
+      "label_confidence": 0.98,
+      "sampling_stratum": "allow",
+      "baseline_decision": "block",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.22983300779015
+    },
+    {
+      "sample_id": "3a2d364762662aaf",
+      "reference_label": "allow",
+      "label_confidence": 0.53,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.0838330015540123
+    },
+    {
+      "sample_id": "7ac1f86dedbc2110",
+      "reference_label": "flag",
+      "label_confidence": 0.13,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 96.35491599328816
+    },
+    {
+      "sample_id": "2dfa2305bc6c2349",
+      "reference_label": "block",
+      "label_confidence": 1.0,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.28312503127381206
+    },
+    {
+      "sample_id": "0417333afff6f266",
+      "reference_label": "block",
+      "label_confidence": 0.97,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.4283750313334167
+    },
+    {
+      "sample_id": "291d1357f9ca6e70",
+      "reference_label": "allow",
+      "label_confidence": 0.98,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 52.45412501972169
+    },
+    {
+      "sample_id": "06b6002a4b2f57bb",
+      "reference_label": "allow",
+      "label_confidence": 1.0,
+      "sampling_stratum": "allow",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 52.07020801026374
+    },
+    {
+      "sample_id": "6a754e517e2b3b68",
+      "reference_label": "block",
+      "label_confidence": 0.98,
+      "sampling_stratum": "allow",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 39.51987496111542
+    },
+    {
+      "sample_id": "9987897f198d91cc",
+      "reference_label": "block",
+      "label_confidence": 0.3,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 51.56033398816362
+    },
+    {
+      "sample_id": "43880c94b8e99933",
+      "reference_label": "review",
+      "label_confidence": 0.16,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.3499999875202775
+    },
+    {
+      "sample_id": "a3561a8ac26afde5",
+      "reference_label": "block",
+      "label_confidence": 0.99,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.26716699404642
+    },
+    {
+      "sample_id": "cc01abd23b868d4a",
+      "reference_label": "review",
+      "label_confidence": 0.3,
+      "sampling_stratum": "allow",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.365624961443245
+    },
+    {
+      "sample_id": "a8b5bdcf970779f9",
+      "reference_label": "block",
+      "label_confidence": 0.83,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 234.76766695966944
+    },
+    {
+      "sample_id": "e5bfd2fe76a7526f",
+      "reference_label": "block",
+      "label_confidence": 0.77,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 57.91866598883644
+    },
+    {
+      "sample_id": "a3b6366d1ab39949",
+      "reference_label": "allow",
+      "label_confidence": 0.97,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 57.000875007361174
+    },
+    {
+      "sample_id": "8c797f058780fe4f",
+      "reference_label": "allow",
+      "label_confidence": 0.97,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 57.484749995637685
+    },
+    {
+      "sample_id": "02f9a4a031ed23fe",
+      "reference_label": "allow",
+      "label_confidence": 0.98,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 215.56220896309242
+    },
+    {
+      "sample_id": "93ecd812cb3349a5",
+      "reference_label": "flag",
+      "label_confidence": 0.24,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.2145410398952663
+    },
+    {
+      "sample_id": "c3a653efcf6ae35f",
+      "reference_label": "allow",
+      "label_confidence": 0.71,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.08366699330508709
+    },
+    {
+      "sample_id": "616faacf2a9786b4",
+      "reference_label": "allow",
+      "label_confidence": 1.0,
+      "sampling_stratum": "allow",
+      "baseline_decision": "flag",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 39.3373750266619
+    },
+    {
+      "sample_id": "5f50e9280a2d5380",
+      "reference_label": "allow",
+      "label_confidence": 0.96,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.306082948111
+    },
+    {
+      "sample_id": "9bbd484b0c205b0e",
+      "reference_label": "allow",
+      "label_confidence": 0.99,
+      "sampling_stratum": "allow",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 51.31229100516066
+    },
+    {
+      "sample_id": "020e0f27f74724d6",
+      "reference_label": "allow",
+      "label_confidence": 0.98,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "block",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 38.55466697132215
+    },
+    {
+      "sample_id": "556cb407e5350cd8",
+      "reference_label": "allow",
+      "label_confidence": 0.37,
+      "sampling_stratum": "flag",
+      "baseline_decision": "flag",
+      "candidate_decision": "flag",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.08862500544637442
+    },
+    {
+      "sample_id": "88b8de5e146d836e",
+      "reference_label": "allow",
+      "label_confidence": 0.94,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 58.233708958141506
+    },
+    {
+      "sample_id": "85b2272696fc2dd6",
+      "reference_label": "block",
+      "label_confidence": 0.63,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.31620904337614775
+    },
+    {
+      "sample_id": "da975445318bde05",
+      "reference_label": "allow",
+      "label_confidence": 0.24,
+      "sampling_stratum": "flag",
+      "baseline_decision": "allow",
+      "candidate_decision": "allow",
+      "candidate_route": "escalated",
+      "candidate_latency_ms": 100.74595804326236
+    },
+    {
+      "sample_id": "c138bb5da4c9ff69",
+      "reference_label": "flag",
+      "label_confidence": 0.66,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.09662500815466046
+    },
+    {
+      "sample_id": "ea556d80b10fe125",
+      "reference_label": "block",
+      "label_confidence": 0.99,
+      "sampling_stratum": "block",
+      "baseline_decision": "block",
+      "candidate_decision": "block",
+      "candidate_route": "fast",
+      "candidate_latency_ms": 0.2977919648401439
+    }
+  ],
+  "post_audit_exclusions": [
+    "42b545fce6177c0f",
+    "c85367b89b3a38fe"
+  ]
+}

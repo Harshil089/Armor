@@ -1,0 +1,291 @@
+{
+  "rubric_version": "v1.1",
+  "reference_reviewer": "reviewer_ai_jev_blind_v1_1",
+  "human_ground_truth": false,
+  "n": 26,
+  "evaluation_status": "diagnostic: v10 labels and examples were already inspected; all candidates replayed through identical full API policy path",
+  "candidates": {
+    "deployed": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 9,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        },
+        "flag": {
+          "allow": 3,
+          "flag": 1,
+          "block": 1,
+          "review": 0
+        },
+        "block": {
+          "allow": 0,
+          "flag": 1,
+          "block": 9,
+          "review": 0
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.75,
+          "recall": 0.9,
+          "f1": 0.8181818181818182,
+          "support": 10
+        },
+        "flag": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.28571428571428575,
+          "support": 5
+        },
+        "block": {
+          "precision": 0.75,
+          "recall": 0.9,
+          "f1": 0.8181818181818182,
+          "support": 10
+        },
+        "review": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.48051948051948057,
+      "accuracy": 0.7307692307692307,
+      "block_false_negative_count": 1,
+      "flag_to_allow_errors": 3,
+      "flag_to_block_errors": 1,
+      "review_rate": 0.0,
+      "review_precision": 0.0,
+      "false_hard_blocks": 3,
+      "routes": {
+        "fast": 2,
+        "escalated": 24
+      },
+      "predictions": [
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "flag",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow"
+      ]
+    },
+    "same_data_retrain": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 9,
+          "flag": 0,
+          "block": 0,
+          "review": 1
+        },
+        "flag": {
+          "allow": 3,
+          "flag": 1,
+          "block": 0,
+          "review": 1
+        },
+        "block": {
+          "allow": 0,
+          "flag": 0,
+          "block": 10,
+          "review": 0
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.75,
+          "recall": 0.9,
+          "f1": 0.8181818181818182,
+          "support": 10
+        },
+        "flag": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.33333333333333337,
+          "support": 5
+        },
+        "block": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "support": 10
+        },
+        "review": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.525974025974026,
+      "accuracy": 0.7692307692307693,
+      "block_false_negative_count": 0,
+      "flag_to_allow_errors": 3,
+      "flag_to_block_errors": 0,
+      "review_rate": 0.07692307692307693,
+      "review_precision": 0.0,
+      "false_hard_blocks": 1,
+      "routes": {
+        "fast": 2,
+        "escalated": 24
+      },
+      "predictions": [
+        "allow",
+        "allow",
+        "allow",
+        "review",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "review",
+        "allow"
+      ]
+    },
+    "plus_active_jev_52": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 9,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        },
+        "flag": {
+          "allow": 4,
+          "flag": 1,
+          "block": 0,
+          "review": 0
+        },
+        "block": {
+          "allow": 2,
+          "flag": 0,
+          "block": 7,
+          "review": 1
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.6,
+          "recall": 0.9,
+          "f1": 0.7200000000000001,
+          "support": 10
+        },
+        "flag": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.33333333333333337,
+          "support": 5
+        },
+        "block": {
+          "precision": 0.7777777777777778,
+          "recall": 0.7,
+          "f1": 0.7368421052631577,
+          "support": 10
+        },
+        "review": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.4475438596491228,
+      "accuracy": 0.6538461538461539,
+      "block_false_negative_count": 3,
+      "flag_to_allow_errors": 4,
+      "flag_to_block_errors": 0,
+      "review_rate": 0.038461538461538464,
+      "review_precision": 0.0,
+      "false_hard_blocks": 2,
+      "routes": {
+        "fast": 2,
+        "escalated": 24
+      },
+      "predictions": [
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "review",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow"
+      ]
+    }
+  }
+}

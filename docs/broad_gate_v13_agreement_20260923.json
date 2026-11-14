@@ -1,0 +1,102 @@
+{
+  "reviewers": {
+    "reviewer_ai_a": "fresh blind AI subagent",
+    "reviewer_ai_b": "Jev via TypeSafe"
+  },
+  "rubric_version": "v1.2-proposal-full",
+  "human_ground_truth": false,
+  "n": 24,
+  "all": {
+    "raw_agreement": 0.6666666666666666,
+    "agreement_by_class": {
+      "allow": 0.5294117647058824,
+      "flag": 0.4666666666666667,
+      "block": null,
+      "review": null
+    },
+    "confusion_matrix": {
+      "allow": {
+        "allow": 9,
+        "flag": 1,
+        "block": 0,
+        "review": 0
+      },
+      "flag": {
+        "allow": 7,
+        "flag": 7,
+        "block": 0,
+        "review": 0
+      },
+      "block": {
+        "allow": 0,
+        "flag": 0,
+        "block": 0,
+        "review": 0
+      },
+      "review": {
+        "allow": 0,
+        "flag": 0,
+        "block": 0,
+        "review": 0
+      }
+    },
+    "cohens_kappa": 0.36842105263157887,
+    "adjudication_rate": 0.3333333333333333
+  },
+  "counts": {
+    "reviewer_ai_a": {
+      "flag": 14,
+      "allow": 10
+    },
+    "reviewer_ai_b": {
+      "flag": 8,
+      "allow": 16
+    }
+  },
+  "consensus_counts": {
+    "flag": 7,
+    "allow": 9
+  },
+  "disagreements": [
+    {
+      "sample_id": "36b89ffd259c",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "bb1d64a06a75",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "37438137b697",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "e3a764104232",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "84df982df396",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "f8634147f063",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "746882da643d",
+      "reviewer_ai_a": "allow",
+      "reviewer_ai_b": "flag"
+    },
+    {
+      "sample_id": "6449aeffdd78",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "human_ground_truth": false,
+  "rows": [
+    {
+      "id": "829d926a5976c579",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "2312574e8a7f8fee",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "5f1649929110a4c2",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "42275f34f2e8d97e",
+      "label": "flag",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "888bb0487113044f",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "a2992965c07d887c",
+      "label": "flag",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "194516f09a7ac051",
+      "label": "flag",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "949c3c1f119939bf",
+      "label": "flag",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "cb86b453759a8941",
+      "label": "review",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "ec6f2107ee0459b9",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "e00f6c91f50555c3",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "5332edd558a7e178",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "ed150ce0712dd7f0",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "503dd5db1efda26b",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "c544c879c5a32193",
+      "label": "review",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "baa15c6047166c85",
+      "label": "flag",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "446c414e966f7a80",
+      "label": "flag",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "80bb3829a8aabb9b",
+      "label": "review",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "390ffa1a77fef26d",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "b82c6201824af239",
+      "label": "review",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "4211325af2707ef5",
+      "label": "review",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "dc6d6bd1e71857b0",
+      "label": "allow",
+      "decision": "review",
+      "route": "escalated"
+    },
+    {
+      "id": "d3a03e9b233c1bef",
+      "label": "review",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "054edfcb4ade18f9",
+      "label": "review",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "f31e07ee5b34cccf",
+      "label": "review",
+      "decision": "allow",
+      "route": "base"
+    }
+  ]
+}

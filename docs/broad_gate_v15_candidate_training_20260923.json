@@ -1,0 +1,36 @@
+{
+  "candidate": "/tmp/armor_policy_v15_candidate.pt",
+  "training_rows": 1079,
+  "existing_unique_rows": 974,
+  "conflicting_texts_excluded": 5,
+  "holdout_rows_excluded": 39,
+  "new_consensus_rows": 105,
+  "new_rows_by_class": {
+    "allow": 52,
+    "review": 12,
+    "block": 12,
+    "flag": 29
+  },
+  "training_rows_by_class": {
+    "block": 571,
+    "allow": 299,
+    "flag": 129,
+    "review": 80
+  },
+  "v12_train_consensus_n": 43,
+  "v13_consensus_n": 16,
+  "v15_consensus_n": 46,
+  "rubric_versions": "mixed historical/v1.2 plus new v1.3 proposal consensus; version provenance preserved in row sources",
+  "reviewers": {
+    "reviewer_ai_a": "fresh blind subagent",
+    "reviewer_ai_b": "Jev via TypeSafe"
+  },
+  "human_ground_truth": false,
+  "method": "train from scratch on de-duplicated prior corrections and cross-reviewer consensuses from v12 training split, v13 development, and v15 v1.3 training-only batch; conflicting text labels and v12 holdout texts excluded; no v14 or future v16 holdout text used",
+  "note": "No new human review or human ground-truth evaluation labels were collected. The existing training corpus includes 57 rows historically tagged source=human; those provenance labels are preserved and disclosed. All 105 newly added rows are AI-reviewer consensus (v1.2/v1.3), and all confirmation labels are AI-only.",
+  "training_example_provenance_counts": {
+    "prior_corrections_source_human": 57,
+    "prior_corrections_pseudo_model": 917,
+    "new_independent_ai_reviewer_consensus": 105
+  }
+}

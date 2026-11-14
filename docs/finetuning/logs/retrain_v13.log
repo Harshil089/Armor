@@ -1,0 +1,10 @@
+device: mps
+regression set (current checkpoint): {'prompt_injection': 0.7621567500724268, 'jailbreak': 0.8891065395154457, 'sensitive_data_exposure': 0.9084736037791507, 'dangerous_tool_action': 0.8865901997279642, 'harmful_content': 0.6813736834164177, 'obfuscation_encoding': 0.8613396811539396}
+training examples: 15453
+epoch 1/5 loss=0.2999 per_label={'prompt_injection': 0.19080423619436324, 'jailbreak': 0.3660064496002449, 'sensitive_data_exposure': 0.14025886780124341, 'dangerous_tool_action': 0.3988114439826357, 'harmful_content': 0.34610595690244594, 'obfuscation_encoding': 0.2952913701216428}
+epoch 2/5 loss=0.1667 per_label={'prompt_injection': 0.08294359383353958, 'jailbreak': 0.230003528455237, 'sensitive_data_exposure': 0.017598511360878435, 'dangerous_tool_action': 0.2549194349870147, 'harmful_content': 0.23877533837810885, 'obfuscation_encoding': 0.09428556847513157}
+epoch 3/5 loss=0.1451 per_label={'prompt_injection': 0.07051523272600883, 'jailbreak': 0.21092010566525288, 'sensitive_data_exposure': 0.010422460436423468, 'dangerous_tool_action': 0.21438011068403084, 'harmful_content': 0.22443992225170806, 'obfuscation_encoding': 0.05185778242851627}
+epoch 4/5 loss=0.1279 per_label={'prompt_injection': 0.057583313013088507, 'jailbreak': 0.1915621992227802, 'sensitive_data_exposure': 0.00529127294895832, 'dangerous_tool_action': 0.1887467907402798, 'harmful_content': 0.21015025415732838, 'obfuscation_encoding': 0.035703973865019216}
+epoch 5/5 loss=0.1193 per_label={'prompt_injection': 0.046123960212882786, 'jailbreak': 0.1709178629748381, 'sensitive_data_exposure': 0.0037795958875720343, 'dangerous_tool_action': 0.1890013861226569, 'harmful_content': 0.20644855460151398, 'obfuscation_encoding': 0.02832763265401132}
+regression set (new head): {'prompt_injection': 0.8221045301736012, 'jailbreak': 0.8908059422001575, 'sensitive_data_exposure': 0.8847312048785431, 'dangerous_tool_action': 0.876686033394695, 'harmful_content': 0.6347850821912289, 'obfuscation_encoding': 0.9336442067264059}
+saved checkpoint to armor/models/checkpoints/final2_candidate_v13.pt

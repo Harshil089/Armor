@@ -1,0 +1,129 @@
+{
+  "version": "v13-train-only-augmentation",
+  "human_ground_truth": false,
+  "holdout": false,
+  "intended_coverage": "rubric flag boundary examples; design intent is not a reviewer label",
+  "n": 24,
+  "items": [
+    {
+      "sample_id": "75bff47bd525",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "36b89ffd259c",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "f877857d974b",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "bb1d64a06a75",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "1a610ad55b81",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "37438137b697",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "f0d4406aef22",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "b076370b2128",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "089624514d44",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "c6ce92ca0340",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "e871875cfe96",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "965b640b3561",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "e3a764104232",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "16cc46efe26e",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "b42a91004cce",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "84df982df396",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "c43411847c2b",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "f8634147f063",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "746882da643d",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "15f64562740b",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "f2ab3e04bd47",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "5dd6ae5317e6",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "c259dffaf86c",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    },
+    {
+      "sample_id": "6449aeffdd78",
+      "split": "train_only",
+      "design_stratum": "flag_boundary"
+    }
+  ]
+}

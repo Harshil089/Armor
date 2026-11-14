@@ -1,0 +1,29 @@
+{
+  "candidate": "/tmp/armor_policy_v12_candidate.pt",
+  "training_rows": 1033,
+  "existing_unique_rows": 974,
+  "conflicting_texts_excluded": 5,
+  "holdout_rows_excluded": 39,
+  "new_consensus_rows": 59,
+  "new_rows_by_class": {
+    "allow": 28,
+    "review": 12,
+    "block": 12,
+    "flag": 7
+  },
+  "training_rows_by_class": {
+    "block": 571,
+    "allow": 275,
+    "flag": 107,
+    "review": 80
+  },
+  "v12_train_consensus_n": 43,
+  "v13_train_consensus_n": 16,
+  "reviewers": {
+    "reviewer_ai_a": "fresh blind AI subagent",
+    "reviewer_ai_b": "Jev via TypeSafe"
+  },
+  "rubric_version": "v1.2-proposal-full",
+  "human_ground_truth": false,
+  "method": "train from scratch; deduplicated prior correction data with conflicting texts excluded; add only cross-reviewer-consensus labels from v12 train split and v13 boundary-development batch; no holdout examples; temp checkpoint; no DB or deployed checkpoint writes"
+}

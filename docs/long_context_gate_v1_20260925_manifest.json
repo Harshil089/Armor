@@ -1,0 +1,59 @@
+{
+  "freeze_id": "armor_long_context_gate_v1_20260925",
+  "frozen_at": "2026-09-25",
+  "corpus_path": "docs/long_context_gate_v1_20260925.jsonl",
+  "corpus_sha256": "3883afe09563ccf625567804fed317340bf791b4e3e51e10f8c2ad16b21c1272",
+  "rows": 105,
+  "tokenizer_model": "answerdotai/ModernBERT-base",
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "tokenizer_version": "4.57.6",
+  "max_model_tokens": 8192,
+  "bucket_ranges_inclusive": {
+    "1k": [
+      850,
+      1250
+    ],
+    "2k": [
+      1700,
+      2300
+    ],
+    "4k": [
+      3400,
+      4600
+    ],
+    "6k": [
+      5400,
+      6600
+    ],
+    "8k": [
+      7400,
+      8100
+    ]
+  },
+  "bucket_counts": {
+    "1k": 21,
+    "2k": 21,
+    "4k": 21,
+    "6k": 21,
+    "8k": 21
+  },
+  "expected_action_counts": {
+    "allow": 53,
+    "flag": 4,
+    "block": 45,
+    "review": 3
+  },
+  "label_source_counts": {
+    "synthetic": 105
+  },
+  "labels_are_human_ground_truth": false,
+  "label_basis": "Predeclared synthetic scenario contracts; metrics are agreement, not independent accuracy.",
+  "carrier_dataset": "OpenAssistant/oasst1",
+  "carrier_revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+  "eligible_carrier_rows": 9775,
+  "position_cases_per_bucket": 5,
+  "scenarios_per_bucket": 6,
+  "benign_carriers_per_bucket": 10,
+  "construction_seed": 20260925,
+  "no_additional_inference_model": true
+}

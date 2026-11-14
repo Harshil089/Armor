@@ -1,0 +1,1176 @@
+{
+  "human_ground_truth": false,
+  "reviewers": [
+    "reviewer_ai_jev_blind_v1_1",
+    "reviewer_ai_blind_b_v1_1"
+  ],
+  "n": 40,
+  "train_rows_raw": 1118,
+  "train_rows_after_neardup_exclusion": 1118,
+  "cosine_filter": 0.98,
+  "candidate_method": "nonparametric BERT embeddings; development only",
+  "results": {
+    "cosine_knn_1": {
+      "predictions": [
+        "block",
+        "block",
+        "block",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "flag",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "flag",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 5,
+            "flag": 2,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 5,
+            "flag": 1,
+            "block": 13,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3333333333333333,
+            "recall": 0.4166666666666667,
+            "f1": 0.3703703703703704,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.5909090909090909,
+            "recall": 0.6842105263157895,
+            "f1": 0.6341463414634148,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.2511291779584463,
+        "accuracy": 0.45,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 3,
+            "flag": 2,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "block": {
+            "allow": 4,
+            "flag": 1,
+            "block": 7,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.25,
+            "recall": 0.3333333333333333,
+            "f1": 0.28571428571428575,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.5384615384615384,
+            "recall": 0.5833333333333334,
+            "f1": 0.5599999999999999,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.2114285714285714,
+        "accuracy": 0.35714285714285715,
+        "block_false_negative_count": 5,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 2,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "cosine_knn_3": {
+      "predictions": [
+        "block",
+        "block",
+        "allow",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 1,
+            "block": 12,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3888888888888889,
+            "recall": 0.5833333333333334,
+            "f1": 0.4666666666666666,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.5714285714285714,
+            "recall": 0.631578947368421,
+            "f1": 0.6,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.26666666666666666,
+        "accuracy": 0.475,
+        "block_false_negative_count": 7,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 5,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "block": {
+            "allow": 5,
+            "flag": 1,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5555555555555556,
+            "f1": 0.4166666666666667,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.22916666666666669,
+        "accuracy": 0.39285714285714285,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 2,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "cosine_knn_5": {
+      "predictions": [
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 8,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 0,
+            "block": 13,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.42105263157894735,
+            "recall": 0.6666666666666666,
+            "f1": 0.5161290322580646,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.6190476190476191,
+            "recall": 0.6842105263157895,
+            "f1": 0.6500000000000001,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.2915322580645162,
+        "accuracy": 0.525,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 5,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3125,
+            "recall": 0.5555555555555556,
+            "f1": 0.39999999999999997,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.22499999999999998,
+        "accuracy": 0.39285714285714285,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 2,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "cosine_knn_10": {
+      "predictions": [
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "flag",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "flag",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 3,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 2,
+            "block": 11,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.4117647058823529,
+            "recall": 0.5833333333333334,
+            "f1": 0.4827586206896552,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.5238095238095238,
+            "recall": 0.5789473684210527,
+            "f1": 0.5500000000000002,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.2581896551724138,
+        "accuracy": 0.45,
+        "block_false_negative_count": 8,
+        "flag_to_allow_errors": 3,
+        "flag_to_block_errors": 4,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 6,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "flag": {
+            "allow": 3,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 5,
+            "flag": 2,
+            "block": 5,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.4,
+            "recall": 0.6666666666666666,
+            "f1": 0.5,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.45454545454545453,
+            "recall": 0.4166666666666667,
+            "f1": 0.43478260869565216,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.23369565217391303,
+        "accuracy": 0.39285714285714285,
+        "block_false_negative_count": 7,
+        "flag_to_allow_errors": 3,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "kernel_ridge_0.1": {
+      "predictions": [
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 9,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "flag": {
+            "allow": 5,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 0,
+            "block": 13,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.42857142857142855,
+            "recall": 0.75,
+            "f1": 0.5454545454545454,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.6842105263157895,
+            "recall": 0.6842105263157895,
+            "f1": 0.6842105263157895,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.3074162679425837,
+        "accuracy": 0.55,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 5,
+        "flag_to_block_errors": 2,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "block": {
+            "allow": 6,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3888888888888889,
+            "recall": 0.7777777777777778,
+            "f1": 0.5185185185185185,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.6,
+            "recall": 0.5,
+            "f1": 0.5454545454545454,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.265993265993266,
+        "accuracy": 0.4642857142857143,
+        "block_false_negative_count": 6,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 2,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "kernel_ridge_1": {
+      "predictions": [
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "allow"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 9,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "flag": {
+            "allow": 4,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 5,
+            "flag": 0,
+            "block": 14,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.47368421052631576,
+            "recall": 0.75,
+            "f1": 0.5806451612903226,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7368421052631579,
+            "f1": 0.7,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.32016129032258067,
+        "accuracy": 0.575,
+        "block_false_negative_count": 5,
+        "flag_to_allow_errors": 4,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 8,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 3,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 5,
+            "flag": 0,
+            "block": 7,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.47058823529411764,
+            "recall": 0.8888888888888888,
+            "f1": 0.6153846153846153,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.6363636363636364,
+            "recall": 0.5833333333333334,
+            "f1": 0.6086956521739131,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.3060200668896321,
+        "accuracy": 0.5357142857142857,
+        "block_false_negative_count": 5,
+        "flag_to_allow_errors": 3,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    },
+    "kernel_ridge_10": {
+      "predictions": [
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "allow",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block"
+      ],
+      "metrics_jev": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 5,
+            "flag": 0,
+            "block": 7,
+            "review": 0
+          },
+          "flag": {
+            "allow": 1,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "block": {
+            "allow": 1,
+            "flag": 0,
+            "block": 18,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.625,
+            "recall": 0.4166666666666667,
+            "f1": 0.5,
+            "support": 12
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "block": {
+            "precision": 0.5625,
+            "recall": 0.9473684210526315,
+            "f1": 0.7058823529411765,
+            "support": 19
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          }
+        },
+        "macro_f1": 0.30147058823529416,
+        "accuracy": 0.575,
+        "block_false_negative_count": 1,
+        "flag_to_allow_errors": 1,
+        "flag_to_block_errors": 6,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "metrics_consensus": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 4,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 1,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "block": {
+            "allow": 1,
+            "flag": 0,
+            "block": 11,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.5714285714285714,
+            "recall": 0.4444444444444444,
+            "f1": 0.5,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.5238095238095238,
+            "recall": 0.9166666666666666,
+            "f1": 0.6666666666666667,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.2916666666666667,
+        "accuracy": 0.5357142857142857,
+        "block_false_negative_count": 1,
+        "flag_to_allow_errors": 1,
+        "flag_to_block_errors": 5,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      }
+    }
+  }
+}

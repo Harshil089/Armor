@@ -1,0 +1,12 @@
+{
+  "_comment": "France locale pack. NIR/INSEE mod-97 key, with Corsica department substitution handled in the validator.",
+  "entities": [
+    {
+      "entity_id": "fr_nir",
+      "locale": "FR",
+      "pattern": "\\b[1278]\\s?\\d{2}\\s?(0[1-9]|1[0-2])\\s?(\\d{2}|2[AB])\\s?\\d{3}\\s?\\d{3}\\s?\\d{2}\\b",
+      "severity": "high",
+      "validator": "fr_nir_mod97"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+device: mps
+regression set (current checkpoint): {'prompt_injection': 0.9288554314990847, 'jailbreak': 0.9032341474900022, 'sensitive_data_exposure': 0.7475367285373977, 'dangerous_tool_action': 0.7106543108051743, 'harmful_content': 0.7464532063342632, 'obfuscation_encoding': 0.9606374313204583}
+training examples: 29034
+fine-tuning final 2 encoder layers
+epoch 1/1 loss=0.1282 per_label={'prompt_injection': 0.027563752104466516, 'jailbreak': 0.2067205644199657, 'sensitive_data_exposure': 0.2104364412628539, 'dangerous_tool_action': 0.2688662420587574, 'harmful_content': 0.22819996967302542, 'obfuscation_encoding': 0.07476914535460645}
+regression set (new head): {'prompt_injection': 0.8142947263073609, 'jailbreak': 0.9480145782272302, 'sensitive_data_exposure': 0.989846629675939, 'dangerous_tool_action': 0.903970270133695, 'harmful_content': 0.6039497767342255, 'obfuscation_encoding': 0.8005092223723377}
+REGRESSION GATE FAILED on: ['prompt_injection', 'harmful_content', 'obfuscation_encoding'] — refusing to overwrite /Users/harshilbuch/Armor/armor/models/checkpoints/head.pt
+Pass force=True to train() to override.

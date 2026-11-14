@@ -1,0 +1,310 @@
+[
+  {
+    "sample_id": "20372d3303d4dbca",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "a839b9da5d9e8c71",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "cb20257a17762b1d",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "2192fb5cb51c2fe7",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "81ab1975f44b846f",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "6dceb3597228fa2b",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "f3ec35e42d5ed0f0",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "cbc5f39344dc9589",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "0ca933b480c20e74",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "b30871fcd024844c",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "31f38753d03f5dac",
+    "label": "allow",
+    "confidence": 0.9,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "be19a3fd5416dacf",
+    "label": "allow",
+    "confidence": 0.98,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "4b3be1b586ba605b",
+    "label": "allow",
+    "confidence": 0.99,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "ab37f60ed5a1fa87",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "65795647a05b1a67",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "c22170753daf91c9",
+    "label": "allow",
+    "confidence": 1.0,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "78d5b646aa44ce2a",
+    "label": "block",
+    "confidence": 0.88,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "86d9758fcfcf918b",
+    "label": "block",
+    "confidence": 0.98,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "ea76ee1803466729",
+    "label": "block",
+    "confidence": 0.97,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "ef96413ffd29c0c6",
+    "label": "block",
+    "confidence": 0.61,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "0223a39d381b9780",
+    "label": "block",
+    "confidence": 0.98,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "7ba92c5fc4671b49",
+    "label": "block",
+    "confidence": 0.96,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "6880c3c5a9eaec72",
+    "label": "block",
+    "confidence": 0.94,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "8661d8bd579ee2e4",
+    "label": "block",
+    "confidence": 0.99,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "2b4a918336e574cf",
+    "label": "block",
+    "confidence": 0.72,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "6069989c1be20585",
+    "label": "block",
+    "confidence": 0.64,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "094c638c97558418",
+    "label": "flag",
+    "confidence": 0.22,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "7ae4af55ea3bd210",
+    "label": "block",
+    "confidence": 0.9,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "8af644862d1fec7a",
+    "label": "block",
+    "confidence": 0.58,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "f2ea4747ccabfa06",
+    "label": "block",
+    "confidence": 0.68,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "53980d371d3d58a7",
+    "label": "block",
+    "confidence": 0.65,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "e15532e5e57a0300",
+    "label": "block",
+    "confidence": 0.77,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "2847834d5aa910e3",
+    "label": "allow",
+    "confidence": 0.51,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "7eef1e38a062aadd",
+    "label": "allow",
+    "confidence": 0.75,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "944990f3d03ab3ce",
+    "label": "allow",
+    "confidence": 0.84,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "124bea3a82da2078",
+    "label": "allow",
+    "confidence": 0.96,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "b51c295ffaa98ed8",
+    "label": "review",
+    "confidence": 0.42,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "dc7e7e77e02a0499",
+    "label": "allow",
+    "confidence": 0.8,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "dd8247b2b1826010",
+    "label": "block",
+    "confidence": 0.23,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "58c17dc16c16635b",
+    "label": "allow",
+    "confidence": 0.7,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "b44be6fcac26878f",
+    "label": "review",
+    "confidence": 0.89,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "e4b7d17bcf124491",
+    "label": "review",
+    "confidence": 0.96,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "38129aa7e6c2c69f",
+    "label": "review",
+    "confidence": 0.92,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  },
+  {
+    "sample_id": "53a92a5fc9bd2d6a",
+    "label": "review",
+    "confidence": 0.88,
+    "reviewer": "reviewer_ai_jev_v1_1",
+    "rubric_version": "v1.1"
+  }
+]

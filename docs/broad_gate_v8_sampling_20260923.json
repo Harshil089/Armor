@@ -1,0 +1,231 @@
+{
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "method": "deterministic stratified sample from uncorrected prompt logs; prior action hidden from reviewer; exact duplicate IDs collapsed at first selected stratum; two known live smoke-test IDs excluded and replaced by untouched candidates; exact-text matches to existing corrected training rows excluded after split audit",
+  "seed": 20260931,
+  "excluded_prior_audit_and_gate_ids": true,
+  "candidate_counts": {
+    "flag": 25,
+    "block": 366,
+    "allow": 9,
+    "review": 3
+  },
+  "requested_per_stratum": {
+    "allow": 10,
+    "flag": 26,
+    "review": 3,
+    "block": 15
+  },
+  "selected_counts": {
+    "flag": 25,
+    "block": 15,
+    "allow": 8
+  },
+  "duplicate_ids_collapsed": 2,
+  "selected": [
+    {
+      "sample_id": "0c92f35bf0d2270a",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "4c5c67b51b7037e2",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "66ed01f750c39f96",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "d21b46ba3c706c9d",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "35a4588a60320ee6",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "ccca27e34f944e32",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "f5f67be101313eca",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "ee9c41f229bdfcb4",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "b2db6534c7698e6f",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "8ca516c56c7c0426",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "0fd549e721a014cc",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "c4ba9e91961967b8",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "a1b01ddbc40b376b",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "4e59bcef85f82e8c",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "2025b6b91fd9540f",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "274d34e388aebccf",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "c0c5a96264114e03",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "489cc1894211ab77",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "5109d89a24acba61",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "6b23cf61759eab5c",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "3a2d364762662aaf",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "7ac1f86dedbc2110",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "2dfa2305bc6c2349",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "0417333afff6f266",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "291d1357f9ca6e70",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "06b6002a4b2f57bb",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "6a754e517e2b3b68",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "9987897f198d91cc",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "43880c94b8e99933",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "a3561a8ac26afde5",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "cc01abd23b868d4a",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "a8b5bdcf970779f9",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "e5bfd2fe76a7526f",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "a3b6366d1ab39949",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "8c797f058780fe4f",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "02f9a4a031ed23fe",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "93ecd812cb3349a5",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "c3a653efcf6ae35f",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "616faacf2a9786b4",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "5f50e9280a2d5380",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "9bbd484b0c205b0e",
+      "sampling_stratum": "allow"
+    },
+    {
+      "sample_id": "020e0f27f74724d6",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "556cb407e5350cd8",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "88b8de5e146d836e",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "85b2272696fc2dd6",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "da975445318bde05",
+      "sampling_stratum": "flag"
+    },
+    {
+      "sample_id": "c138bb5da4c9ff69",
+      "sampling_stratum": "block"
+    },
+    {
+      "sample_id": "ea556d80b10fe125",
+      "sampling_stratum": "block"
+    }
+  ],
+  "smoke_test_ids_excluded_after_provenance_check": [
+    "165d2d242f8cc7e2",
+    "d766d79a13cbb275"
+  ],
+  "replacement_ids": [
+    "c138bb5da4c9ff69",
+    "ea556d80b10fe125"
+  ],
+  "training_overlap_ids_excluded": [
+    "42b545fce6177c0f",
+    "c85367b89b3a38fe"
+  ]
+}

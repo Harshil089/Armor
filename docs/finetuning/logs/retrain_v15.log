@@ -1,0 +1,11 @@
+device: mps
+regression set (current checkpoint): {'prompt_injection': 0.841598150410573, 'jailbreak': 0.893034845908239, 'sensitive_data_exposure': 0.880146993908212, 'dangerous_tool_action': 0.8785376265823288, 'harmful_content': 0.631332778185606, 'obfuscation_encoding': 0.9456407429997142}
+training examples: 14253
+epoch 1/5 loss=0.3129 per_label={'prompt_injection': 0.25533039650564393, 'jailbreak': 0.36262838538490216, 'sensitive_data_exposure': 0.13057778031170592, 'dangerous_tool_action': 0.4103820166748965, 'harmful_content': 0.3529958910606415, 'obfuscation_encoding': 0.2744225248021105}
+epoch 2/5 loss=0.1801 per_label={'prompt_injection': 0.122841957946826, 'jailbreak': 0.24601255361100965, 'sensitive_data_exposure': 0.018347908135249533, 'dangerous_tool_action': 0.25128055558294726, 'harmful_content': 0.24439390444569917, 'obfuscation_encoding': 0.09916750228090189}
+epoch 3/5 loss=0.1501 per_label={'prompt_injection': 0.08758773196018381, 'jailbreak': 0.21531005999984165, 'sensitive_data_exposure': 0.010579705756222456, 'dangerous_tool_action': 0.21106506716503023, 'harmful_content': 0.22112919248497598, 'obfuscation_encoding': 0.055992569484489385}
+epoch 4/5 loss=0.1376 per_label={'prompt_injection': 0.07507141736079452, 'jailbreak': 0.19519294730603828, 'sensitive_data_exposure': 0.0049760348824886575, 'dangerous_tool_action': 0.20619992645040353, 'harmful_content': 0.21172640009497853, 'obfuscation_encoding': 0.04033659457252099}
+epoch 5/5 loss=0.1249 per_label={'prompt_injection': 0.0710813457894229, 'jailbreak': 0.17695811702954647, 'sensitive_data_exposure': 0.006009805107908459, 'dangerous_tool_action': 0.17048477946600862, 'harmful_content': 0.21029482923230083, 'obfuscation_encoding': 0.028828502711376557}
+regression set (new head): {'prompt_injection': 0.8970894238831534, 'jailbreak': 0.8736483801010764, 'sensitive_data_exposure': 0.827375562591312, 'dangerous_tool_action': 0.8555616282672938, 'harmful_content': 0.6979750083227243, 'obfuscation_encoding': 0.8944017682337346}
+REGRESSION GATE FAILED on: ['sensitive_data_exposure', 'obfuscation_encoding'] — overwriting anyway (force=True)
+saved checkpoint to armor/models/checkpoints/final2_candidate_v15.pt

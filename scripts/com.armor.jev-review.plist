@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.armor.jev-review</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/harshilbuch/Armor/dev-tools/typesafe_labeler/.venv/bin/python</string>
+        <string>/Users/harshilbuch/Armor/dev-tools/typesafe_labeler/jev_review_server.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/harshilbuch/Armor</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/harshilbuch/Armor/armor_jev_review.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/harshilbuch/Armor/armor_jev_review.log</string>
+</dict>
+</plist>

@@ -1,0 +1,308 @@
+{
+  "human_ground_truth": false,
+  "prior_label_used_only_for_sampling": true,
+  "excluded_previous_audit_and_gates": true,
+  "pool_size": 711,
+  "selected": [
+    {
+      "sample_id": "2332bff9f1ddbb82",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "910206a74be42294",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9ed2dc3fb9ce8917",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "2ef6bf483644dd94",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c73bd40b4030bfe9",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "dc40decbae959970",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "0b4be4b56aadcdab",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "40a08edd05d1dd03",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "18d7f90df5a6c2cb",
+      "existing_label": "allow",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "cb2aa5731b2ae506",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "0c278c58f2ec1492",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ae6a7cde9b5425bd",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "b9adbc7608f0a2c0",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9f097ed37a6c8a87",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "81f70af472a32bad",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ed2f5a6f2d1aa2f6",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "8230d0c4dceb4276",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "a28347d8c83e94ff",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "8240913a607af1a5",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "b4cf10d832a1333c",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "41b35ada86992e51",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "be82d701da1f6d1f",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9372c54d64ed37b7",
+      "existing_label": "flag",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "f4c02d5d5fe6dccd",
+      "existing_label": "flag",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "9293dc076c72076a",
+      "existing_label": "flag",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "21e6e7feb34ebe0c",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "57d7c166dea19981",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "2327e57edca93452",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "e7cb6e09c75e2185",
+      "existing_label": "flag",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "32c05aca848c6878",
+      "existing_label": "flag",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "3661e20551b5a7e8",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "e558490a2ba7fc08",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "3f53f12335de4f01",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "a7fec1ba91edc747",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "caa18860fe314536",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "dd6a5a39f3db784f",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "764f454e5be2eeab",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9e6f32e2410a53f3",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c4362b8831a0b2b0",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "da95258937bf8196",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "6b3aa32b4701857b",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "124923b7c73aa30c",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ce75f1213a492bff",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "d11b999ea2447562",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ded3e97655c68bce",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ea9d1191d124043a",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "d1b930cb4d24b55b",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "983793a142326ad7",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "02be9137bb46910d",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "6750ec93268ff06b",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "b2700eaec564e0e7",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c43ed9ccfc4372df",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "77b1040fc83907d3",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "503ff0a3087d6f3f",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "669545d90a1af105",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "5ed11cb49f427d03",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "6e17964e558891ac",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "1f0183e9da6f8257",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "1d47f43065a8c1bb",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "d00ddacb11625298",
+      "existing_label": "review",
+      "label_source": "pseudo_model"
+    }
+  ]
+}

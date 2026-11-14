@@ -1,0 +1,12 @@
+{
+  "_comment": "UK locale pack. NINO has no checksum (confirmed: Microsoft Purview SIT definition states \"Checksum: No\"). HMRC excludes 7 specific prefixes (NIM39110) — enforced by the validator. Regex covers both official formats (Microsoft Purview): compact (AB123456C) and grouped-with-separators (AB 12 34 56 C).",
+  "entities": [
+    {
+      "entity_id": "gb_nino",
+      "locale": "GB",
+      "pattern": "\\b[ABCEGHJ-PRSTW-Z][ABCEGHJ-NPRSTW-Z][ -]?\\d{2}[ -]?\\d{2}[ -]?\\d{2}[ -]?[A-D]\\b",
+      "severity": "high",
+      "validator": "gb_nino_prefix"
+    }
+  ]
+}

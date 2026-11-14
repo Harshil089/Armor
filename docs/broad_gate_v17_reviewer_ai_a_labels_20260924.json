@@ -1,0 +1,408 @@
+{
+  "reviewer_id": "reviewer_ai_a",
+  "reviewer": "fresh blind AI reviewer",
+  "rubric_version": "v1.1+v1.3-proposal",
+  "human_ground_truth": false,
+  "labels": [
+    {
+      "sample_id": "f3c344ff08dd",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "7dde2edf1e21",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "77ac07cf1050",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "540dff8ef1df",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "564084286169",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "80a6ef74fd5a",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "c15808ee164a",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "4e9be11d7059",
+      "label": "flag",
+      "confidence": 0.91
+    },
+    {
+      "sample_id": "98c854873972",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "5dd3c0b8b9a1",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "75ec0b3a79d4",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "d1d6d4875471",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "95a307fa305a",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "b276dddbdb14",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "8b9c12564ab1",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "6d1433e1cca6",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "1270139e4c57",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "178be16257d2",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "e598f18e9a0b",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "e8050b364a4a",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "b03e49f1a689",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "cb23dbeaf44d",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "e678ae511ed7",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "e33b5c2d43e8",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "58efe62a56b9",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "5b16e9538c93",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "6bc7be41a8b1",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "7dbe2346498c",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "bebb0b7229a0",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "0f72f8f25e09",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "90f74ac8fad7",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "c6265221ccde",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "a3794552c9ef",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "176e2dc8ee51",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "9fa5e76fd500",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "cff1c9ba6cfb",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "2cbbbf9d3f90",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "259a3d4222f5",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "25a7eb54c32f",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "7ef8ef9df980",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "918116b71fb6",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "026783bd14d3",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "4e7fdd4552d5",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "20bd5c8d5eda",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "503241b999ec",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "bb53e6943ace",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "6411d7bb20aa",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "596ca711eabb",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "a68d4bccf8f8",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "dba4777482cf",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "b11e07131355",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "1dbf607e4bcb",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "ae616986de9d",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "cf43dd4c6a03",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "aef9271d0e04",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "b457df151f8b",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "a017995c3dd9",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "f75f9a945817",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "e2a2dfa792a6",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "7cd9aeb6ebd2",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "4684840ea16a",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "18827c02bd65",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "f1a2e2ae95e5",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "6992a9f50e0b",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "b83ed138009f",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "31946258e7cd",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "e14f0f1cefe1",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "0a0f5dec11f8",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "87bb001d165e",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "7f68ce84e6eb",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "8976b47f426f",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "91f2dfa933a8",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "04cdcea543b6",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "8c2b47275eda",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "aeec447a2b4d",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "49ae7e8337b0",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "3ef492e27498",
+      "label": "flag",
+      "confidence": 0.91
+    },
+    {
+      "sample_id": "44bdaf2a9587",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "459cf4479ef4",
+      "label": "flag",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "630c59518809",
+      "label": "allow",
+      "confidence": 0.96
+    }
+  ]
+}

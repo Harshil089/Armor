@@ -1,0 +1,12 @@
+{
+  "_comment": "South Africa locale pack. ID number: Luhn checksum + loose YYMMDD plausibility check.",
+  "entities": [
+    {
+      "entity_id": "za_id",
+      "locale": "ZA",
+      "pattern": "\\b\\d{13}\\b",
+      "severity": "high",
+      "validator": "za_id_luhn"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "candidate": "/tmp/armor_policy_v17_candidate.pt",
+  "baseline_checkpoint_sha256": "67c964eda7a67e666e6588cc5b7d8dae04a62a91bef97f9952d276881df07d21",
+  "training_rows": 1234,
+  "base_unique_rows": 975,
+  "base_sources": {
+    "pseudo_model": 917,
+    "human": 58
+  },
+  "base_by_class": {
+    "block": 560,
+    "allow": 247,
+    "flag": 100,
+    "review": 68
+  },
+  "base_conflicting_texts_excluded": 5,
+  "v12_holdout_rows_excluded": 39,
+  "consensus_batches": {
+    "v12": {
+      "eligible": 48,
+      "consensus": 43,
+      "disagreements_excluded": 5,
+      "consensus_by_class": {
+        "allow": 19,
+        "review": 12,
+        "block": 12
+      }
+    },
+    "v13": {
+      "eligible": 24,
+      "consensus": 16,
+      "disagreements_excluded": 8,
+      "consensus_by_class": {
+        "flag": 7,
+        "allow": 9
+      }
+    },
+    "v15": {
+      "eligible": 48,
+      "consensus": 46,
+      "disagreements_excluded": 2,
+      "consensus_by_class": {
+        "flag": 22,
+        "allow": 24
+      }
+    },
+    "v16": {
+      "eligible": 80,
+      "consensus": 79,
+      "disagreements_excluded": 1,
+      "consensus_by_class": {
+        "allow": 26,
+        "block": 20,
+        "review": 20,
+        "flag": 13
+      }
+    },
+    "v17": {
+      "eligible": 80,
+      "consensus": 75,
+      "disagreements_excluded": 5,
+      "consensus_by_class": {
+        "allow": 38,
+        "flag": 37
+      }
+    }
+  },
+  "new_unique_consensus_rows": 259,
+  "new_consensus_by_class": {
+    "allow": 116,
+    "review": 32,
+    "block": 32,
+    "flag": 79
+  },
+  "training_by_class": {
+    "block": 592,
+    "allow": 363,
+    "flag": 179,
+    "review": 100
+  },
+  "reviewers": "reviewer_ai_a fresh blind AI and reviewer_ai_b Jev via TypeSafe",
+  "rubric_version": "v1.1 + v1.3 proposal",
+  "human_ground_truth": false,
+  "historical_human_source_rows_in_base": 58,
+  "method": "Rebuild frozen encoder plus flat policy head from de-duplicated current correction rows excluding v12 confirmation text and conflicting labels; add only cross-reviewer-consensus v12 train, v13/v15/v16 development, and v17 FLAG-boundary development rows; no v18 confirmation text included. Training source metadata preserved."
+}

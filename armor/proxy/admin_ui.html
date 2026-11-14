@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Armor — Proxy Providers</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+    color: #1a1a1a;
+  }
+  nav { margin-bottom: 24px; font-size: 13px; }
+  nav a { color: #666; text-decoration: none; margin-right: 16px; }
+  nav a.active { color: #1a1a1a; font-weight: 600; }
+  nav a:hover { text-decoration: underline; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  p.sub { color: #666; margin-top: 0; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e5e5; font-size: 14px; }
+  th { color: #666; font-weight: 600; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  button.del { background: none; border: 1px solid #d33; color: #d33; border-radius: 4px; padding: 3px 9px; cursor: pointer; font-size: 12px; }
+  button.del:hover { background: #fdecec; }
+  button.copy { background: none; border: 1px solid #ccc; border-radius: 4px; padding: 2px 8px; cursor: pointer; font-size: 11px; margin-left: 6px; }
+  button.copy:hover { background: #f2f2f2; }
+  .proxy-url { color: #444; }
+  form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 24px; }
+  input, select { padding: 7px 9px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+  input[name="name"] { width: 120px; }
+  input[name="base_url"] { flex: 1; min-width: 220px; }
+  button[type="submit"] { background: #1a1a1a; color: #fff; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; font-size: 14px; }
+  button[type="submit"]:hover { background: #333; }
+  #error { color: #d33; font-size: 13px; margin-top: 8px; min-height: 16px; }
+</style>
+</head>
+<body>
+  <nav><a href="/admin/" class="active">Providers</a><a href="/admin/logs-page">Logs</a></nav>
+
+  <h1>Proxy providers</h1>
+  <p class="sub">Add or remove upstream LLM providers. Changes apply immediately — no restart needed.</p>
+  <p class="sub">No API key setup here — Armor never stores provider keys. Point your existing client's <code>base_url</code> at the "Use this proxy URL" column below and keep using that provider's own key in your client, unchanged.</p>
+  <p class="sub">To connect an existing app with zero code changes: set the env var shown below before launching it (only shown where verified against that provider's own SDK — not guessed). No app-code edit, no certificate install.</p>
+
+  <table id="table">
+    <thead><tr><th>Name</th><th>Upstream base URL</th><th>Adapter</th><th>Use this proxy URL</th><th>Env var override</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <form id="add-form">
+    <input name="name" placeholder="name (e.g. groq)" required>
+    <input name="base_url" placeholder="https://api.example.com" required>
+    <select name="adapter" id="adapter-select"></select>
+    <button type="submit">Add provider</button>
+  </form>
+  <div id="error"></div>
+
+  <script>
+    async function refresh() {
+      const res = await fetch("/admin/providers");
+      const data = await res.json();
+
+      const rows = document.getElementById("rows");
+      rows.innerHTML = "";
+      for (const p of data.providers) {
+        const proxyUrl = `${window.location.origin}/proxy/${p.name}`;
+        const envCell = p.env_var
+          ? `<code>export ${p.env_var}=${proxyUrl}</code><button class="copy" data-url="export ${p.env_var}=${proxyUrl}">Copy</button>`
+          : `<span class="sub">not verified for this provider — set its client's <code>base_url</code> directly</span>`;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${p.name}</td>
+          <td><code>${p.base_url}</code></td>
+          <td>${p.adapter}</td>
+          <td class="proxy-url"><code>${proxyUrl}</code><button class="copy" data-url="${proxyUrl}">Copy</button></td>
+          <td class="proxy-url">${envCell}</td>
+          <td><button class="del" data-name="${p.name}">Remove</button></td>
+        `;
+        rows.appendChild(tr);
+      }
+
+      const select = document.getElementById("adapter-select");
+      select.innerHTML = "";
+      for (const a of data.adapters) {
+        const opt = document.createElement("option");
+        opt.value = a;
+        opt.textContent = a;
+        select.appendChild(opt);
+      }
+    }
+
+    document.getElementById("rows").addEventListener("click", async (e) => {
+      if (e.target.matches("button.del")) {
+        const name = e.target.dataset.name;
+        await fetch(`/admin/providers/${encodeURIComponent(name)}`, { method: "DELETE" });
+        refresh();
+        return;
+      }
+      if (e.target.matches("button.copy")) {
+        navigator.clipboard.writeText(e.target.dataset.url);
+        const original = e.target.textContent;
+        e.target.textContent = "Copied";
+        setTimeout(() => { e.target.textContent = original; }, 1000);
+      }
+    });
+
+    document.getElementById("add-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById("error");
+      errorEl.textContent = "";
+      const form = new FormData(e.target);
+      const body = {
+        name: form.get("name"),
+        base_url: form.get("base_url"),
+        adapter: form.get("adapter"),
+      };
+      const res = await fetch("/admin/providers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        errorEl.textContent = err.detail || "failed to add provider";
+        return;
+      }
+      e.target.reset();
+      refresh();
+    });
+
+    refresh();
+  </script>
+</body>
+</html>

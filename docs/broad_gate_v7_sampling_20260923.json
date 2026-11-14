@@ -1,0 +1,158 @@
+{
+  "human_ground_truth": false,
+  "prior_label_used_only_for_sampling": true,
+  "excluded_previous_audit_and_gates": true,
+  "pool_size": 448,
+  "selected": [
+    {
+      "sample_id": "84dfabd83c25ee35",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "7a69c7d9b26065cf",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "6d49c4df8f42354a",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "7065da10f73acab5",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "bc7fdc53bcca6777",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "77e4ceed9f5bea58",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "e0b3862f6dc9ea44",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "21500aca95613e24",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "feec080ea93dba4e",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "7d06a70fda63c003",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "801d667ae6fd2bed",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "321a73bdf31b81d0",
+      "existing_label": "allow",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "f5cf3e20cc6af865",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "66bc3741c400fc64",
+      "existing_label": "allow",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "21475fabea9238fe",
+      "existing_label": "allow",
+      "label_source": "human"
+    },
+    {
+      "sample_id": "d54d91f46d609c14",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "9d06ec431ea4ea45",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "f6b97250d6330369",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "4b883a440758edf8",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "7950e0980fcfed83",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "94a9635e96cd0d61",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "c78fe072acb88cc2",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "d7dd3d4de2e0c5a0",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "ba504f0dd69bb3c5",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "8668be7fbbd63560",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "78f8630e3c7f89e3",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "0da25f9f19e8430d",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "1ce75522342f38b0",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "272c1ad5c86c5684",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    },
+    {
+      "sample_id": "7e2a1fac12acfb7e",
+      "existing_label": "block",
+      "label_source": "pseudo_model"
+    }
+  ]
+}

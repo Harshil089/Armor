@@ -1,0 +1,11 @@
+device: mps
+regression set (current checkpoint): {'prompt_injection': 0.9288554314990847, 'jailbreak': 0.9032341474900022, 'sensitive_data_exposure': 0.7475367285373977, 'dangerous_tool_action': 0.7106543108051743, 'harmful_content': 0.7464532063342632, 'obfuscation_encoding': 0.9606374313204583}
+training examples: 29134
+epoch 1/5 loss=0.2508 per_label={'prompt_injection': 0.07071450451264381, 'jailbreak': 0.3474387521927302, 'sensitive_data_exposure': 0.09527550308181594, 'dangerous_tool_action': 0.38498076482666027, 'harmful_content': 0.3337594396740852, 'obfuscation_encoding': 0.21936324206547164}
+epoch 2/5 loss=0.1549 per_label={'prompt_injection': 0.030423956415319146, 'jailbreak': 0.23741595367865873, 'sensitive_data_exposure': 0.012149510165291495, 'dangerous_tool_action': 0.24423533294222566, 'harmful_content': 0.24445930562906867, 'obfuscation_encoding': 0.0589983648120725}
+epoch 3/5 loss=0.1312 per_label={'prompt_injection': 0.025582955626487616, 'jailbreak': 0.1993736988774001, 'sensitive_data_exposure': 0.0043044465967905544, 'dangerous_tool_action': 0.1975986613410559, 'harmful_content': 0.22338511340345285, 'obfuscation_encoding': 0.035757692322074416}
+epoch 4/5 loss=0.1224 per_label={'prompt_injection': 0.023105472092501713, 'jailbreak': 0.18954770332642654, 'sensitive_data_exposure': 0.003060679327384727, 'dangerous_tool_action': 0.18413615401628558, 'harmful_content': 0.20793940400985847, 'obfuscation_encoding': 0.025116042880444132}
+epoch 5/5 loss=0.1197 per_label={'prompt_injection': 0.021102251713661643, 'jailbreak': 0.17621512676576204, 'sensitive_data_exposure': 0.003992356703919367, 'dangerous_tool_action': 0.1811053237645123, 'harmful_content': 0.21549273103414085, 'obfuscation_encoding': 0.01950115804280873}
+regression set (new head): {'prompt_injection': 0.8171426224675088, 'jailbreak': 0.9423997886216966, 'sensitive_data_exposure': 0.8379449198171642, 'dangerous_tool_action': 0.9042603150670142, 'harmful_content': 0.7001978803426028, 'obfuscation_encoding': 0.883312968086716}
+REGRESSION GATE FAILED on: ['prompt_injection', 'obfuscation_encoding'] — refusing to overwrite /Users/harshilbuch/Armor/armor/models/checkpoints/head.pt
+Pass force=True to train() to override.

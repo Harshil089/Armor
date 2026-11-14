@@ -1,0 +1,216 @@
+{
+  "curriculum_id": "armor_long_context_training_v2_20260925",
+  "created_at": "2026-09-25",
+  "seed": 20260925,
+  "rows": 20153,
+  "training_example_sha256": "b5d07989bbbaab5977fad5440f007b183a9e11f81457b108ae8e2ae315cd570e",
+  "label_source": "inherited from existing training sources; augmented text itself is synthetic",
+  "original_training_rows_by_source": {
+    "registered_public_sources": 2390,
+    "synthetic_pii": 800,
+    "agentharm": 416,
+    "agentdojo": 116,
+    "agent_safety_bench": 287,
+    "civil_comments": 5000,
+    "coedit_noisy_negatives": 800,
+    "harmbench": 233,
+    "injecagent": 79,
+    "synthetic_dangerous_tool_action": 400,
+    "synthetic_destructive_tool_action": 200,
+    "synthetic_external_communication_action": 80,
+    "synthetic_obfuscation": 1000,
+    "toolsafety": 500,
+    "toolemu": 322,
+    "jailbreak_wild": 1200,
+    "synthetic_jailbreak_canonical": 300,
+    "synthetic_harmful_content": 300,
+    "aegis": 800,
+    "oasst_chat_negatives": 4000,
+    "synthetic_short_negatives": 150,
+    "synthetic_long_negatives": 480,
+    "synthetic_topic_adjacent_negatives": 300
+  },
+  "original_length_min": 3,
+  "original_length_max": 4674,
+  "original_rows_over_512": 663,
+  "bucket_target_shares": {
+    "<=512": 0.4,
+    "513-1024": 0.25,
+    "1025-2048": 0.15,
+    "2049-4096": 0.1,
+    "4097-6144": 0.07,
+    "6145-8192": 0.03
+  },
+  "target_length_policy": "seeded uniform target within each non-short bucket, with 128-token edge margins; retain every existing >512-token source row intact",
+  "bucket_counts": {
+    "<=512": 8061,
+    "2049-4096": 2015,
+    "1025-2048": 3023,
+    "513-1024": 5038,
+    "4097-6144": 1411,
+    "6145-8192": 605
+  },
+  "actual_token_ranges": {
+    "<=512": [
+      3,
+      510
+    ],
+    "513-1024": [
+      513,
+      1022
+    ],
+    "1025-2048": [
+      1031,
+      2022
+    ],
+    "2049-4096": [
+      2050,
+      4022
+    ],
+    "4097-6144": [
+      4265,
+      6099
+    ],
+    "6145-8192": [
+      6327,
+      8155
+    ]
+  },
+  "positioned_augmented_rows": 11429,
+  "requested_payload_position_counts": {
+    "100": 5789,
+    "700": 3230,
+    "1500": 1443,
+    "3000": 638,
+    "5000": 269,
+    "7000": 60
+  },
+  "supervised_positive_counts": {
+    "obfuscation_encoding": 450,
+    "harmful_content": 2883,
+    "prompt_injection": 842,
+    "dangerous_tool_action": 1437,
+    "jailbreak": 1277,
+    "sensitive_data_exposure": 400
+  },
+  "supervised_masked_row_counts": {
+    "obfuscation_encoding": 3911,
+    "harmful_content": 6488,
+    "prompt_injection": 3308,
+    "dangerous_tool_action": 2545,
+    "sensitive_data_exposure": 2867,
+    "jailbreak": 2634
+  },
+  "carrier_dataset": "OpenAssistant/oasst1",
+  "carrier_revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+  "carrier_filter": "assistant; accepted; not deleted; >=2 reviewers; toxicity <0.05; Armor DLP-clean",
+  "carrier_message_id_count": 9775,
+  "carrier_text_not_adjudicated_for_full_Armor_taxonomy": true,
+  "full_depth_candidate_only": true,
+  "same_existing_model_only": true,
+  "cache_path": "/tmp/armor_long_context_training_v2_20260925.jsonl.gz",
+  "cache_is_local_ephemeral": true,
+  "prepare_only": true,
+  "training_status": "superseded_before_training",
+  "cache_sha256": "9aad6d094c8174e501b80f8466accdfaf4abc7a6e02c2c3f2bfc27c199c1e574",
+  "positive_position_counts_by_label": {
+    "prompt_injection": {
+      "700": 128,
+      "100": 253,
+      "1500": 56,
+      "3000": 29,
+      "5000": 15,
+      "7000": 3
+    },
+    "jailbreak": {
+      "700": 121,
+      "1500": 57,
+      "100": 297,
+      "3000": 28,
+      "7000": 2,
+      "5000": 12
+    },
+    "sensitive_data_exposure": {
+      "700": 74,
+      "100": 100,
+      "5000": 6,
+      "1500": 42,
+      "3000": 19,
+      "7000": 1
+    },
+    "dangerous_tool_action": {
+      "100": 403,
+      "700": 264,
+      "3000": 32,
+      "1500": 107,
+      "7000": 3,
+      "5000": 21
+    },
+    "harmful_content": {
+      "100": 803,
+      "700": 481,
+      "3000": 94,
+      "1500": 228,
+      "5000": 37,
+      "7000": 16
+    },
+    "obfuscation_encoding": {
+      "100": 139,
+      "700": 77,
+      "3000": 17,
+      "1500": 26,
+      "5000": 7
+    }
+  },
+  "masked_position_counts_by_label": {
+    "prompt_injection": {
+      "100": 1058,
+      "700": 483,
+      "1500": 210,
+      "5000": 44,
+      "3000": 109,
+      "7000": 8
+    },
+    "jailbreak": {
+      "700": 324,
+      "3000": 65,
+      "100": 649,
+      "1500": 136,
+      "7000": 3,
+      "5000": 34
+    },
+    "sensitive_data_exposure": {
+      "3000": 97,
+      "700": 475,
+      "1500": 224,
+      "100": 862,
+      "5000": 41,
+      "7000": 6
+    },
+    "dangerous_tool_action": {
+      "100": 713,
+      "700": 465,
+      "3000": 75,
+      "1500": 198,
+      "7000": 8,
+      "5000": 31
+    },
+    "harmful_content": {
+      "100": 1855,
+      "700": 1081,
+      "1500": 521,
+      "3000": 212,
+      "5000": 91,
+      "7000": 26
+    },
+    "obfuscation_encoding": {
+      "700": 706,
+      "1500": 282,
+      "100": 1098,
+      "3000": 132,
+      "5000": 58,
+      "7000": 13
+    }
+  },
+  "superseded_reason": "Position selection was correlated with source-row index, leaving too little late-position sensitive-data coverage. No model training used this prepared draft."
+}

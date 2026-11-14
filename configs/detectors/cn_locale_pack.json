@@ -1,0 +1,12 @@
+{
+  "_comment": "China locale pack. Resident ID has a real ISO 7064 MOD 11-2 check character.",
+  "entities": [
+    {
+      "entity_id": "cn_resident_id",
+      "locale": "CN",
+      "pattern": "\\b\\d{17}[\\dXx]\\b",
+      "severity": "high",
+      "validator": "cn_resident_id"
+    }
+  ]
+}

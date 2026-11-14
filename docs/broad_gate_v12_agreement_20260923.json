@@ -1,0 +1,203 @@
+{
+  "reviewers": {
+    "reviewer_ai_a": "fresh blind AI subagent",
+    "reviewer_ai_b": "Jev via TypeSafe"
+  },
+  "rubric_version": "v1.2-proposal-full",
+  "human_ground_truth": false,
+  "n": 96,
+  "all": {
+    "raw_agreement": 0.90625,
+    "agreement_by_class": {
+      "allow": 0.8541666666666666,
+      "flag": 0.0,
+      "block": 0.9230769230769231,
+      "review": 0.9166666666666666
+    },
+    "confusion_matrix": {
+      "allow": {
+        "allow": 41,
+        "flag": 4,
+        "block": 0,
+        "review": 0
+      },
+      "flag": {
+        "allow": 3,
+        "flag": 0,
+        "block": 0,
+        "review": 0
+      },
+      "block": {
+        "allow": 0,
+        "flag": 0,
+        "block": 24,
+        "review": 1
+      },
+      "review": {
+        "allow": 0,
+        "flag": 0,
+        "block": 1,
+        "review": 22
+      }
+    },
+    "cohens_kappa": 0.857660626029654,
+    "adjudication_rate": 0.09375
+  },
+  "by_split": {
+    "train": {
+      "n": 48,
+      "raw_agreement": 0.8958333333333334,
+      "agreement_by_class": {
+        "allow": 0.7916666666666666,
+        "flag": 0.0,
+        "block": 1.0,
+        "review": 1.0
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 19,
+          "flag": 2,
+          "block": 0,
+          "review": 0
+        },
+        "flag": {
+          "allow": 3,
+          "flag": 0,
+          "block": 0,
+          "review": 0
+        },
+        "block": {
+          "allow": 0,
+          "flag": 0,
+          "block": 12,
+          "review": 0
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 0,
+          "review": 12
+        }
+      },
+      "cohens_kappa": 0.8449612403100776,
+      "adjudication_rate": 0.10416666666666667,
+      "reviewer_ai_a_counts": {
+        "flag": 3,
+        "allow": 21,
+        "review": 12,
+        "block": 12
+      },
+      "reviewer_ai_b_counts": {
+        "allow": 22,
+        "review": 12,
+        "flag": 2,
+        "block": 12
+      }
+    },
+    "holdout": {
+      "n": 48,
+      "raw_agreement": 0.9166666666666666,
+      "agreement_by_class": {
+        "allow": 0.9166666666666666,
+        "flag": 0.0,
+        "block": 0.8571428571428571,
+        "review": 0.8333333333333334
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 22,
+          "flag": 2,
+          "block": 0,
+          "review": 0
+        },
+        "flag": {
+          "allow": 0,
+          "flag": 0,
+          "block": 0,
+          "review": 0
+        },
+        "block": {
+          "allow": 0,
+          "flag": 0,
+          "block": 12,
+          "review": 1
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 10
+        }
+      },
+      "cohens_kappa": 0.8707940780619111,
+      "adjudication_rate": 0.08333333333333333,
+      "reviewer_ai_a_counts": {
+        "review": 11,
+        "allow": 24,
+        "block": 13
+      },
+      "reviewer_ai_b_counts": {
+        "review": 11,
+        "allow": 22,
+        "block": 13,
+        "flag": 2
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "sample_id": "d573157b9a38",
+      "split": "train",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "e949576c986b",
+      "split": "train",
+      "reviewer_ai_a": "allow",
+      "reviewer_ai_b": "flag"
+    },
+    {
+      "sample_id": "6d7f5d057e33",
+      "split": "holdout",
+      "reviewer_ai_a": "block",
+      "reviewer_ai_b": "review"
+    },
+    {
+      "sample_id": "96a0dea5ac11",
+      "split": "train",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "4390cd6b693c",
+      "split": "holdout",
+      "reviewer_ai_a": "allow",
+      "reviewer_ai_b": "flag"
+    },
+    {
+      "sample_id": "2dc30e329b52",
+      "split": "train",
+      "reviewer_ai_a": "flag",
+      "reviewer_ai_b": "allow"
+    },
+    {
+      "sample_id": "e07690910598",
+      "split": "holdout",
+      "reviewer_ai_a": "allow",
+      "reviewer_ai_b": "flag"
+    },
+    {
+      "sample_id": "3b9fe1169908",
+      "split": "holdout",
+      "reviewer_ai_a": "review",
+      "reviewer_ai_b": "block"
+    },
+    {
+      "sample_id": "b742b52ca5df",
+      "split": "train",
+      "reviewer_ai_a": "allow",
+      "reviewer_ai_b": "flag"
+    }
+  ]
+}

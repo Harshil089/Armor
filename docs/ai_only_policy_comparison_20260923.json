@@ -1,0 +1,1590 @@
+{
+  "experiment": "flat policy head, AI-label augmentation",
+  "production_unchanged": true,
+  "training": {
+    "baseline_rows": 836,
+    "augmented_rows": 854,
+    "added_rows": 18,
+    "added_source": "reviewer_ai_c_no_context, rubric v1.1",
+    "shared_training_method": "train_policy.train, 10 epochs, lr=0.001, seed=0, inverse-frequency class weighting",
+    "baseline_checkpoint_sha256": "a278beccb042728d5c6c841b4c133482ea7e286f659e2a356dba48b5c17d1a71",
+    "augmented_checkpoint_sha256": "ef82cb33c0605f83d37ca0148bf6dfee3cf51b3618554b2bf76cef3795655bba"
+  },
+  "interpretation_limit": "The 25-case reference is guided v1 adjudication, the 84-case reference is corrected logs on regression-sourced texts, and the added 18 AI v1.1 labels are training data. Neither evaluation slice is independent human ground truth; no production promotion is justified from this experiment alone.",
+  "results": {
+    "guided_v1_25": {
+      "n": 25,
+      "baseline": {
+        "metrics": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 3,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            },
+            "flag": {
+              "allow": 2,
+              "flag": 1,
+              "block": 3,
+              "review": 0
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 3,
+              "flag": 0,
+              "block": 5,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.375,
+              "recall": 0.6,
+              "f1": 0.4615384615384615,
+              "support": 5
+            },
+            "flag": {
+              "precision": 1.0,
+              "recall": 0.16666666666666666,
+              "f1": 0.2857142857142857,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.375,
+              "recall": 1.0,
+              "f1": 0.5454545454545454,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.32317682317682317,
+          "accuracy": 0.4,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 2,
+          "flag_to_block_errors": 3,
+          "review_rate": 0.0,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "829d926a5976c579",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.555236
+          },
+          {
+            "sample_id": "2312574e8a7f8fee",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.721655
+          },
+          {
+            "sample_id": "5f1649929110a4c2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.731722
+          },
+          {
+            "sample_id": "42275f34f2e8d97e",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.999902
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.962633
+          },
+          {
+            "sample_id": "a2992965c07d887c",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "confidence": 0.746773
+          },
+          {
+            "sample_id": "194516f09a7ac051",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.99991
+          },
+          {
+            "sample_id": "949c3c1f119939bf",
+            "reference_label": "flag",
+            "prediction": "flag",
+            "confidence": 0.57422
+          },
+          {
+            "sample_id": "cb86b453759a8941",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.998021
+          },
+          {
+            "sample_id": "ec6f2107ee0459b9",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999972
+          },
+          {
+            "sample_id": "e00f6c91f50555c3",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "5332edd558a7e178",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.926602
+          },
+          {
+            "sample_id": "ed150ce0712dd7f0",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "503dd5db1efda26b",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999998
+          },
+          {
+            "sample_id": "c544c879c5a32193",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.997416
+          },
+          {
+            "sample_id": "baa15c6047166c85",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "confidence": 0.492354
+          },
+          {
+            "sample_id": "446c414e966f7a80",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.995279
+          },
+          {
+            "sample_id": "80bb3829a8aabb9b",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.726477
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "b82c6201824af239",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.648082
+          },
+          {
+            "sample_id": "4211325af2707ef5",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.994291
+          },
+          {
+            "sample_id": "dc6d6bd1e71857b0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.999644
+          },
+          {
+            "sample_id": "d3a03e9b233c1bef",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.985176
+          },
+          {
+            "sample_id": "054edfcb4ade18f9",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.482234
+          },
+          {
+            "sample_id": "f31e07ee5b34cccf",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.438317
+          }
+        ]
+      },
+      "augmented": {
+        "metrics": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 3,
+              "flag": 0,
+              "block": 2,
+              "review": 0
+            },
+            "flag": {
+              "allow": 1,
+              "flag": 0,
+              "block": 4,
+              "review": 1
+            },
+            "block": {
+              "allow": 0,
+              "flag": 0,
+              "block": 6,
+              "review": 0
+            },
+            "review": {
+              "allow": 3,
+              "flag": 0,
+              "block": 4,
+              "review": 1
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.42857142857142855,
+              "recall": 0.6,
+              "f1": 0.5,
+              "support": 5
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 6
+            },
+            "block": {
+              "precision": 0.375,
+              "recall": 1.0,
+              "f1": 0.5454545454545454,
+              "support": 6
+            },
+            "review": {
+              "precision": 0.5,
+              "recall": 0.125,
+              "f1": 0.2,
+              "support": 8
+            }
+          },
+          "macro_f1": 0.31136363636363634,
+          "accuracy": 0.4,
+          "block_false_negative_count": 0,
+          "flag_to_allow_errors": 1,
+          "flag_to_block_errors": 4,
+          "review_rate": 0.08,
+          "review_precision": 0.5
+        },
+        "rows": [
+          {
+            "sample_id": "829d926a5976c579",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.861755
+          },
+          {
+            "sample_id": "2312574e8a7f8fee",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.584644
+          },
+          {
+            "sample_id": "5f1649929110a4c2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.905447
+          },
+          {
+            "sample_id": "42275f34f2e8d97e",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.999989
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.971694
+          },
+          {
+            "sample_id": "a2992965c07d887c",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.735843
+          },
+          {
+            "sample_id": "194516f09a7ac051",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.999891
+          },
+          {
+            "sample_id": "949c3c1f119939bf",
+            "reference_label": "flag",
+            "prediction": "allow",
+            "confidence": 0.599103
+          },
+          {
+            "sample_id": "cb86b453759a8941",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.966101
+          },
+          {
+            "sample_id": "ec6f2107ee0459b9",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "e00f6c91f50555c3",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999989
+          },
+          {
+            "sample_id": "5332edd558a7e178",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.947259
+          },
+          {
+            "sample_id": "ed150ce0712dd7f0",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "503dd5db1efda26b",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999995
+          },
+          {
+            "sample_id": "c544c879c5a32193",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.999994
+          },
+          {
+            "sample_id": "baa15c6047166c85",
+            "reference_label": "flag",
+            "prediction": "review",
+            "confidence": 0.53675
+          },
+          {
+            "sample_id": "446c414e966f7a80",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.999698
+          },
+          {
+            "sample_id": "80bb3829a8aabb9b",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.710497
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999995
+          },
+          {
+            "sample_id": "b82c6201824af239",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.461796
+          },
+          {
+            "sample_id": "4211325af2707ef5",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.999002
+          },
+          {
+            "sample_id": "dc6d6bd1e71857b0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.999953
+          },
+          {
+            "sample_id": "d3a03e9b233c1bef",
+            "reference_label": "review",
+            "prediction": "block",
+            "confidence": 0.91324
+          },
+          {
+            "sample_id": "054edfcb4ade18f9",
+            "reference_label": "review",
+            "prediction": "allow",
+            "confidence": 0.696477
+          },
+          {
+            "sample_id": "f31e07ee5b34cccf",
+            "reference_label": "review",
+            "prediction": "review",
+            "confidence": 0.829226
+          }
+        ]
+      }
+    },
+    "regression_action_84": {
+      "n": 84,
+      "baseline": {
+        "metrics": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 44,
+              "flag": 0,
+              "block": 23,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 3,
+              "flag": 0,
+              "block": 12,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9361702127659575,
+              "recall": 0.6470588235294118,
+              "f1": 0.7652173913043478,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.3333333333333333,
+              "recall": 0.8,
+              "f1": 0.47058823529411764,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.3089514066496164,
+          "accuracy": 0.6666666666666666,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.011904761904761904,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "6020880c41c85788",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.931782
+          },
+          {
+            "sample_id": "ab17f02a362c3c50",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.984974
+          },
+          {
+            "sample_id": "36e1df4d76b2f900",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.99456
+          },
+          {
+            "sample_id": "3248943a2d7569e0",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.648027
+          },
+          {
+            "sample_id": "b2587ebeaa65b19d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.936093
+          },
+          {
+            "sample_id": "a44e632b9fb558dc",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.673751
+          },
+          {
+            "sample_id": "4bf59cdec52aadb7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.651037
+          },
+          {
+            "sample_id": "476c36d471d75f84",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.995572
+          },
+          {
+            "sample_id": "b7b6200bfd017b5b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.998427
+          },
+          {
+            "sample_id": "9fbbc28eb7708046",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.868073
+          },
+          {
+            "sample_id": "c2b77a0e1494c385",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999821
+          },
+          {
+            "sample_id": "383bc9ebed29c519",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.944878
+          },
+          {
+            "sample_id": "fd14f4444ab73940",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999608
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999999
+          },
+          {
+            "sample_id": "2b99484b86d448de",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999937
+          },
+          {
+            "sample_id": "26b1af7e7e145234",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999986
+          },
+          {
+            "sample_id": "bfb991e39b6d9c5c",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999965
+          },
+          {
+            "sample_id": "67a184c070be907c",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999599
+          },
+          {
+            "sample_id": "f8123e447c5f7cce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.823139
+          },
+          {
+            "sample_id": "36f58010f07eed78",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.992682
+          },
+          {
+            "sample_id": "2674ae5c10d8995b",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999593
+          },
+          {
+            "sample_id": "ec2d1e04425fc022",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.987249
+          },
+          {
+            "sample_id": "5080dfb9914af098",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.966804
+          },
+          {
+            "sample_id": "d08c103248d9401a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.516215
+          },
+          {
+            "sample_id": "b760666511219656",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999735
+          },
+          {
+            "sample_id": "8aa153d227e82d14",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999801
+          },
+          {
+            "sample_id": "4b41c087c37b690a",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.951354
+          },
+          {
+            "sample_id": "de756477b0ebebc7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999371
+          },
+          {
+            "sample_id": "d96f2f71920bbd82",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999984
+          },
+          {
+            "sample_id": "5f3be90810ffe7f0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999697
+          },
+          {
+            "sample_id": "ca59b5255b4eb213",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.980495
+          },
+          {
+            "sample_id": "e74e72adc0cb9336",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999972
+          },
+          {
+            "sample_id": "7bf794881649258e",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.955837
+          },
+          {
+            "sample_id": "2e88b3297ee05abb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.963529
+          },
+          {
+            "sample_id": "1139c8893722cb90",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.761413
+          },
+          {
+            "sample_id": "26e328cab6e60be2",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.445561
+          },
+          {
+            "sample_id": "02f2e7a7052f2b2c",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.662281
+          },
+          {
+            "sample_id": "48dc9d2251d8cd86",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.9945
+          },
+          {
+            "sample_id": "100eff4a07dedd70",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999785
+          },
+          {
+            "sample_id": "e966a2df4176d0e7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.994477
+          },
+          {
+            "sample_id": "d2bf33a495ab5b5b",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.970418
+          },
+          {
+            "sample_id": "d43b7ab3eb16a1f4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.99977
+          },
+          {
+            "sample_id": "90077472641e67ce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.856237
+          },
+          {
+            "sample_id": "32c415303e3cdc4d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.989168
+          },
+          {
+            "sample_id": "e2a5c0a2c2b2ea2f",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999557
+          },
+          {
+            "sample_id": "b707f4f909a7b908",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.660005
+          },
+          {
+            "sample_id": "c07896f48d419ee7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.840313
+          },
+          {
+            "sample_id": "7a265b04999fb864",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.761187
+          },
+          {
+            "sample_id": "ad2236ec511461cf",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.99047
+          },
+          {
+            "sample_id": "dde02b7f2bcb819c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.983358
+          },
+          {
+            "sample_id": "8a40398d6277b710",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.649752
+          },
+          {
+            "sample_id": "80e035a8e69efd9a",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.998234
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.962633
+          },
+          {
+            "sample_id": "24745a674163fae8",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.997538
+          },
+          {
+            "sample_id": "0659e474756e7dad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.99899
+          },
+          {
+            "sample_id": "051568a7dfd524cb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.727755
+          },
+          {
+            "sample_id": "a4dfa7151b551a3d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.997981
+          },
+          {
+            "sample_id": "06aafecab8686d11",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.878395
+          },
+          {
+            "sample_id": "c1dbe7264aea63e2",
+            "reference_label": "allow",
+            "prediction": "review",
+            "confidence": 0.76074
+          },
+          {
+            "sample_id": "b48146653ddd9e99",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.641247
+          },
+          {
+            "sample_id": "629ef0cd1bea05a2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.948448
+          },
+          {
+            "sample_id": "d60d8860d46ee3b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999943
+          },
+          {
+            "sample_id": "df3ab73158b5afc4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.987002
+          },
+          {
+            "sample_id": "f2ecbb99c5995593",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.877869
+          },
+          {
+            "sample_id": "f5454dcfd29e444a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999936
+          },
+          {
+            "sample_id": "3818bb88055c70a4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.500678
+          },
+          {
+            "sample_id": "8553210b85391395",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.949527
+          },
+          {
+            "sample_id": "4021264d73f88a71",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.99673
+          },
+          {
+            "sample_id": "30b579c79e65ef74",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.962802
+          },
+          {
+            "sample_id": "662117c1b5ce6790",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.827081
+          },
+          {
+            "sample_id": "e7e6da388a9d600f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999673
+          },
+          {
+            "sample_id": "baa5007a90b1e70e",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999902
+          },
+          {
+            "sample_id": "d947d539df08f40d",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.871759
+          },
+          {
+            "sample_id": "83893bc63d6a1794",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.862903
+          },
+          {
+            "sample_id": "a4c3ed04a95a3da1",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999888
+          },
+          {
+            "sample_id": "d6edf9e6671cc443",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999766
+          },
+          {
+            "sample_id": "c23b31a0179b550f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 1.0
+          },
+          {
+            "sample_id": "ca3704aa0b06f595",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.783042
+          },
+          {
+            "sample_id": "c13ba5bd3aed190c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.981523
+          },
+          {
+            "sample_id": "fafe97f7def328bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 1.0
+          },
+          {
+            "sample_id": "72745579158ed723",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.993453
+          },
+          {
+            "sample_id": "9df113686f25e8bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.651994
+          },
+          {
+            "sample_id": "65da6ca77f0e60f6",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.661527
+          },
+          {
+            "sample_id": "c06fc555902938b4",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.593725
+          }
+        ]
+      },
+      "augmented": {
+        "metrics": {
+          "confusion_matrix": {
+            "allow": {
+              "allow": 41,
+              "flag": 0,
+              "block": 26,
+              "review": 1
+            },
+            "flag": {
+              "allow": 0,
+              "flag": 0,
+              "block": 1,
+              "review": 0
+            },
+            "block": {
+              "allow": 3,
+              "flag": 0,
+              "block": 12,
+              "review": 0
+            },
+            "review": {
+              "allow": 0,
+              "flag": 0,
+              "block": 0,
+              "review": 0
+            }
+          },
+          "per_class": {
+            "allow": {
+              "precision": 0.9318181818181818,
+              "recall": 0.6029411764705882,
+              "f1": 0.7321428571428571,
+              "support": 68
+            },
+            "flag": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "block": {
+              "precision": 0.3076923076923077,
+              "recall": 0.8,
+              "f1": 0.4444444444444444,
+              "support": 15
+            },
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "macro_f1": 0.29414682539682535,
+          "accuracy": 0.6309523809523809,
+          "block_false_negative_count": 3,
+          "flag_to_allow_errors": 0,
+          "flag_to_block_errors": 1,
+          "review_rate": 0.011904761904761904,
+          "review_precision": 0.0
+        },
+        "rows": [
+          {
+            "sample_id": "6020880c41c85788",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.940742
+          },
+          {
+            "sample_id": "ab17f02a362c3c50",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.933102
+          },
+          {
+            "sample_id": "36e1df4d76b2f900",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.979252
+          },
+          {
+            "sample_id": "3248943a2d7569e0",
+            "reference_label": "allow",
+            "prediction": "review",
+            "confidence": 0.572016
+          },
+          {
+            "sample_id": "b2587ebeaa65b19d",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.558314
+          },
+          {
+            "sample_id": "a44e632b9fb558dc",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.85257
+          },
+          {
+            "sample_id": "4bf59cdec52aadb7",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.848667
+          },
+          {
+            "sample_id": "476c36d471d75f84",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.98898
+          },
+          {
+            "sample_id": "b7b6200bfd017b5b",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.9951
+          },
+          {
+            "sample_id": "9fbbc28eb7708046",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.754255
+          },
+          {
+            "sample_id": "c2b77a0e1494c385",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999597
+          },
+          {
+            "sample_id": "383bc9ebed29c519",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.6787
+          },
+          {
+            "sample_id": "fd14f4444ab73940",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999216
+          },
+          {
+            "sample_id": "390ffa1a77fef26d",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999995
+          },
+          {
+            "sample_id": "2b99484b86d448de",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999086
+          },
+          {
+            "sample_id": "26b1af7e7e145234",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999935
+          },
+          {
+            "sample_id": "bfb991e39b6d9c5c",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999847
+          },
+          {
+            "sample_id": "67a184c070be907c",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.998811
+          },
+          {
+            "sample_id": "f8123e447c5f7cce",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.730771
+          },
+          {
+            "sample_id": "36f58010f07eed78",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.987027
+          },
+          {
+            "sample_id": "2674ae5c10d8995b",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999967
+          },
+          {
+            "sample_id": "ec2d1e04425fc022",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.992823
+          },
+          {
+            "sample_id": "5080dfb9914af098",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.977451
+          },
+          {
+            "sample_id": "d08c103248d9401a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.862097
+          },
+          {
+            "sample_id": "b760666511219656",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.992677
+          },
+          {
+            "sample_id": "8aa153d227e82d14",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.996094
+          },
+          {
+            "sample_id": "4b41c087c37b690a",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.790519
+          },
+          {
+            "sample_id": "de756477b0ebebc7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.998637
+          },
+          {
+            "sample_id": "d96f2f71920bbd82",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999813
+          },
+          {
+            "sample_id": "5f3be90810ffe7f0",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.994894
+          },
+          {
+            "sample_id": "ca59b5255b4eb213",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.996799
+          },
+          {
+            "sample_id": "e74e72adc0cb9336",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999661
+          },
+          {
+            "sample_id": "7bf794881649258e",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.986819
+          },
+          {
+            "sample_id": "2e88b3297ee05abb",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.609894
+          },
+          {
+            "sample_id": "1139c8893722cb90",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.992012
+          },
+          {
+            "sample_id": "26e328cab6e60be2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.56531
+          },
+          {
+            "sample_id": "02f2e7a7052f2b2c",
+            "reference_label": "block",
+            "prediction": "allow",
+            "confidence": 0.842182
+          },
+          {
+            "sample_id": "48dc9d2251d8cd86",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.997838
+          },
+          {
+            "sample_id": "100eff4a07dedd70",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.998046
+          },
+          {
+            "sample_id": "e966a2df4176d0e7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.997899
+          },
+          {
+            "sample_id": "d2bf33a495ab5b5b",
+            "reference_label": "flag",
+            "prediction": "block",
+            "confidence": 0.96772
+          },
+          {
+            "sample_id": "d43b7ab3eb16a1f4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999845
+          },
+          {
+            "sample_id": "90077472641e67ce",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.712632
+          },
+          {
+            "sample_id": "32c415303e3cdc4d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.993173
+          },
+          {
+            "sample_id": "e2a5c0a2c2b2ea2f",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.998982
+          },
+          {
+            "sample_id": "b707f4f909a7b908",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.782081
+          },
+          {
+            "sample_id": "c07896f48d419ee7",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.503821
+          },
+          {
+            "sample_id": "7a265b04999fb864",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.940614
+          },
+          {
+            "sample_id": "ad2236ec511461cf",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.950115
+          },
+          {
+            "sample_id": "dde02b7f2bcb819c",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.990474
+          },
+          {
+            "sample_id": "8a40398d6277b710",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.951208
+          },
+          {
+            "sample_id": "80e035a8e69efd9a",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.999084
+          },
+          {
+            "sample_id": "888bb0487113044f",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.971694
+          },
+          {
+            "sample_id": "24745a674163fae8",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.992661
+          },
+          {
+            "sample_id": "0659e474756e7dad",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.997994
+          },
+          {
+            "sample_id": "051568a7dfd524cb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.936204
+          },
+          {
+            "sample_id": "a4dfa7151b551a3d",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.999686
+          },
+          {
+            "sample_id": "06aafecab8686d11",
+            "reference_label": "block",
+            "prediction": "block",
+            "confidence": 0.979527
+          },
+          {
+            "sample_id": "c1dbe7264aea63e2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.571559
+          },
+          {
+            "sample_id": "b48146653ddd9e99",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.818504
+          },
+          {
+            "sample_id": "629ef0cd1bea05a2",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.997244
+          },
+          {
+            "sample_id": "d60d8860d46ee3b9",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999749
+          },
+          {
+            "sample_id": "df3ab73158b5afc4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.90465
+          },
+          {
+            "sample_id": "f2ecbb99c5995593",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.980435
+          },
+          {
+            "sample_id": "f5454dcfd29e444a",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999954
+          },
+          {
+            "sample_id": "3818bb88055c70a4",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.941692
+          },
+          {
+            "sample_id": "8553210b85391395",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.815641
+          },
+          {
+            "sample_id": "4021264d73f88a71",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.998904
+          },
+          {
+            "sample_id": "30b579c79e65ef74",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.910899
+          },
+          {
+            "sample_id": "662117c1b5ce6790",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.861621
+          },
+          {
+            "sample_id": "e7e6da388a9d600f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.996627
+          },
+          {
+            "sample_id": "baa5007a90b1e70e",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999543
+          },
+          {
+            "sample_id": "d947d539df08f40d",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.55743
+          },
+          {
+            "sample_id": "83893bc63d6a1794",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.684854
+          },
+          {
+            "sample_id": "a4c3ed04a95a3da1",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999612
+          },
+          {
+            "sample_id": "d6edf9e6671cc443",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.994007
+          },
+          {
+            "sample_id": "c23b31a0179b550f",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 1.0
+          },
+          {
+            "sample_id": "ca3704aa0b06f595",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.877855
+          },
+          {
+            "sample_id": "c13ba5bd3aed190c",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.68558
+          },
+          {
+            "sample_id": "fafe97f7def328bb",
+            "reference_label": "allow",
+            "prediction": "allow",
+            "confidence": 0.999485
+          },
+          {
+            "sample_id": "72745579158ed723",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.709241
+          },
+          {
+            "sample_id": "9df113686f25e8bb",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.575148
+          },
+          {
+            "sample_id": "65da6ca77f0e60f6",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.822907
+          },
+          {
+            "sample_id": "c06fc555902938b4",
+            "reference_label": "allow",
+            "prediction": "block",
+            "confidence": 0.800587
+          }
+        ]
+      }
+    }
+  }
+}

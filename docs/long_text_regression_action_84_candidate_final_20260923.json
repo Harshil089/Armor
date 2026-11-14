@@ -1,0 +1,509 @@
+{
+  "human_ground_truth": false,
+  "rows": [
+    {
+      "id": "6020880c41c85788",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "ab17f02a362c3c50",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "36e1df4d76b2f900",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "3248943a2d7569e0",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b2587ebeaa65b19d",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "a44e632b9fb558dc",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "4bf59cdec52aadb7",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "476c36d471d75f84",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b7b6200bfd017b5b",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "9fbbc28eb7708046",
+      "label": "allow",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "c2b77a0e1494c385",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "383bc9ebed29c519",
+      "label": "allow",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "fd14f4444ab73940",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "390ffa1a77fef26d",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "2b99484b86d448de",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "26b1af7e7e145234",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "bfb991e39b6d9c5c",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "67a184c070be907c",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "f8123e447c5f7cce",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "36f58010f07eed78",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "2674ae5c10d8995b",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "ec2d1e04425fc022",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "5080dfb9914af098",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d08c103248d9401a",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b760666511219656",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "8aa153d227e82d14",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "4b41c087c37b690a",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "de756477b0ebebc7",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d96f2f71920bbd82",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "5f3be90810ffe7f0",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "ca59b5255b4eb213",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "e74e72adc0cb9336",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "7bf794881649258e",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "2e88b3297ee05abb",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "1139c8893722cb90",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "26e328cab6e60be2",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "02f2e7a7052f2b2c",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "48dc9d2251d8cd86",
+      "label": "block",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "100eff4a07dedd70",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "e966a2df4176d0e7",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d2bf33a495ab5b5b",
+      "label": "flag",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "d43b7ab3eb16a1f4",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "90077472641e67ce",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "32c415303e3cdc4d",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "e2a5c0a2c2b2ea2f",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "b707f4f909a7b908",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "c07896f48d419ee7",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "7a265b04999fb864",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "ad2236ec511461cf",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "dde02b7f2bcb819c",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "8a40398d6277b710",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "80e035a8e69efd9a",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "888bb0487113044f",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "24745a674163fae8",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "0659e474756e7dad",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "051568a7dfd524cb",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "a4dfa7151b551a3d",
+      "label": "allow",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "06aafecab8686d11",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "c1dbe7264aea63e2",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b48146653ddd9e99",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "629ef0cd1bea05a2",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d60d8860d46ee3b9",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "df3ab73158b5afc4",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "f2ecbb99c5995593",
+      "label": "allow",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "f5454dcfd29e444a",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "3818bb88055c70a4",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "8553210b85391395",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "4021264d73f88a71",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "30b579c79e65ef74",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "662117c1b5ce6790",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "e7e6da388a9d600f",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "baa5007a90b1e70e",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d947d539df08f40d",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "83893bc63d6a1794",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "a4c3ed04a95a3da1",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "d6edf9e6671cc443",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "c23b31a0179b550f",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "ca3704aa0b06f595",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "c13ba5bd3aed190c",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "fafe97f7def328bb",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "72745579158ed723",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "9df113686f25e8bb",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "65da6ca77f0e60f6",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "c06fc555902938b4",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    }
+  ]
+}

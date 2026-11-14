@@ -1,0 +1,153 @@
+{
+  "version": "v17 candidate promotion",
+  "date": "2026-09-24",
+  "promoted": true,
+  "human_ground_truth": false,
+  "baseline_checkpoint_sha256": "67c964eda7a67e666e6588cc5b7d8dae04a62a91bef97f9952d276881df07d21",
+  "promoted_checkpoint_sha256": "4fbf18ff1a6f48f4957beb743772440ad31d30f9d40e84cfa0c86652a5e1448d",
+  "candidate_artifact": "/tmp/armor_policy_v17_candidate.pt",
+  "rollback_backup": "/tmp/armor_policy_head_pre_v17_promotion_20260924.pt",
+  "rollback_command": "cp /tmp/armor_policy_head_pre_v17_promotion_20260924.pt /Users/harshilbuch/Armor/armor/models/checkpoints/policy_head.pt",
+  "checks": {
+    "reviewer_agreement_at_least_95pct": true,
+    "flag_consensus_support_at_least_25": true,
+    "flag_recall_at_least_75pct": true,
+    "flag_precision_at_least_80pct": true,
+    "flag_recall_gain_at_least_15pp": true,
+    "macro_f1_not_materially_regressed": true,
+    "allow_block_review_recall_not_down_over_5pp": true,
+    "api_p95_within_10pct": true,
+    "long_text_accuracy_not_regressed": true,
+    "long_text_macro_f1_not_regressed": true
+  },
+  "reviewer_agreement": {
+    "raw_agreement": 0.9866666666666667,
+    "agreement_by_class": {
+      "allow": 1.0,
+      "flag": 1.0,
+      "block": 0.9375,
+      "review": 0.9333333333333333
+    },
+    "confusion_matrix": {
+      "allow": {
+        "allow": 31,
+        "flag": 0,
+        "block": 0,
+        "review": 0
+      },
+      "flag": {
+        "allow": 0,
+        "flag": 59,
+        "block": 0,
+        "review": 0
+      },
+      "block": {
+        "allow": 0,
+        "flag": 0,
+        "block": 30,
+        "review": 0
+      },
+      "review": {
+        "allow": 0,
+        "flag": 0,
+        "block": 2,
+        "review": 28
+      }
+    },
+    "cohens_kappa": 0.9815475458235946,
+    "adjudication_rate": 0.013333333333333334
+  },
+  "v18_metrics": {
+    "consensus_n": 148,
+    "support": {
+      "flag": 59,
+      "allow": 31,
+      "block": 30,
+      "review": 28
+    },
+    "baseline": {
+      "accuracy": 0.4594594594594595,
+      "macro_f1": 0.4458796032764426,
+      "per_class": {
+        "allow": {
+          "precision": 0.48333333333333334,
+          "recall": 0.9354838709677419,
+          "f1": 0.6373626373626374,
+          "support": 31
+        },
+        "flag": {
+          "precision": 1.0,
+          "recall": 0.15254237288135594,
+          "f1": 0.2647058823529412,
+          "support": 59
+        },
+        "block": {
+          "precision": 0.5135135135135135,
+          "recall": 0.6333333333333333,
+          "f1": 0.5671641791044775,
+          "support": 30
+        },
+        "review": {
+          "precision": 0.2619047619047619,
+          "recall": 0.39285714285714285,
+          "f1": 0.3142857142857143,
+          "support": 28
+        }
+      }
+    },
+    "candidate": {
+      "accuracy": 0.8581081081081081,
+      "macro_f1": 0.849778602919659,
+      "per_class": {
+        "allow": {
+          "precision": 0.7631578947368421,
+          "recall": 0.9354838709677419,
+          "f1": 0.8405797101449276,
+          "support": 31
+        },
+        "flag": {
+          "precision": 0.896551724137931,
+          "recall": 0.8813559322033898,
+          "f1": 0.888888888888889,
+          "support": 59
+        },
+        "block": {
+          "precision": 0.9130434782608695,
+          "recall": 0.7,
+          "f1": 0.7924528301886793,
+          "support": 30
+        },
+        "review": {
+          "precision": 0.8620689655172413,
+          "recall": 0.8928571428571429,
+          "f1": 0.8771929824561403,
+          "support": 28
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline": {
+        "mean": 44.26713608438149,
+        "p50": 43.61737449653447,
+        "p95": 50.34633300965652
+      },
+      "candidate": {
+        "mean": 43.62285941179531,
+        "p50": 43.19956200197339,
+        "p95": 48.72583399992436
+      }
+    }
+  },
+  "long_text_guard": {
+    "baseline_accuracy": 0.8,
+    "candidate_accuracy": 0.8714285714285714,
+    "baseline_macro_f1": 0.42396313364055294,
+    "candidate_macro_f1": 0.4536723163841808,
+    "candidate_latency_ms": {
+      "mean": 97.04464403829272,
+      "p50": 123.22185398079455,
+      "p95": 202.83962500980124
+    }
+  },
+  "notes": "Only consensus labels from reviewer_ai_a and reviewer_ai_b were used. V18 was untouched by training and candidate tuning. Evaluation is AI-only, not human ground truth."
+}

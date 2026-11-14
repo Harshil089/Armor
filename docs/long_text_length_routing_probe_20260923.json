@@ -1,0 +1,2673 @@
+{
+  "threshold_tokens": 256,
+  "routing": "baseline under 256 tokens; long49 full-context head at 256+ tokens; offline shadow probe",
+  "results": {
+    "long_gate_all_33": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 20,
+            "flag": 0,
+            "block": 8,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 1,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.9523809523809523,
+            "recall": 0.7142857142857143,
+            "f1": 0.8163265306122449,
+            "support": 28
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.3333333333333333,
+            "recall": 0.8,
+            "f1": 0.47058823529411764,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.32172869147659067,
+        "accuracy": 0.7272727272727273,
+        "block_false_negative_count": 1,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 23,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.8214285714285714,
+            "f1": 0.9019607843137255,
+            "support": 28
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.39215686274509803,
+        "accuracy": 0.8484848484848485,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 23,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.8214285714285714,
+            "f1": 0.9019607843137255,
+            "support": 28
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.39215686274509803,
+        "accuracy": 0.8484848484848485,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "02f9a4a031ed23fe",
+          "reference_label": "allow",
+          "tokens": 509,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "308e77b1747a27e5",
+          "reference_label": "allow",
+          "tokens": 1231,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e333271e88ec064",
+          "reference_label": "allow",
+          "tokens": 497,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "61b4cf8c045019b9",
+          "reference_label": "allow",
+          "tokens": 3515,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "657e8d6aca923169",
+          "reference_label": "allow",
+          "tokens": 2415,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "91b8cf157742c61a",
+          "reference_label": "block",
+          "tokens": 1384,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "955c878385fe4da7",
+          "reference_label": "block",
+          "tokens": 841,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "960f4a4b3889fb05",
+          "reference_label": "allow",
+          "tokens": 620,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "9a29f86ecd7d5c8c",
+          "reference_label": "block",
+          "tokens": 796,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "a8b5bdcf970779f9",
+          "reference_label": "block",
+          "tokens": 557,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "adfc7e81c0f068ca",
+          "reference_label": "allow",
+          "tokens": 553,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "cb2d9c882458e4fc",
+          "reference_label": "allow",
+          "tokens": 498,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "eda03e38488b4254",
+          "reference_label": "block",
+          "tokens": 342,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "04296db53013136b",
+          "reference_label": "allow",
+          "tokens": 448,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "05cae4228b935ba5",
+          "reference_label": "allow",
+          "tokens": 314,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "082fde60b3c4ec69",
+          "reference_label": "allow",
+          "tokens": 338,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "12c8666e5ff0672a",
+          "reference_label": "allow",
+          "tokens": 282,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "152b512f910ef736",
+          "reference_label": "allow",
+          "tokens": 329,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "1b60e830d8d6d996",
+          "reference_label": "allow",
+          "tokens": 457,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "1c0464b47ed80d33",
+          "reference_label": "allow",
+          "tokens": 381,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "28a94daec6921b19",
+          "reference_label": "allow",
+          "tokens": 275,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "2ce4c5d15b411323",
+          "reference_label": "allow",
+          "tokens": 313,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "31f38753d03f5dac",
+          "reference_label": "allow",
+          "tokens": 316,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "33e98516a9e5dfc9",
+          "reference_label": "allow",
+          "tokens": 311,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "38f3ba8d1697b5cd",
+          "reference_label": "allow",
+          "tokens": 423,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "3cf7fd921c13f3c0",
+          "reference_label": "allow",
+          "tokens": 284,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "3f7c3a224faa7e06",
+          "reference_label": "allow",
+          "tokens": 476,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "403d5c3567a08c10",
+          "reference_label": "allow",
+          "tokens": 326,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "42947d6a2c228136",
+          "reference_label": "allow",
+          "tokens": 402,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e368486bd594fa0",
+          "reference_label": "allow",
+          "tokens": 344,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e99e439e2c7e041",
+          "reference_label": "allow",
+          "tokens": 389,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4f60571288ad579f",
+          "reference_label": "allow",
+          "tokens": 604,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "507b591c0498d1f2",
+          "reference_label": "allow",
+          "tokens": 313,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        }
+      ]
+    },
+    "long_gate_traffic_13": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 1,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875,
+            "support": 8
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8000000000000002,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.41875000000000007,
+        "accuracy": 0.8461538461538461,
+        "block_false_negative_count": 1,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333,
+            "support": 8
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.4606060606060606,
+        "accuracy": 0.9230769230769231,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 7,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333,
+            "support": 8
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091,
+            "support": 5
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.4606060606060606,
+        "accuracy": 0.9230769230769231,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "02f9a4a031ed23fe",
+          "reference_label": "allow",
+          "tokens": 509,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "308e77b1747a27e5",
+          "reference_label": "allow",
+          "tokens": 1231,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e333271e88ec064",
+          "reference_label": "allow",
+          "tokens": 497,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "61b4cf8c045019b9",
+          "reference_label": "allow",
+          "tokens": 3515,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "657e8d6aca923169",
+          "reference_label": "allow",
+          "tokens": 2415,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "91b8cf157742c61a",
+          "reference_label": "block",
+          "tokens": 1384,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "955c878385fe4da7",
+          "reference_label": "block",
+          "tokens": 841,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "960f4a4b3889fb05",
+          "reference_label": "allow",
+          "tokens": 620,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "9a29f86ecd7d5c8c",
+          "reference_label": "block",
+          "tokens": 796,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "a8b5bdcf970779f9",
+          "reference_label": "block",
+          "tokens": 557,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "adfc7e81c0f068ca",
+          "reference_label": "allow",
+          "tokens": 553,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "cb2d9c882458e4fc",
+          "reference_label": "allow",
+          "tokens": 498,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "eda03e38488b4254",
+          "reference_label": "block",
+          "tokens": 342,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        }
+      ]
+    },
+    "long_gate_oasst_20": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 13,
+            "flag": 0,
+            "block": 7,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.65,
+            "f1": 0.787878787878788,
+            "support": 20
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.196969696969697,
+        "accuracy": 0.65,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 16,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 20
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.22222222222222224,
+        "accuracy": 0.8,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 16,
+            "flag": 0,
+            "block": 4,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 20
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "block": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.22222222222222224,
+        "accuracy": 0.8,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "04296db53013136b",
+          "reference_label": "allow",
+          "tokens": 448,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "05cae4228b935ba5",
+          "reference_label": "allow",
+          "tokens": 314,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "082fde60b3c4ec69",
+          "reference_label": "allow",
+          "tokens": 338,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "12c8666e5ff0672a",
+          "reference_label": "allow",
+          "tokens": 282,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "152b512f910ef736",
+          "reference_label": "allow",
+          "tokens": 329,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "1b60e830d8d6d996",
+          "reference_label": "allow",
+          "tokens": 457,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "1c0464b47ed80d33",
+          "reference_label": "allow",
+          "tokens": 381,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "28a94daec6921b19",
+          "reference_label": "allow",
+          "tokens": 275,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "2ce4c5d15b411323",
+          "reference_label": "allow",
+          "tokens": 313,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "31f38753d03f5dac",
+          "reference_label": "allow",
+          "tokens": 316,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "33e98516a9e5dfc9",
+          "reference_label": "allow",
+          "tokens": 311,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "38f3ba8d1697b5cd",
+          "reference_label": "allow",
+          "tokens": 423,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "3cf7fd921c13f3c0",
+          "reference_label": "allow",
+          "tokens": 284,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "3f7c3a224faa7e06",
+          "reference_label": "allow",
+          "tokens": 476,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "403d5c3567a08c10",
+          "reference_label": "allow",
+          "tokens": 326,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "42947d6a2c228136",
+          "reference_label": "allow",
+          "tokens": 402,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e368486bd594fa0",
+          "reference_label": "allow",
+          "tokens": 344,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4e99e439e2c7e041",
+          "reference_label": "allow",
+          "tokens": 389,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4f60571288ad579f",
+          "reference_label": "allow",
+          "tokens": 604,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "507b591c0498d1f2",
+          "reference_label": "allow",
+          "tokens": 313,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        }
+      ]
+    },
+    "new_blind_ai_v1_1_holdout": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 11,
+            "flag": 1,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.9166666666666666,
+            "recall": 0.8461538461538461,
+            "f1": 0.8799999999999999,
+            "support": 13
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1": 0.33333333333333337,
+            "support": 1
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          }
+        },
+        "macro_f1": 0.30333333333333334,
+        "accuracy": 0.6666666666666666,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 9,
+            "flag": 2,
+            "block": 2,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.6923076923076923,
+            "f1": 0.8181818181818181,
+            "support": 13
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.14285714285714285,
+            "recall": 1.0,
+            "f1": 0.25,
+            "support": 1
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          }
+        },
+        "macro_f1": 0.26704545454545453,
+        "accuracy": 0.5555555555555556,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 11,
+            "flag": 1,
+            "block": 1,
+            "review": 0
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 3,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 1.0,
+            "recall": 0.8461538461538461,
+            "f1": 0.9166666666666666,
+            "support": 13
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1": 0.2857142857142857,
+            "support": 1
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 3
+          }
+        },
+        "macro_f1": 0.3005952380952381,
+        "accuracy": 0.6666666666666666,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "15f175828c69dda0",
+          "reference_label": "allow",
+          "tokens": 7,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "252a18d59b0e9169",
+          "reference_label": "allow",
+          "tokens": 10,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "5239f8fe14427e0a",
+          "reference_label": "allow",
+          "tokens": 34,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "61367f40d3f1effc",
+          "reference_label": "allow",
+          "tokens": 103,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "839f1e116e130eea",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "flag",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "960f4a4b3889fb05",
+          "reference_label": "allow",
+          "tokens": 620,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "a013912b1c066fda",
+          "reference_label": "allow",
+          "tokens": 21,
+          "baseline": "flag",
+          "long": "flag",
+          "routed": "flag"
+        },
+        {
+          "sample_id": "adfc7e81c0f068ca",
+          "reference_label": "allow",
+          "tokens": 553,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "b5955291973fecf9",
+          "reference_label": "allow",
+          "tokens": 17,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "b78305b1e645d7fd",
+          "reference_label": "allow",
+          "tokens": 8,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "cb2d9c882458e4fc",
+          "reference_label": "allow",
+          "tokens": 498,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "f285bd526e3539ad",
+          "reference_label": "allow",
+          "tokens": 50,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "fda564ba3f7a0f02",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "bf5a318a47ef055a",
+          "reference_label": "block",
+          "tokens": 180,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "7e20a7c2080c54f4",
+          "reference_label": "flag",
+          "tokens": 20,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "7d51bfa3bf4b94e9",
+          "reference_label": "review",
+          "tokens": 36,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "d3b720e07240468a",
+          "reference_label": "review",
+          "tokens": 532,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "f8aef88d68454f90",
+          "reference_label": "review",
+          "tokens": 51,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        }
+      ]
+    },
+    "guided_v1_25": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 3,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "flag": {
+            "allow": 1,
+            "flag": 2,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 3,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.42857142857142855,
+            "recall": 0.6,
+            "f1": 0.5,
+            "support": 5
+          },
+          "flag": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.375,
+            "recall": 1.0,
+            "f1": 0.5454545454545454,
+            "support": 6
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          }
+        },
+        "macro_f1": 0.38636363636363635,
+        "accuracy": 0.44,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 1,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 1,
+            "flag": 1,
+            "block": 2,
+            "review": 1
+          },
+          "flag": {
+            "allow": 2,
+            "flag": 1,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 3,
+            "block": 4,
+            "review": 1
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2,
+            "f1": 0.25,
+            "support": 5
+          },
+          "flag": {
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "f1": 0.1818181818181818,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285715,
+            "support": 6
+          },
+          "review": {
+            "precision": 0.5,
+            "recall": 0.125,
+            "f1": 0.2,
+            "support": 8
+          }
+        },
+        "macro_f1": 0.3008116883116883,
+        "accuracy": 0.36,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 2,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.08,
+        "review_precision": 0.5
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 3,
+            "flag": 0,
+            "block": 2,
+            "review": 0
+          },
+          "flag": {
+            "allow": 1,
+            "flag": 2,
+            "block": 3,
+            "review": 0
+          },
+          "block": {
+            "allow": 0,
+            "flag": 0,
+            "block": 6,
+            "review": 0
+          },
+          "review": {
+            "allow": 3,
+            "flag": 0,
+            "block": 5,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.42857142857142855,
+            "recall": 0.6,
+            "f1": 0.5,
+            "support": 5
+          },
+          "flag": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.375,
+            "recall": 1.0,
+            "f1": 0.5454545454545454,
+            "support": 6
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          }
+        },
+        "macro_f1": 0.38636363636363635,
+        "accuracy": 0.44,
+        "block_false_negative_count": 0,
+        "flag_to_allow_errors": 1,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.0,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "829d926a5976c579",
+          "reference_label": "allow",
+          "tokens": 22,
+          "baseline": "allow",
+          "long": "review",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "2312574e8a7f8fee",
+          "reference_label": "allow",
+          "tokens": 39,
+          "baseline": "allow",
+          "long": "flag",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "5f1649929110a4c2",
+          "reference_label": "allow",
+          "tokens": 33,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "42275f34f2e8d97e",
+          "reference_label": "flag",
+          "tokens": 25,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "888bb0487113044f",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "a2992965c07d887c",
+          "reference_label": "flag",
+          "tokens": 330,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "194516f09a7ac051",
+          "reference_label": "flag",
+          "tokens": 10,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "949c3c1f119939bf",
+          "reference_label": "flag",
+          "tokens": 21,
+          "baseline": "flag",
+          "long": "flag",
+          "routed": "flag"
+        },
+        {
+          "sample_id": "cb86b453759a8941",
+          "reference_label": "review",
+          "tokens": 15,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "ec6f2107ee0459b9",
+          "reference_label": "block",
+          "tokens": 170,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "e00f6c91f50555c3",
+          "reference_label": "block",
+          "tokens": 43,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "5332edd558a7e178",
+          "reference_label": "block",
+          "tokens": 42,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "ed150ce0712dd7f0",
+          "reference_label": "block",
+          "tokens": 48,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "503dd5db1efda26b",
+          "reference_label": "block",
+          "tokens": 80,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "c544c879c5a32193",
+          "reference_label": "review",
+          "tokens": 36,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "baa15c6047166c85",
+          "reference_label": "flag",
+          "tokens": 27,
+          "baseline": "flag",
+          "long": "allow",
+          "routed": "flag"
+        },
+        {
+          "sample_id": "446c414e966f7a80",
+          "reference_label": "flag",
+          "tokens": 36,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "80bb3829a8aabb9b",
+          "reference_label": "review",
+          "tokens": 35,
+          "baseline": "allow",
+          "long": "flag",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "390ffa1a77fef26d",
+          "reference_label": "block",
+          "tokens": 35,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "b82c6201824af239",
+          "reference_label": "review",
+          "tokens": 23,
+          "baseline": "block",
+          "long": "flag",
+          "routed": "block"
+        },
+        {
+          "sample_id": "4211325af2707ef5",
+          "reference_label": "review",
+          "tokens": 26,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "dc6d6bd1e71857b0",
+          "reference_label": "allow",
+          "tokens": 287,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "d3a03e9b233c1bef",
+          "reference_label": "review",
+          "tokens": 20,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "054edfcb4ade18f9",
+          "reference_label": "review",
+          "tokens": 29,
+          "baseline": "allow",
+          "long": "flag",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "f31e07ee5b34cccf",
+          "reference_label": "review",
+          "tokens": 29,
+          "baseline": "allow",
+          "long": "review",
+          "routed": "allow"
+        }
+      ]
+    },
+    "regression_action_84": {
+      "baseline": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 44,
+            "flag": 0,
+            "block": 23,
+            "review": 1
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 3,
+            "flag": 0,
+            "block": 12,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.9361702127659575,
+            "recall": 0.6470588235294118,
+            "f1": 0.7652173913043478,
+            "support": 68
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.3333333333333333,
+            "recall": 0.8,
+            "f1": 0.47058823529411764,
+            "support": 15
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.3089514066496164,
+        "accuracy": 0.6666666666666666,
+        "block_false_negative_count": 3,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.011904761904761904,
+        "review_precision": 0.0
+      },
+      "long": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 40,
+            "flag": 0,
+            "block": 27,
+            "review": 1
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 3,
+            "flag": 0,
+            "block": 12,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.9302325581395349,
+            "recall": 0.5882352941176471,
+            "f1": 0.7207207207207207,
+            "support": 68
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.3,
+            "recall": 0.8,
+            "f1": 0.4363636363636363,
+            "support": 15
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.28927108927108924,
+        "accuracy": 0.6190476190476191,
+        "block_false_negative_count": 3,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.011904761904761904,
+        "review_precision": 0.0
+      },
+      "routed": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 44,
+            "flag": 0,
+            "block": 23,
+            "review": 1
+          },
+          "flag": {
+            "allow": 0,
+            "flag": 0,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 3,
+            "flag": 0,
+            "block": 12,
+            "review": 0
+          },
+          "review": {
+            "allow": 0,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.9361702127659575,
+            "recall": 0.6470588235294118,
+            "f1": 0.7652173913043478,
+            "support": 68
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "block": {
+            "precision": 0.3333333333333333,
+            "recall": 0.8,
+            "f1": 0.47058823529411764,
+            "support": 15
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "macro_f1": 0.3089514066496164,
+        "accuracy": 0.6666666666666666,
+        "block_false_negative_count": 3,
+        "flag_to_allow_errors": 0,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.011904761904761904,
+        "review_precision": 0.0
+      },
+      "rows": [
+        {
+          "sample_id": "6020880c41c85788",
+          "reference_label": "allow",
+          "tokens": 46,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "ab17f02a362c3c50",
+          "reference_label": "allow",
+          "tokens": 74,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "36e1df4d76b2f900",
+          "reference_label": "allow",
+          "tokens": 20,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "3248943a2d7569e0",
+          "reference_label": "allow",
+          "tokens": 15,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "b2587ebeaa65b19d",
+          "reference_label": "allow",
+          "tokens": 15,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "a44e632b9fb558dc",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "4bf59cdec52aadb7",
+          "reference_label": "allow",
+          "tokens": 85,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "476c36d471d75f84",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "b7b6200bfd017b5b",
+          "reference_label": "allow",
+          "tokens": 10,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "9fbbc28eb7708046",
+          "reference_label": "allow",
+          "tokens": 16,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "c2b77a0e1494c385",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "383bc9ebed29c519",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "fd14f4444ab73940",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "390ffa1a77fef26d",
+          "reference_label": "block",
+          "tokens": 35,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "2b99484b86d448de",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "26b1af7e7e145234",
+          "reference_label": "block",
+          "tokens": 37,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "bfb991e39b6d9c5c",
+          "reference_label": "block",
+          "tokens": 16,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "67a184c070be907c",
+          "reference_label": "block",
+          "tokens": 15,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "f8123e447c5f7cce",
+          "reference_label": "allow",
+          "tokens": 17,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "36f58010f07eed78",
+          "reference_label": "block",
+          "tokens": 19,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "2674ae5c10d8995b",
+          "reference_label": "block",
+          "tokens": 12,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "ec2d1e04425fc022",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "5080dfb9914af098",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "block"
+        },
+        {
+          "sample_id": "d08c103248d9401a",
+          "reference_label": "allow",
+          "tokens": 15,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "b760666511219656",
+          "reference_label": "block",
+          "tokens": 15,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "8aa153d227e82d14",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4b41c087c37b690a",
+          "reference_label": "block",
+          "tokens": 17,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "de756477b0ebebc7",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "d96f2f71920bbd82",
+          "reference_label": "allow",
+          "tokens": 15,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "5f3be90810ffe7f0",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "ca59b5255b4eb213",
+          "reference_label": "allow",
+          "tokens": 47,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "e74e72adc0cb9336",
+          "reference_label": "block",
+          "tokens": 71,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "7bf794881649258e",
+          "reference_label": "allow",
+          "tokens": 26,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "2e88b3297ee05abb",
+          "reference_label": "allow",
+          "tokens": 75,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "1139c8893722cb90",
+          "reference_label": "allow",
+          "tokens": 34,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "26e328cab6e60be2",
+          "reference_label": "allow",
+          "tokens": 16,
+          "baseline": "allow",
+          "long": "review",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "02f2e7a7052f2b2c",
+          "reference_label": "block",
+          "tokens": 16,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "48dc9d2251d8cd86",
+          "reference_label": "block",
+          "tokens": 47,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "100eff4a07dedd70",
+          "reference_label": "block",
+          "tokens": 12,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "e966a2df4176d0e7",
+          "reference_label": "allow",
+          "tokens": 16,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "d2bf33a495ab5b5b",
+          "reference_label": "flag",
+          "tokens": 19,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "d43b7ab3eb16a1f4",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "90077472641e67ce",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "block",
+          "long": "allow",
+          "routed": "block"
+        },
+        {
+          "sample_id": "32c415303e3cdc4d",
+          "reference_label": "allow",
+          "tokens": 20,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "e2a5c0a2c2b2ea2f",
+          "reference_label": "block",
+          "tokens": 17,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "b707f4f909a7b908",
+          "reference_label": "allow",
+          "tokens": 18,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "c07896f48d419ee7",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "7a265b04999fb864",
+          "reference_label": "allow",
+          "tokens": 19,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "ad2236ec511461cf",
+          "reference_label": "allow",
+          "tokens": 10,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "dde02b7f2bcb819c",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "8a40398d6277b710",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "80e035a8e69efd9a",
+          "reference_label": "block",
+          "tokens": 27,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "888bb0487113044f",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "24745a674163fae8",
+          "reference_label": "allow",
+          "tokens": 17,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "0659e474756e7dad",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "051568a7dfd524cb",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "a4dfa7151b551a3d",
+          "reference_label": "allow",
+          "tokens": 42,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "06aafecab8686d11",
+          "reference_label": "block",
+          "tokens": 23,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "c1dbe7264aea63e2",
+          "reference_label": "allow",
+          "tokens": 19,
+          "baseline": "review",
+          "long": "block",
+          "routed": "review"
+        },
+        {
+          "sample_id": "b48146653ddd9e99",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "629ef0cd1bea05a2",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "d60d8860d46ee3b9",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "df3ab73158b5afc4",
+          "reference_label": "allow",
+          "tokens": 15,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "f2ecbb99c5995593",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "f5454dcfd29e444a",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "3818bb88055c70a4",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "8553210b85391395",
+          "reference_label": "allow",
+          "tokens": 11,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "4021264d73f88a71",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "30b579c79e65ef74",
+          "reference_label": "allow",
+          "tokens": 14,
+          "baseline": "allow",
+          "long": "block",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "662117c1b5ce6790",
+          "reference_label": "allow",
+          "tokens": 12,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "e7e6da388a9d600f",
+          "reference_label": "allow",
+          "tokens": 13,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "baa5007a90b1e70e",
+          "reference_label": "allow",
+          "tokens": 9,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "d947d539df08f40d",
+          "reference_label": "allow",
+          "tokens": 4,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "83893bc63d6a1794",
+          "reference_label": "allow",
+          "tokens": 5,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "a4c3ed04a95a3da1",
+          "reference_label": "allow",
+          "tokens": 3,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "d6edf9e6671cc443",
+          "reference_label": "allow",
+          "tokens": 6,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "c23b31a0179b550f",
+          "reference_label": "allow",
+          "tokens": 3,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "ca3704aa0b06f595",
+          "reference_label": "allow",
+          "tokens": 4,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "c13ba5bd3aed190c",
+          "reference_label": "allow",
+          "tokens": 4,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "fafe97f7def328bb",
+          "reference_label": "allow",
+          "tokens": 3,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "72745579158ed723",
+          "reference_label": "allow",
+          "tokens": 6,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "9df113686f25e8bb",
+          "reference_label": "allow",
+          "tokens": 5,
+          "baseline": "allow",
+          "long": "allow",
+          "routed": "allow"
+        },
+        {
+          "sample_id": "65da6ca77f0e60f6",
+          "reference_label": "allow",
+          "tokens": 4,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        },
+        {
+          "sample_id": "c06fc555902938b4",
+          "reference_label": "allow",
+          "tokens": 4,
+          "baseline": "block",
+          "long": "block",
+          "routed": "block"
+        }
+      ]
+    }
+  },
+  "production_unchanged": true
+}

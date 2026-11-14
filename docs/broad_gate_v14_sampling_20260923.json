@@ -1,0 +1,258 @@
+{
+  "version": "v14-flag-boundary-holdout",
+  "human_ground_truth": false,
+  "holdout": true,
+  "n": 48,
+  "design": "24 low-severity/borderline concern candidates plus 24 adjacent benign controls, interleaved and blind-labeled; design stratum is not a target label",
+  "items": [
+    {
+      "sample_id": "7cf4fb1ee1cd",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4f99861c7509",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "17e7750b6c63",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "738987b8336a",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "2b01f6860ff7",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "1eec686a87f7",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "55073597377c",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "64a88ba74c88",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f6758d1c5371",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "fe004541d6ff",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "332c72ae35ee",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6675ae1e5940",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "2f1691671975",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "5d19a0ea8e55",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "54feb9ae055a",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "76eeb07720a9",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c21e8b186cf2",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "55b53443096c",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "daa2d1351014",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "fb777a466b9c",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "9358e0193f09",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "8dc6508f1dd5",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7e28f04b308f",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c4d3df83a69d",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "1a28cd6ba008",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "bbcf560badf2",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "00f86db85c40",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "45bfad4b1837",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "10f23b4c4c51",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7d7528391554",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d6af1a6fe4ce",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "ba6dc16fa20d",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d5a140864b96",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "a2188d204b35",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "5f7a5779a3b3",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e8eece307d30",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f72dfd747b6c",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "41125bb36001",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "9c2bbfb63720",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4fb66156ebdd",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "45a2ac5ffbff",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f754f0382f6e",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "dd2e6f9914bf",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3b30def22828",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6bc112eb38d4",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c2995fd4bb69",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "5adf8d12e0d8",
+      "design_stratum": "boundary_candidate",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "10176170bb83",
+      "design_stratum": "adjacent_control",
+      "split": "holdout"
+    }
+  ],
+  "overlap_screen": {
+    "exact_overlaps_after_replacement": 0,
+    "semantic_threshold_cosine": 0.98,
+    "initial_candidates_above_threshold_replaced": 7,
+    "final_scan_pending": false,
+    "final_scan_items": 48,
+    "final_max_cosine": 0.9789509177,
+    "final_items_at_or_above_threshold": 0
+  }
+}

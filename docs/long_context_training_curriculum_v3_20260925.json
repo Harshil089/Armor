@@ -1,0 +1,407 @@
+{
+  "curriculum_id": "armor_long_context_training_v3_20260925",
+  "created_at": "2026-09-25",
+  "seed": 20260925,
+  "rows": 20153,
+  "training_example_sha256": "1293b9d54d5bc866f7f2e6b715a9ed7a90e1ef2510844cdc6589c55101e3e6c4",
+  "label_source": "inherited from existing training sources; augmented text itself is synthetic",
+  "original_training_rows_by_source": {
+    "registered_public_sources": 2390,
+    "synthetic_pii": 800,
+    "agentharm": 416,
+    "agentdojo": 116,
+    "agent_safety_bench": 287,
+    "civil_comments": 5000,
+    "coedit_noisy_negatives": 800,
+    "harmbench": 233,
+    "injecagent": 79,
+    "synthetic_dangerous_tool_action": 400,
+    "synthetic_destructive_tool_action": 200,
+    "synthetic_external_communication_action": 80,
+    "synthetic_obfuscation": 1000,
+    "toolsafety": 500,
+    "toolemu": 322,
+    "jailbreak_wild": 1200,
+    "synthetic_jailbreak_canonical": 300,
+    "synthetic_harmful_content": 300,
+    "aegis": 800,
+    "oasst_chat_negatives": 4000,
+    "synthetic_short_negatives": 150,
+    "synthetic_long_negatives": 480,
+    "synthetic_topic_adjacent_negatives": 300
+  },
+  "original_length_min": 3,
+  "original_length_max": 4674,
+  "original_rows_over_512": 663,
+  "bucket_target_shares": {
+    "<=512": 0.4,
+    "513-1024": 0.25,
+    "1025-2048": 0.15,
+    "2049-4096": 0.1,
+    "4097-6144": 0.07,
+    "6145-8192": 0.03
+  },
+  "target_length_policy": "seeded uniform target within each non-short bucket, with 128-token edge margins; retain every existing >512-token source row intact",
+  "bucket_counts": {
+    "<=512": 8061,
+    "2049-4096": 2015,
+    "1025-2048": 3023,
+    "513-1024": 5038,
+    "4097-6144": 1411,
+    "6145-8192": 605
+  },
+  "actual_token_ranges": {
+    "<=512": [
+      3,
+      510
+    ],
+    "513-1024": [
+      513,
+      1022
+    ],
+    "1025-2048": [
+      1031,
+      2022
+    ],
+    "2049-4096": [
+      2050,
+      4022
+    ],
+    "4097-6144": [
+      4265,
+      6096
+    ],
+    "6145-8192": [
+      6327,
+      8156
+    ]
+  },
+  "positioned_augmented_rows": 11429,
+  "requested_payload_position_counts": {
+    "700": 3319,
+    "100": 5753,
+    "1500": 1386,
+    "3000": 657,
+    "5000": 261,
+    "7000": 53
+  },
+  "supervised_positive_counts": {
+    "obfuscation_encoding": 450,
+    "harmful_content": 2883,
+    "prompt_injection": 842,
+    "dangerous_tool_action": 1437,
+    "jailbreak": 1277,
+    "sensitive_data_exposure": 400
+  },
+  "supervised_masked_row_counts": {
+    "prompt_injection": 3299,
+    "obfuscation_encoding": 3900,
+    "harmful_content": 6516,
+    "dangerous_tool_action": 2535,
+    "sensitive_data_exposure": 2877,
+    "jailbreak": 2626
+  },
+  "positive_position_counts_by_label": {
+    "prompt_injection": {
+      "100": 252,
+      "700": 133,
+      "1500": 62,
+      "3000": 27,
+      "5000": 8,
+      "7000": 2
+    },
+    "jailbreak": {
+      "100": 291,
+      "700": 134,
+      "1500": 52,
+      "3000": 31,
+      "5000": 5,
+      "7000": 4
+    },
+    "sensitive_data_exposure": {
+      "100": 108,
+      "700": 77,
+      "1500": 35,
+      "3000": 15,
+      "5000": 3,
+      "7000": 4
+    },
+    "dangerous_tool_action": {
+      "100": 393,
+      "700": 274,
+      "1500": 97,
+      "3000": 45,
+      "5000": 19,
+      "7000": 2
+    },
+    "harmful_content": {
+      "100": 841,
+      "700": 486,
+      "1500": 202,
+      "3000": 88,
+      "5000": 32,
+      "7000": 10
+    },
+    "obfuscation_encoding": {
+      "700": 77,
+      "100": 134,
+      "1500": 30,
+      "3000": 16,
+      "5000": 8,
+      "7000": 1
+    }
+  },
+  "masked_position_counts_by_label": {
+    "prompt_injection": {
+      "100": 1028,
+      "700": 524,
+      "1500": 221,
+      "3000": 97,
+      "5000": 39,
+      "7000": 9
+    },
+    "jailbreak": {
+      "700": 341,
+      "100": 615,
+      "1500": 136,
+      "3000": 68,
+      "5000": 27,
+      "7000": 8
+    },
+    "sensitive_data_exposure": {
+      "100": 874,
+      "700": 498,
+      "1500": 189,
+      "3000": 101,
+      "5000": 33,
+      "7000": 9
+    },
+    "dangerous_tool_action": {
+      "100": 693,
+      "700": 473,
+      "1500": 187,
+      "3000": 95,
+      "5000": 32,
+      "7000": 4
+    },
+    "harmful_content": {
+      "100": 1900,
+      "700": 1107,
+      "1500": 475,
+      "3000": 223,
+      "5000": 84,
+      "7000": 17
+    },
+    "obfuscation_encoding": {
+      "100": 1093,
+      "700": 696,
+      "1500": 286,
+      "3000": 139,
+      "5000": 64,
+      "7000": 8
+    }
+  },
+  "carrier_dataset": "OpenAssistant/oasst1",
+  "carrier_revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+  "carrier_filter": "assistant; accepted; not deleted; >=2 reviewers; toxicity <0.05; Armor DLP-clean",
+  "carrier_message_id_count": 9775,
+  "carrier_text_not_adjudicated_for_full_Armor_taxonomy": true,
+  "full_depth_candidate_only": true,
+  "same_existing_model_only": true,
+  "cache_path": "/tmp/armor_long_context_training_v3_20260925.jsonl.gz",
+  "cache_is_local_ephemeral": true,
+  "prepare_only": true,
+  "training_status": "regression_gate_failed",
+  "cache_sha256": "ff4ef87de0c73ddad3e2bce0c9ea4496e6a33e3a49f48c2d0900597cf671053c",
+  "training_attempts": [
+    {
+      "epochs": 5,
+      "learning_rate": 0.001,
+      "warm_start_head": false,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "regression_gate_failed",
+      "regressed_labels": [
+        "prompt_injection",
+        "jailbreak",
+        "sensitive_data_exposure",
+        "dangerous_tool_action",
+        "obfuscation_encoding"
+      ],
+      "baseline_metrics": {
+        "prompt_injection": 0.7839617657214779,
+        "jailbreak": 0.8668627904200953,
+        "sensitive_data_exposure": 0.838693798145199,
+        "dangerous_tool_action": 0.7840836786756492,
+        "harmful_content": 0.6010957495583474,
+        "obfuscation_encoding": 0.8509204661041281
+      },
+      "candidate_metrics": {
+        "prompt_injection": 0.5663476858148967,
+        "jailbreak": 0.7906316814478487,
+        "sensitive_data_exposure": 0.6472848610825498,
+        "dangerous_tool_action": 0.6551173235256491,
+        "harmful_content": 0.6340959456632845,
+        "obfuscation_encoding": 0.6479214732384467
+      },
+      "checkpoint_saved": false
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 0.0001,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "regression_gate_failed",
+      "regressed_labels": [
+        "prompt_injection",
+        "sensitive_data_exposure",
+        "obfuscation_encoding"
+      ],
+      "baseline_metrics": {
+        "prompt_injection": 0.7839617657214779,
+        "jailbreak": 0.8668627904200953,
+        "sensitive_data_exposure": 0.838693798145199,
+        "dangerous_tool_action": 0.7840836786756491,
+        "harmful_content": 0.6010957495583474,
+        "obfuscation_encoding": 0.8509204661041281
+      },
+      "candidate_metrics": {
+        "prompt_injection": 0.6694521043268581,
+        "jailbreak": 0.8564385263630862,
+        "sensitive_data_exposure": 0.7864422788075981,
+        "dangerous_tool_action": 0.8008489908666109,
+        "harmful_content": 0.6504485071015855,
+        "obfuscation_encoding": 0.5331344280157181
+      },
+      "checkpoint_saved": false
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "setup_failed_before_encoder_pass",
+      "error": "TypeError while serializing float label values in feature-cache key",
+      "checkpoint_saved": false
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "paused_by_user",
+      "feature_batches_completed": 4000,
+      "feature_batches_total": 12218,
+      "feature_cache_saved": false,
+      "checkpoint_saved": false
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "interrupted_mps_command_buffer_wait",
+      "feature_cache_saved": true,
+      "checkpoint_saved": false,
+      "feature_batches_completed": 9500,
+      "feature_batches_total": 12218,
+      "feature_rows_complete": 17435,
+      "interruption_reason": "Main thread remained blocked in Metal waitUntilCompleted during MPS-to-CPU tensor copy for over ten minutes; confirmed by macOS sample."
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "failed_partial_cache_size",
+      "device": "cpu_resume_from_mps_cache",
+      "feature_batches_completed": 10000,
+      "feature_batches_total": 12218,
+      "feature_rows_complete": 17935,
+      "feature_cache_saved": true,
+      "checkpoint_saved": false,
+      "error": "RuntimeError while writing the partial cache: CPU CLS views retained full sequence storage, inflating the partial archive to 5.2 GB and its temporary rewrite to 10 GB."
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "interrupted_after_batch_10500_cache_compacted",
+      "feature_cache_saved": true,
+      "checkpoint_saved": false,
+      "device": "cpu_resume_from_mps_cache",
+      "feature_batches_completed": 10500,
+      "feature_batches_total": 12218,
+      "feature_rows_complete": 18435,
+      "interruption_reason": "Checkpoint write at batch 10,500 exposed singleton CLS-view storage retention; process was interrupted during the following batch."
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "interrupted",
+      "feature_cache_saved": true,
+      "checkpoint_saved": false,
+      "feature_cache_next_batch": 10500,
+      "interruption_note": "Stopped at batch 10500 after verifying CPU execution; resumable feature cache was preserved. Initial manifest flag incorrectly checked only the completed-cache path."
+    },
+    {
+      "epochs": 1,
+      "learning_rate": 1e-05,
+      "warm_start_head": true,
+      "fine_tune_layers": 0,
+      "candidate_only": true,
+      "outcome": "regression_gate_failed",
+      "training_device": "mps",
+      "resume_batch": 10500,
+      "completed_batches": 12218,
+      "encoder_frozen": true,
+      "feature_cache_path": "/tmp/armor_long_context_features_v3_20260925.pt",
+      "feature_cache_bytes": 62880092,
+      "candidate_checkpoint_saved": false,
+      "production_checkpoint_overwritten": false,
+      "regressed_labels": [
+        "prompt_injection",
+        "obfuscation_encoding"
+      ],
+      "baseline_metrics": {
+        "prompt_injection": 0.7839617657214779,
+        "jailbreak": 0.8668627904200953,
+        "sensitive_data_exposure": 0.838693798145199,
+        "dangerous_tool_action": 0.7840836786756492,
+        "harmful_content": 0.6010957495583474,
+        "obfuscation_encoding": 0.8509204661041281
+      },
+      "candidate_metrics": {
+        "prompt_injection": 0.6789902688021462,
+        "jailbreak": 0.8670650844326397,
+        "sensitive_data_exposure": 0.8412631858756703,
+        "dangerous_tool_action": 0.7872053691065437,
+        "harmful_content": 0.6743794075096957,
+        "obfuscation_encoding": 0.754948560663686
+      },
+      "mps_stability_changes": {
+        "long_row_pad_to_multiple_of_tokens": 128,
+        "progress_interval_rows": 25,
+        "partial_cache_interval_rows": 100
+      },
+      "thermal_warnings": 0
+    }
+  ],
+  "candidate_training_note": "Training was paused by the user during frozen feature extraction; no candidate checkpoint was saved.",
+  "last_training_attempt_status": "regression_gate_failed",
+  "last_training_error": "Singleton CPU CLS views retained full sequence storage; `.contiguous()` was a no-op for shape [1, hidden]. Fixed with explicit clone and singleton regression test.",
+  "training_exit_code": 1,
+  "candidate_checkpoint_saved": false,
+  "feature_cache_complete": true,
+  "feature_cache_path": "/tmp/armor_long_context_features_v3_20260925.pt"
+}

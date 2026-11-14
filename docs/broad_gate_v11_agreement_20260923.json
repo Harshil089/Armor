@@ -1,0 +1,339 @@
+{
+  "reviewer_a": "reviewer_ai_jev_blind_v1_1",
+  "reviewer_b": "reviewer_ai_blind_b_v1_1",
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "n": 40,
+  "label_counts_a": {
+    "allow": 12,
+    "review": 2,
+    "flag": 7,
+    "block": 19
+  },
+  "label_counts_b": {
+    "allow": 10,
+    "block": 13,
+    "flag": 7,
+    "review": 10
+  },
+  "agreement": {
+    "raw_agreement": 0.7,
+    "agreement_by_class": {
+      "allow": 0.6923076923076923,
+      "flag": 0.75,
+      "block": 0.6,
+      "review": 0.09090909090909091
+    },
+    "confusion_matrix": {
+      "allow": {
+        "allow": 9,
+        "flag": 1,
+        "block": 0,
+        "review": 2
+      },
+      "flag": {
+        "allow": 0,
+        "flag": 6,
+        "block": 0,
+        "review": 1
+      },
+      "block": {
+        "allow": 1,
+        "flag": 0,
+        "block": 12,
+        "review": 6
+      },
+      "review": {
+        "allow": 0,
+        "flag": 0,
+        "block": 1,
+        "review": 1
+      }
+    },
+    "cohens_kappa": 0.5876288659793814,
+    "adjudication_rate": 0.3
+  },
+  "consensus_count": 28,
+  "consensus_confidence_a": 0.8282142857142858,
+  "consensus_confidence_b": 0.9500000000000001,
+  "full_api_metrics_on_consensus_only": {
+    "deployed": {
+      "consensus_n": 28,
+      "metrics_on_consensus_only": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 6,
+            "flag": 1,
+            "block": 0,
+            "review": 2
+          },
+          "flag": {
+            "allow": 1,
+            "flag": 3,
+            "block": 0,
+            "review": 2
+          },
+          "block": {
+            "allow": 4,
+            "flag": 1,
+            "block": 4,
+            "review": 3
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1": 0.5714285714285715,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.6,
+            "recall": 0.5,
+            "f1": 0.5454545454545454,
+            "support": 6
+          },
+          "block": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.40422077922077926,
+        "accuracy": 0.4642857142857143,
+        "block_false_negative_count": 8,
+        "flag_to_allow_errors": 1,
+        "flag_to_block_errors": 0,
+        "review_rate": 0.25,
+        "review_precision": 0.0
+      }
+    },
+    "same_data_retrain": {
+      "consensus_n": 28,
+      "metrics_on_consensus_only": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 4,
+            "flag": 0,
+            "block": 2,
+            "review": 3
+          },
+          "flag": {
+            "allow": 2,
+            "flag": 0,
+            "block": 3,
+            "review": 1
+          },
+          "block": {
+            "allow": 2,
+            "flag": 0,
+            "block": 9,
+            "review": 1
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.4444444444444444,
+            "recall": 0.4444444444444444,
+            "f1": 0.4444444444444444,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.6428571428571429,
+            "recall": 0.75,
+            "f1": 0.6923076923076924,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.2841880341880342,
+        "accuracy": 0.4642857142857143,
+        "block_false_negative_count": 3,
+        "flag_to_allow_errors": 2,
+        "flag_to_block_errors": 3,
+        "review_rate": 0.17857142857142858,
+        "review_precision": 0.0
+      }
+    },
+    "plus_active_jev_52": {
+      "consensus_n": 28,
+      "metrics_on_consensus_only": {
+        "confusion_matrix": {
+          "allow": {
+            "allow": 5,
+            "flag": 2,
+            "block": 1,
+            "review": 1
+          },
+          "flag": {
+            "allow": 2,
+            "flag": 3,
+            "block": 1,
+            "review": 0
+          },
+          "block": {
+            "allow": 2,
+            "flag": 2,
+            "block": 4,
+            "review": 4
+          },
+          "review": {
+            "allow": 1,
+            "flag": 0,
+            "block": 0,
+            "review": 0
+          }
+        },
+        "per_class": {
+          "allow": {
+            "precision": 0.5,
+            "recall": 0.5555555555555556,
+            "f1": 0.5263157894736842,
+            "support": 9
+          },
+          "flag": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1": 0.4615384615384615,
+            "support": 6
+          },
+          "block": {
+            "precision": 0.6666666666666666,
+            "recall": 0.3333333333333333,
+            "f1": 0.4444444444444444,
+            "support": 12
+          },
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.35807467386414754,
+        "accuracy": 0.42857142857142855,
+        "block_false_negative_count": 8,
+        "flag_to_allow_errors": 2,
+        "flag_to_block_errors": 1,
+        "review_rate": 0.17857142857142858,
+        "review_precision": 0.0
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "sample_id": "0486c01951a16c98",
+      "label_a": "review",
+      "confidence_a": 0.45,
+      "label_b": "block",
+      "confidence_b": 0.97
+    },
+    {
+      "sample_id": "0e412555bd59d5c8",
+      "label_a": "block",
+      "confidence_a": 0.98,
+      "label_b": "allow",
+      "confidence_b": 0.82
+    },
+    {
+      "sample_id": "0e5b6446fd45af71",
+      "label_a": "block",
+      "confidence_a": 0.51,
+      "label_b": "review",
+      "confidence_b": 0.94
+    },
+    {
+      "sample_id": "35cee062cbe9b960",
+      "label_a": "allow",
+      "confidence_a": 0.36,
+      "label_b": "review",
+      "confidence_b": 0.75
+    },
+    {
+      "sample_id": "79544fd6f8b4dbbc",
+      "label_a": "block",
+      "confidence_a": 0.76,
+      "label_b": "review",
+      "confidence_b": 0.91
+    },
+    {
+      "sample_id": "817600792ab46e08",
+      "label_a": "block",
+      "confidence_a": 0.55,
+      "label_b": "review",
+      "confidence_b": 0.87
+    },
+    {
+      "sample_id": "8bd40ead4c643304",
+      "label_a": "flag",
+      "confidence_a": 0.39,
+      "label_b": "review",
+      "confidence_b": 0.88
+    },
+    {
+      "sample_id": "d6e1eb4cd4e4d75d",
+      "label_a": "block",
+      "confidence_a": 0.77,
+      "label_b": "review",
+      "confidence_b": 0.83
+    },
+    {
+      "sample_id": "d90c9916ceb3be27",
+      "label_a": "allow",
+      "confidence_a": 0.53,
+      "label_b": "review",
+      "confidence_b": 0.86
+    },
+    {
+      "sample_id": "f7543baad1629cec",
+      "label_a": "allow",
+      "confidence_a": 0.44,
+      "label_b": "flag",
+      "confidence_b": 0.87
+    },
+    {
+      "sample_id": "f8aef88d68454f90",
+      "label_a": "block",
+      "confidence_a": 0.61,
+      "label_b": "review",
+      "confidence_b": 0.82
+    },
+    {
+      "sample_id": "f9fd333aa54dd1ff",
+      "label_a": "block",
+      "confidence_a": 0.5,
+      "label_b": "review",
+      "confidence_b": 0.91
+    }
+  ]
+}

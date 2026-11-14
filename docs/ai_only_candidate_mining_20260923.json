@@ -1,0 +1,431 @@
+{
+  "pool_count": 413,
+  "method": "Uncorrected unique traffic with no exact corrected-text overlap; length 20-4000; baseline policy margin, reference-bank disagreement, flag similarity, OOD novelty; diversity by existing k-means helper; logged decision used for sampling strata only, hidden from AI reviewer.",
+  "selection": [
+    {
+      "sample_id": "07478171fa81d5c9",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.964968,
+      "disagreement": 1.0,
+      "rare_similarity": 0.963831,
+      "novelty": 0.036169,
+      "priority": 0.506779
+    },
+    {
+      "sample_id": "15f175828c69dda0",
+      "stratum": "allow",
+      "prediction": "block",
+      "margin": 0.27186,
+      "disagreement": 1.0,
+      "rare_similarity": 0.430715,
+      "novelty": 0.006456,
+      "priority": 0.621116
+    },
+    {
+      "sample_id": "17aad64c190ea7d8",
+      "stratum": "block",
+      "prediction": "allow",
+      "margin": 0.012786,
+      "disagreement": 1.0,
+      "rare_similarity": 0.925336,
+      "novelty": 0.056549,
+      "priority": 0.878141
+    },
+    {
+      "sample_id": "22e3430ddac0d37d",
+      "stratum": "allow",
+      "prediction": "allow",
+      "margin": 0.995945,
+      "disagreement": 0.0,
+      "rare_similarity": 0.962836,
+      "novelty": 0.034799,
+      "priority": 0.293953
+    },
+    {
+      "sample_id": "252a18d59b0e9169",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.999994,
+      "disagreement": 1.0,
+      "rare_similarity": 0.884486,
+      "novelty": 0.088997,
+      "priority": 0.474248
+    },
+    {
+      "sample_id": "2bc97333a07734c6",
+      "stratum": "block",
+      "prediction": "block",
+      "margin": 0.209428,
+      "disagreement": 0.0,
+      "rare_similarity": 0.955979,
+      "novelty": 0.03862,
+      "priority": 0.606885
+    },
+    {
+      "sample_id": "340e96fa6485b7a5",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.443773,
+      "disagreement": 0.0,
+      "rare_similarity": 0.954325,
+      "novelty": 0.027499,
+      "priority": 0.511538
+    },
+    {
+      "sample_id": "5239f8fe14427e0a",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.998497,
+      "disagreement": 0.0,
+      "rare_similarity": 0.961398,
+      "novelty": 0.026084,
+      "priority": 0.291629
+    },
+    {
+      "sample_id": "5993288d7ad73776",
+      "stratum": "allow",
+      "prediction": "allow",
+      "margin": 0.996912,
+      "disagreement": 0.0,
+      "rare_similarity": 0.961329,
+      "novelty": 0.035623,
+      "priority": 0.293196
+    },
+    {
+      "sample_id": "61367f40d3f1effc",
+      "stratum": "allow",
+      "prediction": "allow",
+      "margin": 0.9611,
+      "disagreement": 1.0,
+      "rare_similarity": 0.957086,
+      "novelty": 0.033789,
+      "priority": 0.506065
+    },
+    {
+      "sample_id": "649b94d7bc16919c",
+      "stratum": "allow",
+      "prediction": "block",
+      "margin": 0.068446,
+      "disagreement": 1.0,
+      "rare_similarity": 0.940588,
+      "novelty": 0.045702,
+      "priority": 0.859368
+    },
+    {
+      "sample_id": "6a03ff8720f97b58",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.995893,
+      "disagreement": 1.0,
+      "rare_similarity": 0.962199,
+      "novelty": 0.036083,
+      "priority": 0.493911
+    },
+    {
+      "sample_id": "7d51bfa3bf4b94e9",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.999985,
+      "disagreement": 0.0,
+      "rare_similarity": 0.959341,
+      "novelty": 0.030484,
+      "priority": 0.290857
+    },
+    {
+      "sample_id": "7e20a7c2080c54f4",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.015466,
+      "disagreement": 0.0,
+      "rare_similarity": 0.96816,
+      "novelty": 0.03093,
+      "priority": 0.687355
+    },
+    {
+      "sample_id": "839f1e116e130eea",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.517166,
+      "disagreement": 1.0,
+      "rare_similarity": 0.958316,
+      "novelty": 0.039657,
+      "priority": 0.684594
+    },
+    {
+      "sample_id": "8411c26795e7ea0e",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.993056,
+      "disagreement": 0.0,
+      "rare_similarity": 0.962577,
+      "novelty": 0.037277,
+      "priority": 0.295278
+    },
+    {
+      "sample_id": "960f4a4b3889fb05",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.983023,
+      "disagreement": 0.0,
+      "rare_similarity": 0.87714,
+      "novelty": 0.039507,
+      "priority": 0.273883
+    },
+    {
+      "sample_id": "96d25abf2e578b3a",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.917509,
+      "disagreement": 1.0,
+      "rare_similarity": 0.963246,
+      "novelty": 0.036754,
+      "priority": 0.525645
+    },
+    {
+      "sample_id": "96eac2e5152353b8",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.92698,
+      "disagreement": 1.0,
+      "rare_similarity": 0.943657,
+      "novelty": 0.041478,
+      "priority": 0.516453
+    },
+    {
+      "sample_id": "a013912b1c066fda",
+      "stratum": "flag",
+      "prediction": "flag",
+      "margin": 0.032234,
+      "disagreement": 1.0,
+      "rare_similarity": 0.961804,
+      "novelty": 0.034755,
+      "priority": 0.879123
+    },
+    {
+      "sample_id": "a4b4c46f6ba645a5",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.999358,
+      "disagreement": 0.0,
+      "rare_similarity": 0.918663,
+      "novelty": 0.055501,
+      "priority": 0.281406
+    },
+    {
+      "sample_id": "adfc7e81c0f068ca",
+      "stratum": "allow",
+      "prediction": "allow",
+      "margin": 0.986456,
+      "disagreement": 0.0,
+      "rare_similarity": 0.93256,
+      "novelty": 0.030019,
+      "priority": 0.288188
+    },
+    {
+      "sample_id": "b45e9e352f31cff5",
+      "stratum": "block",
+      "prediction": "allow",
+      "margin": 0.084696,
+      "disagreement": 1.0,
+      "rare_similarity": 0.952257,
+      "novelty": 0.047743,
+      "priority": 0.856573
+    },
+    {
+      "sample_id": "b53ef960e9a4b690",
+      "stratum": "block",
+      "prediction": "allow",
+      "margin": 0.042383,
+      "disagreement": 1.0,
+      "rare_similarity": 0.963223,
+      "novelty": 0.032673,
+      "priority": 0.875281
+    },
+    {
+      "sample_id": "b5955291973fecf9",
+      "stratum": "allow",
+      "prediction": "block",
+      "margin": 0.656179,
+      "disagreement": 1.0,
+      "rare_similarity": 0.930939,
+      "novelty": 0.051156,
+      "priority": 0.621925
+    },
+    {
+      "sample_id": "b6be5c511d29bf97",
+      "stratum": "block",
+      "prediction": "allow",
+      "margin": 0.999442,
+      "disagreement": 1.0,
+      "rare_similarity": 0.822327,
+      "novelty": 0.154368,
+      "priority": 0.462358
+    },
+    {
+      "sample_id": "b78305b1e645d7fd",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.986157,
+      "disagreement": 1.0,
+      "rare_similarity": 0.510707,
+      "novelty": 0.011416,
+      "priority": 0.359891
+    },
+    {
+      "sample_id": "bf5a318a47ef055a",
+      "stratum": "block",
+      "prediction": "block",
+      "margin": 0.99917,
+      "disagreement": 0.0,
+      "rare_similarity": 0.943475,
+      "novelty": 0.004858,
+      "priority": 0.28386
+    },
+    {
+      "sample_id": "c1141903b8c9dbd5",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.906845,
+      "disagreement": 0.0,
+      "rare_similarity": 0.96399,
+      "novelty": 0.030444,
+      "priority": 0.329503
+    },
+    {
+      "sample_id": "c1d619ec72b62c69",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.16526,
+      "disagreement": 0.0,
+      "rare_similarity": 0.953637,
+      "novelty": 0.033393,
+      "priority": 0.623326
+    },
+    {
+      "sample_id": "cb2d9c882458e4fc",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.999999,
+      "disagreement": 0.0,
+      "rare_similarity": 0.928984,
+      "novelty": 0.021065,
+      "priority": 0.280802
+    },
+    {
+      "sample_id": "cf5ae8b34b4d5380",
+      "stratum": "block",
+      "prediction": "review",
+      "margin": 0.034923,
+      "disagreement": 1.0,
+      "rare_similarity": 0.963603,
+      "novelty": 0.01573,
+      "priority": 0.876685
+    },
+    {
+      "sample_id": "d3b720e07240468a",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.999614,
+      "disagreement": 0.0,
+      "rare_similarity": 0.919003,
+      "novelty": 0.038203,
+      "priority": 0.279676
+    },
+    {
+      "sample_id": "d83823395a10d1cd",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.966933,
+      "disagreement": 1.0,
+      "rare_similarity": 0.960555,
+      "novelty": 0.039308,
+      "priority": 0.505324
+    },
+    {
+      "sample_id": "dbd056b6a3d5a079",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.986209,
+      "disagreement": 1.0,
+      "rare_similarity": 0.931153,
+      "novelty": 0.047645,
+      "priority": 0.489627
+    },
+    {
+      "sample_id": "f285bd526e3539ad",
+      "stratum": "flag",
+      "prediction": "allow",
+      "margin": 0.964477,
+      "disagreement": 0.0,
+      "rare_similarity": 0.96009,
+      "novelty": 0.038624,
+      "priority": 0.306099
+    },
+    {
+      "sample_id": "f345a304912374e1",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.843639,
+      "disagreement": 0.0,
+      "rare_similarity": 0.962908,
+      "novelty": 0.028048,
+      "priority": 0.354222
+    },
+    {
+      "sample_id": "f8aef88d68454f90",
+      "stratum": "block",
+      "prediction": "block",
+      "margin": 0.999638,
+      "disagreement": 0.0,
+      "rare_similarity": 0.966615,
+      "novelty": 0.024906,
+      "priority": 0.29262
+    },
+    {
+      "sample_id": "fc95a3875f3407d8",
+      "stratum": "flag",
+      "prediction": "block",
+      "margin": 0.961044,
+      "disagreement": 0.0,
+      "rare_similarity": 0.962342,
+      "novelty": 0.027562,
+      "priority": 0.307041
+    },
+    {
+      "sample_id": "fda564ba3f7a0f02",
+      "stratum": "allow",
+      "prediction": "allow",
+      "margin": 0.992482,
+      "disagreement": 0.0,
+      "rare_similarity": 0.963879,
+      "novelty": 0.002436,
+      "priority": 0.292414
+    }
+  ],
+  "source_decision_counts": {
+    "flag": 24,
+    "allow": 8,
+    "block": 8
+  },
+  "model_prediction_counts": {
+    "allow": 25,
+    "block": 13,
+    "flag": 1,
+    "review": 1
+  },
+  "reference_label_provenance": {
+    "allow": {
+      "pseudo_model": 156,
+      "human": 21
+    },
+    "block": {
+      "pseudo_model": 523
+    },
+    "flag": {
+      "pseudo_model": 66,
+      "human": 19
+    }
+  },
+  "human_ground_truth": false
+}

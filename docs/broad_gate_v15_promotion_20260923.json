@@ -1,0 +1,17 @@
+{
+  "event": "local_policy_head_promotion",
+  "date": "2026-09-24",
+  "human_ground_truth": false,
+  "holdout": "broad_gate_v16_queue_20260923.jsonl",
+  "training_metadata": "broad_gate_v15_candidate_training_20260923.json",
+  "previous_checkpoint_backup": "/tmp/armor_policy_head_pre_v15_promotion_20260923.pt",
+  "previous_sha256": "6640d61c48bc3d9c95f3e85bc52b4d34f7c3de31e224958e51e2f01b2ed1088b",
+  "promoted_checkpoint": "/Users/harshilbuch/Armor/armor/models/checkpoints/policy_head.pt",
+  "candidate_source": "/tmp/armor_policy_v15_candidate.pt",
+  "promoted_sha256": "67c964eda7a67e666e6588cc5b7d8dae04a62a91bef97f9952d276881df07d21",
+  "candidate_sha256": "67c964eda7a67e666e6588cc5b7d8dae04a62a91bef97f9952d276881df07d21",
+  "atomic_replace": true,
+  "rollback": "copy previous_checkpoint_backup back to promoted_checkpoint and restart com.armor.server",
+  "promoted_at_utc": "2026-09-23 18:30 UTC",
+  "promoted_local_date": "2026-09-24"
+}

@@ -1,0 +1,401 @@
+{
+  "service_port": 8002,
+  "human_ground_truth": false,
+  "n": 48,
+  "prediction_counts": {
+    "block": 1,
+    "allow": 40,
+    "review": 7
+  },
+  "latency_ms": {
+    "mean": 42.538169188143605,
+    "p50": 41.46997901261784,
+    "p95": 42.87275002570823
+  },
+  "records": [
+    {
+      "sample_id": "17e7750b6c63",
+      "decision": "block",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 88.5835419758223,
+      "client_elapsed_ms": 94.73733301274478
+    },
+    {
+      "sample_id": "7cf4fb1ee1cd",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.50866599613801,
+      "client_elapsed_ms": 44.78466702857986
+    },
+    {
+      "sample_id": "e8eece307d30",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.76899999240413,
+      "client_elapsed_ms": 45.100332994479686
+    },
+    {
+      "sample_id": "fe004541d6ff",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.12900000857189,
+      "client_elapsed_ms": 44.415874988771975
+    },
+    {
+      "sample_id": "f754f0382f6e",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.67983296792954,
+      "client_elapsed_ms": 43.93787501612678
+    },
+    {
+      "sample_id": "5f7a5779a3b3",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.09208402223885,
+      "client_elapsed_ms": 43.36970899021253
+    },
+    {
+      "sample_id": "2f1691671975",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.24337498797104,
+      "client_elapsed_ms": 43.41729101724923
+    },
+    {
+      "sample_id": "8dc6508f1dd5",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.63845798373222,
+      "client_elapsed_ms": 42.944291955791414
+    },
+    {
+      "sample_id": "55073597377c",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.60883300937712,
+      "client_elapsed_ms": 43.888040992897004
+    },
+    {
+      "sample_id": "fb777a466b9c",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.975999960210174,
+      "client_elapsed_ms": 43.222416017670184
+    },
+    {
+      "sample_id": "f72dfd747b6c",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.76129198074341,
+      "client_elapsed_ms": 42.993584007490426
+    },
+    {
+      "sample_id": "f6758d1c5371",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.39416599739343,
+      "client_elapsed_ms": 44.769000029191375
+    },
+    {
+      "sample_id": "ba6dc16fa20d",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.56429198337719,
+      "client_elapsed_ms": 43.754750047810376
+    },
+    {
+      "sample_id": "daa2d1351014",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.45333298947662,
+      "client_elapsed_ms": 43.754582991823554
+    },
+    {
+      "sample_id": "76eeb07720a9",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.17633303394541,
+      "client_elapsed_ms": 43.387041019741446
+    },
+    {
+      "sample_id": "dd2e6f9914bf",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.164540976751596,
+      "client_elapsed_ms": 43.540374957956374
+    },
+    {
+      "sample_id": "332c72ae35ee",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.85262503940612,
+      "client_elapsed_ms": 43.621291988529265
+    },
+    {
+      "sample_id": "4fb66156ebdd",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.65654198732227,
+      "client_elapsed_ms": 43.93554205307737
+    },
+    {
+      "sample_id": "10f23b4c4c51",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.833041002973914,
+      "client_elapsed_ms": 44.121791026555
+    },
+    {
+      "sample_id": "2b01f6860ff7",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.75604204647243,
+      "client_elapsed_ms": 43.99783298140392
+    },
+    {
+      "sample_id": "4f99861c7509",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.17791599128395,
+      "client_elapsed_ms": 43.40383398812264
+    },
+    {
+      "sample_id": "d5a140864b96",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.570167009718716,
+      "client_elapsed_ms": 42.76637500151992
+    },
+    {
+      "sample_id": "9c2bbfb63720",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.874292026273906,
+      "client_elapsed_ms": 42.96654195059091
+    },
+    {
+      "sample_id": "3b30def22828",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 43.53908298071474,
+      "client_elapsed_ms": 45.86374998325482
+    },
+    {
+      "sample_id": "1a28cd6ba008",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.17095802212134,
+      "client_elapsed_ms": 43.40979194967076
+    },
+    {
+      "sample_id": "55b53443096c",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.34549996908754,
+      "client_elapsed_ms": 44.598541979212314
+    },
+    {
+      "sample_id": "45a2ac5ffbff",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.07050003949553,
+      "client_elapsed_ms": 43.35812496719882
+    },
+    {
+      "sample_id": "c4d3df83a69d",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.77495901240036,
+      "client_elapsed_ms": 44.218832976184785
+    },
+    {
+      "sample_id": "54feb9ae055a",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 46.561333001591265,
+      "client_elapsed_ms": 48.677499988116324
+    },
+    {
+      "sample_id": "41125bb36001",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.87275002570823,
+      "client_elapsed_ms": 45.154416002333164
+    },
+    {
+      "sample_id": "64a88ba74c88",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.41687501780689,
+      "client_elapsed_ms": 44.59412500727922
+    },
+    {
+      "sample_id": "7d7528391554",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.222041996661574,
+      "client_elapsed_ms": 43.36845799116418
+    },
+    {
+      "sample_id": "5d19a0ea8e55",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 42.06170898396522,
+      "client_elapsed_ms": 44.212959008291364
+    },
+    {
+      "sample_id": "6bc112eb38d4",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.85266699641943,
+      "client_elapsed_ms": 43.94120897632092
+    },
+    {
+      "sample_id": "6675ae1e5940",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.48662503575906,
+      "client_elapsed_ms": 43.630041007418185
+    },
+    {
+      "sample_id": "45bfad4b1837",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.83879203628749,
+      "client_elapsed_ms": 44.1189170232974
+    },
+    {
+      "sample_id": "738987b8336a",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.157040977850556,
+      "client_elapsed_ms": 43.37729199323803
+    },
+    {
+      "sample_id": "9358e0193f09",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.451333032455295,
+      "client_elapsed_ms": 43.79854100989178
+    },
+    {
+      "sample_id": "bbcf560badf2",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 39.88508298061788,
+      "client_elapsed_ms": 42.041500040795654
+    },
+    {
+      "sample_id": "10176170bb83",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.07650003768504,
+      "client_elapsed_ms": 42.19691699836403
+    },
+    {
+      "sample_id": "c2995fd4bb69",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.58312501385808,
+      "client_elapsed_ms": 43.728250020649284
+    },
+    {
+      "sample_id": "a2188d204b35",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.633374999742955,
+      "client_elapsed_ms": 42.760125012136996
+    },
+    {
+      "sample_id": "d6af1a6fe4ce",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 40.94291594810784,
+      "client_elapsed_ms": 43.06712496327236
+    },
+    {
+      "sample_id": "7e28f04b308f",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 39.28945801453665,
+      "client_elapsed_ms": 41.47120798006654
+    },
+    {
+      "sample_id": "5adf8d12e0d8",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.85020795557648,
+      "client_elapsed_ms": 44.442999991588295
+    },
+    {
+      "sample_id": "00f86db85c40",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.35883302660659,
+      "client_elapsed_ms": 43.56266697868705
+    },
+    {
+      "sample_id": "1eec686a87f7",
+      "decision": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.35270800907165,
+      "client_elapsed_ms": 43.45687502063811
+    },
+    {
+      "sample_id": "c21e8b186cf2",
+      "decision": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "api_latency_ms": 41.57437494723126,
+      "client_elapsed_ms": 43.82929200073704
+    }
+  ]
+}

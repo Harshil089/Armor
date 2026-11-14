@@ -1,0 +1,59 @@
+{
+  "_comment": "DLP-2 global entity pack (framework doc section 5) — format-only, no country/locale scope. Real severity/threshold tuning is a config edit here, not a code change. email's quantifiers are bounded (RFC 5321: local-part <=64, domain <=255) to avoid O(n^2) backtracking on adversarial non-matching input — found via stress testing (tests/test_dlp_stress.py), this ran on every request via the Fast Scan Layer. url/github_token/stripe_key/slack_token/generic_jwt were already O(n) (audited empirically, see test_dlp_stress.py) but their quantifiers are now capped anyway — defense in depth against a pathological single huge token/URL, not a complexity fix.",
+  "entities": [
+    {
+      "entity_id": "email",
+      "locale": "global",
+      "pattern": "[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,255}\\.[A-Za-z]{2,24}",
+      "severity": "medium"
+    },
+    {
+      "entity_id": "url",
+      "locale": "global",
+      "pattern": "https?://[^\\s\"'<>]{1,2048}",
+      "severity": "low"
+    },
+    {
+      "entity_id": "ipv4",
+      "locale": "global",
+      "pattern": "\\b(?:(?:25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1?[0-9]?[0-9])\\b",
+      "severity": "medium"
+    },
+    {
+      "entity_id": "ipv6",
+      "locale": "global",
+      "pattern": "\\b(?:[A-Fa-f0-9]{1,4}:){2,7}[A-Fa-f0-9]{1,4}\\b",
+      "severity": "medium"
+    },
+    {
+      "entity_id": "aws_access_key",
+      "locale": "global",
+      "pattern": "\\bAKIA[0-9A-Z]{16}\\b",
+      "severity": "high"
+    },
+    {
+      "entity_id": "github_token",
+      "locale": "global",
+      "pattern": "\\bgh[pousr]_[A-Za-z0-9]{36,255}\\b",
+      "severity": "high"
+    },
+    {
+      "entity_id": "stripe_key",
+      "locale": "global",
+      "pattern": "\\bsk_(live|test)_[A-Za-z0-9]{24,255}\\b",
+      "severity": "high"
+    },
+    {
+      "entity_id": "slack_token",
+      "locale": "global",
+      "pattern": "\\bxox[baprs]-[A-Za-z0-9-]{10,255}\\b",
+      "severity": "high"
+    },
+    {
+      "entity_id": "generic_jwt",
+      "locale": "global",
+      "pattern": "\\beyJ[A-Za-z0-9_-]{1,64}\\.[A-Za-z0-9_-]{1,4096}\\.[A-Za-z0-9_-]{1,128}\\b",
+      "severity": "high"
+    }
+  ]
+}

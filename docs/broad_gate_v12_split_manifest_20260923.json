@@ -1,0 +1,500 @@
+{
+  "version": "v12-synthetic-boundary-dev",
+  "human_ground_truth": false,
+  "counts": {
+    "total": 96,
+    "by_design_stratum": {
+      "allow": 24,
+      "flag": 24,
+      "block": 24,
+      "review": 24
+    },
+    "train": 48,
+    "holdout": 48,
+    "train_per_stratum": 12,
+    "holdout_per_stratum": 12
+  },
+  "split_by_design_stratum_not_reviewer_label": true,
+  "items": [
+    {
+      "sample_id": "cf101d621705",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "e94f429ca5ef",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "32b262c2c665",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "0d8c2ea946bf",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "c797a6f92f56",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "2f6afaf49499",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "8cb24c2acbc8",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "c98d97f4aa77",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "1ec107d6c7c6",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "35417d8b7b29",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "3a62e97e0866",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "0447a7af0005",
+      "design_stratum": "allow",
+      "split": "train"
+    },
+    {
+      "sample_id": "b7f520d8eb16",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "95e15ca04dbb",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "786092d1742f",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "894470867d99",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "052f7a6aedeb",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "653d704a23fd",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c1aab15467a3",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "cdf15ceabe6c",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d70785eb0fc5",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "fdfee5d19580",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "76b59d6cb30d",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "41663ae4e8dc",
+      "design_stratum": "allow",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "96a0dea5ac11",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "2dc30e329b52",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "7e868e31cf13",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "f1fa01fa76f2",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "e949576c986b",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "ba4c426ee7db",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "d573157b9a38",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "1877f5bd9503",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "73dbc63c5ff1",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "364c01f20c8d",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "b742b52ca5df",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "b5b7b8c39b89",
+      "design_stratum": "flag",
+      "split": "train"
+    },
+    {
+      "sample_id": "960bb7077421",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e07690910598",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4390cd6b693c",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c9e5d2cc00ce",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "39e4f631de55",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "17c1620cc383",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4b64321c8508",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "0fa5586828f8",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6394af5f3642",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "e9ae8c0aa605",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "91772fe156e7",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6dc70bbd15bb",
+      "design_stratum": "flag",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "21fde46717b2",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "2655f27ba04f",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "095b3f4d3813",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "fc1232c4f5b7",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "bacadc0b1d3c",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "77104c27311c",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "2c4801237b06",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "98efc2525195",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "1f64202791f7",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "4f2ae04737f3",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "f3f40a721549",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "1043a7fd29ac",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "cf94f66cf132",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d8de6a5ac44c",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "9856021de9ce",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d27e6a53e9d8",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "de7898e3074d",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "4a880f1083f1",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "14a6e6afacad",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "4f492718556f",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "707cac410bc0",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "1269cb802050",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "869ab2946a73",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "6647e5cad3c7",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "e869ab485c07",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "d9099cf1def8",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "6d7f5d057e33",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "613f1f1c2ac7",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "c7ae73182546",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3b9fe1169908",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "7b50e4da30fe",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "745074e3407a",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d6d016fb69a3",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "24337a5efd6e",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "bb1624aa767f",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "d60099f59d11",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "80c534f773e1",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "ccd0a7b2e3a1",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "23bf37fc1293",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "90db89594dab",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "53477e13e4ad",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "ecbf5fc2f073",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "b66e8293b19d",
+      "design_stratum": "block",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "3e5962713e5b",
+      "design_stratum": "block",
+      "split": "train"
+    },
+    {
+      "sample_id": "e8bd70615fbb",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "922e3f4f2e73",
+      "design_stratum": "review",
+      "split": "holdout"
+    },
+    {
+      "sample_id": "9955f19c8873",
+      "design_stratum": "review",
+      "split": "train"
+    },
+    {
+      "sample_id": "9a3ce95beafa",
+      "design_stratum": "block",
+      "split": "train"
+    }
+  ]
+}

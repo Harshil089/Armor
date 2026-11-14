@@ -1,0 +1,371 @@
+{
+  "rubric_version": "v1.2-proposal",
+  "reviewers": [
+    "reviewer_ai_jev_blind_v1_2_dev",
+    "reviewer_ai_blind_b_v1_2_dev"
+  ],
+  "human_ground_truth": false,
+  "n": 40,
+  "label_counts": {
+    "jev_v1_1": {
+      "allow": 12,
+      "review": 2,
+      "flag": 7,
+      "block": 19
+    },
+    "blind_b_v1_1": {
+      "allow": 10,
+      "block": 13,
+      "flag": 7,
+      "review": 10
+    },
+    "jev_v1_2": {
+      "allow": 19,
+      "block": 16,
+      "flag": 3,
+      "review": 2
+    },
+    "blind_b_v1_2": {
+      "allow": 14,
+      "block": 13,
+      "flag": 6,
+      "review": 7
+    }
+  },
+  "agreement_comparison": {
+    "v1_1_inter_reviewer": {
+      "raw_agreement": 0.7,
+      "agreement_by_class": {
+        "allow": 0.6923076923076923,
+        "flag": 0.75,
+        "block": 0.6,
+        "review": 0.09090909090909091
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 9,
+          "flag": 1,
+          "block": 0,
+          "review": 2
+        },
+        "flag": {
+          "allow": 0,
+          "flag": 6,
+          "block": 0,
+          "review": 1
+        },
+        "block": {
+          "allow": 1,
+          "flag": 0,
+          "block": 12,
+          "review": 6
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 1
+        }
+      },
+      "cohens_kappa": 0.5876288659793814,
+      "adjudication_rate": 0.3
+    },
+    "v1_2_proposal_inter_reviewer": {
+      "raw_agreement": 0.75,
+      "agreement_by_class": {
+        "allow": 0.65,
+        "flag": 0.2857142857142857,
+        "block": 0.8125,
+        "review": 0.2857142857142857
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 13,
+          "flag": 3,
+          "block": 0,
+          "review": 3
+        },
+        "flag": {
+          "allow": 1,
+          "flag": 2,
+          "block": 0,
+          "review": 0
+        },
+        "block": {
+          "allow": 0,
+          "flag": 1,
+          "block": 13,
+          "review": 2
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 0,
+          "review": 2
+        }
+      },
+      "cohens_kappa": 0.6343692870201096,
+      "adjudication_rate": 0.25
+    },
+    "jev_v1_1_vs_v1_2_self_stability": {
+      "raw_agreement": 0.65,
+      "agreement_by_class": {
+        "allow": 0.55,
+        "flag": 0.0,
+        "block": 0.75,
+        "review": 0.0
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 11,
+          "flag": 1,
+          "block": 0,
+          "review": 0
+        },
+        "flag": {
+          "allow": 7,
+          "flag": 0,
+          "block": 0,
+          "review": 0
+        },
+        "block": {
+          "allow": 0,
+          "flag": 2,
+          "block": 15,
+          "review": 2
+        },
+        "review": {
+          "allow": 1,
+          "flag": 0,
+          "block": 1,
+          "review": 0
+        }
+      },
+      "cohens_kappa": 0.46308724832214765,
+      "adjudication_rate": 0.35
+    },
+    "reviewer_b_v1_1_vs_v1_2_self_stability": {
+      "raw_agreement": 0.75,
+      "agreement_by_class": {
+        "allow": 0.6,
+        "flag": 0.3,
+        "block": 0.8571428571428571,
+        "review": 0.5454545454545454
+      },
+      "confusion_matrix": {
+        "allow": {
+          "allow": 9,
+          "flag": 1,
+          "block": 0,
+          "review": 0
+        },
+        "flag": {
+          "allow": 3,
+          "flag": 3,
+          "block": 0,
+          "review": 1
+        },
+        "block": {
+          "allow": 0,
+          "flag": 1,
+          "block": 12,
+          "review": 0
+        },
+        "review": {
+          "allow": 2,
+          "flag": 1,
+          "block": 1,
+          "review": 6
+        }
+      },
+      "cohens_kappa": 0.6607294317217982,
+      "adjudication_rate": 0.25
+    }
+  },
+  "proposal_consensus_count": 30,
+  "full_api_results_on_proposal_consensus_dev_only": {
+    "deployed": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 7,
+          "flag": 3,
+          "block": 0,
+          "review": 3
+        },
+        "flag": {
+          "allow": 0,
+          "flag": 0,
+          "block": 2,
+          "review": 0
+        },
+        "block": {
+          "allow": 4,
+          "flag": 1,
+          "block": 5,
+          "review": 3
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 0,
+          "review": 2
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.6363636363636364,
+          "recall": 0.5384615384615384,
+          "f1": 0.5833333333333334,
+          "support": 13
+        },
+        "flag": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "block": {
+          "precision": 0.7142857142857143,
+          "recall": 0.38461538461538464,
+          "f1": 0.5,
+          "support": 13
+        },
+        "review": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.37083333333333335,
+      "accuracy": 0.4666666666666667,
+      "block_false_negative_count": 8,
+      "flag_to_allow_errors": 0,
+      "flag_to_block_errors": 2,
+      "review_rate": 0.26666666666666666,
+      "review_precision": 0.25
+    },
+    "same_data_retrain": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 6,
+          "flag": 0,
+          "block": 3,
+          "review": 4
+        },
+        "flag": {
+          "allow": 0,
+          "flag": 0,
+          "block": 2,
+          "review": 0
+        },
+        "block": {
+          "allow": 2,
+          "flag": 0,
+          "block": 10,
+          "review": 1
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 1
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.75,
+          "recall": 0.46153846153846156,
+          "f1": 0.5714285714285714,
+          "support": 13
+        },
+        "flag": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "block": {
+          "precision": 0.625,
+          "recall": 0.7692307692307693,
+          "f1": 0.6896551724137931,
+          "support": 13
+        },
+        "review": {
+          "precision": 0.16666666666666666,
+          "recall": 0.5,
+          "f1": 0.25,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.37777093596059114,
+      "accuracy": 0.5666666666666667,
+      "block_false_negative_count": 3,
+      "flag_to_allow_errors": 0,
+      "flag_to_block_errors": 2,
+      "review_rate": 0.2,
+      "review_precision": 0.16666666666666666
+    },
+    "plus_active_jev_52": {
+      "confusion_matrix": {
+        "allow": {
+          "allow": 7,
+          "flag": 3,
+          "block": 2,
+          "review": 1
+        },
+        "flag": {
+          "allow": 0,
+          "flag": 0,
+          "block": 2,
+          "review": 0
+        },
+        "block": {
+          "allow": 2,
+          "flag": 2,
+          "block": 5,
+          "review": 4
+        },
+        "review": {
+          "allow": 0,
+          "flag": 0,
+          "block": 1,
+          "review": 1
+        }
+      },
+      "per_class": {
+        "allow": {
+          "precision": 0.7777777777777778,
+          "recall": 0.5384615384615384,
+          "f1": 0.6363636363636364,
+          "support": 13
+        },
+        "flag": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "block": {
+          "precision": 0.5,
+          "recall": 0.38461538461538464,
+          "f1": 0.4347826086956522,
+          "support": 13
+        },
+        "review": {
+          "precision": 0.16666666666666666,
+          "recall": 0.5,
+          "f1": 0.25,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.33028656126482214,
+      "accuracy": 0.43333333333333335,
+      "block_false_negative_count": 8,
+      "flag_to_allow_errors": 0,
+      "flag_to_block_errors": 2,
+      "review_rate": 0.2,
+      "review_precision": 0.16666666666666666
+    }
+  }
+}

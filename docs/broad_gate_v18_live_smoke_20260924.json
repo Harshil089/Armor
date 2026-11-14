@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-24",
+  "service": "com.armor.server",
+  "live_pid": "2227",
+  "checkpoint_sha256": "4fbf18ff1a6f48f4957beb743772440ad31d30f9d40e84cfa0c86652a5e1448d",
+  "human_ground_truth": false,
+  "n": 4,
+  "all_match_candidate_temp_service": true,
+  "records": [
+    {
+      "sample_id": "9cefdb540272",
+      "expected_action": "allow",
+      "candidate_service_action": "allow",
+      "live_action": "allow",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "latency_ms": 4472.915875026956,
+      "client_elapsed_ms": 4509.086875012144
+    },
+    {
+      "sample_id": "7a7c03de52f0",
+      "expected_action": "flag",
+      "candidate_service_action": "flag",
+      "live_action": "flag",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "latency_ms": 66.0365839721635,
+      "client_elapsed_ms": 69.72158304415643
+    },
+    {
+      "sample_id": "9a9ff5ae6a91",
+      "expected_action": "block",
+      "candidate_service_action": "block",
+      "live_action": "block",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "latency_ms": 44.584874995052814,
+      "client_elapsed_ms": 47.218916995916516
+    },
+    {
+      "sample_id": "a3c03f5aabba",
+      "expected_action": "review",
+      "candidate_service_action": "review",
+      "live_action": "review",
+      "route": "escalated",
+      "model_version": "armor-base-seed-v0.1+bert-policy-v1",
+      "latency_ms": 43.5647499980405,
+      "client_elapsed_ms": 47.265500004868954
+    }
+  ]
+}

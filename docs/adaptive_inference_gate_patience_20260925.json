@@ -1,0 +1,5660 @@
+{
+  "gate": "docs/long_text_final_gate_corpus_20260923.jsonl",
+  "human_ground_truth": false,
+  "encoder_fingerprint": "760836bcef70b53a6e6bae3d57816136c276598dc4d5651c264725111baef73f",
+  "rows": 140,
+  "window_size": 512,
+  "overlap": 96,
+  "max_full_depth_windows": 4,
+  "exit_policy": "patience",
+  "exit_safe_threshold_6": 0.4,
+  "exit_safe_threshold_12": 0.5,
+  "max_calibrated_threat_score": 0.5,
+  "timings": {
+    "tokenization": {
+      "count": 140,
+      "mean_ms": 1.021041373106917,
+      "p50_ms": 0.9639999771025032,
+      "p95_ms": 1.4852500171400607,
+      "p99_ms": 1.797958044335246,
+      "max_ms": 3.3162920153699815
+    },
+    "A_full_depth": {
+      "count": 140,
+      "mean_ms": 135.3582259342407,
+      "p50_ms": 125.4335209960118,
+      "p95_ms": 210.97329095937312,
+      "p99_ms": 310.63062499742955,
+      "max_ms": 319.8120419983752
+    },
+    "B_adaptive_depth": {
+      "count": 140,
+      "mean_ms": 180.8118544955505,
+      "p50_ms": 169.23202050384134,
+      "p95_ms": 245.64149999059737,
+      "p99_ms": 351.46858397638425,
+      "max_ms": 372.6515420130454
+    },
+    "C_adaptive_windows": {
+      "count": 140,
+      "mean_ms": 207.50765032467567,
+      "p50_ms": 169.23202050384134,
+      "p95_ms": 696.8595000216737,
+      "p99_ms": 834.5512920059264,
+      "max_ms": 849.6532500139438
+    }
+  },
+  "by_token_bucket": {
+    "129-512": {
+      "a": {
+        "count": 132,
+        "mean_ms": 127.07029391524635,
+        "p50_ms": 123.94374998984858,
+        "p95_ms": 172.3434580489993,
+        "p99_ms": 186.43141601933166,
+        "max_ms": 195.86183299543336
+      },
+      "b": {
+        "count": 132,
+        "mean_ms": 172.58429895005202,
+        "p50_ms": 168.52616649703123,
+        "p95_ms": 221.0944580147043,
+        "p99_ms": 235.59341701911762,
+        "max_ms": 241.5127910207957
+      },
+      "c": {
+        "count": 132,
+        "mean_ms": 172.58429895005202,
+        "p50_ms": 168.52616649703123,
+        "p95_ms": 221.0944580147043,
+        "p99_ms": 235.59341701911762,
+        "max_ms": 241.5127910207957
+      }
+    },
+    "513-1024": {
+      "a": {
+        "count": 8,
+        "mean_ms": 272.10910424764734,
+        "p50_ms": 282.01622946653515,
+        "p95_ms": 319.8120419983752,
+        "p99_ms": 319.8120419983752,
+        "max_ms": 319.8120419983752
+      },
+      "b": {
+        "count": 8,
+        "mean_ms": 316.56652099627536,
+        "p50_ms": 325.5245624750387,
+        "p95_ms": 372.6515420130454,
+        "p99_ms": 372.6515420130454,
+        "max_ms": 372.6515420130454
+      },
+      "c": {
+        "count": 8,
+        "mean_ms": 783.7429480059654,
+        "p50_ms": 802.6660210161936,
+        "p95_ms": 849.6532500139438,
+        "p99_ms": 849.6532500139438,
+        "max_ms": 849.6532500139438
+      }
+    }
+  },
+  "metrics": {
+    "A_full_depth": {
+      "accuracy_vs_gate_labels": 0.5428571428571428,
+      "macro_f1_vs_gate_labels": 0.19779346866725508,
+      "block_recall_vs_gate_labels": 0.03773584905660377,
+      "dangerous_false_allow_count_vs_gate_labels": 46,
+      "agreement_with_full_depth": 1.0,
+      "confusion": {
+        "allow->allow": 74,
+        "allow->flag": 6,
+        "block->allow": 46,
+        "block->block": 2,
+        "block->flag": 5,
+        "review->allow": 6,
+        "review->flag": 1
+      }
+    },
+    "B_adaptive_depth": {
+      "accuracy_vs_gate_labels": 0.5428571428571428,
+      "macro_f1_vs_gate_labels": 0.19779346866725508,
+      "block_recall_vs_gate_labels": 0.03773584905660377,
+      "dangerous_false_allow_count_vs_gate_labels": 46,
+      "agreement_with_full_depth": 1.0,
+      "confusion": {
+        "allow->allow": 74,
+        "allow->flag": 6,
+        "block->allow": 46,
+        "block->block": 2,
+        "block->flag": 5,
+        "review->allow": 6,
+        "review->flag": 1
+      }
+    },
+    "C_adaptive_windows": {
+      "accuracy_vs_gate_labels": 0.5428571428571428,
+      "macro_f1_vs_gate_labels": 0.22438672438672438,
+      "block_recall_vs_gate_labels": 0.11320754716981132,
+      "dangerous_false_allow_count_vs_gate_labels": 42,
+      "agreement_with_full_depth": 0.9428571428571428,
+      "confusion": {
+        "allow->allow": 70,
+        "allow->block": 4,
+        "allow->flag": 6,
+        "block->allow": 42,
+        "block->block": 6,
+        "block->flag": 5,
+        "review->allow": 6,
+        "review->flag": 1
+      }
+    }
+  },
+  "compute_distribution": {
+    "B_adaptive_depth": {
+      "layer6": 0,
+      "layer12": 0,
+      "full_depth": 140
+    },
+    "C_adaptive_windows": {
+      "windows": 148,
+      "layer6": 0,
+      "layer12": 0,
+      "full_depth": 162,
+      "deep": 16
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "13813e1caa4fabca",
+      "label": "allow",
+      "token_count": 322,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 150.50724998582155,
+        "adaptive_depth": 168.46399998757988,
+        "adaptive_windows": 168.46399998757988,
+        "tokenization": 3.3162920153699815
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12683303793892264,
+        "layers_1_6_ms": 32.537124992813915,
+        "layers_7_12_ms": 32.62845805147663,
+        "layers_13_22_ms": 53.93137503415346,
+        "total_ms": 167.1579169924371
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12683303793892264,
+        "layers_1_6_ms": 32.537124992813915,
+        "layers_7_12_ms": 32.62845805147663,
+        "layers_13_22_ms": 53.93137503415346,
+        "total_ms": 167.1579169924371
+      }
+    },
+    {
+      "sample_id": "503f1977e033d555",
+      "label": "allow",
+      "token_count": 263,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 102.8936660150066,
+        "adaptive_depth": 143.24100001249462,
+        "adaptive_windows": 143.24100001249462,
+        "tokenization": 0.9075000416487455
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11466699652373791,
+        "layers_1_6_ms": 26.795040990691632,
+        "layers_7_12_ms": 25.965708016883582,
+        "layers_13_22_ms": 44.870999990962446,
+        "total_ms": 143.21216696407646
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11466699652373791,
+        "layers_1_6_ms": 26.795040990691632,
+        "layers_7_12_ms": 25.965708016883582,
+        "layers_13_22_ms": 44.870999990962446,
+        "total_ms": 143.21216696407646
+      }
+    },
+    {
+      "sample_id": "cd3269154e7ecdb6",
+      "label": "allow",
+      "token_count": 259,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 104.63025001809001,
+        "adaptive_depth": 144.15950002148747,
+        "adaptive_windows": 144.15950002148747,
+        "tokenization": 0.9072919492609799
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11458300286903977,
+        "layers_1_6_ms": 26.897832984104753,
+        "layers_7_12_ms": 27.962916996330023,
+        "layers_13_22_ms": 43.72270795283839,
+        "total_ms": 144.13291699020192
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11458300286903977,
+        "layers_1_6_ms": 26.897832984104753,
+        "layers_7_12_ms": 27.962916996330023,
+        "layers_13_22_ms": 43.72270795283839,
+        "total_ms": 144.13291699020192
+      }
+    },
+    {
+      "sample_id": "1cb0dfe4e1cf4dda",
+      "label": "allow",
+      "token_count": 295,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 111.77579202922061,
+        "adaptive_depth": 154.18837498873472,
+        "adaptive_windows": 154.18837498873472,
+        "tokenization": 0.9642919758334756
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11300004553049803,
+        "layers_1_6_ms": 29.737207980360836,
+        "layers_7_12_ms": 29.754500021226704,
+        "layers_13_22_ms": 49.166625016368926,
+        "total_ms": 154.15499999653548
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11300004553049803,
+        "layers_1_6_ms": 29.737207980360836,
+        "layers_7_12_ms": 29.754500021226704,
+        "layers_13_22_ms": 49.166625016368926,
+        "total_ms": 154.15499999653548
+      }
+    },
+    {
+      "sample_id": "5186461fd4c8d638",
+      "label": "allow",
+      "token_count": 671,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 280.94916697591543,
+        "adaptive_depth": 321.435833000578,
+        "adaptive_windows": 828.2321660080925,
+        "tokenization": 1.762708998285234
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17491600010544062,
+        "layers_1_6_ms": 74.34999995166436,
+        "layers_7_12_ms": 75.03849995555356,
+        "layers_13_22_ms": 125.72362500941381,
+        "total_ms": 321.40195899410173
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 103.3735410310328,
+        "layer6_head_ms": 0.09841698920354247,
+        "layer12_encoder_ms": 101.26533400034532,
+        "layer12_head_ms": 0.08870795136317611,
+        "layer22_encoder_ms": 166.92145797424018,
+        "total_ms": 828.1919579603709
+      }
+    },
+    {
+      "sample_id": "37489ba297b8b3e4",
+      "label": "allow",
+      "token_count": 768,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 310.63062499742955,
+        "adaptive_depth": 351.46858397638425,
+        "adaptive_windows": 696.8595000216737,
+        "tokenization": 1.797958044335246
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.21641596686095,
+        "layers_1_6_ms": 83.2430410082452,
+        "layers_7_12_ms": 82.86704099737108,
+        "layers_13_22_ms": 138.7631669640541,
+        "total_ms": 351.434666023124
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 3,
+        "context_expansion_count": 1,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 101.7077500000596,
+        "layer6_head_ms": 0.08700002217665315,
+        "layer12_encoder_ms": 100.63762502977625,
+        "layer12_head_ms": 0.08533295476809144,
+        "layer22_encoder_ms": 167.76858299272135,
+        "total_ms": 696.8122499529272
+      }
+    },
+    {
+      "sample_id": "28374d4963c8f5d9",
+      "label": "allow",
+      "token_count": 530,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 210.97329095937312,
+        "adaptive_depth": 245.64149999059737,
+        "adaptive_windows": 757.7862089965492,
+        "tokenization": 1.4852500171400607
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15445798635482788,
+        "layers_1_6_ms": 54.407458985224366,
+        "layers_7_12_ms": 54.546749975997955,
+        "layers_13_22_ms": 90.27816698653623,
+        "total_ms": 245.61237503075972
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 101.93562495987862,
+        "layer6_head_ms": 0.0891250092536211,
+        "layer12_encoder_ms": 101.58029198646545,
+        "layer12_head_ms": 0.09041698649525642,
+        "layer22_encoder_ms": 166.3350419839844,
+        "total_ms": 757.7478329767473
+      }
+    },
+    {
+      "sample_id": "bc7429220c82ecce",
+      "label": "allow",
+      "token_count": 392,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 145.55458299582824,
+        "adaptive_depth": 187.44941701879725,
+        "adaptive_windows": 187.44941701879725,
+        "tokenization": 1.1066659935750067
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13233395293354988,
+        "layers_1_6_ms": 38.02949999226257,
+        "layers_7_12_ms": 40.091500035487115,
+        "layers_13_22_ms": 63.32995800767094,
+        "total_ms": 187.4219580204226
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13233395293354988,
+        "layers_1_6_ms": 38.02949999226257,
+        "layers_7_12_ms": 40.091500035487115,
+        "layers_13_22_ms": 63.32995800767094,
+        "total_ms": 187.4219580204226
+      }
+    },
+    {
+      "sample_id": "80c6f1546f010c10",
+      "label": "allow",
+      "token_count": 345,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 129.00150002678856,
+        "adaptive_depth": 170.5596250249073,
+        "adaptive_windows": 170.5596250249073,
+        "tokenization": 1.0201249970123172
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12308399891480803,
+        "layers_1_6_ms": 33.141791995149106,
+        "layers_7_12_ms": 34.494708001147956,
+        "layers_13_22_ms": 57.07958299899474,
+        "total_ms": 170.53195799235255
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12308399891480803,
+        "layers_1_6_ms": 33.141791995149106,
+        "layers_7_12_ms": 34.494708001147956,
+        "layers_13_22_ms": 57.07958299899474,
+        "total_ms": 170.53195799235255
+      }
+    },
+    {
+      "sample_id": "b5b04ea95fecd91e",
+      "label": "allow",
+      "token_count": 329,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 127.04024999402463,
+        "adaptive_depth": 171.91645898856223,
+        "adaptive_windows": 171.91645898856223,
+        "tokenization": 0.9141250047832727
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12112502008676529,
+        "layers_1_6_ms": 33.30562502378598,
+        "layers_7_12_ms": 33.46020897151902,
+        "layers_13_22_ms": 58.4926669835113,
+        "total_ms": 171.88891698606312
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12112502008676529,
+        "layers_1_6_ms": 33.30562502378598,
+        "layers_7_12_ms": 33.46020897151902,
+        "layers_13_22_ms": 58.4926669835113,
+        "total_ms": 171.88891698606312
+      }
+    },
+    {
+      "sample_id": "4ae9de62eefcf868",
+      "label": "allow",
+      "token_count": 283,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 105.36950000096112,
+        "adaptive_depth": 150.07741702720523,
+        "adaptive_windows": 150.07741702720523,
+        "tokenization": 0.8622920140624046
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11229200754314661,
+        "layers_1_6_ms": 28.001582948490977,
+        "layers_7_12_ms": 26.86454198556021,
+        "layers_13_22_ms": 48.47191600129008,
+        "total_ms": 150.04662499995902
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11229200754314661,
+        "layers_1_6_ms": 28.001582948490977,
+        "layers_7_12_ms": 26.86454198556021,
+        "layers_13_22_ms": 48.47191600129008,
+        "total_ms": 150.04662499995902
+      }
+    },
+    {
+      "sample_id": "6c3f4714d4f7d333",
+      "label": "allow",
+      "token_count": 403,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 153.8418749696575,
+        "adaptive_depth": 191.6393749997951,
+        "adaptive_windows": 191.6393749997951,
+        "tokenization": 1.1733329738490283
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1367499935440719,
+        "layers_1_6_ms": 40.31254100846127,
+        "layers_7_12_ms": 39.2704579862766,
+        "layers_13_22_ms": 66.05758296791464,
+        "total_ms": 191.6137920343317
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1367499935440719,
+        "layers_1_6_ms": 40.31254100846127,
+        "layers_7_12_ms": 39.2704579862766,
+        "layers_13_22_ms": 66.05758296791464,
+        "total_ms": 191.6137920343317
+      }
+    },
+    {
+      "sample_id": "ac4f7adf33267bc9",
+      "label": "allow",
+      "token_count": 325,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 123.85812500724569,
+        "adaptive_depth": 168.35733299376443,
+        "adaptive_windows": 168.35733299376443,
+        "tokenization": 1.03012501494959
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12495799455791712,
+        "layers_1_6_ms": 33.629124984145164,
+        "layers_7_12_ms": 33.912832965143025,
+        "layers_13_22_ms": 54.932416998781264,
+        "total_ms": 168.32870803773403
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12495799455791712,
+        "layers_1_6_ms": 33.629124984145164,
+        "layers_7_12_ms": 33.912832965143025,
+        "layers_13_22_ms": 54.932416998781264,
+        "total_ms": 168.32870803773403
+      }
+    },
+    {
+      "sample_id": "687b195d88cce03b",
+      "label": "allow",
+      "token_count": 406,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 155.8825839892961,
+        "adaptive_depth": 192.09775002673268,
+        "adaptive_windows": 192.09775002673268,
+        "tokenization": 1.123625028412789
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13095804024487734,
+        "layers_1_6_ms": 39.57083402201533,
+        "layers_7_12_ms": 39.970916986931115,
+        "layers_13_22_ms": 66.52462499914691,
+        "total_ms": 192.0694580185227
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13095804024487734,
+        "layers_1_6_ms": 39.57083402201533,
+        "layers_7_12_ms": 39.970916986931115,
+        "layers_13_22_ms": 66.52462499914691,
+        "total_ms": 192.0694580185227
+      }
+    },
+    {
+      "sample_id": "681c7eb09ebc61a7",
+      "label": "allow",
+      "token_count": 356,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 134.9321659654379,
+        "adaptive_depth": 174.73025002982467,
+        "adaptive_windows": 174.73025002982467,
+        "tokenization": 1.0979579528793693
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.18350000027567148,
+        "layers_1_6_ms": 35.46187496976927,
+        "layers_7_12_ms": 34.49970902875066,
+        "layers_13_22_ms": 59.03154198313132,
+        "total_ms": 174.70312502700835
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.18350000027567148,
+        "layers_1_6_ms": 35.46187496976927,
+        "layers_7_12_ms": 34.49970902875066,
+        "layers_13_22_ms": 59.03154198313132,
+        "total_ms": 174.70312502700835
+      }
+    },
+    {
+      "sample_id": "86cd8b445bc8191f",
+      "label": "allow",
+      "token_count": 275,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 102.71554201608524,
+        "adaptive_depth": 147.77008397504687,
+        "adaptive_windows": 147.77008397504687,
+        "tokenization": 0.8318750187754631
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1129580195993185,
+        "layers_1_6_ms": 27.77495898772031,
+        "layers_7_12_ms": 27.516542002558708,
+        "layers_13_22_ms": 46.81091697420925,
+        "total_ms": 147.74416701402515
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1129580195993185,
+        "layers_1_6_ms": 27.77495898772031,
+        "layers_7_12_ms": 27.516542002558708,
+        "layers_13_22_ms": 46.81091697420925,
+        "total_ms": 147.74416701402515
+      }
+    },
+    {
+      "sample_id": "e0be116e750e4434",
+      "label": "allow",
+      "token_count": 377,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 135.68633300019428,
+        "adaptive_depth": 180.7049160124734,
+        "adaptive_windows": 180.7049160124734,
+        "tokenization": 1.1049169697798789
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.130290980450809,
+        "layers_1_6_ms": 36.77491698181257,
+        "layers_7_12_ms": 36.52754198992625,
+        "layers_13_22_ms": 61.641625012271106,
+        "total_ms": 180.67974998848513
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.130290980450809,
+        "layers_1_6_ms": 36.77491698181257,
+        "layers_7_12_ms": 36.52754198992625,
+        "layers_13_22_ms": 61.641625012271106,
+        "total_ms": 180.67974998848513
+      }
+    },
+    {
+      "sample_id": "3475017a64dec419",
+      "label": "allow",
+      "token_count": 292,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 106.04220896493644,
+        "adaptive_depth": 152.68379199551418,
+        "adaptive_windows": 152.68379199551418,
+        "tokenization": 0.8668340160511434
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13375002890825272,
+        "layers_1_6_ms": 29.16233299765736,
+        "layers_7_12_ms": 28.02387496922165,
+        "layers_13_22_ms": 49.42320799455047,
+        "total_ms": 152.65599999111146
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13375002890825272,
+        "layers_1_6_ms": 29.16233299765736,
+        "layers_7_12_ms": 28.02387496922165,
+        "layers_13_22_ms": 49.42320799455047,
+        "total_ms": 152.65599999111146
+      }
+    },
+    {
+      "sample_id": "b9e12967bf25950e",
+      "label": "allow",
+      "token_count": 297,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.7163329939358,
+        "adaptive_depth": 154.26333399955183,
+        "adaptive_windows": 154.26333399955183,
+        "tokenization": 0.8875829516910017
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11458300286903977,
+        "layers_1_6_ms": 30.064292019233108,
+        "layers_7_12_ms": 29.29308300372213,
+        "layers_13_22_ms": 48.95083303563297,
+        "total_ms": 154.23670795280486
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11458300286903977,
+        "layers_1_6_ms": 30.064292019233108,
+        "layers_7_12_ms": 29.29308300372213,
+        "layers_13_22_ms": 48.95083303563297,
+        "total_ms": 154.23670795280486
+      }
+    },
+    {
+      "sample_id": "9df34f972a46c52f",
+      "label": "allow",
+      "token_count": 353,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 130.04191598156467,
+        "adaptive_depth": 176.86158401193097,
+        "adaptive_windows": 176.86158401193097,
+        "tokenization": 0.9471660014241934
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12225005775690079,
+        "layers_1_6_ms": 37.14262502035126,
+        "layers_7_12_ms": 35.052500024903566,
+        "layers_13_22_ms": 59.06104203313589,
+        "total_ms": 176.83470802148804
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12225005775690079,
+        "layers_1_6_ms": 37.14262502035126,
+        "layers_7_12_ms": 35.052500024903566,
+        "layers_13_22_ms": 59.06104203313589,
+        "total_ms": 176.83470802148804
+      }
+    },
+    {
+      "sample_id": "938d480320dbebfc",
+      "label": "allow",
+      "token_count": 332,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 119.0929589793086,
+        "adaptive_depth": 167.1767919906415,
+        "adaptive_windows": 167.1767919906415,
+        "tokenization": 1.0050830314867198
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12437498662620783,
+        "layers_1_6_ms": 33.29991700593382,
+        "layers_7_12_ms": 32.75958402082324,
+        "layers_13_22_ms": 55.07383303483948,
+        "total_ms": 167.15116699924693
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12437498662620783,
+        "layers_1_6_ms": 33.29991700593382,
+        "layers_7_12_ms": 32.75958402082324,
+        "layers_13_22_ms": 55.07383303483948,
+        "total_ms": 167.15116699924693
+      }
+    },
+    {
+      "sample_id": "c8955e57c212e4dc",
+      "label": "allow",
+      "token_count": 262,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 97.28449996327981,
+        "adaptive_depth": 141.57629100373015,
+        "adaptive_windows": 141.57629100373015,
+        "tokenization": 0.8011250174604356
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11245801579207182,
+        "layers_1_6_ms": 25.660666986368597,
+        "layers_7_12_ms": 26.36025001993403,
+        "layers_13_22_ms": 43.66050002863631,
+        "total_ms": 141.54929196229205
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11245801579207182,
+        "layers_1_6_ms": 25.660666986368597,
+        "layers_7_12_ms": 26.36025001993403,
+        "layers_13_22_ms": 43.66050002863631,
+        "total_ms": 141.54929196229205
+      }
+    },
+    {
+      "sample_id": "f42ad11f1fc404a9",
+      "label": "allow",
+      "token_count": 403,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 145.6279580015689,
+        "adaptive_depth": 192.42629100335762,
+        "adaptive_windows": 192.42629100335762,
+        "tokenization": 1.124667003750801
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12695800978690386,
+        "layers_1_6_ms": 39.49758299859241,
+        "layers_7_12_ms": 39.508874993771315,
+        "layers_13_22_ms": 67.3302499926649,
+        "total_ms": 192.39987496985123
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12695800978690386,
+        "layers_1_6_ms": 39.49758299859241,
+        "layers_7_12_ms": 39.508874993771315,
+        "layers_13_22_ms": 67.3302499926649,
+        "total_ms": 192.39987496985123
+      }
+    },
+    {
+      "sample_id": "27200ecf1de4e449",
+      "label": "allow",
+      "token_count": 344,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 121.34608399355784,
+        "adaptive_depth": 168.15370798576623,
+        "adaptive_windows": 168.15370798576623,
+        "tokenization": 1.0013750288635492
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12237497139722109,
+        "layers_1_6_ms": 33.81166700273752,
+        "layers_7_12_ms": 32.72170800482854,
+        "layers_13_22_ms": 55.53729098755866,
+        "total_ms": 168.12683298485354
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12237497139722109,
+        "layers_1_6_ms": 33.81166700273752,
+        "layers_7_12_ms": 32.72170800482854,
+        "layers_13_22_ms": 55.53729098755866,
+        "total_ms": 168.12683298485354
+      }
+    },
+    {
+      "sample_id": "8266915b6d3eb91c",
+      "label": "allow",
+      "token_count": 263,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 96.5863749734126,
+        "adaptive_depth": 143.26795801753178,
+        "adaptive_windows": 143.26795801753178,
+        "tokenization": 0.8139159763231874
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11570804053917527,
+        "layers_1_6_ms": 26.86658297898248,
+        "layers_7_12_ms": 25.784042023587972,
+        "layers_13_22_ms": 44.83187501318753,
+        "total_ms": 143.24087498243898
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11570804053917527,
+        "layers_1_6_ms": 26.86658297898248,
+        "layers_7_12_ms": 25.784042023587972,
+        "layers_13_22_ms": 44.83187501318753,
+        "total_ms": 143.24087498243898
+      }
+    },
+    {
+      "sample_id": "694940b39fd35e28",
+      "label": "allow",
+      "token_count": 304,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.73633302981034,
+        "adaptive_depth": 154.14220798993483,
+        "adaptive_windows": 154.14220798993483,
+        "tokenization": 0.9036670089699328
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11929200263693929,
+        "layers_1_6_ms": 30.17387498402968,
+        "layers_7_12_ms": 29.88945902325213,
+        "layers_13_22_ms": 48.47441700985655,
+        "total_ms": 154.1119169560261
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11929200263693929,
+        "layers_1_6_ms": 30.17387498402968,
+        "layers_7_12_ms": 29.88945902325213,
+        "layers_13_22_ms": 48.47441700985655,
+        "total_ms": 154.1119169560261
+      }
+    },
+    {
+      "sample_id": "9b3f5d8d5bcc6d18",
+      "label": "allow",
+      "token_count": 344,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 122.77529196580872,
+        "adaptive_depth": 168.16466703312472,
+        "adaptive_windows": 168.16466703312472,
+        "tokenization": 1.050791994202882
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13129203580319881,
+        "layers_1_6_ms": 32.73308300413191,
+        "layers_7_12_ms": 34.67799996724352,
+        "layers_13_22_ms": 54.712874989490956,
+        "total_ms": 168.13454101793468
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13129203580319881,
+        "layers_1_6_ms": 32.73308300413191,
+        "layers_7_12_ms": 34.67799996724352,
+        "layers_13_22_ms": 54.712874989490956,
+        "total_ms": 168.13454101793468
+      }
+    },
+    {
+      "sample_id": "3d115246bc41bd85",
+      "label": "allow",
+      "token_count": 265,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 97.01495902845636,
+        "adaptive_depth": 143.30287498887628,
+        "adaptive_windows": 143.30287498887628,
+        "tokenization": 0.8299170294776559
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1252919901162386,
+        "layers_1_6_ms": 27.49608299927786,
+        "layers_7_12_ms": 25.83154203603044,
+        "layers_13_22_ms": 44.05783297261223,
+        "total_ms": 143.27554201008752
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1252919901162386,
+        "layers_1_6_ms": 27.49608299927786,
+        "layers_7_12_ms": 25.83154203603044,
+        "layers_13_22_ms": 44.05783297261223,
+        "total_ms": 143.27554201008752
+      }
+    },
+    {
+      "sample_id": "b7bea0b3bda773e8",
+      "label": "allow",
+      "token_count": 316,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 112.24254197441041,
+        "adaptive_depth": 162.30029199505225,
+        "adaptive_windows": 162.30029199505225,
+        "tokenization": 0.9063329780474305
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12529100058600307,
+        "layers_1_6_ms": 32.18487498816103,
+        "layers_7_12_ms": 30.995542008895427,
+        "layers_13_22_ms": 52.7097909944132,
+        "total_ms": 162.2729169903323
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12529100058600307,
+        "layers_1_6_ms": 32.18487498816103,
+        "layers_7_12_ms": 30.995542008895427,
+        "layers_13_22_ms": 52.7097909944132,
+        "total_ms": 162.2729169903323
+      }
+    },
+    {
+      "sample_id": "5dbe7e101bd17597",
+      "label": "allow",
+      "token_count": 335,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 121.45108397817239,
+        "adaptive_depth": 166.99008300201967,
+        "adaptive_windows": 166.99008300201967,
+        "tokenization": 0.9734999621286988
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13745902106165886,
+        "layers_1_6_ms": 32.95783302746713,
+        "layers_7_12_ms": 32.522291992791,
+        "layers_13_22_ms": 55.86012499406934,
+        "total_ms": 166.9627910014242
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13745902106165886,
+        "layers_1_6_ms": 32.95783302746713,
+        "layers_7_12_ms": 32.522291992791,
+        "layers_13_22_ms": 55.86012499406934,
+        "total_ms": 166.9627910014242
+      }
+    },
+    {
+      "sample_id": "1c630992ad025ade",
+      "label": "allow",
+      "token_count": 444,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 159.4903339864686,
+        "adaptive_depth": 210.35587502410635,
+        "adaptive_windows": 210.35587502410635,
+        "tokenization": 1.2836669920943677
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.2168749924749136,
+        "layers_1_6_ms": 44.7056659613736,
+        "layers_7_12_ms": 45.65433401148766,
+        "layers_13_22_ms": 73.8071670057252,
+        "total_ms": 210.32154199201614
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.2168749924749136,
+        "layers_1_6_ms": 44.7056659613736,
+        "layers_7_12_ms": 45.65433401148766,
+        "layers_13_22_ms": 73.8071670057252,
+        "total_ms": 210.32154199201614
+      }
+    },
+    {
+      "sample_id": "81b9864eff4680bf",
+      "label": "allow",
+      "token_count": 295,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 107.59983299067244,
+        "adaptive_depth": 159.09916599048302,
+        "adaptive_windows": 159.09916599048302,
+        "tokenization": 0.9257920319214463
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11200003791600466,
+        "layers_1_6_ms": 30.50516697112471,
+        "layers_7_12_ms": 32.48212503967807,
+        "layers_13_22_ms": 50.12624996015802,
+        "total_ms": 159.070709021762
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11200003791600466,
+        "layers_1_6_ms": 30.50516697112471,
+        "layers_7_12_ms": 32.48212503967807,
+        "layers_13_22_ms": 50.12624996015802,
+        "total_ms": 159.070709021762
+      }
+    },
+    {
+      "sample_id": "9680f639a2037b3e",
+      "label": "allow",
+      "token_count": 339,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 122.98824999015778,
+        "adaptive_depth": 169.0907909651287,
+        "adaptive_windows": 169.0907909651287,
+        "tokenization": 1.0167090222239494
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12445799075067043,
+        "layers_1_6_ms": 33.19429198745638,
+        "layers_7_12_ms": 34.05483299866319,
+        "layers_13_22_ms": 56.16879102308303,
+        "total_ms": 169.06395799014717
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12445799075067043,
+        "layers_1_6_ms": 33.19429198745638,
+        "layers_7_12_ms": 34.05483299866319,
+        "layers_13_22_ms": 56.16879102308303,
+        "total_ms": 169.06395799014717
+      }
+    },
+    {
+      "sample_id": "df277d4278812909",
+      "label": "allow",
+      "token_count": 321,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 117.59883299237117,
+        "adaptive_depth": 165.85070901783183,
+        "adaptive_windows": 165.85070901783183,
+        "tokenization": 0.9200000204145908
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.206290977075696,
+        "layers_1_6_ms": 32.37008297583088,
+        "layers_7_12_ms": 32.35575003782287,
+        "layers_13_22_ms": 54.40541700227186,
+        "total_ms": 165.8237089868635
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.206290977075696,
+        "layers_1_6_ms": 32.37008297583088,
+        "layers_7_12_ms": 32.35575003782287,
+        "layers_13_22_ms": 54.40541700227186,
+        "total_ms": 165.8237089868635
+      }
+    },
+    {
+      "sample_id": "4a578a798d17e280",
+      "label": "allow",
+      "token_count": 391,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 141.80116704665124,
+        "adaptive_depth": 187.48320901067927,
+        "adaptive_windows": 187.48320901067927,
+        "tokenization": 1.0949589777737856
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1318340073339641,
+        "layers_1_6_ms": 39.61883299052715,
+        "layers_7_12_ms": 38.13058405648917,
+        "layers_13_22_ms": 63.86241700965911,
+        "total_ms": 187.45729100191966
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1318340073339641,
+        "layers_1_6_ms": 39.61883299052715,
+        "layers_7_12_ms": 38.13058405648917,
+        "layers_13_22_ms": 63.86241700965911,
+        "total_ms": 187.45729100191966
+      }
+    },
+    {
+      "sample_id": "7ea09ad06063359e",
+      "label": "allow",
+      "token_count": 346,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 126.260666991584,
+        "adaptive_depth": 169.14987500058487,
+        "adaptive_windows": 169.14987500058487,
+        "tokenization": 0.9432079968973994
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11945900041610003,
+        "layers_1_6_ms": 33.93004200188443,
+        "layers_7_12_ms": 33.83179096272215,
+        "layers_13_22_ms": 55.4662499926053,
+        "total_ms": 169.12404203321785
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11945900041610003,
+        "layers_1_6_ms": 33.93004200188443,
+        "layers_7_12_ms": 33.83179096272215,
+        "layers_13_22_ms": 55.4662499926053,
+        "total_ms": 169.12404203321785
+      }
+    },
+    {
+      "sample_id": "95b2cf073f623dc0",
+      "label": "allow",
+      "token_count": 274,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 100.05829099100083,
+        "adaptive_depth": 145.0331669766456,
+        "adaptive_windows": 145.0331669766456,
+        "tokenization": 0.8023749687708914
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12104096822440624,
+        "layers_1_6_ms": 27.205125021282583,
+        "layers_7_12_ms": 26.694207976106554,
+        "layers_13_22_ms": 45.245082990732044,
+        "total_ms": 145.00554202822968
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12104096822440624,
+        "layers_1_6_ms": 27.205125021282583,
+        "layers_7_12_ms": 26.694207976106554,
+        "layers_13_22_ms": 45.245082990732044,
+        "total_ms": 145.00554202822968
+      }
+    },
+    {
+      "sample_id": "f4b6ed1b1017c989",
+      "label": "allow",
+      "token_count": 307,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 112.9592499928549,
+        "adaptive_depth": 158.29037502408028,
+        "adaptive_windows": 158.29037502408028,
+        "tokenization": 0.8637499995529652
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17829204443842173,
+        "layers_1_6_ms": 30.64087504753843,
+        "layers_7_12_ms": 30.872291012201458,
+        "layers_13_22_ms": 51.11891601700336,
+        "total_ms": 158.25937502086163
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17829204443842173,
+        "layers_1_6_ms": 30.64087504753843,
+        "layers_7_12_ms": 30.872291012201458,
+        "layers_13_22_ms": 51.11891601700336,
+        "total_ms": 158.25937502086163
+      }
+    },
+    {
+      "sample_id": "0f01fbff341cfeee",
+      "label": "allow",
+      "token_count": 461,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 172.3434580489993,
+        "adaptive_depth": 221.0944580147043,
+        "adaptive_windows": 221.0944580147043,
+        "tokenization": 1.232417009305209
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14341698260977864,
+        "layers_1_6_ms": 47.13474999880418,
+        "layers_7_12_ms": 48.765167011879385,
+        "layers_13_22_ms": 78.87541595846415,
+        "total_ms": 221.06654202798381
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14341698260977864,
+        "layers_1_6_ms": 47.13474999880418,
+        "layers_7_12_ms": 48.765167011879385,
+        "layers_13_22_ms": 78.87541595846415,
+        "total_ms": 221.06654202798381
+      }
+    },
+    {
+      "sample_id": "65d9bdd6a0ad7ad1",
+      "label": "allow",
+      "token_count": 362,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 134.4602499739267,
+        "adaptive_depth": 176.41762498533353,
+        "adaptive_windows": 176.41762498533353,
+        "tokenization": 0.9884170140139759
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.157458009198308,
+        "layers_1_6_ms": 35.97274998901412,
+        "layers_7_12_ms": 34.923291008453816,
+        "layers_13_22_ms": 59.37316600466147,
+        "total_ms": 176.3914580224082
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.157458009198308,
+        "layers_1_6_ms": 35.97274998901412,
+        "layers_7_12_ms": 34.923291008453816,
+        "layers_13_22_ms": 59.37316600466147,
+        "total_ms": 176.3914580224082
+      }
+    },
+    {
+      "sample_id": "8d7428667f2e58b9",
+      "label": "block",
+      "token_count": 343,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 127.82945903018117,
+        "adaptive_depth": 171.44524998730049,
+        "adaptive_windows": 171.44524998730049,
+        "tokenization": 0.9472090168856084
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1264170277863741,
+        "layers_1_6_ms": 34.57370796240866,
+        "layers_7_12_ms": 34.45258300052956,
+        "layers_13_22_ms": 56.98870797641575,
+        "total_ms": 171.4200419955887
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1264170277863741,
+        "layers_1_6_ms": 34.57370796240866,
+        "layers_7_12_ms": 34.45258300052956,
+        "layers_13_22_ms": 56.98870797641575,
+        "total_ms": 171.4200419955887
+      }
+    },
+    {
+      "sample_id": "3d69e6d1ee2ddbd3",
+      "label": "block",
+      "token_count": 280,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 99.6031669783406,
+        "adaptive_depth": 144.94308404391631,
+        "adaptive_windows": 144.94308404391631,
+        "tokenization": 0.7864580256864429
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11845800327137113,
+        "layers_1_6_ms": 27.555999986361712,
+        "layers_7_12_ms": 26.78362501319498,
+        "layers_13_22_ms": 44.89391698734835,
+        "total_ms": 144.9152909917757
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11845800327137113,
+        "layers_1_6_ms": 27.555999986361712,
+        "layers_7_12_ms": 26.78362501319498,
+        "layers_13_22_ms": 44.89391698734835,
+        "total_ms": 144.9152909917757
+      }
+    },
+    {
+      "sample_id": "f75dc0d38428fa17",
+      "label": "block",
+      "token_count": 280,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 101.11895797308534,
+        "adaptive_depth": 144.39470798242837,
+        "adaptive_windows": 144.39470798242837,
+        "tokenization": 0.8179160067811608
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1163750421255827,
+        "layers_1_6_ms": 26.61458303919062,
+        "layers_7_12_ms": 27.055707992985845,
+        "layers_13_22_ms": 44.74483395460993,
+        "total_ms": 144.3647500127554
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1163750421255827,
+        "layers_1_6_ms": 26.61458303919062,
+        "layers_7_12_ms": 27.055707992985845,
+        "layers_13_22_ms": 44.74483395460993,
+        "total_ms": 144.3647500127554
+      }
+    },
+    {
+      "sample_id": "abf90f73a834d7b6",
+      "label": "review",
+      "token_count": 312,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 111.38025001855567,
+        "adaptive_depth": 157.5251659960486,
+        "adaptive_windows": 157.5251659960486,
+        "tokenization": 0.891125004272908
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.16904203221201897,
+        "layers_1_6_ms": 30.12883401243016,
+        "layers_7_12_ms": 30.536375008523464,
+        "layers_13_22_ms": 51.272040989715606,
+        "total_ms": 157.49841602519155
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.16904203221201897,
+        "layers_1_6_ms": 30.12883401243016,
+        "layers_7_12_ms": 30.536375008523464,
+        "layers_13_22_ms": 51.272040989715606,
+        "total_ms": 157.49841602519155
+      }
+    },
+    {
+      "sample_id": "3e611963c5619b86",
+      "label": "block",
+      "token_count": 692,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 283.08329195715487,
+        "adaptive_depth": 333.0492499517277,
+        "adaptive_windows": 834.5512920059264,
+        "tokenization": 1.5364999999292195
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1805420033633709,
+        "layers_1_6_ms": 78.53329199133441,
+        "layers_7_12_ms": 77.88908301154152,
+        "layers_13_22_ms": 130.53662498714402,
+        "total_ms": 333.0217089969665
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 100.41054198518395,
+        "layer6_head_ms": 0.09058299474418163,
+        "layer12_encoder_ms": 100.18100001616403,
+        "layer12_head_ms": 0.09712501196190715,
+        "layer22_encoder_ms": 167.47337498236448,
+        "total_ms": 834.5124159823172
+      }
+    },
+    {
+      "sample_id": "6e922c95967b8e35",
+      "label": "block",
+      "token_count": 785,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 319.8120419983752,
+        "adaptive_depth": 372.6515420130454,
+        "adaptive_windows": 697.5291249691509,
+        "tokenization": 1.6810829984024167
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.20883296383544803,
+        "layers_1_6_ms": 87.64908299781382,
+        "layers_7_12_ms": 89.98941699974239,
+        "layers_13_22_ms": 148.7578329979442,
+        "total_ms": 372.6233339984901
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 3,
+        "context_expansion_count": 1,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 101.25945904292166,
+        "layer6_head_ms": 0.08545903256163001,
+        "layer12_encoder_ms": 101.4614169835113,
+        "layer12_head_ms": 0.09158399188891053,
+        "layer22_encoder_ms": 167.52024996094406,
+        "total_ms": 697.4912919686176
+      }
+    },
+    {
+      "sample_id": "be8db57317f79439",
+      "label": "block",
+      "token_count": 551,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 216.48487501079217,
+        "adaptive_depth": 260.22870803717524,
+        "adaptive_windows": 777.5109999929555,
+        "tokenization": 1.3058750191703439
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.2275419537909329,
+        "layers_1_6_ms": 58.626708982046694,
+        "layers_7_12_ms": 59.42429194692522,
+        "layers_13_22_ms": 95.80691700102761,
+        "total_ms": 260.2007079985924
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 100.48962500877678,
+        "layer6_head_ms": 0.08933298522606492,
+        "layer12_encoder_ms": 101.65675001917407,
+        "layer12_head_ms": 0.08729100227355957,
+        "layer22_encoder_ms": 168.89112500939518,
+        "total_ms": 777.4742500041611
+      }
+    },
+    {
+      "sample_id": "61fc72b21e4ee383",
+      "label": "block",
+      "token_count": 409,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 153.03741698153317,
+        "adaptive_depth": 194.0243340213783,
+        "adaptive_windows": 194.0243340213783,
+        "tokenization": 1.0238750255666673
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17858302453532815,
+        "layers_1_6_ms": 40.87812500074506,
+        "layers_7_12_ms": 40.924750035628676,
+        "layers_13_22_ms": 66.15075003355742,
+        "total_ms": 193.9969169907272
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17858302453532815,
+        "layers_1_6_ms": 40.87812500074506,
+        "layers_7_12_ms": 40.924750035628676,
+        "layers_13_22_ms": 66.15075003355742,
+        "total_ms": 193.9969169907272
+      }
+    },
+    {
+      "sample_id": "1e13a3b8096e3113",
+      "label": "block",
+      "token_count": 366,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 131.9395420141518,
+        "adaptive_depth": 179.06583403237164,
+        "adaptive_windows": 179.06583403237164,
+        "tokenization": 0.9549579699523747
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13154104817658663,
+        "layers_1_6_ms": 35.88379098800942,
+        "layers_7_12_ms": 36.13745799520984,
+        "layers_13_22_ms": 61.20870803715661,
+        "total_ms": 179.03691699029878
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13154104817658663,
+        "layers_1_6_ms": 35.88379098800942,
+        "layers_7_12_ms": 36.13745799520984,
+        "layers_13_22_ms": 61.20870803715661,
+        "total_ms": 179.03691699029878
+      }
+    },
+    {
+      "sample_id": "69756887f45e238c",
+      "label": "review",
+      "token_count": 346,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 125.54949999321252,
+        "adaptive_depth": 168.64225000608712,
+        "adaptive_windows": 168.64225000608712,
+        "tokenization": 0.8649160154163837
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15766697470098734,
+        "layers_1_6_ms": 33.14745897660032,
+        "layers_7_12_ms": 33.62704097526148,
+        "layers_13_22_ms": 56.11387500539422,
+        "total_ms": 168.61362499184906
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15766697470098734,
+        "layers_1_6_ms": 33.14745897660032,
+        "layers_7_12_ms": 33.62704097526148,
+        "layers_13_22_ms": 56.11387500539422,
+        "total_ms": 168.61362499184906
+      }
+    },
+    {
+      "sample_id": "648ca4e5ff795790",
+      "label": "block",
+      "token_count": 304,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 107.92849998688325,
+        "adaptive_depth": 154.10458302358165,
+        "adaptive_windows": 154.10458302358165,
+        "tokenization": 0.8331669960170984
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12049998622387648,
+        "layers_1_6_ms": 29.199165990576148,
+        "layers_7_12_ms": 30.058834003284574,
+        "layers_13_22_ms": 48.619916022289544,
+        "total_ms": 154.06787500251085
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12049998622387648,
+        "layers_1_6_ms": 29.199165990576148,
+        "layers_7_12_ms": 30.058834003284574,
+        "layers_13_22_ms": 48.619916022289544,
+        "total_ms": 154.06787500251085
+      }
+    },
+    {
+      "sample_id": "2bbf9587fa4a4988",
+      "label": "review",
+      "token_count": 420,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 154.70604202710092,
+        "adaptive_depth": 199.24083398655057,
+        "adaptive_windows": 199.24083398655057,
+        "tokenization": 1.1449999874457717
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1497499761171639,
+        "layers_1_6_ms": 42.252125043887645,
+        "layers_7_12_ms": 42.011457961052656,
+        "layers_13_22_ms": 69.10016597248614,
+        "total_ms": 199.21462499769405
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1497499761171639,
+        "layers_1_6_ms": 42.252125043887645,
+        "layers_7_12_ms": 42.011457961052656,
+        "layers_13_22_ms": 69.10016597248614,
+        "total_ms": 199.21462499769405
+      }
+    },
+    {
+      "sample_id": "d3dc7d6f23d8f412",
+      "label": "block",
+      "token_count": 346,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 125.44220901327208,
+        "adaptive_depth": 170.02395901363343,
+        "adaptive_windows": 170.02395901363343,
+        "tokenization": 1.0056250030174851
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12504198821261525,
+        "layers_1_6_ms": 33.99595804512501,
+        "layers_7_12_ms": 34.56987504614517,
+        "layers_13_22_ms": 55.57337502250448,
+        "total_ms": 169.99424999812618
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12504198821261525,
+        "layers_1_6_ms": 33.99595804512501,
+        "layers_7_12_ms": 34.56987504614517,
+        "layers_13_22_ms": 55.57337502250448,
+        "total_ms": 169.99424999812618
+      }
+    },
+    {
+      "sample_id": "690e5cc3bf5d07d1",
+      "label": "review",
+      "token_count": 423,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 160.05341697018594,
+        "adaptive_depth": 202.05399999395013,
+        "adaptive_windows": 202.05399999395013,
+        "tokenization": 1.0950000141747296
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13633299386128783,
+        "layers_1_6_ms": 42.726833024062216,
+        "layers_7_12_ms": 41.82316601509228,
+        "layers_13_22_ms": 71.59262499772012,
+        "total_ms": 202.02812500065193
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13633299386128783,
+        "layers_1_6_ms": 42.726833024062216,
+        "layers_7_12_ms": 41.82316601509228,
+        "layers_13_22_ms": 71.59262499772012,
+        "total_ms": 202.02812500065193
+      }
+    },
+    {
+      "sample_id": "3badc58ee5fce8a0",
+      "label": "block",
+      "token_count": 377,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 134.51737503055483,
+        "adaptive_depth": 180.87804201059043,
+        "adaptive_windows": 180.87804201059043,
+        "tokenization": 0.9881669539026916
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820796109735966,
+        "layers_1_6_ms": 37.14912501163781,
+        "layers_7_12_ms": 37.29554102756083,
+        "layers_13_22_ms": 60.89108303422108,
+        "total_ms": 180.84908300079405
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820796109735966,
+        "layers_1_6_ms": 37.14912501163781,
+        "layers_7_12_ms": 37.29554102756083,
+        "layers_13_22_ms": 60.89108303422108,
+        "total_ms": 180.84908300079405
+      }
+    },
+    {
+      "sample_id": "9f320f1305082049",
+      "label": "block",
+      "token_count": 292,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 107.18220804119483,
+        "adaptive_depth": 151.5487500000745,
+        "adaptive_windows": 151.5487500000745,
+        "tokenization": 0.8820410002954304
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12379203690215945,
+        "layers_1_6_ms": 29.289709054864943,
+        "layers_7_12_ms": 28.034416027367115,
+        "layers_13_22_ms": 48.03845804417506,
+        "total_ms": 151.519917009864
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12379203690215945,
+        "layers_1_6_ms": 29.289709054864943,
+        "layers_7_12_ms": 28.034416027367115,
+        "layers_13_22_ms": 48.03845804417506,
+        "total_ms": 151.519917009864
+      }
+    },
+    {
+      "sample_id": "c56fea2fda1f9471",
+      "label": "block",
+      "token_count": 398,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 143.07229197584093,
+        "adaptive_depth": 190.07750001037493,
+        "adaptive_windows": 190.07750001037493,
+        "tokenization": 1.0591670288704336
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13474997831508517,
+        "layers_1_6_ms": 38.67283300496638,
+        "layers_7_12_ms": 39.76091701770201,
+        "layers_13_22_ms": 65.57362497551367,
+        "total_ms": 190.05066703539342
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13474997831508517,
+        "layers_1_6_ms": 38.67283300496638,
+        "layers_7_12_ms": 39.76091701770201,
+        "layers_13_22_ms": 65.57362497551367,
+        "total_ms": 190.05066703539342
+      }
+    },
+    {
+      "sample_id": "568b8452ae8d9619",
+      "label": "block",
+      "token_count": 309,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 113.55941696092486,
+        "adaptive_depth": 158.10624998994172,
+        "adaptive_windows": 158.10624998994172,
+        "tokenization": 0.8037919760681689
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12670800788328052,
+        "layers_1_6_ms": 30.433958978392184,
+        "layers_7_12_ms": 31.090499949641526,
+        "layers_13_22_ms": 50.81208300543949,
+        "total_ms": 158.07937498902902
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12670800788328052,
+        "layers_1_6_ms": 30.433958978392184,
+        "layers_7_12_ms": 31.090499949641526,
+        "layers_13_22_ms": 50.81208300543949,
+        "total_ms": 158.07937498902902
+      }
+    },
+    {
+      "sample_id": "99cf8de508491ad9",
+      "label": "block",
+      "token_count": 318,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 113.56879200320691,
+        "adaptive_depth": 159.91799999028444,
+        "adaptive_windows": 159.91799999028444,
+        "tokenization": 0.8371250005438924
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12583297211676836,
+        "layers_1_6_ms": 30.3097500000149,
+        "layers_7_12_ms": 32.16091694775969,
+        "layers_13_22_ms": 51.16916599217802,
+        "total_ms": 159.8899159580469
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12583297211676836,
+        "layers_1_6_ms": 30.3097500000149,
+        "layers_7_12_ms": 32.16091694775969,
+        "layers_13_22_ms": 51.16916599217802,
+        "total_ms": 159.8899159580469
+      }
+    },
+    {
+      "sample_id": "2ee65965f4f9902a",
+      "label": "block",
+      "token_count": 370,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 134.98025003354996,
+        "adaptive_depth": 181.47766595939174,
+        "adaptive_windows": 181.47766595939174,
+        "tokenization": 0.9438749984838068
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12241699732840061,
+        "layers_1_6_ms": 37.83737501362339,
+        "layers_7_12_ms": 36.96662501897663,
+        "layers_13_22_ms": 60.77325000660494,
+        "total_ms": 181.44974997267127
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12241699732840061,
+        "layers_1_6_ms": 37.83737501362339,
+        "layers_7_12_ms": 36.96662501897663,
+        "layers_13_22_ms": 60.77325000660494,
+        "total_ms": 181.44974997267127
+      }
+    },
+    {
+      "sample_id": "b8734eb36cecdcf8",
+      "label": "block",
+      "token_count": 352,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 121.87450000783429,
+        "adaptive_depth": 168.03420800715685,
+        "adaptive_windows": 168.03420800715685,
+        "tokenization": 0.9264160180464387
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820801930502057,
+        "layers_1_6_ms": 33.99183298461139,
+        "layers_7_12_ms": 33.121292013674974,
+        "layers_13_22_ms": 55.100540979765356,
+        "total_ms": 168.00737497396767
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820801930502057,
+        "layers_1_6_ms": 33.99183298461139,
+        "layers_7_12_ms": 33.121292013674974,
+        "layers_13_22_ms": 55.100540979765356,
+        "total_ms": 168.00737497396767
+      }
+    },
+    {
+      "sample_id": "d8f7f669cf3ba516",
+      "label": "block",
+      "token_count": 279,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 100.76262499205768,
+        "adaptive_depth": 145.55337495403364,
+        "adaptive_windows": 145.55337495403364,
+        "tokenization": 0.7890419801697135
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11550000635907054,
+        "layers_1_6_ms": 27.3726669838652,
+        "layers_7_12_ms": 27.82291703624651,
+        "layers_13_22_ms": 44.993708026595414,
+        "total_ms": 145.5261660157703
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11550000635907054,
+        "layers_1_6_ms": 27.3726669838652,
+        "layers_7_12_ms": 27.82291703624651,
+        "layers_13_22_ms": 44.993708026595414,
+        "total_ms": 145.5261660157703
+      }
+    },
+    {
+      "sample_id": "d300f14563d5e2da",
+      "label": "block",
+      "token_count": 423,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 156.4910840243101,
+        "adaptive_depth": 201.49733300786465,
+        "adaptive_windows": 201.49733300786465,
+        "tokenization": 1.0500840144231915
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14041701797395945,
+        "layers_1_6_ms": 42.40954096894711,
+        "layers_7_12_ms": 43.18666603649035,
+        "layers_13_22_ms": 70.0998330139555,
+        "total_ms": 201.47120795445517
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14041701797395945,
+        "layers_1_6_ms": 42.40954096894711,
+        "layers_7_12_ms": 43.18666603649035,
+        "layers_13_22_ms": 70.0998330139555,
+        "total_ms": 201.47120795445517
+      }
+    },
+    {
+      "sample_id": "b3e4f5aadc551961",
+      "label": "block",
+      "token_count": 361,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 133.09166702674702,
+        "adaptive_depth": 176.62195803131908,
+        "adaptive_windows": 176.62195803131908,
+        "tokenization": 0.9712919709272683
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1396249863319099,
+        "layers_1_6_ms": 35.67804099293426,
+        "layers_7_12_ms": 35.6888750102371,
+        "layers_13_22_ms": 58.73870896175504,
+        "total_ms": 176.5960410120897
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1396249863319099,
+        "layers_1_6_ms": 35.67804099293426,
+        "layers_7_12_ms": 35.6888750102371,
+        "layers_13_22_ms": 58.73870896175504,
+        "total_ms": 176.5960410120897
+      }
+    },
+    {
+      "sample_id": "752d3ac52257008a",
+      "label": "block",
+      "token_count": 283,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 101.75529198022559,
+        "adaptive_depth": 146.31816698238254,
+        "adaptive_windows": 146.31816698238254,
+        "tokenization": 0.7722500013187528
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11845800327137113,
+        "layers_1_6_ms": 27.686457964591682,
+        "layers_7_12_ms": 26.935999980196357,
+        "layers_13_22_ms": 45.685334014706314,
+        "total_ms": 146.29175001755357
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11845800327137113,
+        "layers_1_6_ms": 27.686457964591682,
+        "layers_7_12_ms": 26.935999980196357,
+        "layers_13_22_ms": 45.685334014706314,
+        "total_ms": 146.29175001755357
+      }
+    },
+    {
+      "sample_id": "3ba915545b0481e2",
+      "label": "block",
+      "token_count": 321,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 118.26824996387586,
+        "adaptive_depth": 166.20404197601601,
+        "adaptive_windows": 166.20404197601601,
+        "tokenization": 0.8493330096825957
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17737498274073005,
+        "layers_1_6_ms": 33.48604100756347,
+        "layers_7_12_ms": 31.813125009648502,
+        "layers_13_22_ms": 54.7070000320673,
+        "total_ms": 166.17870901245624
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17737498274073005,
+        "layers_1_6_ms": 33.48604100756347,
+        "layers_7_12_ms": 31.813125009648502,
+        "layers_13_22_ms": 54.7070000320673,
+        "total_ms": 166.17870901245624
+      }
+    },
+    {
+      "sample_id": "43169000c82f21c1",
+      "label": "block",
+      "token_count": 364,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 129.56925004255027,
+        "adaptive_depth": 175.55495799751952,
+        "adaptive_windows": 175.55495799751952,
+        "tokenization": 0.9637079783715308
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12629199773073196,
+        "layers_1_6_ms": 35.89662502054125,
+        "layers_7_12_ms": 34.69104098621756,
+        "layers_13_22_ms": 59.141041012480855,
+        "total_ms": 175.52925000200048
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12629199773073196,
+        "layers_1_6_ms": 35.89662502054125,
+        "layers_7_12_ms": 34.69104098621756,
+        "layers_13_22_ms": 59.141041012480855,
+        "total_ms": 175.52925000200048
+      }
+    },
+    {
+      "sample_id": "d50107621763ca0b",
+      "label": "block",
+      "token_count": 282,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 100.86708300514147,
+        "adaptive_depth": 147.51679199980572,
+        "adaptive_windows": 147.51679199980572,
+        "tokenization": 0.7555420161224902
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17208303324878216,
+        "layers_1_6_ms": 28.38016697205603,
+        "layers_7_12_ms": 27.501041011419147,
+        "layers_13_22_ms": 45.747082971502095,
+        "total_ms": 147.48554094694555
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17208303324878216,
+        "layers_1_6_ms": 28.38016697205603,
+        "layers_7_12_ms": 27.501041011419147,
+        "layers_13_22_ms": 45.747082971502095,
+        "total_ms": 147.48554094694555
+      }
+    },
+    {
+      "sample_id": "49254385f0dccb28",
+      "label": "block",
+      "token_count": 336,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 120.25191599968821,
+        "adaptive_depth": 165.3037910000421,
+        "adaptive_windows": 165.3037910000421,
+        "tokenization": 0.8785420213826001
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12933299876749516,
+        "layers_1_6_ms": 32.66270796302706,
+        "layers_7_12_ms": 32.68545801984146,
+        "layers_13_22_ms": 54.45508303819224,
+        "total_ms": 165.2780409785919
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12933299876749516,
+        "layers_1_6_ms": 32.66270796302706,
+        "layers_7_12_ms": 32.68545801984146,
+        "layers_13_22_ms": 54.45508303819224,
+        "total_ms": 165.2780409785919
+      }
+    },
+    {
+      "sample_id": "5866492662fe9b4e",
+      "label": "block",
+      "token_count": 352,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 124.02937497245148,
+        "adaptive_depth": 168.58833300648257,
+        "adaptive_windows": 168.58833300648257,
+        "tokenization": 0.9040419827215374
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12720900122076273,
+        "layers_1_6_ms": 33.950958983041346,
+        "layers_7_12_ms": 32.8962909989059,
+        "layers_13_22_ms": 56.05949996970594,
+        "total_ms": 168.56141696916893
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12720900122076273,
+        "layers_1_6_ms": 33.950958983041346,
+        "layers_7_12_ms": 32.8962909989059,
+        "layers_13_22_ms": 56.05949996970594,
+        "total_ms": 168.56141696916893
+      }
+    },
+    {
+      "sample_id": "024b4a3d9a6ca223",
+      "label": "allow",
+      "token_count": 393,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 143.4032919933088,
+        "adaptive_depth": 191.05991697870195,
+        "adaptive_windows": 191.05991697870195,
+        "tokenization": 1.1641670134849846
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12795900693163276,
+        "layers_1_6_ms": 39.66066596331075,
+        "layers_7_12_ms": 39.43845903268084,
+        "layers_13_22_ms": 65.16900000860915,
+        "total_ms": 191.02979195304215
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12795900693163276,
+        "layers_1_6_ms": 39.66066596331075,
+        "layers_7_12_ms": 39.43845903268084,
+        "layers_13_22_ms": 65.16900000860915,
+        "total_ms": 191.02979195304215
+      }
+    },
+    {
+      "sample_id": "fa79b3a966d98207",
+      "label": "allow",
+      "token_count": 280,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 99.37754197744653,
+        "adaptive_depth": 145.8681669901125,
+        "adaptive_windows": 145.8681669901125,
+        "tokenization": 0.8240829920396209
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1432080171070993,
+        "layers_1_6_ms": 27.517625014297664,
+        "layers_7_12_ms": 26.88695798860863,
+        "layers_13_22_ms": 45.30258401064202,
+        "total_ms": 145.83400002447888
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1432080171070993,
+        "layers_1_6_ms": 27.517625014297664,
+        "layers_7_12_ms": 26.88695798860863,
+        "layers_13_22_ms": 45.30258401064202,
+        "total_ms": 145.83400002447888
+      }
+    },
+    {
+      "sample_id": "d25f547dfb66767a",
+      "label": "allow",
+      "token_count": 378,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 136.47512497846037,
+        "adaptive_depth": 182.22616601269692,
+        "adaptive_windows": 182.22616601269692,
+        "tokenization": 1.0872079874388874
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820801930502057,
+        "layers_1_6_ms": 37.156499980483204,
+        "layers_7_12_ms": 38.15024998039007,
+        "layers_13_22_ms": 61.086333997081965,
+        "total_ms": 182.19937500543892
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12820801930502057,
+        "layers_1_6_ms": 37.156499980483204,
+        "layers_7_12_ms": 38.15024998039007,
+        "layers_13_22_ms": 61.086333997081965,
+        "total_ms": 182.19937500543892
+      }
+    },
+    {
+      "sample_id": "1b37d578d567742e",
+      "label": "allow",
+      "token_count": 304,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 107.66666597919539,
+        "adaptive_depth": 153.4010000177659,
+        "adaptive_windows": 153.4010000177659,
+        "tokenization": 0.9407090255990624
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12087495997548103,
+        "layers_1_6_ms": 29.067124996799976,
+        "layers_7_12_ms": 29.17891601100564,
+        "layers_13_22_ms": 49.09166699508205,
+        "total_ms": 153.3754160045646
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12087495997548103,
+        "layers_1_6_ms": 29.067124996799976,
+        "layers_7_12_ms": 29.17891601100564,
+        "layers_13_22_ms": 49.09166699508205,
+        "total_ms": 153.3754160045646
+      }
+    },
+    {
+      "sample_id": "a7b25575df4ea79a",
+      "label": "allow",
+      "token_count": 437,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 161.38962499098852,
+        "adaptive_depth": 209.36450001318008,
+        "adaptive_windows": 209.36450001318008,
+        "tokenization": 1.1616250267252326
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14045904390513897,
+        "layers_1_6_ms": 44.834042026195675,
+        "layers_7_12_ms": 44.73354096990079,
+        "layers_13_22_ms": 73.47983296494931,
+        "total_ms": 209.33558302931488
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14045904390513897,
+        "layers_1_6_ms": 44.834042026195675,
+        "layers_7_12_ms": 44.73354096990079,
+        "layers_13_22_ms": 73.47983296494931,
+        "total_ms": 209.33558302931488
+      }
+    },
+    {
+      "sample_id": "665686ad4f429fa9",
+      "label": "allow",
+      "token_count": 470,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 179.19029196491465,
+        "adaptive_depth": 224.06079102074727,
+        "adaptive_windows": 224.06079102074727,
+        "tokenization": 1.326667028479278
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14899997040629387,
+        "layers_1_6_ms": 48.54816698934883,
+        "layers_7_12_ms": 48.220207972917706,
+        "layers_13_22_ms": 81.16716600488871,
+        "total_ms": 224.0348750492558
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14899997040629387,
+        "layers_1_6_ms": 48.54816698934883,
+        "layers_7_12_ms": 48.220207972917706,
+        "layers_13_22_ms": 81.16716600488871,
+        "total_ms": 224.0348750492558
+      }
+    },
+    {
+      "sample_id": "d61a929b96ad7a39",
+      "label": "allow",
+      "token_count": 283,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 101.54895804589614,
+        "adaptive_depth": 146.72858302947134,
+        "adaptive_windows": 146.72858302947134,
+        "tokenization": 0.8185829501599073
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1757090212777257,
+        "layers_1_6_ms": 27.476416958961636,
+        "layers_7_12_ms": 27.527540980372578,
+        "layers_13_22_ms": 46.14520800532773,
+        "total_ms": 146.67920803185552
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1757090212777257,
+        "layers_1_6_ms": 27.476416958961636,
+        "layers_7_12_ms": 27.527540980372578,
+        "layers_13_22_ms": 46.14520800532773,
+        "total_ms": 146.67920803185552
+      }
+    },
+    {
+      "sample_id": "501e8fba51892470",
+      "label": "allow",
+      "token_count": 333,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 120.27641700115055,
+        "adaptive_depth": 167.96950000571087,
+        "adaptive_windows": 167.96950000571087,
+        "tokenization": 0.9987080120481551
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1249159686267376,
+        "layers_1_6_ms": 34.3004580354318,
+        "layers_7_12_ms": 32.626292027998716,
+        "layers_13_22_ms": 55.13575003715232,
+        "total_ms": 167.93979203794152
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1249159686267376,
+        "layers_1_6_ms": 34.3004580354318,
+        "layers_7_12_ms": 32.626292027998716,
+        "layers_13_22_ms": 55.13575003715232,
+        "total_ms": 167.93979203794152
+      }
+    },
+    {
+      "sample_id": "eb4b0cf03123863b",
+      "label": "allow",
+      "token_count": 284,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 101.49070800980553,
+        "adaptive_depth": 145.1185829937458,
+        "adaptive_windows": 145.1185829937458,
+        "tokenization": 0.8249999955296516
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17150002531707287,
+        "layers_1_6_ms": 26.98291599517688,
+        "layers_7_12_ms": 27.391124982386827,
+        "layers_13_22_ms": 44.48629100807011,
+        "total_ms": 145.0916660251096
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.17150002531707287,
+        "layers_1_6_ms": 26.98291599517688,
+        "layers_7_12_ms": 27.391124982386827,
+        "layers_13_22_ms": 44.48629100807011,
+        "total_ms": 145.0916660251096
+      }
+    },
+    {
+      "sample_id": "44dc824ae7de4c76",
+      "label": "allow",
+      "token_count": 345,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 125.42483297875151,
+        "adaptive_depth": 169.3141660070978,
+        "adaptive_windows": 169.3141660070978,
+        "tokenization": 1.0281659779138863
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1812499831430614,
+        "layers_1_6_ms": 33.49358303239569,
+        "layers_7_12_ms": 33.962166984565556,
+        "layers_13_22_ms": 55.97133398987353,
+        "total_ms": 169.28591596661136
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1812499831430614,
+        "layers_1_6_ms": 33.49358303239569,
+        "layers_7_12_ms": 33.962166984565556,
+        "layers_13_22_ms": 55.97133398987353,
+        "total_ms": 169.28591596661136
+      }
+    },
+    {
+      "sample_id": "c8df1ff238c03b99",
+      "label": "allow",
+      "token_count": 283,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 101.46937501849607,
+        "adaptive_depth": 150.90262499870732,
+        "adaptive_windows": 150.90262499870732,
+        "tokenization": 0.8042919798754156
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10837503941729665,
+        "layers_1_6_ms": 27.838791022077203,
+        "layers_7_12_ms": 27.579332992900163,
+        "layers_13_22_ms": 48.93966700183228,
+        "total_ms": 150.8741659927182
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10837503941729665,
+        "layers_1_6_ms": 27.838791022077203,
+        "layers_7_12_ms": 27.579332992900163,
+        "layers_13_22_ms": 48.93966700183228,
+        "total_ms": 150.8741659927182
+      }
+    },
+    {
+      "sample_id": "79ea36811f400f0e",
+      "label": "allow",
+      "token_count": 410,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 152.8464580187574,
+        "adaptive_depth": 195.21412503672764,
+        "adaptive_windows": 195.21412503672764,
+        "tokenization": 1.1157089611515403
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13854197459295392,
+        "layers_1_6_ms": 41.14354099147022,
+        "layers_7_12_ms": 41.30458302097395,
+        "layers_13_22_ms": 67.10887502413243,
+        "total_ms": 195.18804195104167
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13854197459295392,
+        "layers_1_6_ms": 41.14354099147022,
+        "layers_7_12_ms": 41.30458302097395,
+        "layers_13_22_ms": 67.10887502413243,
+        "total_ms": 195.18804195104167
+      }
+    },
+    {
+      "sample_id": "d6e42194a0d8fafd",
+      "label": "allow",
+      "token_count": 272,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 97.31399995507672,
+        "adaptive_depth": 143.3362920070067,
+        "adaptive_windows": 143.3362920070067,
+        "tokenization": 0.8221660391427577
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1882920041680336,
+        "layers_1_6_ms": 26.667375001125038,
+        "layers_7_12_ms": 26.219916995614767,
+        "layers_13_22_ms": 44.67558296164498,
+        "total_ms": 143.30554095795378
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1882920041680336,
+        "layers_1_6_ms": 26.667375001125038,
+        "layers_7_12_ms": 26.219916995614767,
+        "layers_13_22_ms": 44.67558296164498,
+        "total_ms": 143.30554095795378
+      }
+    },
+    {
+      "sample_id": "3ac8220907f1b823",
+      "label": "allow",
+      "token_count": 361,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 132.5660000438802,
+        "adaptive_depth": 177.70549998385832,
+        "adaptive_windows": 177.70549998385832,
+        "tokenization": 1.0299169807694852
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12420798884704709,
+        "layers_1_6_ms": 35.71329201804474,
+        "layers_7_12_ms": 36.36566601926461,
+        "layers_13_22_ms": 59.53308299649507,
+        "total_ms": 177.67725000157952
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12420798884704709,
+        "layers_1_6_ms": 35.71329201804474,
+        "layers_7_12_ms": 36.36566601926461,
+        "layers_13_22_ms": 59.53308299649507,
+        "total_ms": 177.67725000157952
+      }
+    },
+    {
+      "sample_id": "29f6a70facd3e98e",
+      "label": "allow",
+      "token_count": 356,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 129.50120802270249,
+        "adaptive_depth": 178.5774999880232,
+        "adaptive_windows": 178.5774999880232,
+        "tokenization": 1.0381669853813946
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12795900693163276,
+        "layers_1_6_ms": 37.70770796108991,
+        "layers_7_12_ms": 35.192875016946346,
+        "layers_13_22_ms": 59.77479199646041,
+        "total_ms": 178.55137499282137
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12795900693163276,
+        "layers_1_6_ms": 37.70770796108991,
+        "layers_7_12_ms": 35.192875016946346,
+        "layers_13_22_ms": 59.77479199646041,
+        "total_ms": 178.55137499282137
+      }
+    },
+    {
+      "sample_id": "8dbf2b27a4e23b27",
+      "label": "allow",
+      "token_count": 334,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 121.1040000198409,
+        "adaptive_depth": 167.98383300192654,
+        "adaptive_windows": 167.98383300192654,
+        "tokenization": 0.9868330089375377
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12462498852983117,
+        "layers_1_6_ms": 33.63012499175966,
+        "layers_7_12_ms": 32.84412500215694,
+        "layers_13_22_ms": 55.61199999647215,
+        "total_ms": 167.95762500260025
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12462498852983117,
+        "layers_1_6_ms": 33.63012499175966,
+        "layers_7_12_ms": 32.84412500215694,
+        "layers_13_22_ms": 55.61199999647215,
+        "total_ms": 167.95762500260025
+      }
+    },
+    {
+      "sample_id": "2ed82dacfa0aa049",
+      "label": "allow",
+      "token_count": 316,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 113.50449995370582,
+        "adaptive_depth": 160.4229169897735,
+        "adaptive_windows": 160.4229169897735,
+        "tokenization": 0.8807079866528511
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11320802150294185,
+        "layers_1_6_ms": 31.312874983996153,
+        "layers_7_12_ms": 30.845957982819527,
+        "layers_13_22_ms": 52.07020795205608,
+        "total_ms": 160.39395896950737
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11320802150294185,
+        "layers_1_6_ms": 31.312874983996153,
+        "layers_7_12_ms": 30.845957982819527,
+        "layers_13_22_ms": 52.07020795205608,
+        "total_ms": 160.39395896950737
+      }
+    },
+    {
+      "sample_id": "76531cd13b5a2f7f",
+      "label": "allow",
+      "token_count": 662,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 270.3762500314042,
+        "adaptive_depth": 318.44345905119553,
+        "adaptive_windows": 827.8210420394316,
+        "tokenization": 1.5982920303940773
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1727920025587082,
+        "layers_1_6_ms": 74.5082920184359,
+        "layers_7_12_ms": 73.93070799298584,
+        "layers_13_22_ms": 123.47958300961182,
+        "total_ms": 318.410333013162
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 101.69024998322129,
+        "layer6_head_ms": 0.08879095548763871,
+        "layer12_encoder_ms": 100.31070798868313,
+        "layer12_head_ms": 0.08295901352539659,
+        "layer22_encoder_ms": 167.40283399121836,
+        "total_ms": 827.7833329630084
+      }
+    },
+    {
+      "sample_id": "db345928de21d668",
+      "label": "allow",
+      "token_count": 321,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 119.92783303139731,
+        "adaptive_depth": 164.0582499676384,
+        "adaptive_windows": 164.0582499676384,
+        "tokenization": 0.8940420229919255
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12025004252791405,
+        "layers_1_6_ms": 32.30187500594184,
+        "layers_7_12_ms": 32.81304199481383,
+        "layers_13_22_ms": 53.311375027988106,
+        "total_ms": 164.03204097878188
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12025004252791405,
+        "layers_1_6_ms": 32.30187500594184,
+        "layers_7_12_ms": 32.81304199481383,
+        "layers_13_22_ms": 53.311375027988106,
+        "total_ms": 164.03204097878188
+      }
+    },
+    {
+      "sample_id": "d8612fafd5af252f",
+      "label": "allow",
+      "token_count": 382,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 140.09220799198374,
+        "adaptive_depth": 182.69112502457574,
+        "adaptive_windows": 182.69112502457574,
+        "tokenization": 1.1824159882962704
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14474999625235796,
+        "layers_1_6_ms": 36.87154198996723,
+        "layers_7_12_ms": 37.69574995385483,
+        "layers_13_22_ms": 62.32766603352502,
+        "total_ms": 182.66458302969113
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14474999625235796,
+        "layers_1_6_ms": 36.87154198996723,
+        "layers_7_12_ms": 37.69574995385483,
+        "layers_13_22_ms": 62.32766603352502,
+        "total_ms": 182.66458302969113
+      }
+    },
+    {
+      "sample_id": "c59f78e221dc4600",
+      "label": "allow",
+      "token_count": 312,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 113.01949998596683,
+        "adaptive_depth": 156.65312501369044,
+        "adaptive_windows": 156.65312501369044,
+        "tokenization": 0.8665000204928219
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1140419626608491,
+        "layers_1_6_ms": 30.03066696692258,
+        "layers_7_12_ms": 30.471916950773448,
+        "layers_13_22_ms": 50.0277079991065,
+        "total_ms": 156.62574995076284
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1140419626608491,
+        "layers_1_6_ms": 30.03066696692258,
+        "layers_7_12_ms": 30.471916950773448,
+        "layers_13_22_ms": 50.0277079991065,
+        "total_ms": 156.62574995076284
+      }
+    },
+    {
+      "sample_id": "70d8b6716a19a4d8",
+      "label": "allow",
+      "token_count": 295,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.6985839647241,
+        "adaptive_depth": 155.39129200624302,
+        "adaptive_windows": 155.39129200624302,
+        "tokenization": 0.8632919634692371
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1187919988296926,
+        "layers_1_6_ms": 29.23833398381248,
+        "layers_7_12_ms": 29.91104102693498,
+        "layers_13_22_ms": 49.66812499333173,
+        "total_ms": 155.36487504141405
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1187919988296926,
+        "layers_1_6_ms": 29.23833398381248,
+        "layers_7_12_ms": 29.91104102693498,
+        "layers_13_22_ms": 49.66812499333173,
+        "total_ms": 155.36487504141405
+      }
+    },
+    {
+      "sample_id": "9caf8c17b6bbebfb",
+      "label": "allow",
+      "token_count": 275,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 98.36720797466114,
+        "adaptive_depth": 146.92979102255777,
+        "adaptive_windows": 146.92979102255777,
+        "tokenization": 0.8456670329906046
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1153330085799098,
+        "layers_1_6_ms": 28.493457997683436,
+        "layers_7_12_ms": 27.035542007070035,
+        "layers_13_22_ms": 45.49708298873156,
+        "total_ms": 146.9026249833405
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1153330085799098,
+        "layers_1_6_ms": 28.493457997683436,
+        "layers_7_12_ms": 27.035542007070035,
+        "layers_13_22_ms": 45.49708298873156,
+        "total_ms": 146.9026249833405
+      }
+    },
+    {
+      "sample_id": "e009e0312c9cbabb",
+      "label": "allow",
+      "token_count": 316,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 114.91779197240248,
+        "adaptive_depth": 158.83558400673792,
+        "adaptive_windows": 158.83558400673792,
+        "tokenization": 0.9567090310156345
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1235419767908752,
+        "layers_1_6_ms": 30.39254096802324,
+        "layers_7_12_ms": 30.747666023671627,
+        "layers_13_22_ms": 51.771749975159764,
+        "total_ms": 158.80841697799042
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1235419767908752,
+        "layers_1_6_ms": 30.39254096802324,
+        "layers_7_12_ms": 30.747666023671627,
+        "layers_13_22_ms": 51.771749975159764,
+        "total_ms": 158.80841697799042
+      }
+    },
+    {
+      "sample_id": "eb4b2bd90f0b04c5",
+      "label": "allow",
+      "token_count": 402,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 146.1122499895282,
+        "adaptive_depth": 192.74904200574383,
+        "adaptive_windows": 192.74904200574383,
+        "tokenization": 1.1464580311439931
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13812497491016984,
+        "layers_1_6_ms": 40.02233303617686,
+        "layers_7_12_ms": 40.19875003723428,
+        "layers_13_22_ms": 66.14704203093424,
+        "total_ms": 192.72129202727228
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13812497491016984,
+        "layers_1_6_ms": 40.02233303617686,
+        "layers_7_12_ms": 40.19875003723428,
+        "layers_13_22_ms": 66.14704203093424,
+        "total_ms": 192.72129202727228
+      }
+    },
+    {
+      "sample_id": "39f659562e29770a",
+      "label": "allow",
+      "token_count": 276,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 100.58887500781566,
+        "adaptive_depth": 144.55987501423806,
+        "adaptive_windows": 144.55987501423806,
+        "tokenization": 0.8307920070365071
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10712497169151902,
+        "layers_1_6_ms": 27.575167012400925,
+        "layers_7_12_ms": 26.423999981489033,
+        "layers_13_22_ms": 44.77158299414441,
+        "total_ms": 144.53287498326972
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10712497169151902,
+        "layers_1_6_ms": 27.575167012400925,
+        "layers_7_12_ms": 26.423999981489033,
+        "layers_13_22_ms": 44.77158299414441,
+        "total_ms": 144.53287498326972
+      }
+    },
+    {
+      "sample_id": "3264e6e31340acba",
+      "label": "allow",
+      "token_count": 356,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 129.90183400688693,
+        "adaptive_depth": 175.31075002625585,
+        "adaptive_windows": 175.31075002625585,
+        "tokenization": 0.9665000252425671
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12333295308053493,
+        "layers_1_6_ms": 35.10695800650865,
+        "layers_7_12_ms": 34.46737502235919,
+        "layers_13_22_ms": 59.24154201056808,
+        "total_ms": 175.28424999909475
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12333295308053493,
+        "layers_1_6_ms": 35.10695800650865,
+        "layers_7_12_ms": 34.46737502235919,
+        "layers_13_22_ms": 59.24154201056808,
+        "total_ms": 175.28424999909475
+      }
+    },
+    {
+      "sample_id": "fce3c5d575982522",
+      "label": "allow",
+      "token_count": 492,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 186.2225839868188,
+        "adaptive_depth": 229.3969169841148,
+        "adaptive_windows": 229.3969169841148,
+        "tokenization": 1.2898330460302532
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14045799616724253,
+        "layers_1_6_ms": 50.28324999148026,
+        "layers_7_12_ms": 49.686791957356036,
+        "layers_13_22_ms": 82.93662499636412,
+        "total_ms": 229.3685830081813
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14045799616724253,
+        "layers_1_6_ms": 50.28324999148026,
+        "layers_7_12_ms": 49.686791957356036,
+        "layers_13_22_ms": 82.93662499636412,
+        "total_ms": 229.3685830081813
+      }
+    },
+    {
+      "sample_id": "629cac9a8e75ee7f",
+      "label": "allow",
+      "token_count": 350,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 125.93733298126608,
+        "adaptive_depth": 169.95650000171736,
+        "adaptive_windows": 169.95650000171736,
+        "tokenization": 0.9785830043256283
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12679200153797865,
+        "layers_1_6_ms": 33.98554102750495,
+        "layers_7_12_ms": 34.48237502016127,
+        "layers_13_22_ms": 55.71091698948294,
+        "total_ms": 169.9273750418797
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12679200153797865,
+        "layers_1_6_ms": 33.98554102750495,
+        "layers_7_12_ms": 34.48237502016127,
+        "layers_13_22_ms": 55.71091698948294,
+        "total_ms": 169.9273750418797
+      }
+    },
+    {
+      "sample_id": "1889db833be3e5f2",
+      "label": "allow",
+      "token_count": 364,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 131.60700001753867,
+        "adaptive_depth": 179.12670801160857,
+        "adaptive_windows": 179.12670801160857,
+        "tokenization": 1.0654579964466393
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1360420137643814,
+        "layers_1_6_ms": 35.974750004243106,
+        "layers_7_12_ms": 36.232749989721924,
+        "layers_13_22_ms": 60.608332976698875,
+        "total_ms": 179.0967500419356
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1360420137643814,
+        "layers_1_6_ms": 35.974750004243106,
+        "layers_7_12_ms": 36.232749989721924,
+        "layers_13_22_ms": 60.608332976698875,
+        "total_ms": 179.0967500419356
+      }
+    },
+    {
+      "sample_id": "ebe8bb672ebafe75",
+      "label": "allow",
+      "token_count": 299,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 109.81266596354544,
+        "adaptive_depth": 154.58937495714054,
+        "adaptive_windows": 154.58937495714054,
+        "tokenization": 0.9233750170096755
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1170000177808106,
+        "layers_1_6_ms": 30.257417005486786,
+        "layers_7_12_ms": 29.56866699969396,
+        "layers_13_22_ms": 49.458416004199535,
+        "total_ms": 154.5567910070531
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1170000177808106,
+        "layers_1_6_ms": 30.257417005486786,
+        "layers_7_12_ms": 29.56866699969396,
+        "layers_13_22_ms": 49.458416004199535,
+        "total_ms": 154.5567910070531
+      }
+    },
+    {
+      "sample_id": "3460b97231b0cdd3",
+      "label": "allow",
+      "token_count": 293,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.65783295594156,
+        "adaptive_depth": 153.61016703536734,
+        "adaptive_windows": 153.61016703536734,
+        "tokenization": 0.9167920215986669
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11691695544868708,
+        "layers_1_6_ms": 29.027042037341744,
+        "layers_7_12_ms": 29.858833004254848,
+        "layers_13_22_ms": 48.29162498936057,
+        "total_ms": 153.5828749765642
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11691695544868708,
+        "layers_1_6_ms": 29.027042037341744,
+        "layers_7_12_ms": 29.858833004254848,
+        "layers_13_22_ms": 48.29162498936057,
+        "total_ms": 153.5828749765642
+      }
+    },
+    {
+      "sample_id": "47628fce05d6a74c",
+      "label": "allow",
+      "token_count": 428,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 155.8792080031708,
+        "adaptive_depth": 219.22616596566513,
+        "adaptive_windows": 219.22616596566513,
+        "tokenization": 1.15537503734231
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14304200885817409,
+        "layers_1_6_ms": 48.450500005856156,
+        "layers_7_12_ms": 49.01249997783452,
+        "layers_13_22_ms": 73.3089999994263,
+        "total_ms": 219.19883304508403
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14304200885817409,
+        "layers_1_6_ms": 48.450500005856156,
+        "layers_7_12_ms": 49.01249997783452,
+        "layers_13_22_ms": 73.3089999994263,
+        "total_ms": 219.19883304508403
+      }
+    },
+    {
+      "sample_id": "78456b41e12268e5",
+      "label": "allow",
+      "token_count": 465,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 180.82570901606232,
+        "adaptive_depth": 226.90454201074317,
+        "adaptive_windows": 226.90454201074317,
+        "tokenization": 1.2682919623330235
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.147333019413054,
+        "layers_1_6_ms": 49.30333397351205,
+        "layers_7_12_ms": 49.42841699812561,
+        "layers_13_22_ms": 82.23437500419095,
+        "total_ms": 226.87758301617578
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.147333019413054,
+        "layers_1_6_ms": 49.30333397351205,
+        "layers_7_12_ms": 49.42841699812561,
+        "layers_13_22_ms": 82.23437500419095,
+        "total_ms": 226.87758301617578
+      }
+    },
+    {
+      "sample_id": "7f8934dfd629956d",
+      "label": "allow",
+      "token_count": 277,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 102.49725001631305,
+        "adaptive_depth": 145.43145900825039,
+        "adaptive_windows": 145.43145900825039,
+        "tokenization": 0.8007500437088311
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11591700604185462,
+        "layers_1_6_ms": 27.079167019110173,
+        "layers_7_12_ms": 27.322499954607338,
+        "layers_13_22_ms": 45.007625012658536,
+        "total_ms": 145.4049589810893
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11591700604185462,
+        "layers_1_6_ms": 27.079167019110173,
+        "layers_7_12_ms": 27.322499954607338,
+        "layers_13_22_ms": 45.007625012658536,
+        "total_ms": 145.4049589810893
+      }
+    },
+    {
+      "sample_id": "8e857ef9e0d07ac3",
+      "label": "allow",
+      "token_count": 389,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 142.0395000022836,
+        "adaptive_depth": 188.3487500017509,
+        "adaptive_windows": 188.3487500017509,
+        "tokenization": 1.0624590213410556
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12929097283631563,
+        "layers_1_6_ms": 39.299541036598384,
+        "layers_7_12_ms": 39.275415998417884,
+        "layers_13_22_ms": 63.894292048644274,
+        "total_ms": 188.31766699440777
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12929097283631563,
+        "layers_1_6_ms": 39.299541036598384,
+        "layers_7_12_ms": 39.275415998417884,
+        "layers_13_22_ms": 63.894292048644274,
+        "total_ms": 188.31766699440777
+      }
+    },
+    {
+      "sample_id": "0320b981294b495c",
+      "label": "allow",
+      "token_count": 461,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 176.7795829800889,
+        "adaptive_depth": 230.77566700521857,
+        "adaptive_windows": 230.77566700521857,
+        "tokenization": 1.2039170251227915
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15858298866078258,
+        "layers_1_6_ms": 53.639582998584956,
+        "layers_7_12_ms": 50.66958302631974,
+        "layers_13_22_ms": 80.20712499273941,
+        "total_ms": 230.7483340264298
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15858298866078258,
+        "layers_1_6_ms": 53.639582998584956,
+        "layers_7_12_ms": 50.66958302631974,
+        "layers_13_22_ms": 80.20712499273941,
+        "total_ms": 230.7483340264298
+      }
+    },
+    {
+      "sample_id": "3eda9a7144aa4323",
+      "label": "allow",
+      "token_count": 354,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 130.70300000254065,
+        "adaptive_depth": 177.10445798002183,
+        "adaptive_windows": 177.10445798002183,
+        "tokenization": 1.0560000082477927
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12862496078014374,
+        "layers_1_6_ms": 35.7420839718543,
+        "layers_7_12_ms": 35.25470901513472,
+        "layers_13_22_ms": 59.62645896943286,
+        "total_ms": 177.0783750107512
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12862496078014374,
+        "layers_1_6_ms": 35.7420839718543,
+        "layers_7_12_ms": 35.25470901513472,
+        "layers_13_22_ms": 59.62645896943286,
+        "total_ms": 177.0783750107512
+      }
+    },
+    {
+      "sample_id": "34b84665af4614c6",
+      "label": "allow",
+      "token_count": 351,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 125.59366598725319,
+        "adaptive_depth": 171.68516700621694,
+        "adaptive_windows": 171.68516700621694,
+        "tokenization": 0.9399169939570129
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13275002129375935,
+        "layers_1_6_ms": 34.900041995570064,
+        "layers_7_12_ms": 34.79337500175461,
+        "layers_13_22_ms": 56.56454199925065,
+        "total_ms": 171.6597499907948
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13275002129375935,
+        "layers_1_6_ms": 34.900041995570064,
+        "layers_7_12_ms": 34.79337500175461,
+        "layers_13_22_ms": 56.56454199925065,
+        "total_ms": 171.6597499907948
+      }
+    },
+    {
+      "sample_id": "33b1fb2a257614f5",
+      "label": "allow",
+      "token_count": 403,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 148.00225000362843,
+        "adaptive_depth": 194.32983302976936,
+        "adaptive_windows": 194.32983302976936,
+        "tokenization": 1.1164580355398357
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14166597975417972,
+        "layers_1_6_ms": 40.139750053640455,
+        "layers_7_12_ms": 41.54770897002891,
+        "layers_13_22_ms": 66.56137498794124,
+        "total_ms": 194.30116703733802
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14166597975417972,
+        "layers_1_6_ms": 40.139750053640455,
+        "layers_7_12_ms": 41.54770897002891,
+        "layers_13_22_ms": 66.56137498794124,
+        "total_ms": 194.30116703733802
+      }
+    },
+    {
+      "sample_id": "aede438618bfecb9",
+      "label": "block",
+      "token_count": 414,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 150.435000017751,
+        "adaptive_depth": 196.2007090332918,
+        "adaptive_windows": 196.2007090332918,
+        "tokenization": 1.06916599906981
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1410409458912909,
+        "layers_1_6_ms": 40.76712502865121,
+        "layers_7_12_ms": 41.72658297466114,
+        "layers_13_22_ms": 67.51533399801701,
+        "total_ms": 196.17325003491715
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1410409458912909,
+        "layers_1_6_ms": 40.76712502865121,
+        "layers_7_12_ms": 41.72658297466114,
+        "layers_13_22_ms": 67.51533399801701,
+        "total_ms": 196.17325003491715
+      }
+    },
+    {
+      "sample_id": "48b698ef2d67aba5",
+      "label": "block",
+      "token_count": 301,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 109.97795802541077,
+        "adaptive_depth": 153.81291700759903,
+        "adaptive_windows": 153.81291700759903,
+        "tokenization": 0.9691659943200648
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11645798804238439,
+        "layers_1_6_ms": 29.321999987587333,
+        "layers_7_12_ms": 29.673125012777746,
+        "layers_13_22_ms": 49.04545802855864,
+        "total_ms": 153.78674998646602
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11645798804238439,
+        "layers_1_6_ms": 29.321999987587333,
+        "layers_7_12_ms": 29.673125012777746,
+        "layers_13_22_ms": 49.04545802855864,
+        "total_ms": 153.78674998646602
+      }
+    },
+    {
+      "sample_id": "fe11599654b6c8e2",
+      "label": "block",
+      "token_count": 396,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 142.40312500623986,
+        "adaptive_depth": 195.9004999953322,
+        "adaptive_windows": 195.9004999953322,
+        "tokenization": 1.060207956470549
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13108301209285855,
+        "layers_1_6_ms": 38.71599998092279,
+        "layers_7_12_ms": 39.20037503121421,
+        "layers_13_22_ms": 72.01966701541096,
+        "total_ms": 195.87237504310906
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.13108301209285855,
+        "layers_1_6_ms": 38.71599998092279,
+        "layers_7_12_ms": 39.20037503121421,
+        "layers_13_22_ms": 72.01966701541096,
+        "total_ms": 195.87237504310906
+      }
+    },
+    {
+      "sample_id": "cb78f72c17537707",
+      "label": "block",
+      "token_count": 321,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 118.3661250397563,
+        "adaptive_depth": 163.81145897321403,
+        "adaptive_windows": 163.81145897321403,
+        "tokenization": 0.9372909553349018
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12616696767508984,
+        "layers_1_6_ms": 32.48929203255102,
+        "layers_7_12_ms": 31.8718749913387,
+        "layers_13_22_ms": 53.59604099066928,
+        "total_ms": 163.78266701940447
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12616696767508984,
+        "layers_1_6_ms": 32.48929203255102,
+        "layers_7_12_ms": 31.8718749913387,
+        "layers_13_22_ms": 53.59604099066928,
+        "total_ms": 163.78266701940447
+      }
+    },
+    {
+      "sample_id": "49cb7ca2df68f30e",
+      "label": "block",
+      "token_count": 454,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 171.10870900796726,
+        "adaptive_depth": 219.65004201047122,
+        "adaptive_windows": 219.65004201047122,
+        "tokenization": 1.1210829834453762
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15745795099064708,
+        "layers_1_6_ms": 46.99491697829217,
+        "layers_7_12_ms": 47.06508299568668,
+        "layers_13_22_ms": 79.58175003295764,
+        "total_ms": 219.6222500060685
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15745795099064708,
+        "layers_1_6_ms": 46.99491697829217,
+        "layers_7_12_ms": 47.06508299568668,
+        "layers_13_22_ms": 79.58175003295764,
+        "total_ms": 219.6222500060685
+      }
+    },
+    {
+      "sample_id": "6bbf472877a02960",
+      "label": "block",
+      "token_count": 486,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 186.43141601933166,
+        "adaptive_depth": 235.59341701911762,
+        "adaptive_windows": 235.59341701911762,
+        "tokenization": 1.2262919917702675
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15183299547061324,
+        "layers_1_6_ms": 51.08904198277742,
+        "layers_7_12_ms": 51.25724995741621,
+        "layers_13_22_ms": 87.17499999329448,
+        "total_ms": 235.56545801693574
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.15183299547061324,
+        "layers_1_6_ms": 51.08904198277742,
+        "layers_7_12_ms": 51.25724995741621,
+        "layers_13_22_ms": 87.17499999329448,
+        "total_ms": 235.56545801693574
+      }
+    },
+    {
+      "sample_id": "caf7a699390d2bd9",
+      "label": "block",
+      "token_count": 298,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.58524998184294,
+        "adaptive_depth": 154.26195797044784,
+        "adaptive_windows": 154.26195797044784,
+        "tokenization": 0.8052079938352108
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1230000052601099,
+        "layers_1_6_ms": 30.403457989450544,
+        "layers_7_12_ms": 28.819625033065677,
+        "layers_13_22_ms": 49.24975003814325,
+        "total_ms": 154.23583396477625
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1230000052601099,
+        "layers_1_6_ms": 30.403457989450544,
+        "layers_7_12_ms": 28.819625033065677,
+        "layers_13_22_ms": 49.24975003814325,
+        "total_ms": 154.23583396477625
+      }
+    },
+    {
+      "sample_id": "7cde35785e7c9ad1",
+      "label": "block",
+      "token_count": 350,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 124.78625000221655,
+        "adaptive_depth": 171.94120900239795,
+        "adaptive_windows": 171.94120900239795,
+        "tokenization": 0.8707499946467578
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.21308398572728038,
+        "layers_1_6_ms": 34.259250038303435,
+        "layers_7_12_ms": 33.63416698994115,
+        "layers_13_22_ms": 57.397082971874624,
+        "total_ms": 171.9145419774577
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.21308398572728038,
+        "layers_1_6_ms": 34.259250038303435,
+        "layers_7_12_ms": 33.63416698994115,
+        "layers_13_22_ms": 57.397082971874624,
+        "total_ms": 171.9145419774577
+      }
+    },
+    {
+      "sample_id": "88a1f38f5c87be7a",
+      "label": "block",
+      "token_count": 299,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 109.42624998278916,
+        "adaptive_depth": 155.33420798601583,
+        "adaptive_windows": 155.33420798601583,
+        "tokenization": 0.8089999901130795
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11800002539530396,
+        "layers_1_6_ms": 30.128291982691735,
+        "layers_7_12_ms": 30.280584003776312,
+        "layers_13_22_ms": 49.271458003204316,
+        "total_ms": 155.30687500722706
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.11800002539530396,
+        "layers_1_6_ms": 30.128291982691735,
+        "layers_7_12_ms": 30.280584003776312,
+        "layers_13_22_ms": 49.271458003204316,
+        "total_ms": 155.30687500722706
+      }
+    },
+    {
+      "sample_id": "6fe986e62193a2f6",
+      "label": "block",
+      "token_count": 363,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 130.52491704002023,
+        "adaptive_depth": 181.06129200896248,
+        "adaptive_windows": 181.06129200896248,
+        "tokenization": 0.9847080218605697
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.134333036839962,
+        "layers_1_6_ms": 37.31316601624712,
+        "layers_7_12_ms": 35.45470902463421,
+        "layers_13_22_ms": 62.55575001705438,
+        "total_ms": 181.03562504984438
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.134333036839962,
+        "layers_1_6_ms": 37.31316601624712,
+        "layers_7_12_ms": 35.45470902463421,
+        "layers_13_22_ms": 62.55575001705438,
+        "total_ms": 181.03562504984438
+      }
+    },
+    {
+      "sample_id": "465c144b3d9d17dc",
+      "label": "review",
+      "token_count": 298,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 109.02650002390146,
+        "adaptive_depth": 154.67116696527228,
+        "adaptive_windows": 154.67116696527228,
+        "tokenization": 0.8239169837906957
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.16070797573775053,
+        "layers_1_6_ms": 29.69075000146404,
+        "layers_7_12_ms": 29.21629196498543,
+        "layers_13_22_ms": 49.64954097522423,
+        "total_ms": 154.64458300266415
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.16070797573775053,
+        "layers_1_6_ms": 29.69075000146404,
+        "layers_7_12_ms": 29.21629196498543,
+        "layers_13_22_ms": 49.64954097522423,
+        "total_ms": 154.64458300266415
+      }
+    },
+    {
+      "sample_id": "3a20c6ae0efa44cc",
+      "label": "review",
+      "token_count": 423,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 155.58887500083074,
+        "adaptive_depth": 201.63649995811284,
+        "adaptive_windows": 201.63649995811284,
+        "tokenization": 1.1302090133540332
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14474999625235796,
+        "layers_1_6_ms": 42.685208027251065,
+        "layers_7_12_ms": 42.761666991282254,
+        "layers_13_22_ms": 70.12487499741837,
+        "total_ms": 201.60958298947662
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.14474999625235796,
+        "layers_1_6_ms": 42.685208027251065,
+        "layers_7_12_ms": 42.761666991282254,
+        "layers_13_22_ms": 70.12487499741837,
+        "total_ms": 201.60958298947662
+      }
+    },
+    {
+      "sample_id": "3ddf6d3e0a09831a",
+      "label": "block",
+      "token_count": 286,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 102.40841703489423,
+        "adaptive_depth": 152.00937498593703,
+        "adaptive_windows": 152.00937498593703,
+        "tokenization": 0.7852080161683261
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.118332973215729,
+        "layers_1_6_ms": 27.60395803488791,
+        "layers_7_12_ms": 31.782249978277832,
+        "layers_13_22_ms": 46.2654170114547,
+        "total_ms": 151.98299998883158
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.118332973215729,
+        "layers_1_6_ms": 27.60395803488791,
+        "layers_7_12_ms": 31.782249978277832,
+        "layers_13_22_ms": 46.2654170114547,
+        "total_ms": 151.98299998883158
+      }
+    },
+    {
+      "sample_id": "f79013ec6c568382",
+      "label": "block",
+      "token_count": 375,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 136.6591249825433,
+        "adaptive_depth": 181.7506660008803,
+        "adaptive_windows": 181.7506660008803,
+        "tokenization": 0.9832089999690652
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1265419996343553,
+        "layers_1_6_ms": 36.531208956148475,
+        "layers_7_12_ms": 37.41304099094123,
+        "layers_13_22_ms": 61.75862503005192,
+        "total_ms": 181.70808401191607
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1265419996343553,
+        "layers_1_6_ms": 36.531208956148475,
+        "layers_7_12_ms": 37.41304099094123,
+        "layers_13_22_ms": 61.75862503005192,
+        "total_ms": 181.70808401191607
+      }
+    },
+    {
+      "sample_id": "7a7797810f35a508",
+      "label": "block",
+      "token_count": 371,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 136.26191701041535,
+        "adaptive_depth": 183.23670903919265,
+        "adaptive_windows": 183.23670903919265,
+        "tokenization": 0.9389999904669821
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12745801359415054,
+        "layers_1_6_ms": 37.48745797201991,
+        "layers_7_12_ms": 36.43083298811689,
+        "layers_13_22_ms": 63.527750025969,
+        "total_ms": 183.20612498791888
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12745801359415054,
+        "layers_1_6_ms": 37.48745797201991,
+        "layers_7_12_ms": 36.43083298811689,
+        "layers_13_22_ms": 63.527750025969,
+        "total_ms": 183.20612498791888
+      }
+    },
+    {
+      "sample_id": "69d999be2a408f4c",
+      "label": "review",
+      "token_count": 351,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 124.5832089916803,
+        "adaptive_depth": 170.22554203867912,
+        "adaptive_windows": 170.22554203867912,
+        "tokenization": 0.9984580101445317
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12733298353850842,
+        "layers_1_6_ms": 34.64891703333706,
+        "layers_7_12_ms": 32.99425001023337,
+        "layers_13_22_ms": 56.74558295868337,
+        "total_ms": 170.19558302126825
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12733298353850842,
+        "layers_1_6_ms": 34.64891703333706,
+        "layers_7_12_ms": 32.99425001023337,
+        "layers_13_22_ms": 56.74558295868337,
+        "total_ms": 170.19558302126825
+      }
+    },
+    {
+      "sample_id": "61d05003d16e4dad",
+      "label": "block",
+      "token_count": 329,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 120.2295419643633,
+        "adaptive_depth": 165.79979204107076,
+        "adaptive_windows": 165.79979204107076,
+        "tokenization": 0.8554169908165932
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12604199582710862,
+        "layers_1_6_ms": 32.91045897640288,
+        "layers_7_12_ms": 32.20641700318083,
+        "layers_13_22_ms": 54.443957982584834,
+        "total_ms": 165.76504200929776
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12604199582710862,
+        "layers_1_6_ms": 32.91045897640288,
+        "layers_7_12_ms": 32.20641700318083,
+        "layers_13_22_ms": 54.443957982584834,
+        "total_ms": 165.76504200929776
+      }
+    },
+    {
+      "sample_id": "4e55895bf64a3f13",
+      "label": "block",
+      "token_count": 677,
+      "bucket": "513-1024",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 284.56329205073416,
+        "adaptive_depth": 329.6132919494994,
+        "adaptive_windows": 849.6532500139438,
+        "tokenization": 1.6106660477817059
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1854579895734787,
+        "layers_1_6_ms": 77.4552920483984,
+        "layers_7_12_ms": 76.48150000022724,
+        "layers_13_22_ms": 128.7487499648705,
+        "total_ms": 329.583625018131
+      },
+      "window_trace": {
+        "window_count": 2,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 4,
+        "context_expansion_count": 2,
+        "deep_window_count": 2,
+        "inspection_budget_exceeded": false,
+        "approximate_compute_path": "windowed_shallow_then_selective_deep",
+        "layer6_encoder_ms": 101.74824995920062,
+        "layer6_head_ms": 0.08704100036993623,
+        "layer12_encoder_ms": 103.26887498376891,
+        "layer12_head_ms": 0.0837919651530683,
+        "layer22_encoder_ms": 168.1912500062026,
+        "total_ms": 849.6125420206226
+      }
+    },
+    {
+      "sample_id": "60dab8f3eb8a7f8a",
+      "label": "block",
+      "token_count": 336,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 119.86350000370294,
+        "adaptive_depth": 167.78104100376368,
+        "adaptive_windows": 167.78104100376368,
+        "tokenization": 0.8744999649934471
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1605410361662507,
+        "layers_1_6_ms": 33.916625019628555,
+        "layers_7_12_ms": 32.89699996821582,
+        "layers_13_22_ms": 54.7177079715766,
+        "total_ms": 167.75195900117978
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1605410361662507,
+        "layers_1_6_ms": 33.916625019628555,
+        "layers_7_12_ms": 32.89699996821582,
+        "layers_13_22_ms": 54.7177079715766,
+        "total_ms": 167.75195900117978
+      }
+    },
+    {
+      "sample_id": "e6e715880f45ef8e",
+      "label": "block",
+      "token_count": 399,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 146.59729099366814,
+        "adaptive_depth": 191.4765000110492,
+        "adaptive_windows": 191.4765000110492,
+        "tokenization": 1.0798749863170087
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1384579809382558,
+        "layers_1_6_ms": 39.28754199296236,
+        "layers_7_12_ms": 40.48224998405203,
+        "layers_13_22_ms": 65.52449997980148,
+        "total_ms": 191.44762499490753
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1384579809382558,
+        "layers_1_6_ms": 39.28754199296236,
+        "layers_7_12_ms": 40.48224998405203,
+        "layers_13_22_ms": 65.52449997980148,
+        "total_ms": 191.44762499490753
+      }
+    },
+    {
+      "sample_id": "2be647e69c75d4d0",
+      "label": "block",
+      "token_count": 333,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 123.78033302957192,
+        "adaptive_depth": 166.65349999675527,
+        "adaptive_windows": 166.65349999675527,
+        "tokenization": 0.8618750143796206
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12158398749306798,
+        "layers_1_6_ms": 32.664415950421244,
+        "layers_7_12_ms": 33.47774996655062,
+        "layers_13_22_ms": 54.39787497743964,
+        "total_ms": 166.62545799044892
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12158398749306798,
+        "layers_1_6_ms": 32.664415950421244,
+        "layers_7_12_ms": 33.47774996655062,
+        "layers_13_22_ms": 54.39787497743964,
+        "total_ms": 166.62545799044892
+      }
+    },
+    {
+      "sample_id": "e956d1236b18e8cc",
+      "label": "block",
+      "token_count": 316,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 113.17904200404882,
+        "adaptive_depth": 160.6988749699667,
+        "adaptive_windows": 160.6988749699667,
+        "tokenization": 0.8569170022383332
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12337503721937537,
+        "layers_1_6_ms": 31.06574999401346,
+        "layers_7_12_ms": 31.30733303260058,
+        "layers_13_22_ms": 51.46770796272904,
+        "total_ms": 160.67083401139826
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12337503721937537,
+        "layers_1_6_ms": 31.06574999401346,
+        "layers_7_12_ms": 31.30733303260058,
+        "layers_13_22_ms": 51.46770796272904,
+        "total_ms": 160.67083401139826
+      }
+    },
+    {
+      "sample_id": "066250a7681f2e8e",
+      "label": "block",
+      "token_count": 293,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 108.33654197631404,
+        "adaptive_depth": 152.76370802894235,
+        "adaptive_windows": 152.76370802894235,
+        "tokenization": 0.7882909849286079
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1253749942407012,
+        "layers_1_6_ms": 29.107125010341406,
+        "layers_7_12_ms": 29.042000009212643,
+        "layers_13_22_ms": 49.05462503666058,
+        "total_ms": 152.736832969822
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1253749942407012,
+        "layers_1_6_ms": 29.107125010341406,
+        "layers_7_12_ms": 29.042000009212643,
+        "layers_13_22_ms": 49.05462503666058,
+        "total_ms": 152.736832969822
+      }
+    },
+    {
+      "sample_id": "e2e194d7248790e2",
+      "label": "block",
+      "token_count": 332,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 119.28345897467807,
+        "adaptive_depth": 165.720000048168,
+        "adaptive_windows": 165.720000048168,
+        "tokenization": 0.861832988448441
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1259169657714665,
+        "layers_1_6_ms": 32.91483299108222,
+        "layers_7_12_ms": 31.82591701624915,
+        "layers_13_22_ms": 54.825875035021454,
+        "total_ms": 165.68833403289318
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1259169657714665,
+        "layers_1_6_ms": 32.91483299108222,
+        "layers_7_12_ms": 31.82591701624915,
+        "layers_13_22_ms": 54.825875035021454,
+        "total_ms": 165.68833403289318
+      }
+    },
+    {
+      "sample_id": "d54c6b6b8d767a8e",
+      "label": "block",
+      "token_count": 419,
+      "bucket": "129-512",
+      "full": "block",
+      "adaptive_depth": "block",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 158.0151669913903,
+        "adaptive_depth": 201.94879197515547,
+        "adaptive_windows": 201.94879197515547,
+        "tokenization": 1.0977499769069254
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.19416603026911616,
+        "layers_1_6_ms": 42.82775003230199,
+        "layers_7_12_ms": 42.79508296167478,
+        "layers_13_22_ms": 70.6133340136148,
+        "total_ms": 201.9211250008084
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.19416603026911616,
+        "layers_1_6_ms": 42.82775003230199,
+        "layers_7_12_ms": 42.79508296167478,
+        "layers_13_22_ms": 70.6133340136148,
+        "total_ms": 201.9211250008084
+      }
+    },
+    {
+      "sample_id": "19f174693ec7e59a",
+      "label": "block",
+      "token_count": 292,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 107.29191696736962,
+        "adaptive_depth": 154.72562500508502,
+        "adaptive_windows": 154.72562500508502,
+        "tokenization": 0.8344579837284982
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10891602141782641,
+        "layers_1_6_ms": 29.697708028834313,
+        "layers_7_12_ms": 29.11554102320224,
+        "layers_13_22_ms": 50.30187498778105,
+        "total_ms": 154.69870797824115
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.10891602141782641,
+        "layers_1_6_ms": 29.697708028834313,
+        "layers_7_12_ms": 29.11554102320224,
+        "layers_13_22_ms": 50.30187498778105,
+        "total_ms": 154.69870797824115
+      }
+    },
+    {
+      "sample_id": "d0700251ecd34203",
+      "label": "block",
+      "token_count": 371,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 136.6610000259243,
+        "adaptive_depth": 183.3711250219494,
+        "adaptive_windows": 183.3711250219494,
+        "tokenization": 0.9526669746264815
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12866698671132326,
+        "layers_1_6_ms": 38.61641703406349,
+        "layers_7_12_ms": 36.90804197685793,
+        "layers_13_22_ms": 61.6625000257045,
+        "total_ms": 183.34433302516118
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.12866698671132326,
+        "layers_1_6_ms": 38.61641703406349,
+        "layers_7_12_ms": 36.90804197685793,
+        "layers_13_22_ms": 61.6625000257045,
+        "total_ms": 183.34433302516118
+      }
+    },
+    {
+      "sample_id": "139a0d141b98ff26",
+      "label": "block",
+      "token_count": 510,
+      "bucket": "129-512",
+      "full": "flag",
+      "adaptive_depth": "flag",
+      "adaptive_windows": "flag",
+      "latency_ms": {
+        "full": 195.86183299543336,
+        "adaptive_depth": 241.5127910207957,
+        "adaptive_windows": 241.5127910207957,
+        "tokenization": 1.2060829903930426
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1883330405689776,
+        "layers_1_6_ms": 54.556041955947876,
+        "layers_7_12_ms": 52.49616701621562,
+        "layers_13_22_ms": 88.42975000152364,
+        "total_ms": 241.48491700179875
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1883330405689776,
+        "layers_1_6_ms": 54.556041955947876,
+        "layers_7_12_ms": 52.49616701621562,
+        "layers_13_22_ms": 88.42975000152364,
+        "total_ms": 241.48491700179875
+      }
+    },
+    {
+      "sample_id": "772c212d33cd34f3",
+      "label": "block",
+      "token_count": 365,
+      "bucket": "129-512",
+      "full": "allow",
+      "adaptive_depth": "allow",
+      "adaptive_windows": "allow",
+      "latency_ms": {
+        "full": 131.39808300184086,
+        "adaptive_depth": 180.85750000318512,
+        "adaptive_windows": 180.85750000318512,
+        "tokenization": 0.9089999948628247
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.130708038341254,
+        "layers_1_6_ms": 36.88133304240182,
+        "layers_7_12_ms": 36.551249970216304,
+        "layers_13_22_ms": 61.840707960072905,
+        "total_ms": 180.83004199434072
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.130708038341254,
+        "layers_1_6_ms": 36.88133304240182,
+        "layers_7_12_ms": 36.551249970216304,
+        "layers_13_22_ms": 61.840707960072905,
+        "total_ms": 180.83004199434072
+      }
+    },
+    {
+      "sample_id": "58248655a8251d3c",
+      "label": "block",
+      "token_count": 381,
+      "bucket": "129-512",
+      "full": "block",
+      "adaptive_depth": "block",
+      "adaptive_windows": "block",
+      "latency_ms": {
+        "full": 136.83725002920255,
+        "adaptive_depth": 182.6080409809947,
+        "adaptive_windows": 182.6080409809947,
+        "tokenization": 1.0102910455316305
+      },
+      "adaptive_depth_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1342499745078385,
+        "layers_1_6_ms": 37.43608301738277,
+        "layers_7_12_ms": 36.93337499862537,
+        "layers_13_22_ms": 62.33975000213832,
+        "total_ms": 182.5822090031579
+      },
+      "window_trace": {
+        "window_count": 1,
+        "windows_exited_at_6": 0,
+        "windows_exited_at_12": 0,
+        "windows_full_depth": 1,
+        "approximate_compute_path": "single_request_22_layers",
+        "embeddings_ms": 0.1342499745078385,
+        "layers_1_6_ms": 37.43608301738277,
+        "layers_7_12_ms": 36.93337499862537,
+        "layers_13_22_ms": 62.33975000213832,
+        "total_ms": 182.5822090031579
+      }
+    }
+  ]
+}

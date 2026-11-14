@@ -1,0 +1,720 @@
+{
+  "version": "long_text_gate_v1",
+  "created": "2026-09-23",
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "reviewer": "reviewer_ai_jev_v1_1",
+  "frozen_before_training": true,
+  "notes": "Exact content hashes from logs.db or pinned OASST1 revision; one Jev AI label per row; d3b720e07240468a excluded from primary gate and training because latest request is outside 512-token prefix and AI reviewers disagree.",
+  "gate": [
+    {
+      "sample_id": "02f9a4a031ed23fe",
+      "source": "traffic",
+      "tokens": 509,
+      "label": "allow",
+      "confidence": 0.97
+    },
+    {
+      "sample_id": "308e77b1747a27e5",
+      "source": "traffic",
+      "tokens": 1231,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "4e333271e88ec064",
+      "source": "traffic",
+      "tokens": 497,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "61b4cf8c045019b9",
+      "source": "traffic",
+      "tokens": 3515,
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "657e8d6aca923169",
+      "source": "traffic",
+      "tokens": 2415,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "91b8cf157742c61a",
+      "source": "traffic",
+      "tokens": 1384,
+      "label": "block",
+      "confidence": 0.91
+    },
+    {
+      "sample_id": "955c878385fe4da7",
+      "source": "traffic",
+      "tokens": 841,
+      "label": "block",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "960f4a4b3889fb05",
+      "source": "traffic",
+      "tokens": 620,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "9a29f86ecd7d5c8c",
+      "source": "traffic",
+      "tokens": 796,
+      "label": "block",
+      "confidence": 0.88
+    },
+    {
+      "sample_id": "a8b5bdcf970779f9",
+      "source": "traffic",
+      "tokens": 557,
+      "label": "block",
+      "confidence": 0.88
+    },
+    {
+      "sample_id": "adfc7e81c0f068ca",
+      "source": "traffic",
+      "tokens": 553,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "cb2d9c882458e4fc",
+      "source": "traffic",
+      "tokens": 498,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "eda03e38488b4254",
+      "source": "traffic",
+      "tokens": 342,
+      "label": "block",
+      "confidence": 0.91
+    },
+    {
+      "sample_id": "04296db53013136b",
+      "source": "oasst1_assistant",
+      "tokens": 448,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "05cae4228b935ba5",
+      "source": "oasst1_assistant",
+      "tokens": 314,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "082fde60b3c4ec69",
+      "source": "oasst1_assistant",
+      "tokens": 338,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "12c8666e5ff0672a",
+      "source": "oasst1_assistant",
+      "tokens": 282,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "152b512f910ef736",
+      "source": "oasst1_assistant",
+      "tokens": 329,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "1b60e830d8d6d996",
+      "source": "oasst1_assistant",
+      "tokens": 457,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "1c0464b47ed80d33",
+      "source": "oasst1_assistant",
+      "tokens": 381,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "28a94daec6921b19",
+      "source": "oasst1_assistant",
+      "tokens": 275,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "2ce4c5d15b411323",
+      "source": "oasst1_assistant",
+      "tokens": 313,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "31f38753d03f5dac",
+      "source": "oasst1_assistant",
+      "tokens": 316,
+      "label": "allow",
+      "confidence": 0.89
+    },
+    {
+      "sample_id": "33e98516a9e5dfc9",
+      "source": "oasst1_assistant",
+      "tokens": 311,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "38f3ba8d1697b5cd",
+      "source": "oasst1_assistant",
+      "tokens": 423,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "3cf7fd921c13f3c0",
+      "source": "oasst1_assistant",
+      "tokens": 284,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "3f7c3a224faa7e06",
+      "source": "oasst1_assistant",
+      "tokens": 476,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "403d5c3567a08c10",
+      "source": "oasst1_assistant",
+      "tokens": 326,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "42947d6a2c228136",
+      "source": "oasst1_assistant",
+      "tokens": 402,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "4e368486bd594fa0",
+      "source": "oasst1_assistant",
+      "tokens": 344,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "4e99e439e2c7e041",
+      "source": "oasst1_assistant",
+      "tokens": 389,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "4f60571288ad579f",
+      "source": "oasst1_assistant",
+      "tokens": 604,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "507b591c0498d1f2",
+      "source": "oasst1_assistant",
+      "tokens": 313,
+      "label": "allow",
+      "confidence": 1.0
+    }
+  ],
+  "train": [
+    {
+      "sample_id": "72a9e64d4a75b1ec",
+      "source": "traffic",
+      "tokens": 3196,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "8d782db2ac8e61d0",
+      "source": "traffic",
+      "tokens": 519,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "a50db751ff393825",
+      "source": "traffic",
+      "tokens": 632,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "ad03b218212b3295",
+      "source": "traffic",
+      "tokens": 1589,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "c13ed8207e690f7d",
+      "source": "traffic",
+      "tokens": 3110,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "c62d568144713c35",
+      "source": "traffic",
+      "tokens": 671,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "e9c7bf9f5525747a",
+      "source": "traffic",
+      "tokens": 3162,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "f2f64ebfe19049ac",
+      "source": "traffic",
+      "tokens": 389,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "f4f33012c2626689",
+      "source": "traffic",
+      "tokens": 363,
+      "label": "block",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "525ae37196516b68",
+      "source": "oasst1_assistant",
+      "tokens": 405,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "56efd92bc37fc26b",
+      "source": "oasst1_assistant",
+      "tokens": 290,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "5a9e8960b3336a87",
+      "source": "oasst1_assistant",
+      "tokens": 361,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "5d07a13a68aa1814",
+      "source": "oasst1_assistant",
+      "tokens": 332,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "5d2c90556088c804",
+      "source": "oasst1_assistant",
+      "tokens": 312,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "5e963c792d75de8f",
+      "source": "oasst1_assistant",
+      "tokens": 294,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "5f4a300a7d7fb416",
+      "source": "oasst1_assistant",
+      "tokens": 375,
+      "label": "allow",
+      "confidence": 0.97
+    },
+    {
+      "sample_id": "656976e99ded2951",
+      "source": "oasst1_assistant",
+      "tokens": 355,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "67c93faf54bb3283",
+      "source": "oasst1_assistant",
+      "tokens": 349,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "6bb5d54fa40e4785",
+      "source": "oasst1_assistant",
+      "tokens": 296,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "753a02d464b22a5b",
+      "source": "oasst1_assistant",
+      "tokens": 319,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "766c0d1206bc969b",
+      "source": "oasst1_assistant",
+      "tokens": 266,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "77eb2e39eb8aa790",
+      "source": "oasst1_assistant",
+      "tokens": 314,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "7a877fc441cff134",
+      "source": "oasst1_assistant",
+      "tokens": 298,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "7c7c0ded57d83f8b",
+      "source": "oasst1_assistant",
+      "tokens": 375,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "7d40d5b1bea9bd5b",
+      "source": "oasst1_assistant",
+      "tokens": 374,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "7f21fe0990350a63",
+      "source": "oasst1_assistant",
+      "tokens": 264,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "83c5dbc467835ecf",
+      "source": "oasst1_assistant",
+      "tokens": 559,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "885db9076f06831f",
+      "source": "oasst1_assistant",
+      "tokens": 450,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "94a0242f6e971f57",
+      "source": "oasst1_assistant",
+      "tokens": 429,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "99ec621afd64752b",
+      "source": "oasst1_assistant",
+      "tokens": 381,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "9f4277d5866e91a1",
+      "source": "oasst1_assistant",
+      "tokens": 273,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "9f576ef410f493b9",
+      "source": "oasst1_assistant",
+      "tokens": 275,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "a2064648f07898a6",
+      "source": "oasst1_assistant",
+      "tokens": 338,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "a5db75b71247376e",
+      "source": "oasst1_assistant",
+      "tokens": 295,
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "a624c81621d4c298",
+      "source": "oasst1_assistant",
+      "tokens": 382,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "aa4d3ca064a45ed0",
+      "source": "oasst1_assistant",
+      "tokens": 359,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "ac0f1a26ba715d90",
+      "source": "oasst1_assistant",
+      "tokens": 340,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "ad4da446e322ec12",
+      "source": "oasst1_assistant",
+      "tokens": 313,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "b44163bf4a1fd882",
+      "source": "oasst1_assistant",
+      "tokens": 474,
+      "label": "allow",
+      "confidence": 0.94
+    },
+    {
+      "sample_id": "b5ae3eea4fb882f0",
+      "source": "oasst1_assistant",
+      "tokens": 409,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "bbe512c62f612b8b",
+      "source": "oasst1_assistant",
+      "tokens": 379,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "bcbbd12a4fbfc3ab",
+      "source": "oasst1_assistant",
+      "tokens": 328,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "bcc7910bb14ad2cf",
+      "source": "oasst1_assistant",
+      "tokens": 355,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "bd0b78786b9ca2fd",
+      "source": "oasst1_assistant",
+      "tokens": 353,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "be0ef3f33af01fd5",
+      "source": "oasst1_assistant",
+      "tokens": 265,
+      "label": "allow",
+      "confidence": 0.89
+    },
+    {
+      "sample_id": "be710aff30ee9528",
+      "source": "oasst1_assistant",
+      "tokens": 549,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "bf5e468338e42a35",
+      "source": "oasst1_assistant",
+      "tokens": 337,
+      "label": "allow",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "bf76d455e37dd7c7",
+      "source": "oasst1_assistant",
+      "tokens": 366,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "c3edf80df4bdb4ab",
+      "source": "oasst1_assistant",
+      "tokens": 262,
+      "label": "allow",
+      "confidence": 0.97
+    },
+    {
+      "sample_id": "c5261a51fadf9d02",
+      "source": "oasst1_assistant",
+      "tokens": 410,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "caa3b564aefd74a7",
+      "source": "oasst1_assistant",
+      "tokens": 263,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "cd7788daee91d6bb",
+      "source": "oasst1_assistant",
+      "tokens": 402,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "d13788a732786ec1",
+      "source": "oasst1_assistant",
+      "tokens": 349,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "d3caaee1ecf6870f",
+      "source": "oasst1_assistant",
+      "tokens": 366,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "d4e07d3d4edef323",
+      "source": "oasst1_assistant",
+      "tokens": 395,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "d5d49513f2d084e2",
+      "source": "oasst1_assistant",
+      "tokens": 303,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "db29213ddc7c7b15",
+      "source": "oasst1_assistant",
+      "tokens": 437,
+      "label": "allow",
+      "confidence": 0.95
+    },
+    {
+      "sample_id": "dced98e555009b4a",
+      "source": "oasst1_assistant",
+      "tokens": 300,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "df3114cbbf800886",
+      "source": "oasst1_assistant",
+      "tokens": 341,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "df818731455d0b71",
+      "source": "oasst1_assistant",
+      "tokens": 343,
+      "label": "allow",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "e06a8c606d2dc1ff",
+      "source": "oasst1_assistant",
+      "tokens": 382,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "e8758a1f2c06df57",
+      "source": "oasst1_assistant",
+      "tokens": 401,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "e897d19ed5370871",
+      "source": "oasst1_assistant",
+      "tokens": 407,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "ef1eeb8c956c6c3b",
+      "source": "oasst1_assistant",
+      "tokens": 301,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "f00a7f30f0feac06",
+      "source": "oasst1_assistant",
+      "tokens": 307,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "f1b56e78059556e5",
+      "source": "oasst1_assistant",
+      "tokens": 368,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "f84548edc348230d",
+      "source": "oasst1_assistant",
+      "tokens": 394,
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "f98c1851cfc5df94",
+      "source": "oasst1_assistant",
+      "tokens": 257,
+      "label": "allow",
+      "confidence": 0.99
+    }
+  ]
+}

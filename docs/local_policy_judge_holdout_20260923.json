@@ -1,0 +1,607 @@
+{
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "rows": [
+    {
+      "id": "2332bff9f1ddbb82",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.65,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 928.7
+    },
+    {
+      "id": "910206a74be42294",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 701.4
+    },
+    {
+      "id": "9ed2dc3fb9ce8917",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.48,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 807.8
+    },
+    {
+      "id": "2ef6bf483644dd94",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 686.3
+    },
+    {
+      "id": "c73bd40b4030bfe9",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.65,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 677.8
+    },
+    {
+      "id": "dc40decbae959970",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.73,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\n  \"action\": \"review\"\n}",
+      "duration_ms": 825.6
+    },
+    {
+      "id": "0b4be4b56aadcdab",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.27,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 693.2
+    },
+    {
+      "id": "40a08edd05d1dd03",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.45,
+      "baseline": "allow",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 548.0
+    },
+    {
+      "id": "18d7f90df5a6c2cb",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.53,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 689.0
+    },
+    {
+      "id": "cb2aa5731b2ae506",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.56,
+      "baseline": "allow",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 811.0
+    },
+    {
+      "id": "0c278c58f2ec1492",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.18,
+      "baseline": "block",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 554.1
+    },
+    {
+      "id": "ae6a7cde9b5425bd",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 1.0,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 591.2
+    },
+    {
+      "id": "b9adbc7608f0a2c0",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.87,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 721.5
+    },
+    {
+      "id": "9f097ed37a6c8a87",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.23,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 680.4
+    },
+    {
+      "id": "81f70af472a32bad",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.99,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\"action\": \"allow\"}",
+      "duration_ms": 690.8
+    },
+    {
+      "id": "ed2f5a6f2d1aa2f6",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\"action\": \"review\"}",
+      "duration_ms": 689.3
+    },
+    {
+      "id": "8230d0c4dceb4276",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.51,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 811.0
+    },
+    {
+      "id": "a28347d8c83e94ff",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.38,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 811.8
+    },
+    {
+      "id": "8240913a607af1a5",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.48,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 844.4
+    },
+    {
+      "id": "b4cf10d832a1333c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.6,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 690.7
+    },
+    {
+      "id": "41b35ada86992e51",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.5,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 810.1
+    },
+    {
+      "id": "be82d701da1f6d1f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.4,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 851.5
+    },
+    {
+      "id": "9372c54d64ed37b7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.54,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 607.3
+    },
+    {
+      "id": "f4c02d5d5fe6dccd",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.57,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 858.5
+    },
+    {
+      "id": "9293dc076c72076a",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.53,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 695.3
+    },
+    {
+      "id": "21e6e7feb34ebe0c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.83,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 690.0
+    },
+    {
+      "id": "57d7c166dea19981",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 685.6
+    },
+    {
+      "id": "2327e57edca93452",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.14,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 571.4
+    },
+    {
+      "id": "e7cb6e09c75e2185",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.86,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 574.6
+    },
+    {
+      "id": "32c05aca848c6878",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.35,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 807.7
+    },
+    {
+      "id": "3661e20551b5a7e8",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 2115.8
+    },
+    {
+      "id": "e558490a2ba7fc08",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.97,
+      "baseline": "block",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 679.8
+    },
+    {
+      "id": "3f53f12335de4f01",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.23,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 1039.7
+    },
+    {
+      "id": "a7fec1ba91edc747",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.79,
+      "baseline": "block",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 858.5
+    },
+    {
+      "id": "caa18860fe314536",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.42,
+      "baseline": "block",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 987.7
+    },
+    {
+      "id": "dd6a5a39f3db784f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.74,
+      "baseline": "block",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 959.7
+    },
+    {
+      "id": "764f454e5be2eeab",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.81,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 837.8
+    },
+    {
+      "id": "9e6f32e2410a53f3",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.24,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 809.7
+    },
+    {
+      "id": "c4362b8831a0b2b0",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.96,
+      "baseline": "block",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 604.0
+    },
+    {
+      "id": "da95258937bf8196",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.63,
+      "baseline": "allow",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 1323.4
+    },
+    {
+      "id": "6b3aa32b4701857b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.21,
+      "baseline": "block",
+      "action": "review",
+      "raw": "{\n  \"action\": \"review\"\n}",
+      "duration_ms": 983.2
+    },
+    {
+      "id": "124923b7c73aa30c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.44,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 703.8
+    },
+    {
+      "id": "ce75f1213a492bff",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.21,
+      "baseline": "allow",
+      "action": "block",
+      "raw": "{\n  \"action\": \"block\"\n}",
+      "duration_ms": 705.4
+    },
+    {
+      "id": "d11b999ea2447562",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.9,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 726.7
+    },
+    {
+      "id": "ded3e97655c68bce",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.49,
+      "baseline": "allow",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 683.9
+    },
+    {
+      "id": "ea9d1191d124043a",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.25,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 705.2
+    },
+    {
+      "id": "d1b930cb4d24b55b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.78,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 696.0
+    },
+    {
+      "id": "983793a142326ad7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.44,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\"action\": \"flag\"}",
+      "duration_ms": 706.7
+    },
+    {
+      "id": "02be9137bb46910d",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.69,
+      "baseline": "block",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 817.3
+    },
+    {
+      "id": "6750ec93268ff06b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 817.1
+    },
+    {
+      "id": "b2700eaec564e0e7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.77,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\n  \"action\": \"review\"\n}",
+      "duration_ms": 808.1
+    },
+    {
+      "id": "c43ed9ccfc4372df",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.86,
+      "baseline": "allow",
+      "action": "review",
+      "raw": "{\n  \"action\": \"review\"\n}",
+      "duration_ms": 811.2
+    },
+    {
+      "id": "77b1040fc83907d3",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "block",
+      "raw": "{\"action\": \"block\"}",
+      "duration_ms": 578.4
+    },
+    {
+      "id": "503ff0a3087d6f3f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.7,
+      "baseline": "block",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 682.4
+    },
+    {
+      "id": "669545d90a1af105",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.74,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\"action\": \"review\"}",
+      "duration_ms": 690.7
+    },
+    {
+      "id": "5ed11cb49f427d03",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.64,
+      "baseline": "allow",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 812.1
+    },
+    {
+      "id": "6e17964e558891ac",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.91,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\"action\": \"review\"}",
+      "duration_ms": 550.8
+    },
+    {
+      "id": "1f0183e9da6f8257",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.33,
+      "baseline": "flag",
+      "action": "allow",
+      "raw": "{\n  \"action\": \"allow\"\n}",
+      "duration_ms": 1019.0
+    },
+    {
+      "id": "1d47f43065a8c1bb",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.75,
+      "baseline": "flag",
+      "action": "review",
+      "raw": "{\n  \"action\": \"review\"\n}",
+      "duration_ms": 818.1
+    },
+    {
+      "id": "d00ddacb11625298",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.46,
+      "baseline": "flag",
+      "action": "flag",
+      "raw": "{\n  \"action\": \"flag\"\n}",
+      "duration_ms": 810.2
+    }
+  ]
+}

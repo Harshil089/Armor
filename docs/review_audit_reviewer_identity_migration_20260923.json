@@ -1,0 +1,16 @@
+{
+  "db": "/Users/harshilbuch/Armor/armor/observability/review_audit.db",
+  "backup": "/tmp/armor_review_audit_before_reviewer_ids_20260923.sqlite",
+  "prior_rows_preserved": 85,
+  "prior_identity_backfill": {
+    "reviewer_ai_a_decisions": 67,
+    "reviewer_ai_b_decisions": 67
+  },
+  "new_rows_added": 120,
+  "new_batches": {
+    "v12": 96,
+    "v13": 24
+  },
+  "all_new_reviewer_ids_verified": true,
+  "no_human_ground_truth": true
+}

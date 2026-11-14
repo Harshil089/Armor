@@ -1,0 +1,208 @@
+{
+  "reviewer": "reviewer_ai_jev_blind_v1_2_dev",
+  "rubric_version": "v1.2-proposal",
+  "human_ground_truth": false,
+  "method": "TypeSafe Jev; blind to prior decisions, sampling strata, candidate predictions, and model outputs; text-only rubric judgment",
+  "rows": [
+    {
+      "sample_id": "252a18d59b0e9169",
+      "label": "allow",
+      "confidence": 0.9
+    },
+    {
+      "sample_id": "fd100d77aa5c947b",
+      "label": "allow",
+      "confidence": 0.49
+    },
+    {
+      "sample_id": "17aad64c190ea7d8",
+      "label": "block",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "df19622ef8c197da",
+      "label": "block",
+      "confidence": 0.97
+    },
+    {
+      "sample_id": "9871ee304ac895f3",
+      "label": "block",
+      "confidence": 0.84
+    },
+    {
+      "sample_id": "0486c01951a16c98",
+      "label": "block",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "dbf15e59ec37ca2f",
+      "label": "allow",
+      "confidence": 0.54
+    },
+    {
+      "sample_id": "35cee062cbe9b960",
+      "label": "allow",
+      "confidence": 0.97
+    },
+    {
+      "sample_id": "be0c9705cedf928d",
+      "label": "allow",
+      "confidence": 0.94
+    },
+    {
+      "sample_id": "91b8cf157742c61a",
+      "label": "block",
+      "confidence": 0.94
+    },
+    {
+      "sample_id": "05ec8a5ea8e9156e",
+      "label": "allow",
+      "confidence": 0.84
+    },
+    {
+      "sample_id": "dcdd7a77e892723d",
+      "label": "block",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "036eb2196bcee481",
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "c542e330f2f70e44",
+      "label": "allow",
+      "confidence": 0.85
+    },
+    {
+      "sample_id": "88c4daaf6c862d4c",
+      "label": "block",
+      "confidence": 0.92
+    },
+    {
+      "sample_id": "9bb6c6b87cf0039a",
+      "label": "allow",
+      "confidence": 0.83
+    },
+    {
+      "sample_id": "83ee31db7fc5189e",
+      "label": "allow",
+      "confidence": 0.94
+    },
+    {
+      "sample_id": "65138e55d2dcbf6e",
+      "label": "allow",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "817600792ab46e08",
+      "label": "flag",
+      "confidence": 0.23
+    },
+    {
+      "sample_id": "f8aef88d68454f90",
+      "label": "block",
+      "confidence": 0.22
+    },
+    {
+      "sample_id": "76812fd097f2c32e",
+      "label": "allow",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "d3b720e07240468a",
+      "label": "block",
+      "confidence": 0.9
+    },
+    {
+      "sample_id": "d90c9916ceb3be27",
+      "label": "allow",
+      "confidence": 0.74
+    },
+    {
+      "sample_id": "d6e1eb4cd4e4d75d",
+      "label": "block",
+      "confidence": 0.26
+    },
+    {
+      "sample_id": "6b0de141f4ba95b4",
+      "label": "block",
+      "confidence": 1.0
+    },
+    {
+      "sample_id": "163062c9e7096b0f",
+      "label": "block",
+      "confidence": 0.96
+    },
+    {
+      "sample_id": "a4b4c46f6ba645a5",
+      "label": "allow",
+      "confidence": 0.93
+    },
+    {
+      "sample_id": "ee5769b73a848ec7",
+      "label": "allow",
+      "confidence": 0.41
+    },
+    {
+      "sample_id": "240d49b733da9a15",
+      "label": "allow",
+      "confidence": 0.48
+    },
+    {
+      "sample_id": "89046ecc1da824c0",
+      "label": "flag",
+      "confidence": 0.46
+    },
+    {
+      "sample_id": "f9fd333aa54dd1ff",
+      "label": "block",
+      "confidence": 0.36
+    },
+    {
+      "sample_id": "0e5b6446fd45af71",
+      "label": "review",
+      "confidence": 0.95
+    },
+    {
+      "sample_id": "d79837f00d968835",
+      "label": "block",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "f7543baad1629cec",
+      "label": "allow",
+      "confidence": 0.49
+    },
+    {
+      "sample_id": "8bd40ead4c643304",
+      "label": "allow",
+      "confidence": 0.27
+    },
+    {
+      "sample_id": "79544fd6f8b4dbbc",
+      "label": "review",
+      "confidence": 0.99
+    },
+    {
+      "sample_id": "7501dccbd055e263",
+      "label": "block",
+      "confidence": 0.91
+    },
+    {
+      "sample_id": "b6be5c511d29bf97",
+      "label": "allow",
+      "confidence": 0.9
+    },
+    {
+      "sample_id": "0e412555bd59d5c8",
+      "label": "flag",
+      "confidence": 0.98
+    },
+    {
+      "sample_id": "a9f2dd5480d826d3",
+      "label": "block",
+      "confidence": 0.98
+    }
+  ]
+}

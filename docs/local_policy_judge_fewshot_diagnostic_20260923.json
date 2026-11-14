@@ -1,0 +1,1040 @@
+{
+  "prompt": "rubric_v1.1_plus_eight_boundary_examples",
+  "rows": [
+    {
+      "id": "2332bff9f1ddbb82",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.65,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 2016.1
+    },
+    {
+      "id": "910206a74be42294",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 708.4
+    },
+    {
+      "id": "9ed2dc3fb9ce8917",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.48,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 804.7
+    },
+    {
+      "id": "2ef6bf483644dd94",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 707.5
+    },
+    {
+      "id": "c73bd40b4030bfe9",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.65,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 750.5
+    },
+    {
+      "id": "dc40decbae959970",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.73,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 801.5
+    },
+    {
+      "id": "0b4be4b56aadcdab",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.27,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 681.3
+    },
+    {
+      "id": "40a08edd05d1dd03",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.45,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 618.2
+    },
+    {
+      "id": "18d7f90df5a6c2cb",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.53,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 702.3
+    },
+    {
+      "id": "cb2aa5731b2ae506",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.56,
+      "baseline": "allow",
+      "action": "allow",
+      "duration_ms": 841.4
+    },
+    {
+      "id": "0c278c58f2ec1492",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.18,
+      "baseline": "block",
+      "action": "review",
+      "duration_ms": 583.0
+    },
+    {
+      "id": "ae6a7cde9b5425bd",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 1.0,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 592.8
+    },
+    {
+      "id": "b9adbc7608f0a2c0",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.87,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 577.0
+    },
+    {
+      "id": "9f097ed37a6c8a87",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.23,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 612.4
+    },
+    {
+      "id": "81f70af472a32bad",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.99,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 703.9
+    },
+    {
+      "id": "ed2f5a6f2d1aa2f6",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 697.7
+    },
+    {
+      "id": "8230d0c4dceb4276",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.51,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 820.3
+    },
+    {
+      "id": "a28347d8c83e94ff",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.38,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 805.3
+    },
+    {
+      "id": "8240913a607af1a5",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.48,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 851.5
+    },
+    {
+      "id": "b4cf10d832a1333c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.6,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 828.7
+    },
+    {
+      "id": "41b35ada86992e51",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.5,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 821.2
+    },
+    {
+      "id": "be82d701da1f6d1f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.4,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 802.1
+    },
+    {
+      "id": "9372c54d64ed37b7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.54,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 608.4
+    },
+    {
+      "id": "f4c02d5d5fe6dccd",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.57,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 797.3
+    },
+    {
+      "id": "9293dc076c72076a",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.53,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 585.0
+    },
+    {
+      "id": "21e6e7feb34ebe0c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.83,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 681.4
+    },
+    {
+      "id": "57d7c166dea19981",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 677.1
+    },
+    {
+      "id": "2327e57edca93452",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.14,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 562.9
+    },
+    {
+      "id": "e7cb6e09c75e2185",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.86,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 576.9
+    },
+    {
+      "id": "32c05aca848c6878",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.35,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 817.6
+    },
+    {
+      "id": "3661e20551b5a7e8",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 2094.7
+    },
+    {
+      "id": "e558490a2ba7fc08",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.97,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 706.3
+    },
+    {
+      "id": "3f53f12335de4f01",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.23,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 1004.1
+    },
+    {
+      "id": "a7fec1ba91edc747",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.79,
+      "baseline": "block",
+      "action": "flag",
+      "duration_ms": 1031.0
+    },
+    {
+      "id": "caa18860fe314536",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.42,
+      "baseline": "block",
+      "action": "flag",
+      "duration_ms": 1016.5
+    },
+    {
+      "id": "dd6a5a39f3db784f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.74,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 981.2
+    },
+    {
+      "id": "764f454e5be2eeab",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.81,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 846.4
+    },
+    {
+      "id": "9e6f32e2410a53f3",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.24,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 700.2
+    },
+    {
+      "id": "c4362b8831a0b2b0",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.96,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 584.2
+    },
+    {
+      "id": "da95258937bf8196",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.63,
+      "baseline": "allow",
+      "action": "block",
+      "duration_ms": 1162.0
+    },
+    {
+      "id": "6b3aa32b4701857b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.21,
+      "baseline": "block",
+      "action": "review",
+      "duration_ms": 1004.3
+    },
+    {
+      "id": "124923b7c73aa30c",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.44,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 703.4
+    },
+    {
+      "id": "ce75f1213a492bff",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.21,
+      "baseline": "allow",
+      "action": "block",
+      "duration_ms": 612.9
+    },
+    {
+      "id": "d11b999ea2447562",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.9,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 725.5
+    },
+    {
+      "id": "ded3e97655c68bce",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.49,
+      "baseline": "allow",
+      "action": "block",
+      "duration_ms": 705.5
+    },
+    {
+      "id": "ea9d1191d124043a",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.25,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 718.0
+    },
+    {
+      "id": "d1b930cb4d24b55b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.78,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 818.5
+    },
+    {
+      "id": "983793a142326ad7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.44,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 843.5
+    },
+    {
+      "id": "02be9137bb46910d",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.69,
+      "baseline": "block",
+      "action": "review",
+      "duration_ms": 801.8
+    },
+    {
+      "id": "6750ec93268ff06b",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 828.0
+    },
+    {
+      "id": "b2700eaec564e0e7",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.77,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 678.0
+    },
+    {
+      "id": "c43ed9ccfc4372df",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.86,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 796.1
+    },
+    {
+      "id": "77b1040fc83907d3",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.82,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 583.9
+    },
+    {
+      "id": "503ff0a3087d6f3f",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "allow",
+      "label_confidence": 0.7,
+      "baseline": "block",
+      "action": "allow",
+      "duration_ms": 557.6
+    },
+    {
+      "id": "669545d90a1af105",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.74,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 690.0
+    },
+    {
+      "id": "5ed11cb49f427d03",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.64,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 795.3
+    },
+    {
+      "id": "6e17964e558891ac",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.91,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 594.3
+    },
+    {
+      "id": "1f0183e9da6f8257",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "block",
+      "label_confidence": 0.33,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 1040.4
+    },
+    {
+      "id": "1d47f43065a8c1bb",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "review",
+      "label_confidence": 0.75,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 803.1
+    },
+    {
+      "id": "d00ddacb11625298",
+      "slice": "fresh_broad_v1_1_holdout",
+      "label": "flag",
+      "label_confidence": 0.46,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 829.6
+    },
+    {
+      "id": "2f8b7bd8af2a8c38",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 681.9
+    },
+    {
+      "id": "051149b1f1cde73e",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.46,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 703.9
+    },
+    {
+      "id": "59f5ffd258602549",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.42,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 697.8
+    },
+    {
+      "id": "f98296d2e4e04440",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.46,
+      "baseline": "block",
+      "action": "review",
+      "duration_ms": 559.8
+    },
+    {
+      "id": "3321b8e9f3716978",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.26,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 822.8
+    },
+    {
+      "id": "bfa7035980a7ad71",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.4,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 818.5
+    },
+    {
+      "id": "5e13f537f55b7e91",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.67,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 702.9
+    },
+    {
+      "id": "17afb911738a270a",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.99,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 708.7
+    },
+    {
+      "id": "0685f3a08a73d664",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.92,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 1130.9
+    },
+    {
+      "id": "5eb4ec77fe945d3a",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.24,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 584.7
+    },
+    {
+      "id": "f7c1eba04e1a86c8",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.63,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 702.9
+    },
+    {
+      "id": "db4cfe9813140eaa",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.44,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 578.1
+    },
+    {
+      "id": "c21648d904d7ba87",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.44,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 819.2
+    },
+    {
+      "id": "04febbef18451e9f",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.97,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 574.0
+    },
+    {
+      "id": "820f861158ef14bf",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.65,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 804.2
+    },
+    {
+      "id": "681a55a23e8e7e1d",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "allow",
+      "label_confidence": 0.52,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 585.1
+    },
+    {
+      "id": "975ff11d84e2b069",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.62,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 708.0
+    },
+    {
+      "id": "ceec4abb384b1bb2",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.66,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 693.9
+    },
+    {
+      "id": "ed9d369a2f1501ef",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 808.8
+    },
+    {
+      "id": "efca9ac30dc982fe",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.73,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 797.4
+    },
+    {
+      "id": "79d3951567f74929",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.41,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 799.6
+    },
+    {
+      "id": "f84c78fa1952b0aa",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.6,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 707.0
+    },
+    {
+      "id": "3b9c984e41b3b905",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.38,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 843.3
+    },
+    {
+      "id": "69bde6beedc0c1d3",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.53,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 811.3
+    },
+    {
+      "id": "082712249ebcc42a",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.33,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 579.7
+    },
+    {
+      "id": "73502a27cb9f7dce",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.6,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 588.2
+    },
+    {
+      "id": "205c0ebee2189c73",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.55,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 680.9
+    },
+    {
+      "id": "3b483b014b558793",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.81,
+      "baseline": "flag",
+      "action": "allow",
+      "duration_ms": 597.6
+    },
+    {
+      "id": "6ff482c336bf0796",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.64,
+      "baseline": "allow",
+      "action": "flag",
+      "duration_ms": 629.1
+    },
+    {
+      "id": "78649c2485252acf",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.46,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 698.3
+    },
+    {
+      "id": "32fec5943371096f",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.88,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 622.0
+    },
+    {
+      "id": "b8a08fa1bc78e184",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.92,
+      "baseline": "block",
+      "action": "review",
+      "duration_ms": 1146.6
+    },
+    {
+      "id": "6d34c46f02a68aca",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.9,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 1050.1
+    },
+    {
+      "id": "5192c4f88b287134",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.76,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 1360.5
+    },
+    {
+      "id": "fa2784b4adea8f7b",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 716.0
+    },
+    {
+      "id": "944448fdb770ec33",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.75,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 1354.1
+    },
+    {
+      "id": "44f3efc10d1d431c",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.95,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 719.7
+    },
+    {
+      "id": "ea8fc1f3064e2219",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.94,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 588.2
+    },
+    {
+      "id": "707c79965dfd7fdf",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.38,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 1178.4
+    },
+    {
+      "id": "36608c5f54d9e058",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.73,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 734.4
+    },
+    {
+      "id": "dfde2491a803f290",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 754.2
+    },
+    {
+      "id": "1cccfd7dba62a1a4",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.69,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 599.9
+    },
+    {
+      "id": "9e4f64c5dd4816c2",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.92,
+      "baseline": "block",
+      "action": "block",
+      "duration_ms": 1084.5
+    },
+    {
+      "id": "afff1d03d5f8e9b2",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.39,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 771.8
+    },
+    {
+      "id": "3f0e6451ca1570fe",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.74,
+      "baseline": "block",
+      "action": "flag",
+      "duration_ms": 750.2
+    },
+    {
+      "id": "bcc59cd8f1e7edbf",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.31,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 742.8
+    },
+    {
+      "id": "17b6cf4441e0aba1",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.87,
+      "baseline": "flag",
+      "action": "block",
+      "duration_ms": 762.8
+    },
+    {
+      "id": "7be2a2642c5727ce",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.72,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 893.2
+    },
+    {
+      "id": "ebe130b09fbd5b6d",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.38,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 658.8
+    },
+    {
+      "id": "2837f6d6133df48d",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "flag",
+      "label_confidence": 0.34,
+      "baseline": "flag",
+      "action": "flag",
+      "duration_ms": 927.7
+    },
+    {
+      "id": "acbd07747f6d7db8",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.78,
+      "baseline": "allow",
+      "action": "review",
+      "duration_ms": 770.8
+    },
+    {
+      "id": "0aec24878a1a374a",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.22,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 808.8
+    },
+    {
+      "id": "97561ac8705a8733",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "block",
+      "label_confidence": 0.61,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 806.1
+    },
+    {
+      "id": "c1fd3f532938717a",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.57,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 817.2
+    },
+    {
+      "id": "d16128b9c2bb065d",
+      "slice": "fresh_broad_v1_1_v4",
+      "label": "review",
+      "label_confidence": 0.29,
+      "baseline": "flag",
+      "action": "review",
+      "duration_ms": 965.5
+    }
+  ]
+}

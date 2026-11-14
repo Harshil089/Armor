@@ -1,0 +1,12 @@
+{
+  "_comment": "Canada locale pack. SIN uses a real Luhn checksum, same algorithm as credit cards at a different length.",
+  "entities": [
+    {
+      "entity_id": "ca_sin",
+      "locale": "CA",
+      "pattern": "\\b\\d{3}[ -]?\\d{3}[ -]?\\d{3}\\b",
+      "severity": "high",
+      "validator": "ca_sin_luhn"
+    }
+  ]
+}

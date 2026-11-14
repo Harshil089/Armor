@@ -1,0 +1,113 @@
+{
+  "human_ground_truth": false,
+  "rows": [
+    {
+      "id": "15f175828c69dda0",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "252a18d59b0e9169",
+      "label": "allow",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "5239f8fe14427e0a",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "61367f40d3f1effc",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "839f1e116e130eea",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "960f4a4b3889fb05",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "a013912b1c066fda",
+      "label": "allow",
+      "decision": "flag",
+      "route": "fast"
+    },
+    {
+      "id": "adfc7e81c0f068ca",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b5955291973fecf9",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "b78305b1e645d7fd",
+      "label": "allow",
+      "decision": "flag",
+      "route": "base"
+    },
+    {
+      "id": "cb2d9c882458e4fc",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "f285bd526e3539ad",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "fda564ba3f7a0f02",
+      "label": "allow",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "bf5a318a47ef055a",
+      "label": "block",
+      "decision": "block",
+      "route": "base"
+    },
+    {
+      "id": "7e20a7c2080c54f4",
+      "label": "flag",
+      "decision": "flag",
+      "route": "fast"
+    },
+    {
+      "id": "7d51bfa3bf4b94e9",
+      "label": "review",
+      "decision": "flag",
+      "route": "fast"
+    },
+    {
+      "id": "d3b720e07240468a",
+      "label": "review",
+      "decision": "allow",
+      "route": "base"
+    },
+    {
+      "id": "f8aef88d68454f90",
+      "label": "review",
+      "decision": "block",
+      "route": "base"
+    }
+  ]
+}

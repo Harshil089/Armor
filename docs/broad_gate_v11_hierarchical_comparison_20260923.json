@@ -1,0 +1,173 @@
+{
+  "reviewer_a": "reviewer_ai_jev_blind_v1_1",
+  "reviewer_b": "reviewer_ai_blind_b_v1_1",
+  "rubric_version": "v1.1",
+  "human_ground_truth": false,
+  "n": 40,
+  "candidate": "hierarchical intervention+block heads; conformal/OOD not enabled",
+  "metrics_vs_jev": {
+    "confusion_matrix": {
+      "allow": {
+        "allow": 4,
+        "flag": 2,
+        "block": 6,
+        "review": 0
+      },
+      "flag": {
+        "allow": 2,
+        "flag": 2,
+        "block": 3,
+        "review": 0
+      },
+      "block": {
+        "allow": 0,
+        "flag": 2,
+        "block": 16,
+        "review": 1
+      },
+      "review": {
+        "allow": 1,
+        "flag": 0,
+        "block": 1,
+        "review": 0
+      }
+    },
+    "per_class": {
+      "allow": {
+        "precision": 0.5714285714285714,
+        "recall": 0.3333333333333333,
+        "f1": 0.4210526315789474,
+        "support": 12
+      },
+      "flag": {
+        "precision": 0.3333333333333333,
+        "recall": 0.2857142857142857,
+        "f1": 0.30769230769230765,
+        "support": 7
+      },
+      "block": {
+        "precision": 0.6153846153846154,
+        "recall": 0.8421052631578947,
+        "f1": 0.7111111111111111,
+        "support": 19
+      },
+      "review": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      }
+    },
+    "macro_f1": 0.3599640125955915,
+    "accuracy": 0.55,
+    "block_false_negative_count": 3,
+    "flag_to_allow_errors": 2,
+    "flag_to_block_errors": 3,
+    "review_rate": 0.025,
+    "review_precision": 0.0
+  },
+  "metrics_vs_independent_consensus_only": {
+    "confusion_matrix": {
+      "allow": {
+        "allow": 3,
+        "flag": 2,
+        "block": 4,
+        "review": 0
+      },
+      "flag": {
+        "allow": 1,
+        "flag": 2,
+        "block": 3,
+        "review": 0
+      },
+      "block": {
+        "allow": 0,
+        "flag": 2,
+        "block": 9,
+        "review": 1
+      },
+      "review": {
+        "allow": 1,
+        "flag": 0,
+        "block": 0,
+        "review": 0
+      }
+    },
+    "per_class": {
+      "allow": {
+        "precision": 0.6,
+        "recall": 0.3333333333333333,
+        "f1": 0.42857142857142855,
+        "support": 9
+      },
+      "flag": {
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333,
+        "support": 6
+      },
+      "block": {
+        "precision": 0.5625,
+        "recall": 0.75,
+        "f1": 0.6428571428571429,
+        "support": 12
+      },
+      "review": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "macro_f1": 0.35119047619047616,
+    "accuracy": 0.5,
+    "block_false_negative_count": 3,
+    "flag_to_allow_errors": 1,
+    "flag_to_block_errors": 3,
+    "review_rate": 0.03571428571428571,
+    "review_precision": 0.0
+  },
+  "consensus_n": 28,
+  "predictions": [
+    "allow",
+    "block",
+    "block",
+    "block",
+    "flag",
+    "block",
+    "block",
+    "allow",
+    "allow",
+    "block",
+    "allow",
+    "block",
+    "block",
+    "flag",
+    "flag",
+    "block",
+    "allow",
+    "flag",
+    "block",
+    "block",
+    "block",
+    "block",
+    "block",
+    "block",
+    "block",
+    "review",
+    "flag",
+    "block",
+    "flag",
+    "block",
+    "block",
+    "block",
+    "block",
+    "block",
+    "allow",
+    "block",
+    "block",
+    "allow",
+    "block",
+    "block"
+  ]
+}
