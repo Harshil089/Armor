@@ -16,6 +16,8 @@ def _block_text(content) -> str:
             if block.get("type") == "tool_use":
                 parts.append(str(block.get("name", "")))
                 parts.append(json.dumps(block.get("input", {})))
+            elif block.get("type") == "tool_result":
+                parts.append(_block_text(block.get("content")))
             else:
                 parts.append(str(block.get("text", "")))
         return "\n".join(parts)
@@ -26,15 +28,19 @@ class AnthropicMessagesAdapter:
     """Adapter for Anthropic-shaped /v1/messages requests and responses."""
 
     def extract_prompt_text(self, request_json: dict) -> str:
-        """The newest user message, not the whole conversation — see
-        armor/proxy/adapters/openai.py's extract_prompt_text for the
-        measurement that motivated this (concatenating history collapsed
+        """The newest user message (including tool_result blocks), not the whole
+        conversation — see armor/proxy/adapters/openai.py's extract_prompt_text
+        for the measurement that motivated this (concatenating history collapsed
         the classifier's discrimination on live traffic)."""
         messages = request_json.get("messages", [])
         for message in reversed(messages):
             if message.get("role") == "user":
                 return _block_text(message.get("content"))
-        return _block_text(messages[-1].get("content")) if messages else ""
+        if messages:
+            return _block_text(messages[-1].get("content"))
+        if "system" in request_json:
+            return _block_text(request_json.get("system"))
+        return ""
 
     def extract_response_text(self, response_json: dict) -> str:
         return _block_text(response_json.get("content"))

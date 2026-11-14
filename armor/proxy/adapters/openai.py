@@ -1,11 +1,28 @@
 import json
 
 
+def _extract_message_content(content) -> str:
+    if content is None:
+        return ""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = []
+        for part in content:
+            if isinstance(part, dict):
+                if "text" in part:
+                    parts.append(str(part.get("text", "")))
+            elif isinstance(part, str):
+                parts.append(part)
+        return "\n".join(parts)
+    return str(content)
+
+
 class OpenAIChatAdapter:
     """Adapter for OpenAI-shaped /v1/chat/completions requests and responses."""
 
     def extract_prompt_text(self, request_json: dict) -> str:
-        """The newest user message, not the whole conversation.
+        """The newest unvetted turn (newest user message, or tool results after it).
 
         ponytail: this joined every message with "\\n" until 2026-09-20.
         Chat clients resend the full history on every turn, so what reached
@@ -17,22 +34,32 @@ class OpenAIChatAdapter:
         both scored 0.99. Scored on their own, the same two are 0.650 and
         0.197.
 
-        Only the newest user turn is new, unvetted input; earlier turns were
+        Only the newest user turn (or tool/function outputs returned after
+        the newest user turn) is new, unvetted input; earlier turns were
         already inspected when they were sent. Re-scanning them every turn
         costs tokens and destroys the signal.
-
-        Known limitation: indirect injection carried in tool results or
-        assistant turns is not covered by this. That needs its own handling
-        (inspect tool outputs as their own direction), not a return to
-        concatenating everything.
         """
         messages = request_json.get("messages", [])
-        for message in reversed(messages):
-            if message.get("role") == "user":
-                return str(message.get("content", ""))
+        last_user_idx = None
+        for idx in range(len(messages) - 1, -1, -1):
+            if messages[idx].get("role") == "user":
+                last_user_idx = idx
+                break
+
+        if last_user_idx is not None:
+            trailing_tools = [
+                _extract_message_content(m.get("content"))
+                for m in messages[last_user_idx + 1 :]
+                if m.get("role") in ("tool", "function")
+            ]
+            trailing_tools = [t for t in trailing_tools if t]
+            if trailing_tools:
+                return "\n".join(trailing_tools)
+            return _extract_message_content(messages[last_user_idx].get("content"))
+
         # No user turn (or a non-standard shape) — fall back to the last
         # message so a malformed request is still inspected, never skipped.
-        return str(messages[-1].get("content", "")) if messages else ""
+        return _extract_message_content(messages[-1].get("content")) if messages else ""
 
     def extract_response_text(self, response_json: dict) -> str:
         """Plain content plus any tool calls — a non-streaming response

@@ -1,3 +1,4 @@
+import codecs
 import json
 import os
 from typing import Literal
@@ -8,6 +9,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 
 from armor.api.schemas import InspectRequest, InspectResponse
 from armor.observability import log_store
+from armor.proxy import config as proxy_config
 from armor.proxy.adapters import get_adapter
 from armor.proxy.config import DEFAULT_CONFIG
 
@@ -25,24 +27,10 @@ _HOP_BY_HOP = {"host", "content-length", "connection"}
 _STREAM_INSPECT_EVERY_CHARS = 40
 
 
-def _drain_sse_events(buffer: bytes) -> tuple[list[tuple[str | None, dict]], bool, bytes]:
-    """Splits a raw SSE byte buffer on event boundaries. Returns (event_type,
-    payload) pairs for complete events (event_type is None for OpenAI-style
-    frames with no `event:` line — Anthropic's `event: content_block_delta`
-    etc. is preserved so reconstruction doesn't drop the field real SDKs
-    key off), whether a `[DONE]` sentinel was seen, and the leftover
-    (possibly incomplete) tail to prepend to the next chunk.
-
-    ponytail: decodes the whole buffer as utf-8 per call rather than
-    tracking incremental decode state — a multi-byte character split
-    exactly across a chunk boundary can garble one character (errors are
-    replaced, not raised). Rare in practice and self-heals on the next
-    chunk; a full incremental-decoder state machine is overkill for what
-    this buys here.
-    """
+def _drain_sse_text(text: str) -> tuple[list[tuple[str | None, dict]], bool, str]:
     events: list[tuple[str | None, dict]] = []
     saw_done = False
-    parts = buffer.decode("utf-8", errors="replace").split("\n\n")
+    parts = text.split("\n\n")
     remainder = parts.pop()
     for part in parts:
         event_type = None
@@ -59,6 +47,25 @@ def _drain_sse_events(buffer: bytes) -> tuple[list[tuple[str | None, dict]], boo
                         events.append((event_type, json.loads(payload)))
                     except json.JSONDecodeError:
                         continue
+    return events, saw_done, remainder
+
+
+def _drain_sse_events(
+    buffer: bytes,
+    decoder: codecs.IncrementalDecoder | None = None,
+    *,
+    final: bool = True,
+) -> tuple[list[tuple[str | None, dict]], bool, bytes]:
+    """Splits a raw SSE byte buffer on event boundaries. Returns (event_type,
+    payload) pairs for complete events (event_type is None for OpenAI-style
+    frames with no `event:` line — Anthropic's `event: content_block_delta`
+    etc. is preserved so reconstruction doesn't drop the field real SDKs
+    key off), whether a `[DONE]` sentinel was seen, and the leftover
+    (possibly incomplete) tail to prepend to the next chunk.
+    """
+    active_decoder = decoder or codecs.getincrementaldecoder("utf-8")(errors="replace")
+    decoded = active_decoder.decode(buffer, final=final)
+    events, saw_done, remainder = _drain_sse_text(decoded)
     return events, saw_done, remainder.encode("utf-8")
 
 _client: httpx.AsyncClient | None = None
@@ -84,6 +91,7 @@ def _forward_headers(headers) -> dict:
 @router.post("/proxy/{provider}/{path:path}")
 async def proxy(provider: str, path: str, request: Request):
     config = DEFAULT_CONFIG
+    proxy_config.sync_providers(config)
     if provider not in config.upstreams:
         return JSONResponse({"error": f"unknown provider: {provider}"}, status_code=404)
 
@@ -157,14 +165,15 @@ async def proxy(provider: str, path: str, request: Request):
             accumulated_text = ""
             unchecked_text = ""
             pending_frames: list[bytes] = []
-            sse_buffer = b""
+            decoder = codecs.getincrementaldecoder("utf-8")(errors="replace")
+            sse_text = ""
             saw_done = False
             async with client.stream(
                 "POST", url, json=body, headers=fwd_headers, timeout=upstream.timeout_s
             ) as upstream_resp:
                 async for chunk in upstream_resp.aiter_bytes():
-                    sse_buffer += chunk
-                    events, chunk_saw_done, sse_buffer = _drain_sse_events(sse_buffer)
+                    sse_text += decoder.decode(chunk, final=False)
+                    events, chunk_saw_done, sse_text = _drain_sse_text(sse_text)
                     saw_done = saw_done or chunk_saw_done
                     # Per-event granularity, not per-raw-chunk: a transport
                     # can bundle several SSE events into one network read

@@ -35,7 +35,9 @@ def upsert_provider(path: Path, name: str, base_url: str, adapter: str) -> None:
     entries = [e for e in raw["providers"] if e["name"] != name]
     entries.append({"name": name, "base_url": base_url, "adapter": adapter})
     raw["providers"] = entries
-    path.write_text(json.dumps(raw, indent=2) + "\n")
+    tmp_path = path.with_name(f"{path.name}.{os.getpid()}.tmp")
+    tmp_path.write_text(json.dumps(raw, indent=2) + "\n")
+    os.replace(tmp_path, path)
 
 
 def delete_provider(path: Path, name: str) -> bool:
@@ -45,7 +47,9 @@ def delete_provider(path: Path, name: str) -> bool:
     raw["providers"] = [e for e in raw["providers"] if e["name"] != name]
     if len(raw["providers"]) == before:
         return False
-    path.write_text(json.dumps(raw, indent=2) + "\n")
+    tmp_path = path.with_name(f"{path.name}.{os.getpid()}.tmp")
+    tmp_path.write_text(json.dumps(raw, indent=2) + "\n")
+    os.replace(tmp_path, path)
     return True
 
 
@@ -57,6 +61,30 @@ class ProxyConfig:
     fail_open_prompt: bool = True
     fail_open_response: bool = False
     upstreams: dict[str, UpstreamConfig] = field(default_factory=lambda: _load_providers(PROVIDERS_PATH))
+    _providers_path: Path | None = field(default=None, init=False, repr=False, compare=False)
+    _providers_mtime_ns: int | None = field(default=None, init=False, repr=False, compare=False)
+
+    def __post_init__(self) -> None:
+        try:
+            self._providers_path = PROVIDERS_PATH
+            self._providers_mtime_ns = PROVIDERS_PATH.stat().st_mtime_ns
+        except OSError:
+            pass
 
 
 DEFAULT_CONFIG = ProxyConfig()
+
+
+def sync_providers(config: ProxyConfig | None = None) -> dict[str, UpstreamConfig]:
+    """Reload provider upstreams if PROVIDERS_PATH changed or its mtime updated on disk."""
+    target = config or DEFAULT_CONFIG
+    path = PROVIDERS_PATH
+    try:
+        mtime_ns = path.stat().st_mtime_ns
+    except OSError:
+        return target.upstreams
+    if target._providers_path != path or target._providers_mtime_ns != mtime_ns:
+        target.upstreams = _load_providers(path)
+        target._providers_path = path
+        target._providers_mtime_ns = mtime_ns
+    return target.upstreams

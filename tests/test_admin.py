@@ -122,3 +122,47 @@ def test_logs_ui_page_loads():
     resp = TestClient(app).get("/admin/logs-page")
     assert resp.status_code == 200
     assert "text/html" in resp.headers["content-type"]
+
+
+def test_admin_auth_allows_access_when_env_unset(monkeypatch):
+    monkeypatch.delenv("ARMOR_ADMIN_API_KEY", raising=False)
+    client = TestClient(app)
+    assert client.get("/admin/providers").status_code == 200
+    assert client.get("/admin/logs").status_code == 200
+    assert client.get("/admin/reviews").status_code == 200
+
+
+def test_admin_auth_requires_key_when_env_set(monkeypatch):
+    monkeypatch.setenv("ARMOR_ADMIN_API_KEY", "secret-key-123")
+    client = TestClient(app)
+
+    # Missing or wrong credentials -> 401 on JSON endpoints
+    assert client.get("/admin/providers").status_code == 401
+    assert client.post(
+        "/admin/providers",
+        json={"name": "groq", "base_url": "https://api.groq.com/openai", "adapter": "openai"},
+    ).status_code == 401
+    assert client.delete("/admin/providers/openai").status_code == 401
+    assert client.get("/admin/logs").status_code == 401
+    assert client.get("/admin/reviews").status_code == 401
+    assert client.get("/admin/providers", headers={"X-Armor-Admin-Key": "wrong"}).status_code == 401
+    assert client.get("/admin/providers", headers={"Authorization": "Bearer wrong"}).status_code == 401
+
+    # Valid X-Armor-Admin-Key or Bearer token -> 200
+    assert client.get("/admin/providers", headers={"X-Armor-Admin-Key": "secret-key-123"}).status_code == 200
+    assert client.get("/admin/providers", headers={"Authorization": "Bearer secret-key-123"}).status_code == 200
+    assert client.get("/admin/reviews", headers={"Authorization": "Bearer secret-key-123"}).status_code == 200
+
+    # HTML UI pages remain accessible
+    assert client.get("/admin/").status_code == 200
+    assert client.get("/admin/logs-page").status_code == 200
+
+
+def test_admin_providers_reloads_when_file_updated_on_disk(isolated_providers):
+    client = TestClient(app)
+    assert all(p["name"] != "mistral" for p in client.get("/admin/providers").json()["providers"])
+
+    # Simulate another worker writing providers.json to disk with a newer mtime
+    proxy_config.upsert_provider(isolated_providers, "mistral", "https://api.mistral.ai", "openai")
+    names = {p["name"] for p in client.get("/admin/providers").json()["providers"]}
+    assert "mistral" in names

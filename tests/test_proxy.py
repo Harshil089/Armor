@@ -351,6 +351,30 @@ def test_stream_kill_switch_stops_forwarding_after_block(monkeypatch):
     assert b"SHOULD_NOT_APPEAR" not in resp.content
 
 
+def test_stream_preserves_split_multibyte_utf8_across_chunks(monkeypatch):
+    class SplitUtf8Stream(httpx.AsyncByteStream):
+        async def __aiter__(self):
+            full = b'data: {"choices": [{"delta": {"content": "\xf0\x9f\x9a\x80"}}]}\n\ndata: [DONE]\n\n'
+            split_at = full.index(b"\xf0") + 2  # split inside 4-byte emoji
+            yield full[:split_at]
+            yield full[split_at:]
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, stream=SplitUtf8Stream())
+
+    proxy_app._client = _mock_client(handler)
+    monkeypatch.setattr(proxy_app, "inspect_content", lambda direction, content: _result())
+
+    resp = TestClient(app).post(
+        "/proxy/openai/v1/chat/completions",
+        json={"messages": [{"role": "user", "content": "hi"}], "stream": True},
+    )
+    assert resp.status_code == 200
+    text = resp.content.decode("utf-8")
+    assert "\ufffd" not in text
+    assert "🚀" in text or "\\ud83d\\ude80" in text
+
+
 def test_stream_kill_switch_checks_per_event_within_one_raw_chunk(monkeypatch):
     """Two SSE events concatenated into ONE content= blob — httpx delivers
     small content-based mock responses as a single aiter_bytes() read, so
@@ -435,3 +459,27 @@ def test_stream_response_inspection_failure_fails_closed(monkeypatch):
     assert resp.status_code == 200
     assert b"Blocked by Armor" in resp.content
     assert b"SHOULD_NOT_APPEAR" not in resp.content
+
+
+def test_stream_preserves_split_multibyte_utf8_across_chunks(monkeypatch):
+    class SplitUtf8Stream(httpx.AsyncByteStream):
+        async def __aiter__(self):
+            full = b'data: {"choices": [{"delta": {"content": "\xf0\x9f\x9a\x80"}}]}\n\ndata: [DONE]\n\n'
+            split_at = full.index(b"\xf0") + 2  # split inside 4-byte emoji
+            yield full[:split_at]
+            yield full[split_at:]
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, stream=SplitUtf8Stream())
+
+    proxy_app._client = _mock_client(handler)
+    monkeypatch.setattr(proxy_app, "inspect_content", lambda direction, content: _result())
+
+    resp = TestClient(app).post(
+        "/proxy/openai/v1/chat/completions",
+        json={"messages": [{"role": "user", "content": "hi"}], "stream": True},
+    )
+    assert resp.status_code == 200
+    text = resp.content.decode("utf-8")
+    assert "\ufffd" not in text
+    assert "🚀" in text or "\\ud83d\\ude80" in text

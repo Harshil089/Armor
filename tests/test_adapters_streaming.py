@@ -1,8 +1,9 @@
+import codecs
 import json
 
 from armor.proxy.adapters.anthropic import AnthropicMessagesAdapter
 from armor.proxy.adapters.openai import OpenAIChatAdapter
-from armor.proxy.app import _drain_sse_events
+from armor.proxy.app import _drain_sse_events, _drain_sse_text
 
 
 def test_openai_extract_stream_delta_text():
@@ -87,3 +88,18 @@ def test_drain_sse_events_preserves_event_type_lines():
     buffer = b'event: content_block_delta\ndata: {"a": 1}\n\n'
     events, _, _ = _drain_sse_events(buffer)
     assert events == [("content_block_delta", {"a": 1})]
+
+
+def test_incremental_utf8_decoder_handles_split_multibyte_char():
+    decoder = codecs.getincrementaldecoder("utf-8")(errors="replace")
+    payload = 'data: {"text": "🚀"}\n\n'.encode("utf-8")
+    split_at = payload.index(b"\xf0") + 2  # split inside 4-byte emoji
+
+    text = decoder.decode(payload[:split_at], final=False)
+    events1, _, text = _drain_sse_text(text)
+    assert events1 == []
+
+    text += decoder.decode(payload[split_at:], final=False)
+    events2, _, text = _drain_sse_text(text)
+    assert events2 == [(None, {"text": "🚀"})]
+    assert "\ufffd" not in events2[0][1]["text"]
