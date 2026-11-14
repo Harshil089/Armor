@@ -54,11 +54,12 @@ class EncoderState:
     """A resumable state inside the single ModernBERT encoder stack."""
 
     hidden_states: torch.Tensor
-    attention_mask: torch.Tensor
-    sliding_window_mask: torch.Tensor
+    attention_mask: torch.Tensor | dict[str, torch.Tensor]
+    sliding_window_mask: torch.Tensor | None
     position_ids: torch.Tensor
     next_layer: int
     context: TokenContext
+    position_embeddings: dict | None = None
     timings_ms: dict[str, float] = field(default_factory=dict)
 
 
@@ -238,12 +239,34 @@ class ArmorBase:
         if hasattr(encoder, "warn_if_padding_and_no_attention_mask"):
             encoder.warn_if_padding_and_no_attention_mask(input_ids, attention_mask)
         position_ids = torch.arange(seq_len, device=device).unsqueeze(0)
-        global_mask, sliding_mask = encoder._update_attention_mask(
-            attention_mask, output_attentions=False
-        )
         started = time.perf_counter()
         hidden_states = encoder.embeddings(input_ids=input_ids)
         elapsed = (time.perf_counter() - started) * 1000
+        if hasattr(encoder, "_update_attention_mask"):
+            global_mask, sliding_mask = encoder._update_attention_mask(
+                attention_mask, output_attentions=False
+            )
+            position_embeddings = None
+        else:
+            from transformers.models.modernbert.modeling_modernbert import (
+                create_bidirectional_mask,
+                create_bidirectional_sliding_window_mask,
+            )
+
+            mask_kwargs = {
+                "config": encoder.config,
+                "inputs_embeds": hidden_states,
+                "attention_mask": attention_mask,
+            }
+            global_mask = {
+                "full_attention": create_bidirectional_mask(**mask_kwargs),
+                "sliding_attention": create_bidirectional_sliding_window_mask(**mask_kwargs),
+            }
+            sliding_mask = None
+            position_embeddings = {
+                layer_type: encoder.rotary_emb(hidden_states, position_ids, layer_type)
+                for layer_type in set(encoder.config.layer_types)
+            }
         return EncoderState(
             hidden_states=hidden_states,
             attention_mask=global_mask,
@@ -251,6 +274,7 @@ class ArmorBase:
             position_ids=position_ids,
             next_layer=1,
             context=context,
+            position_embeddings=position_embeddings,
             timings_ms={"embeddings_ms": elapsed},
         )
 
@@ -271,13 +295,23 @@ class ArmorBase:
         start_layer = state.next_layer
         started = time.perf_counter()
         for layer_index in range(state.next_layer, end_layer + 1):
-            state.hidden_states = layers[layer_index - 1](
-                state.hidden_states,
-                attention_mask=state.attention_mask,
-                sliding_window_mask=state.sliding_window_mask,
-                position_ids=state.position_ids,
-                output_attentions=False,
-            )[0]
+            layer = layers[layer_index - 1]
+            if state.position_embeddings is not None and isinstance(state.attention_mask, dict):
+                attn_type = layer.attention_type
+                out = layer(
+                    state.hidden_states,
+                    attention_mask=state.attention_mask[attn_type],
+                    position_embeddings=state.position_embeddings[attn_type],
+                )
+            else:
+                out = layer(
+                    state.hidden_states,
+                    attention_mask=state.attention_mask,
+                    sliding_window_mask=state.sliding_window_mask,
+                    position_ids=state.position_ids,
+                    output_attentions=False,
+                )
+            state.hidden_states = out[0] if isinstance(out, tuple) else out
         state.next_layer = end_layer + 1
         if end_layer == len(layers):
             state.hidden_states = self.encoder.final_norm(state.hidden_states)
