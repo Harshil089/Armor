@@ -9,11 +9,11 @@ _HARM = LABELS.index("harmful_content")
 
 def test_generate_examples_balanced_and_masked():
     examples = generate_examples()
-    assert len(examples) == 384  # 192 pairs * 2
+    assert len(examples) == 464  # 192 pairs * 2 + 80 benign build negatives
     positives = [ex for ex in examples if ex[1][_HARM] == 1.0]
     negatives = [ex for ex in examples if ex[1][_HARM] == 0.0]
     assert len(positives) == 192
-    assert len(negatives) == 192
+    assert len(negatives) == 272
     for _text, y, m in examples:
         assert m[_HARM] == 1.0
         assert sum(m) == 1.0

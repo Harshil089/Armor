@@ -115,7 +115,7 @@ def run_adaptive_single(
     heads = load_exit_heads(
         model.encoder.config.hidden_size,
         expected_encoder_fingerprint=getattr(model, "encoder_fingerprint", None),
-        device=model.device,
+        device=getattr(model, "device", "cpu"),
     )
     if heads is None:
         return AdaptiveWindowResult("review", "exit_heads_unavailable", [], {
@@ -229,7 +229,7 @@ def run_adaptive_windows(
     heads = load_exit_heads(
         model.encoder.config.hidden_size,
         expected_encoder_fingerprint=getattr(model, "encoder_fingerprint", None),
-        device=model.device,
+        device=getattr(model, "device", "cpu"),
     )
     if heads is None:
         unresolved = [WindowResult(w.index, w.start_token, w.end_token, 0, False,

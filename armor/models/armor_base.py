@@ -399,7 +399,12 @@ class ArmorBase:
 
     @torch.no_grad()
     def window_scores(
-        self, context: TokenContext, window: int = 512, overlap: int = 96, batch_size: int = 8
+        self,
+        context: TokenContext,
+        window: int = 512,
+        overlap: int = 96,
+        batch_size: int = 8,
+        early_stop_threshold: float | None = None,
     ) -> tuple[torch.Tensor, torch.Tensor]:
         """Full-depth sigmoid scores [n_windows, n_labels] and pooled CLS [n_windows, hidden].
 
@@ -418,6 +423,10 @@ class ArmorBase:
             scores, pooled = self.predict_with_embedding(context)
             return torch.tensor([list(scores.values())]), pooled[None]
         starts = list(range(0, max(1, len(body) - overlap), span - overlap))
+        max_windows = int(os.environ.get("ARMOR_MAX_WINDOWS", "24"))
+        if max_windows > 0 and len(starts) > max_windows:
+            starts = starts[:max_windows]
+        batch_size = int(os.environ.get("ARMOR_WINDOW_BATCH_SIZE", str(batch_size)))
         cls_id, sep_id, pad_id = (
             self.tokenizer.cls_token_id, self.tokenizer.sep_token_id, self.tokenizer.pad_token_id,
         )
@@ -425,6 +434,11 @@ class ArmorBase:
             torch.cat([ids.new_tensor([cls_id]), body[s:s + span], ids.new_tensor([sep_id])])
             for s in starts
         ]
+        if early_stop_threshold is None:
+            env_stop = os.environ.get("ARMOR_WINDOW_EARLY_STOP_THRESHOLD")
+            if env_stop:
+                early_stop_threshold = float(env_stop)
+        pi_idx = LABELS.index("prompt_injection")
         scores, pooled_all = [], []
         started = time.perf_counter()
         for i in range(0, len(rows), batch_size):
@@ -437,9 +451,16 @@ class ArmorBase:
                 mask[j, :len(r)] = 1
             pooled = self.encoder(
                 input_ids=input_ids.to(self.device), attention_mask=mask.to(self.device)
-            ).last_hidden_state[:, 0, :]
+            ).last_hidden_state[:, 0, :].clone()
             scores.append(torch.sigmoid(self.head(pooled.to(self.head.weight.device))))
             pooled_all.append(pooled)
+            if early_stop_threshold is not None and early_stop_threshold > 0:
+                cat_scores = torch.cat(scores)
+                if (
+                    float(cat_scores[:, pi_idx].max().item()) >= early_stop_threshold
+                    or int((cat_scores >= early_stop_threshold).sum(dim=0).max().item()) >= 2
+                ):
+                    break
         context.timings_ms["encoder_ms"] = (time.perf_counter() - started) * 1000
         return torch.cat(scores), torch.cat(pooled_all)
 

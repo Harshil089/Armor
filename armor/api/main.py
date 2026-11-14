@@ -24,7 +24,27 @@ app = FastAPI(title="Armor", version="0.1.0")
 USE_BASE_MODEL = os.environ.get("ARMOR_USE_BASE_MODEL") == "1"
 USE_BERT_POLICY_HEAD = os.environ.get("ARMOR_BERT_POLICY_HEAD") == "1"
 ADAPTIVE_SHADOW = os.environ.get("ARMOR_ADAPTIVE_SHADOW") == "1"
+ADAPTIVE_LIVE = os.environ.get("ARMOR_ADAPTIVE_LIVE") == "1"
 FINDING_THRESHOLD = float(os.environ.get("ARMOR_BASE_THRESHOLD", "0.5"))
+WINDOW_FUSION_MODE = os.environ.get("ARMOR_WINDOW_FUSION", "pi_max_others_second_max")
+
+
+def _fuse_window_scores(window_raw) -> dict[str, float]:
+    """Aggregate [n_windows, n_labels] raw scores into per-label request scores.
+
+    Single-window `max` across 20+ windows causes isolated noise spikes on
+    benign long documents. Using `max` for `prompt_injection` (single-window
+    injection) and `second_max` for the remaining 5 labels preserves PI recall
+    while suppressing single-window false positives.
+    """
+    from armor.models.labels import LABELS
+
+    if WINDOW_FUSION_MODE == "max" or window_raw.shape[0] < 2:
+        return dict(zip(LABELS, window_raw.max(dim=0).values.tolist()))
+    pi_idx = LABELS.index("prompt_injection")
+    second_max = window_raw.topk(2, dim=0).values[-1].tolist()
+    second_max[pi_idx] = float(window_raw[:, pi_idx].max().item())
+    return dict(zip(LABELS, second_max))
 
 # ponytail: the base-model route could only ever return "flag", never "block",
 # no matter the confidence — only the deterministic Fast Scan Layer could
@@ -282,8 +302,14 @@ def inspect(req: InspectRequest) -> InspectResponse:
             # windowing (max-fused) only kicks in past ~512 tokens, which is
             # where the quadratic full-depth pass gets expensive.
             window_started = time.perf_counter()
-            window_raw, pooled_all = model.window_scores(token_context)
-            raw_scores = dict(zip(LABELS, window_raw.max(dim=0).values.tolist()))
+            if ADAPTIVE_LIVE:
+                stop_thresh = float(os.environ.get("ARMOR_WINDOW_EARLY_STOP_THRESHOLD", "0.85"))
+                window_raw, pooled_all = model.window_scores(
+                    token_context, early_stop_threshold=stop_thresh
+                )
+            else:
+                window_raw, pooled_all = model.window_scores(token_context)
+            raw_scores = _fuse_window_scores(window_raw)
             pooled = pooled_all.mean(dim=0)
             inference_trace["window_count"] = window_raw.shape[0]
             inference_trace["windows_full_depth"] = window_raw.shape[0]

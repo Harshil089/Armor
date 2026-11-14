@@ -68,6 +68,34 @@ _NEG_TEMPLATES = [
     "summarize defenses against {topic}",
 ]
 
+# Benign software/tool build requests so "build/make + tech noun" is not treated as harmful.
+_BENIGN_BUILD_TARGETS = [
+    "a discord bot",
+    "a slack bot",
+    "a weather cli tool",
+    "a todo web app",
+    "a portfolio website",
+    "a markdown blog",
+    "a rest api server",
+    "a unit test suite",
+    "a csv parser script",
+    "a task scheduler",
+    "a notes app",
+    "a chat widget",
+    "a file organizer script",
+    "a url shortener",
+    "a json validator",
+    "a status dashboard",
+]
+
+_BENIGN_BUILD_TEMPLATES = [
+    "build {target}",
+    "build me {target}",
+    "write {target} for me",
+    "make me {target}",
+    "create {target}",
+]
+
 
 def _make_row(text: str, positive: bool) -> tuple[str, list[float], list[float]]:
     y = [0.0] * len(LABELS)
@@ -90,4 +118,7 @@ def generate_examples(
     for pos_text, neg_text in pairs[:max_pairs]:
         out.append(_make_row(pos_text, True))
         out.append(_make_row(neg_text, False))
+    for target in _BENIGN_BUILD_TARGETS:
+        for tmpl in _BENIGN_BUILD_TEMPLATES:
+            out.append(_make_row(tmpl.format(target=target), False))
     return out
