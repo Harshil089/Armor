@@ -58,6 +58,8 @@ None of these upstream repositories ships a NOTICE file.
 | [grammarly/coedit](https://huggingface.co/datasets/grammarly/coedit) | Grammarly | `e9a255c33ef910bc33a9d2b522653fa87521583e` | `obfuscation_encoding` negatives, 800 rows |
 | [aradhye/agent-safety-bench](https://huggingface.co/datasets/aradhye/agent-safety-bench) | aradhye | `b7761ca4c4e7a5937f0b6ad11dd24ce19163c454` | `dangerous_tool_action`, 287 rows |
 | [ryoungj/ToolEmu](https://github.com/ryoungj/ToolEmu) | ToolEmu authors (Ruan et al.) | `ac4a7ab7ed8c7985d96231e214bd6b54304b7ddb` | `dangerous_tool_action`, 322 rows |
+| [walledai/SaladBench](https://huggingface.co/datasets/walledai/SaladBench) | SaladBench / OpenSafetyLab | `5d9d078571dd171990162ba6201bc81c41c7c867` | `harmful_content` positives, up to 1,000 `prompts/base` rows |
+| [cyberec/Prompt-injection-dataset](https://huggingface.co/datasets/cyberec/Prompt-injection-dataset) | cyberec | `cfe0ce4a4d5eb9528ffaca55cf0db27ac609b8b1` | `prompt_injection`, up to 750 pos + 750 security-adjacent neg (`core/train`) |
 
 **Change notice (Apache-2.0 §4(b)):** Armor does not redistribute these
 files. It selects, filters, caps, and relabels rows into its own 6-label
@@ -73,6 +75,7 @@ credit, a license link, and an indication of changes.
 | [nvidia/Aegis-AI-Content-Safety-Dataset-1.0](https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-1.0) | NVIDIA Corporation | `bd96d862068e47630197de64eb91f8d1481ff3e0` | Negatives for `harmful_content`, `sensitive_data_exposure`, `obfuscation_encoding`, 800 rows. Only `user_message` rows that all annotators marked `Safe` are kept; responses and multi-turn rows are dropped, and the rest is deduplicated and sorted-sampled by ID. Card terms in §3 apply. |
 | [nvidia/Aegis-AI-Content-Safety-Dataset-2.0](https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0) | NVIDIA Corporation (Ghosh et al., 2025) | `d86bb8bedff51d25ac834ab7838f1cc61acb7a2c` | `harmful_content`, up to 1,500 unsafe + 1,500 safe user prompts. Only the `prompt` field is used; responses and `REDACTED` rows are dropped. `violated_categories` collapse to one binary label, and `Needs Caution`, `PII/Privacy`, `Copyright/Trademark/Plagiarism`, `Unauthorized Advice`, `High Risk Gov Decision Making` and `Other` are not counted as positives. All `Malware` rows are kept; the rest is deduplicated and randomly sampled (seed 0). Card terms in §3 apply. |
 | [Paul/XSTest](https://huggingface.co/datasets/Paul/XSTest) | Paul Röttger et al. | `f600c994b256f12867dfa5b3eb3d545a3e62f8b5` | `harmful_content`, 200 unsafe / 250 safe; safe rows are also `dangerous_tool_action` negatives. `safe`/`unsafe` becomes a binary label, and `type`, `focus` and `note` are dropped. |
+| [bench-llms/or-bench](https://huggingface.co/datasets/bench-llms/or-bench) | OR-Bench authors (Cui et al.) | `fd6ee135ee63ff6c4f3ff72c0e39627bf0a7f314` | `or-bench-hard-1k` (up to 1,000 hard benign negatives for `harmful_content` + `dangerous_tool_action`) and `or-bench-toxic` (up to 600 `harmful_content` positives). `category` is dropped. |
 
 ### CC0-1.0 (public domain)
 
