@@ -1,0 +1,177 @@
+{
+  "candidate_only": true,
+  "teacher": "full_depth_ArmorBase_classifier",
+  "source_rows": 1600,
+  "in_context_rows": 1600,
+  "train_rows": 1280,
+  "validation_rows": 320,
+  "validation_teacher_safe_rows": 251,
+  "validation_non_safe_rows": 69,
+  "teacher_safe_ceiling": 0.5,
+  "best_validation_loss": 0.6505652070045471,
+  "unsafe_weight": 8.0,
+  "encoder_fingerprint": "606c47585e84189fdfcc60a22038b906392bc042a2c57a11e86c69e3a8f07bbc",
+  "feature_extraction_seconds": 1273.9173693519997,
+  "source_provenance_counts": {
+    "longpibench": 1600
+  },
+  "split": "grouped_by_longpibench_item",
+  "checkpoints": {
+    "6": {
+      "candidate_allow_count": 227,
+      "candidate_allow_rate": 0.709375,
+      "teacher_non_safe_early_allow_count": 0,
+      "teacher_non_safe_early_allow_ids": [],
+      "mean_teacher_agreement_on_candidates": 1.0,
+      "safe_confidence_quantiles": {
+        "p50": 0.9999944567680359,
+        "p90": 0.9999997615814209,
+        "p99": 1.0,
+        "max": 1.0
+      },
+      "confidence_threshold_sweep_without_threat_ceiling": [
+        {
+          "safe_confidence_threshold": 0.05,
+          "candidate_allow_count": 234,
+          "candidate_allow_rate": 0.73125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 234
+        },
+        {
+          "safe_confidence_threshold": 0.1,
+          "candidate_allow_count": 233,
+          "candidate_allow_rate": 0.728125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 233
+        },
+        {
+          "safe_confidence_threshold": 0.2,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.3,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.4,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.45,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.5,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.9,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.99,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        }
+      ]
+    },
+    "12": {
+      "candidate_allow_count": 150,
+      "candidate_allow_rate": 0.46875,
+      "teacher_non_safe_early_allow_count": 0,
+      "teacher_non_safe_early_allow_ids": [],
+      "mean_teacher_agreement_on_candidates": 1.0,
+      "safe_confidence_quantiles": {
+        "p50": 0.9985404014587402,
+        "p90": 0.9999778270721436,
+        "p99": 0.9999980926513672,
+        "max": 0.9999997615814209
+      },
+      "confidence_threshold_sweep_without_threat_ceiling": [
+        {
+          "safe_confidence_threshold": 0.05,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.1,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.2,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.3,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.4,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.45,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.5,
+          "candidate_allow_count": 228,
+          "candidate_allow_rate": 0.7125,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 228
+        },
+        {
+          "safe_confidence_threshold": 0.9,
+          "candidate_allow_count": 227,
+          "candidate_allow_rate": 0.709375,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 227
+        },
+        {
+          "safe_confidence_threshold": 0.99,
+          "candidate_allow_count": 221,
+          "candidate_allow_rate": 0.690625,
+          "teacher_non_safe_early_allow_count": 0,
+          "teacher_allow_agreement_count": 221
+        }
+      ]
+    }
+  }
+}

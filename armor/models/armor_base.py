@@ -54,11 +54,12 @@ class EncoderState:
     """A resumable state inside the single ModernBERT encoder stack."""
 
     hidden_states: torch.Tensor
-    attention_mask: torch.Tensor
-    sliding_window_mask: torch.Tensor
+    attention_mask: torch.Tensor | dict[str, torch.Tensor]
+    sliding_window_mask: torch.Tensor | None
     position_ids: torch.Tensor
     next_layer: int
     context: TokenContext
+    position_embeddings: dict | None = None
     timings_ms: dict[str, float] = field(default_factory=dict)
 
 
@@ -238,12 +239,34 @@ class ArmorBase:
         if hasattr(encoder, "warn_if_padding_and_no_attention_mask"):
             encoder.warn_if_padding_and_no_attention_mask(input_ids, attention_mask)
         position_ids = torch.arange(seq_len, device=device).unsqueeze(0)
-        global_mask, sliding_mask = encoder._update_attention_mask(
-            attention_mask, output_attentions=False
-        )
         started = time.perf_counter()
         hidden_states = encoder.embeddings(input_ids=input_ids)
         elapsed = (time.perf_counter() - started) * 1000
+        if hasattr(encoder, "_update_attention_mask"):
+            global_mask, sliding_mask = encoder._update_attention_mask(
+                attention_mask, output_attentions=False
+            )
+            position_embeddings = None
+        else:
+            from transformers.models.modernbert.modeling_modernbert import (
+                create_bidirectional_mask,
+                create_bidirectional_sliding_window_mask,
+            )
+
+            mask_kwargs = {
+                "config": encoder.config,
+                "inputs_embeds": hidden_states,
+                "attention_mask": attention_mask,
+            }
+            global_mask = {
+                "full_attention": create_bidirectional_mask(**mask_kwargs),
+                "sliding_attention": create_bidirectional_sliding_window_mask(**mask_kwargs),
+            }
+            sliding_mask = None
+            position_embeddings = {
+                layer_type: encoder.rotary_emb(hidden_states, position_ids, layer_type)
+                for layer_type in set(encoder.config.layer_types)
+            }
         return EncoderState(
             hidden_states=hidden_states,
             attention_mask=global_mask,
@@ -251,6 +274,7 @@ class ArmorBase:
             position_ids=position_ids,
             next_layer=1,
             context=context,
+            position_embeddings=position_embeddings,
             timings_ms={"embeddings_ms": elapsed},
         )
 
@@ -271,13 +295,23 @@ class ArmorBase:
         start_layer = state.next_layer
         started = time.perf_counter()
         for layer_index in range(state.next_layer, end_layer + 1):
-            state.hidden_states = layers[layer_index - 1](
-                state.hidden_states,
-                attention_mask=state.attention_mask,
-                sliding_window_mask=state.sliding_window_mask,
-                position_ids=state.position_ids,
-                output_attentions=False,
-            )[0]
+            layer = layers[layer_index - 1]
+            if state.position_embeddings is not None and isinstance(state.attention_mask, dict):
+                attn_type = layer.attention_type
+                out = layer(
+                    state.hidden_states,
+                    attention_mask=state.attention_mask[attn_type],
+                    position_embeddings=state.position_embeddings[attn_type],
+                )
+            else:
+                out = layer(
+                    state.hidden_states,
+                    attention_mask=state.attention_mask,
+                    sliding_window_mask=state.sliding_window_mask,
+                    position_ids=state.position_ids,
+                    output_attentions=False,
+                )
+            state.hidden_states = out[0] if isinstance(out, tuple) else out
         state.next_layer = end_layer + 1
         if end_layer == len(layers):
             state.hidden_states = self.encoder.final_norm(state.hidden_states)
@@ -399,7 +433,12 @@ class ArmorBase:
 
     @torch.no_grad()
     def window_scores(
-        self, context: TokenContext, window: int = 512, overlap: int = 96, batch_size: int = 8
+        self,
+        context: TokenContext,
+        window: int = 512,
+        overlap: int = 96,
+        batch_size: int = 8,
+        early_stop_threshold: float | None = None,
     ) -> tuple[torch.Tensor, torch.Tensor]:
         """Full-depth sigmoid scores [n_windows, n_labels] and pooled CLS [n_windows, hidden].
 
@@ -418,6 +457,10 @@ class ArmorBase:
             scores, pooled = self.predict_with_embedding(context)
             return torch.tensor([list(scores.values())]), pooled[None]
         starts = list(range(0, max(1, len(body) - overlap), span - overlap))
+        max_windows = int(os.environ.get("ARMOR_MAX_WINDOWS", "24"))
+        if max_windows > 0 and len(starts) > max_windows:
+            starts = starts[:max_windows]
+        batch_size = int(os.environ.get("ARMOR_WINDOW_BATCH_SIZE", str(batch_size)))
         cls_id, sep_id, pad_id = (
             self.tokenizer.cls_token_id, self.tokenizer.sep_token_id, self.tokenizer.pad_token_id,
         )
@@ -425,6 +468,11 @@ class ArmorBase:
             torch.cat([ids.new_tensor([cls_id]), body[s:s + span], ids.new_tensor([sep_id])])
             for s in starts
         ]
+        if early_stop_threshold is None:
+            env_stop = os.environ.get("ARMOR_WINDOW_EARLY_STOP_THRESHOLD")
+            if env_stop:
+                early_stop_threshold = float(env_stop)
+        pi_idx = LABELS.index("prompt_injection")
         scores, pooled_all = [], []
         started = time.perf_counter()
         for i in range(0, len(rows), batch_size):
@@ -437,9 +485,16 @@ class ArmorBase:
                 mask[j, :len(r)] = 1
             pooled = self.encoder(
                 input_ids=input_ids.to(self.device), attention_mask=mask.to(self.device)
-            ).last_hidden_state[:, 0, :]
+            ).last_hidden_state[:, 0, :].clone()
             scores.append(torch.sigmoid(self.head(pooled.to(self.head.weight.device))))
             pooled_all.append(pooled)
+            if early_stop_threshold is not None and early_stop_threshold > 0:
+                cat_scores = torch.cat(scores)
+                if (
+                    float(cat_scores[:, pi_idx].max().item()) >= early_stop_threshold
+                    or int((cat_scores >= early_stop_threshold).sum(dim=0).max().item()) >= 2
+                ):
+                    break
         context.timings_ms["encoder_ms"] = (time.perf_counter() - started) * 1000
         return torch.cat(scores), torch.cat(pooled_all)
 

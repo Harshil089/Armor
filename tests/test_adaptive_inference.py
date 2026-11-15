@@ -190,12 +190,16 @@ def test_single_request_can_exit_at_six_and_patience_at_twelve(monkeypatch):
     assert result.decision == "allow"
     assert result.trace["windows_exited_at_6"] == 1
     assert model.depths == [6]
+    assert result.raw_scores is not None and len(result.raw_scores) == 6
+    assert result.pooled is not None and result.pooled.shape == (16,)
 
     model = FakeModel()
     result = adaptive.run_adaptive_single(model, context, exit_policy="patience")
     assert result.decision == "allow"
     assert result.trace["windows_exited_at_12"] == 1
     assert model.depths == [6, 12]
+    assert result.raw_scores is not None and len(result.raw_scores) == 6
+    assert result.pooled is not None and result.pooled.shape == (16,)
 
     model = FakeModel()
     result = adaptive.run_adaptive_single(

@@ -24,7 +24,27 @@ app = FastAPI(title="Armor", version="0.1.0")
 USE_BASE_MODEL = os.environ.get("ARMOR_USE_BASE_MODEL") == "1"
 USE_BERT_POLICY_HEAD = os.environ.get("ARMOR_BERT_POLICY_HEAD") == "1"
 ADAPTIVE_SHADOW = os.environ.get("ARMOR_ADAPTIVE_SHADOW") == "1"
+ADAPTIVE_LIVE = os.environ.get("ARMOR_ADAPTIVE_LIVE") == "1"
 FINDING_THRESHOLD = float(os.environ.get("ARMOR_BASE_THRESHOLD", "0.5"))
+WINDOW_FUSION_MODE = os.environ.get("ARMOR_WINDOW_FUSION", "pi_max_others_second_max")
+
+
+def _fuse_window_scores(window_raw) -> dict[str, float]:
+    """Aggregate [n_windows, n_labels] raw scores into per-label request scores.
+
+    Single-window `max` across 20+ windows causes isolated noise spikes on
+    benign long documents. Using `max` for `prompt_injection` (single-window
+    injection) and `second_max` for the remaining 5 labels preserves PI recall
+    while suppressing single-window false positives.
+    """
+    from armor.models.labels import LABELS
+
+    if WINDOW_FUSION_MODE == "max" or window_raw.shape[0] < 2:
+        return dict(zip(LABELS, window_raw.max(dim=0).values.tolist()))
+    pi_idx = LABELS.index("prompt_injection")
+    second_max = window_raw.topk(2, dim=0).values[-1].tolist()
+    second_max[pi_idx] = float(window_raw[:, pi_idx].max().item())
+    return dict(zip(LABELS, second_max))
 
 # ponytail: the base-model route could only ever return "flag", never "block",
 # no matter the confidence — only the deterministic Fast Scan Layer could
@@ -282,15 +302,50 @@ def inspect(req: InspectRequest) -> InspectResponse:
             # windowing (max-fused) only kicks in past ~512 tokens, which is
             # where the quadratic full-depth pass gets expensive.
             window_started = time.perf_counter()
-            window_raw, pooled_all = model.window_scores(token_context)
-            raw_scores = dict(zip(LABELS, window_raw.max(dim=0).values.tolist()))
-            pooled = pooled_all.mean(dim=0)
-            inference_trace["window_count"] = window_raw.shape[0]
-            inference_trace["windows_full_depth"] = window_raw.shape[0]
-            inference_trace["approximate_compute_path"] = (
-                "full_depth_legacy" if window_raw.shape[0] == 1 else "windowed_full_depth"
-            )
-            inference_trace["windowing_ms"] = (time.perf_counter() - window_started) * 1000
+            used_early_exit = False
+            if ADAPTIVE_LIVE and hasattr(model, "begin_encoder") and hasattr(model, "continue_encoder"):
+                from armor.inference.adaptive import run_adaptive_single, run_adaptive_windows
+
+                win_size = int(os.environ.get("ARMOR_WINDOW_SIZE", "512"))
+                exit_policy = os.environ.get("ARMOR_EXIT_POLICY", "patience").lower()
+                if (token_context.token_count or 0) <= win_size:
+                    adaptive_res = run_adaptive_single(
+                        model, token_context, exit_policy=exit_policy,
+                        max_inspection_time_ms=float(os.environ.get("ARMOR_MAX_INSPECTION_TIME_MS", "3000")),
+                    )
+                else:
+                    adaptive_res = run_adaptive_windows(
+                        model, token_context, model.tokenizer,
+                        window_size=win_size,
+                        overlap=int(os.environ.get("ARMOR_WINDOW_OVERLAP", "96")),
+                        max_windows=int(os.environ.get("ARMOR_MAX_WINDOWS", "24")),
+                        max_full_depth_windows=int(os.environ.get("ARMOR_MAX_FULL_DEPTH_WINDOWS", "4")),
+                        max_context_expansions=int(os.environ.get("ARMOR_MAX_CONTEXT_EXPANSIONS", "2")),
+                        max_expanded_tokens=int(os.environ.get("ARMOR_EXPANDED_CONTEXT_TOKENS", "768")),
+                        max_inspection_time_ms=float(os.environ.get("ARMOR_MAX_INSPECTION_TIME_MS", "3000")),
+                        exit_policy=exit_policy,
+                    )
+                if adaptive_res.raw_scores is not None:
+                    raw_scores = adaptive_res.raw_scores
+                    pooled = adaptive_res.pooled
+                    inference_trace.update(adaptive_res.trace)
+                    used_early_exit = True
+            if not used_early_exit:
+                if ADAPTIVE_LIVE:
+                    stop_thresh = float(os.environ.get("ARMOR_WINDOW_EARLY_STOP_THRESHOLD", "0.85"))
+                    window_raw, pooled_all = model.window_scores(
+                        token_context, early_stop_threshold=stop_thresh
+                    )
+                else:
+                    window_raw, pooled_all = model.window_scores(token_context)
+                raw_scores = _fuse_window_scores(window_raw)
+                pooled = pooled_all.mean(dim=0)
+                inference_trace["window_count"] = window_raw.shape[0]
+                inference_trace["windows_full_depth"] = window_raw.shape[0]
+                inference_trace["approximate_compute_path"] = (
+                    "full_depth_legacy" if window_raw.shape[0] == 1 else "windowed_full_depth"
+                )
+                inference_trace["windowing_ms"] = (time.perf_counter() - window_started) * 1000
         elif hasattr(model, "predict_with_embedding"):
             raw_scores, pooled = model.predict_with_embedding(
                 token_context if token_context is not None else req.content

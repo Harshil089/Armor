@@ -29,6 +29,7 @@ from armor.data.harmbench_harmful_content import (
     load_examples as load_harmbench_harmful_content_examples,
 )
 from armor.data.harm_request_sources import LOADERS as HARM_REQUEST_LOADERS
+from armor.data.open_safety_sources import LOADERS as OPEN_SAFETY_LOADERS
 from armor.data.injecagent import load_examples as load_injecagent_examples
 from armor.data.jailbreak_wild import load_examples as load_jailbreak_wild_examples
 from armor.data.longpibench import load_examples as load_longpibench_examples
@@ -37,6 +38,9 @@ from armor.data.synthetic_jailbreak_canonical import (
 )
 from armor.data.synthetic_harmful_content import (
     generate_examples as generate_harmful_content_examples,
+)
+from armor.data.synthetic_harmful_content_pairs import (
+    generate_examples as generate_harmful_content_pair_examples,
 )
 from armor.data.aegis_content_safety import load_examples as load_aegis_examples
 from armor.data.oasst_chat_negatives import load_examples as load_oasst_chat_examples
@@ -108,12 +112,14 @@ def load_training_examples_with_provenance() -> list[tuple[str, tuple]]:
         ("longpibench", load_longpibench_examples()),
         ("synthetic_jailbreak_canonical", generate_jailbreak_canonical_examples()),
         ("synthetic_harmful_content", generate_harmful_content_examples()),
+        ("synthetic_harmful_content_pairs", generate_harmful_content_pair_examples()),
         ("aegis", load_aegis_examples()),
         ("oasst_chat_negatives", load_oasst_chat_examples()),
         ("synthetic_short_negatives", generate_short_negative_examples()),
         ("synthetic_long_negatives", generate_long_negative_examples()),
         ("synthetic_topic_adjacent_negatives", generate_topic_adjacent_negative_examples()),
         *((name, load()) for name, load in HARM_REQUEST_LOADERS.items()),
+        *((name, load()) for name, load in OPEN_SAFETY_LOADERS.items()),
     ]
     return [(source, example) for source, examples in groups for example in examples]
 
