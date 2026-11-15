@@ -1,10 +1,12 @@
+import hmac
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal
 
 import numpy as np
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -21,11 +23,28 @@ from armor.proxy.env_overrides import KNOWN_ENV_OVERRIDES
 # only works if this reads it through the module each call, not a value
 # bound once at import time.
 
-# ponytail: no auth — matches Armor's current trust model, nothing else in
-# this app has auth either. This is a localhost/trusted-network dev tool;
-# do not expose it on a public interface. Add a shared-secret header check
-# here first if that assumption ever stops holding.
 router = APIRouter(prefix="/admin")
+
+
+def require_admin_auth(request: Request) -> None:
+    """Enforce ARMOR_ADMIN_API_KEY on /admin/* JSON endpoints when configured."""
+    expected = os.environ.get("ARMOR_ADMIN_API_KEY", "")
+    if not expected:
+        return
+
+    expected_bytes = expected.encode("utf-8")
+    header_key = request.headers.get("x-armor-admin-key")
+    if header_key is not None and hmac.compare_digest(header_key.encode("utf-8"), expected_bytes):
+        return
+
+    auth_header = request.headers.get("authorization", "")
+    if auth_header[:7].lower() == "bearer ":
+        bearer_key = auth_header[7:].strip()
+        if bearer_key and hmac.compare_digest(bearer_key.encode("utf-8"), expected_bytes):
+            return
+
+    raise HTTPException(status_code=401, detail="Invalid or missing admin API key")
+
 
 _UI_PATH = Path(__file__).with_name("admin_ui.html")
 _LOGS_UI_PATH = Path(__file__).with_name("admin_logs_ui.html")
@@ -47,8 +66,9 @@ def logs_ui() -> HTMLResponse:
     return HTMLResponse(_LOGS_UI_PATH.read_text())
 
 
-@router.get("/providers")
+@router.get("/providers", dependencies=[Depends(require_admin_auth)])
 def list_providers() -> dict:
+    proxy_config.sync_providers()
     return {
         "providers": [
             {
@@ -63,7 +83,7 @@ def list_providers() -> dict:
     }
 
 
-@router.post("/providers")
+@router.post("/providers", dependencies=[Depends(require_admin_auth)])
 def add_provider(provider: ProviderCreate) -> dict:
     if not provider.name.strip():
         raise HTTPException(400, "name must not be empty")
@@ -73,24 +93,24 @@ def add_provider(provider: ProviderCreate) -> dict:
         raise HTTPException(400, f"unknown adapter '{provider.adapter}', valid: {sorted(ADAPTERS)}")
 
     upsert_provider(proxy_config.PROVIDERS_PATH, provider.name, provider.base_url, provider.adapter)
-    DEFAULT_CONFIG.upstreams = proxy_config._load_providers(proxy_config.PROVIDERS_PATH)
+    proxy_config.sync_providers()
     return {"name": provider.name, "base_url": provider.base_url, "adapter": provider.adapter}
 
 
-@router.delete("/providers/{name}")
+@router.delete("/providers/{name}", dependencies=[Depends(require_admin_auth)])
 def remove_provider(name: str) -> dict:
     if not delete_provider(proxy_config.PROVIDERS_PATH, name):
         raise HTTPException(404, f"unknown provider: {name}")
-    DEFAULT_CONFIG.upstreams = proxy_config._load_providers(proxy_config.PROVIDERS_PATH)
+    proxy_config.sync_providers()
     return {"deleted": name}
 
 
-@router.get("/logs")
+@router.get("/logs", dependencies=[Depends(require_admin_auth)])
 def list_logs(limit: int = 200) -> dict:
     return {"logs": log_store.list_entries(log_store.DB_PATH, limit=limit)}
 
 
-@router.get("/logs/{entry_id}")
+@router.get("/logs/{entry_id}", dependencies=[Depends(require_admin_auth)])
 def get_log(entry_id: int) -> dict:
     entry = log_store.get_entry(log_store.DB_PATH, entry_id)
     if entry is None:
@@ -108,7 +128,7 @@ class LogCorrection(BaseModel):
     ] = "human"
 
 
-@router.post("/logs/{entry_id}/correct")
+@router.post("/logs/{entry_id}/correct", dependencies=[Depends(require_admin_auth)])
 def correct_log(entry_id: int, body: LogCorrection) -> dict:
     entry = log_store.get_entry(log_store.DB_PATH, entry_id)
     if entry is None:
@@ -161,7 +181,7 @@ def correct_log(entry_id: int, body: LogCorrection) -> dict:
     }
 
 
-@router.get("/reviews")
+@router.get("/reviews", dependencies=[Depends(require_admin_auth)])
 def list_reviews(limit: int = 200) -> dict:
     """Unresolved production review decisions; shadow recommendations and
     duplicate proxy summary rows are excluded."""

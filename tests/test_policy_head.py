@@ -60,6 +60,30 @@ def test_binary_head_save_load_round_trip(tmp_path):
     assert torch.equal(head(pooled, scores), loaded(pooled, scores))
 
 
+def test_missing_checkpoint_logs_warning(monkeypatch, tmp_path, caplog):
+    import logging
+    import armor.models.policy_head as policy_head
+
+    monkeypatch.setattr(policy_head, "_policy_head", None)
+    monkeypatch.setattr(policy_head, "_intervention_head", None)
+    monkeypatch.setattr(policy_head, "_block_head", None)
+    monkeypatch.setattr(policy_head, "CHECKPOINT_PATH", str(tmp_path / "missing_policy.pt"))
+    monkeypatch.setattr(policy_head, "INTERVENTION_CHECKPOINT_PATH", str(tmp_path / "missing_intervention.pt"))
+    monkeypatch.setattr(policy_head, "BLOCK_CHECKPOINT_PATH", str(tmp_path / "missing_block.pt"))
+
+    with caplog.at_level(logging.WARNING):
+        p_head = policy_head.get_policy_head(embedding_dim=8)
+        i_head = policy_head.get_intervention_head(embedding_dim=8)
+        b_head = policy_head.get_block_head(embedding_dim=8)
+
+    assert not p_head.training
+    assert not i_head.training
+    assert not b_head.training
+    assert "PolicyHead checkpoint not found" in caplog.text
+    assert "InterventionHead checkpoint not found" in caplog.text
+    assert "BlockHead checkpoint not found" in caplog.text
+
+
 @pytest.mark.skipif(
     os.environ.get("ARMOR_RUN_SLOW_TESTS") != "1",
     reason="loads the real ArmorBase model; set ARMOR_RUN_SLOW_TESTS=1 to run",

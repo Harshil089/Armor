@@ -16,6 +16,7 @@ logits. Same checkpoint-loading shape as armor_base.py's own ArmorBase
 class, not a new pattern.
 """
 
+import logging
 import os
 
 import torch
@@ -55,12 +56,23 @@ def build_input(pooled_embedding: torch.Tensor, scores: dict[str, float]) -> tup
 _policy_head: PolicyHead | None = None
 
 
+def _load_or_warn(head: nn.Module, checkpoint_path: str, head_name: str) -> None:
+    """Load checkpoint weights if present, or warn before using random weights."""
+    if os.path.exists(checkpoint_path):
+        head.load_state_dict(torch.load(checkpoint_path, map_location="cpu"))
+    else:
+        logging.warning(
+            "%s checkpoint not found at %s; using randomly initialized weights.",
+            head_name,
+            checkpoint_path,
+        )
+
+
 def get_policy_head(embedding_dim: int = 768) -> PolicyHead:
     global _policy_head
     if _policy_head is None:
         head = PolicyHead(embedding_dim)
-        if os.path.exists(CHECKPOINT_PATH):
-            head.load_state_dict(torch.load(CHECKPOINT_PATH, map_location="cpu"))
+        _load_or_warn(head, CHECKPOINT_PATH, "PolicyHead")
         head.eval()
         _policy_head = head
     return _policy_head
@@ -124,8 +136,7 @@ def get_intervention_head(embedding_dim: int = 768) -> BinaryPolicyHead:
     global _intervention_head
     if _intervention_head is None:
         head = BinaryPolicyHead(embedding_dim)
-        if os.path.exists(INTERVENTION_CHECKPOINT_PATH):
-            head.load_state_dict(torch.load(INTERVENTION_CHECKPOINT_PATH, map_location="cpu"))
+        _load_or_warn(head, INTERVENTION_CHECKPOINT_PATH, "InterventionHead")
         head.eval()
         _intervention_head = head
     return _intervention_head
@@ -135,8 +146,7 @@ def get_block_head(embedding_dim: int = 768) -> BinaryPolicyHead:
     global _block_head
     if _block_head is None:
         head = BinaryPolicyHead(embedding_dim)
-        if os.path.exists(BLOCK_CHECKPOINT_PATH):
-            head.load_state_dict(torch.load(BLOCK_CHECKPOINT_PATH, map_location="cpu"))
+        _load_or_warn(head, BLOCK_CHECKPOINT_PATH, "BlockHead")
         head.eval()
         _block_head = head
     return _block_head
