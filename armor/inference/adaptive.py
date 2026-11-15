@@ -23,6 +23,8 @@ class AdaptiveWindowResult:
     review_reason: str | None
     windows: list[WindowResult]
     trace: dict[str, object]
+    raw_scores: dict[str, float] | None = None
+    pooled: torch.Tensor | None = None
 
 
 def _batch_context(windows: list[TokenWindow], pad_token_id: int, original: TokenContext):
@@ -51,15 +53,35 @@ def _subset(state: EncoderState, indices: list[int]) -> EncoderState:
         token_count=state.context.token_count,
         original_length=state.context.original_length,
     )
+    if isinstance(state.attention_mask, dict):
+        attention_mask = {
+            k: v.index_select(0, selected.to(v.device)) if v is not None and v.shape[0] > 1 else v
+            for k, v in state.attention_mask.items()
+        }
+    else:
+        attention_mask = state.attention_mask.index_select(0, selected.to(state.attention_mask.device))
+    sliding_window_mask = (
+        state.sliding_window_mask.index_select(0, selected.to(state.sliding_window_mask.device))
+        if state.sliding_window_mask is not None
+        else None
+    )
+    position_embeddings = None
+    if getattr(state, "position_embeddings", None) is not None:
+        position_embeddings = {
+            k: tuple(
+                t.index_select(0, selected.to(t.device)) if t.shape[0] > 1 else t
+                for t in pair
+            )
+            for k, pair in state.position_embeddings.items()
+        }
     return EncoderState(
         hidden_states=state.hidden_states.index_select(0, selected),
-        attention_mask=state.attention_mask.index_select(0, selected.to(state.attention_mask.device)),
-        sliding_window_mask=state.sliding_window_mask.index_select(
-            0, selected.to(state.sliding_window_mask.device)
-        ),
+        attention_mask=attention_mask,
+        sliding_window_mask=sliding_window_mask,
         position_ids=state.position_ids,
         next_layer=state.next_layer,
         context=context,
+        position_embeddings=position_embeddings,
         timings_ms={},
     )
 
@@ -139,6 +161,7 @@ def run_adaptive_single(
             "windows_full_depth": 0, "inspection_budget_exceeded": True,
             "total_ms": (time.perf_counter() - started) * 1000,
         })
+    out12 = None
     if selected is None:
         model.continue_encoder(state, 12)
         out12 = heads.layer12(state.hidden_states)
@@ -156,6 +179,9 @@ def run_adaptive_single(
                 "total_ms": (time.perf_counter() - started) * 1000,
             })
     if selected is not None:
+        exit_logits = out6[0] if selected.depth == 6 else out12[0]
+        raw_scores = dict(zip(LABELS, torch.sigmoid(exit_logits[:-1]).detach().cpu().tolist()))
+        pooled = state.hidden_states[0, 0, :].detach().clone()
         result = WindowResult(0, 0, context.token_count or 0, selected.depth,
                               True, "allow", selected.confidence)
         decision, reason = "allow", None
@@ -164,8 +190,9 @@ def run_adaptive_single(
             model.continue_encoder(state, len(model.encoder.layers))
         with torch.no_grad():
             logits = model.head(state.hidden_states[:, 0, :])
-            raw = dict(zip(LABELS, torch.sigmoid(logits).squeeze(0).cpu().tolist()))
-        scores = _calibrate(model, raw)
+            raw_scores = dict(zip(LABELS, torch.sigmoid(logits).squeeze(0).cpu().tolist()))
+        pooled = state.hidden_states[0, 0, :].detach().clone()
+        scores = _calibrate(model, raw_scores)
         decision, risk = _score_action(scores, finding_threshold, block_threshold)
         result = WindowResult(0, 0, context.token_count or 0, len(model.encoder.layers),
                               True, decision, risk)
@@ -179,7 +206,7 @@ def run_adaptive_single(
         **state.timings_ms,
         "total_ms": (time.perf_counter() - started) * 1000,
     }
-    return AdaptiveWindowResult(decision, reason, [result], trace)
+    return AdaptiveWindowResult(decision, reason, [result], trace, raw_scores=raw_scores, pooled=pooled)
 
 
 def run_adaptive_windows(
@@ -254,11 +281,15 @@ def run_adaptive_windows(
     stage_times["layer6_head_ms"] = (time.perf_counter() - t) * 1000
     candidate6 = [_candidate(model, row, 6) for row in out6]
     results: list[WindowResult | None] = [None] * len(windows)
+    window_raw_rows: list[torch.Tensor | None] = [None] * len(windows)
+    window_pooled_rows: list[torch.Tensor | None] = [None] * len(windows)
 
     layer12_indices = []
     for i, candidate in enumerate(candidate6):
         if exit_policy == "single" and candidate is not None:
             results[i] = _base_result(windows[i], 6, "allow", candidate.confidence)
+            window_raw_rows[i] = torch.sigmoid(out6[i, :-1]).detach().cpu()
+            window_pooled_rows[i] = state.hidden_states[i, 0, :].detach().clone()
         else:
             layer12_indices.append(i)
     if layer12_indices and _budget_exceeded(started, max_inspection_time_ms):
@@ -300,6 +331,8 @@ def run_adaptive_windows(
                     windows[original_i], 12, "allow",
                     min(current.confidence, prior.confidence) if prior is not None else current.confidence,
                 )
+                window_raw_rows[original_i] = torch.sigmoid(out12[local_i, :-1]).detach().cpu()
+                window_pooled_rows[original_i] = state12.hidden_states[local_i, 0, :].detach().clone()
             else:
                 layer22_indices.append(local_i)
 
@@ -327,6 +360,8 @@ def run_adaptive_windows(
         for local_row, state_index in enumerate(layer22_indices):
             original_i = layer12_indices[state_index]
             raw = dict(zip(LABELS, raw_batch_scores[local_row]))
+            window_raw_rows[original_i] = torch.sigmoid(batch_logits[local_row]).detach().cpu()
+            window_pooled_rows[original_i] = state22.hidden_states[local_row, 0, :].detach().clone()
             scores = _calibrate(model, raw)
             decision, risk = _score_action(scores, finding_threshold, block_threshold)
             result = _base_result(windows[original_i], len(model.encoder.layers), decision, risk)
@@ -384,4 +419,17 @@ def run_adaptive_windows(
         **stage_times,
         "total_ms": (time.perf_counter() - started) * 1000,
     }
-    return AdaptiveWindowResult(decision, reason, concrete, trace)
+    raw_scores: dict[str, float] | None = None
+    pooled: torch.Tensor | None = None
+    if all(row is not None for row in window_raw_rows):
+        window_raw = torch.stack([row for row in window_raw_rows if row is not None])
+        pooled = torch.stack([row for row in window_pooled_rows if row is not None]).mean(dim=0)
+        if window_raw.shape[0] < 2:
+            raw_scores = dict(zip(LABELS, window_raw.max(dim=0).values.tolist()))
+        else:
+            pi_idx = LABELS.index("prompt_injection")
+            second_max = window_raw.topk(2, dim=0).values[-1].tolist()
+            second_max[pi_idx] = float(window_raw[:, pi_idx].max().item())
+            raw_scores = dict(zip(LABELS, second_max))
+
+    return AdaptiveWindowResult(decision, reason, concrete, trace, raw_scores=raw_scores, pooled=pooled)
