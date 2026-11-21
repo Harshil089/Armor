@@ -57,6 +57,15 @@ def test_bert_policy_head_cannot_escalate_completely_benign_prompt_to_flag(monke
     assert result.findings == []
 
 
+def test_bert_policy_head_cannot_escalate_empty_findings_to_block(monkeypatch, tmp_path):
+    _configure(monkeypatch, tmp_path, "block", {"jailbreak": 0.48})
+
+    result = main.inspect(InspectRequest(direction="prompt", content="write a Dockerfile for a FastAPI web application"))
+
+    assert result.decision == "allow"
+    assert result.findings == []
+
+
 def test_context_review_overrides_bert_allow(monkeypatch, tmp_path):
     _configure(monkeypatch, tmp_path, "allow")
 

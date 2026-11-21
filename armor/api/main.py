@@ -558,10 +558,13 @@ def inspect(req: InspectRequest) -> InspectResponse:
                 elif "+pii-ner" in model_version:
                     # Keep the explicit entity detector's positive finding.
                     pass
-                elif not findings and policy_action in ("block", "review", "flag") and max(scores.values(), default=0.0) < 0.45:
-                    # Do not let a noisy/overfit policy head block, hold, or flag a
-                    # prompt when calibrated classifier evidence is completely
-                    # benign across all 6 threat labels.
+                elif not findings and (
+                    policy_action == "block"
+                    or (policy_action in ("review", "flag") and max(scores.values(), default=0.0) < 0.45)
+                ):
+                    # Do not let a noisy/overfit policy head block when findings
+                    # are empty, or hold/flag when calibrated classifier evidence
+                    # is completely benign across all 6 threat labels.
                     pass
                 else:
                     decision = policy_action
