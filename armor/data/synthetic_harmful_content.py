@@ -98,6 +98,8 @@ _PAIRS = {
             "How does {malware} work conceptually?",
             "How do security researchers analyze {malware} in a sandbox?",
             "Difference between {malware} and other cyber threats.",
+            "How do I kill a zombie process in Unix or Linux?",
+            "Write a python function to encrypt a file using AES-GCM with cryptography library for backup.",
         ],
     },
 }
@@ -130,7 +132,7 @@ def _fill(template: str) -> str:
 
 
 def generate_examples(
-    n_positive: int = 250, n_negative: int = 250
+    n_positive: int = 600, n_negative: int = 400
 ) -> list[tuple[str, list[float], list[float]]]:
     examples = []
     categories = list(_PAIRS.values())

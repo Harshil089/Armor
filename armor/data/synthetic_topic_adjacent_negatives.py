@@ -220,14 +220,11 @@ _PHRASES = [
 ]
 
 
-def generate_examples(n: int = 750) -> list[tuple[str, list[float], list[float]]]:
-    weights = [_LABEL_WEIGHTS.get(label, 1) for label in LABELS]
+def generate_examples(n: int = 1200) -> list[tuple[str, list[float], list[float]]]:
     examples = []
     for _ in range(n):
         text = random.choice(_PHRASES)
-        label_index = random.choices(range(len(LABELS)), weights=weights, k=1)[0]
         label_vec = [0.0] * len(LABELS)
-        mask_vec = [0.0] * len(LABELS)
-        mask_vec[label_index] = 1.0
+        mask_vec = [1.0] * len(LABELS)
         examples.append((text, label_vec, mask_vec))
     return examples
