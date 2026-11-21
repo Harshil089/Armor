@@ -65,6 +65,9 @@ _DOMAINS = [
             "Check whether {service} is passing its latest health check.",
             "Summarize this week's error rate for {service}.",
             "Generate a read-only report of {service}'s current configuration.",
+            "How do people protect API keys for {service} from leaking?",
+            "Why do people fall for social engineering targeting {service}?",
+            "How do password managers protect credentials for {service} against keyloggers?",
         ],
     },
     {

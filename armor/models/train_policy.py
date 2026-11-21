@@ -16,6 +16,7 @@ import torch
 from torch import nn
 
 from armor.models.armor_base import get_armor_base
+from armor.models.calibration import calibrate_scores
 from armor.models.policy_head import (
     CHECKPOINT_PATH,
     POLICY_ACTIONS,
@@ -98,9 +99,15 @@ def train(
     )
 
     model = get_armor_base()
+    fingerprint = getattr(model, "fingerprint", None)
     examples = []
     for content, correction, _ in rows:
-        scores, pooled = model.predict_with_embedding(content)
+        raw_scores, pooled = model.predict_with_embedding(content)
+        scores = (
+            {label: c["score"] for label, c in calibrate_scores(raw_scores, fingerprint).items()}
+            if fingerprint is not None
+            else raw_scores
+        )
         embedding, threat_scores = build_input(pooled, scores)
         examples.append((embedding.detach(), threat_scores.detach(), POLICY_ACTIONS.index(correction)))
 
@@ -159,6 +166,7 @@ def train_hierarchical(
     if not rows:
         raise ValueError("no trusted policy feedback rows; collect human or reviewer-consensus decision labels first")
     model = get_armor_base()
+    fingerprint = getattr(model, "fingerprint", None)
 
     examples = []  # (embedding, threat_scores, intervention_label, block_label, block_mask)
     excluded_review = 0
@@ -168,7 +176,12 @@ def train_hierarchical(
             excluded_review += 1
             continue
         intervention_label, block_label, block_applies = labels
-        scores, pooled = model.predict_with_embedding(content)
+        raw_scores, pooled = model.predict_with_embedding(content)
+        scores = (
+            {label: c["score"] for label, c in calibrate_scores(raw_scores, fingerprint).items()}
+            if fingerprint is not None
+            else raw_scores
+        )
         embedding, threat_scores = build_input(pooled, scores)
         examples.append((
             embedding.detach(), threat_scores.detach(),

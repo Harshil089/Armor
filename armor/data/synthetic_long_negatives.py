@@ -88,6 +88,12 @@ _TURNS = [
     "Track your actual times for a few weeks and compare to your guesses.",
     "What is a reasonable goal for the first month?",
     "Something you can finish and show someone, however small.",
+    "Malware (short for malicious software) is any program or code designed to infiltrate, damage, or gain unauthorized access to a computer system, network, or device.",
+    "Common types of malware include viruses, worms, trojan horses, ransomware, spyware, adware, rootkits, and keyloggers.",
+    "Ransomware is malicious software that encrypts a victim's data or system and demands payment to restore access.",
+    "Defensive measures against ransomware and malware include regular offline backups, timely patch management, least privilege, network segmentation, and endpoint protection.",
+    "A computer virus attaches itself to legitimate files and spreads when those files are executed, whereas a computer worm self-replicates across networks without needing a host file.",
+    "Developing, distributing, or using malware is illegal; understanding how threats work conceptually helps security teams defend systems.",
 ]
 
 

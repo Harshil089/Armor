@@ -53,6 +53,15 @@ _NEGATIVES = [
     "What's the boiling point of water at sea level?",
     "Draft a polite email declining a meeting invite.",
     "Explain how a binary search works.",
+    "Define privilege escalation in cybersecurity.",
+    "Define remote code execution and how to prevent it.",
+    "Define command and control server.",
+    "Define rootkit and explain how antivirus detects it.",
+    "How does multi-factor authentication stop phishing?",
+    "Why do people fall for social engineering?",
+    "How do people protect API keys from leaking?",
+    "Malware (short for malicious software) is any program or code designed to infiltrate, damage, or gain unauthorized access to a computer system.",
+    "Ransomware is malicious software that encrypts files and demands payment to restore access.",
 ]
 
 

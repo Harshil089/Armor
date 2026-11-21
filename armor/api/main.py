@@ -543,12 +543,31 @@ def inspect(req: InspectRequest) -> InspectResponse:
                 elif decision == "block":
                     # A learned action head may refine non-block decisions,
                     # but it must not erase strong classifier block evidence.
-                    pass
+                    # Only downgrade an isolated borderline single-label spike
+                    # when the policy head is very confident the request is allow.
+                    if (
+                        policy_action == "allow"
+                        and (policy_confidence_value or 0.0) >= 0.90
+                        and len(findings) == 1
+                        and max(scores.values(), default=0.0) < 0.95
+                        and scores.get("prompt_injection", 0.0) < BLOCK_THRESHOLD
+                    ):
+                        decision = "allow"
+                        findings = []
+                        risk_score = min(risk_score, 0.45)
                 elif "+pii-ner" in model_version:
                     # Keep the explicit entity detector's positive finding.
                     pass
+                elif not findings and policy_action in ("block", "review", "flag") and max(scores.values(), default=0.0) < 0.45:
+                    # Do not let a noisy/overfit policy head block, hold, or flag a
+                    # prompt when calibrated classifier evidence is completely
+                    # benign across all 6 threat labels.
+                    pass
                 else:
                     decision = policy_action
+                    if decision == "allow" and findings:
+                        findings = []
+                        risk_score = min(risk_score, 0.45)
                 route = "escalated"
                 risk_score = max(risk_score, 0.8 if decision == "block" else 0.0)
                 model_version += "+bert-policy-v1"

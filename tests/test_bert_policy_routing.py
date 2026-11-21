@@ -39,13 +39,22 @@ def _configure(monkeypatch, tmp_path, action, scores=None):
 
 
 def test_bert_policy_head_routes_prompt_action(monkeypatch, tmp_path):
-    _configure(monkeypatch, tmp_path, "flag")
+    _configure(monkeypatch, tmp_path, "flag", {"jailbreak": 0.48})
 
     result = main.inspect(InspectRequest(direction="prompt", content="A boundary case."))
 
     assert result.decision == "flag"
     assert result.route == "escalated"
     assert "bert-policy-v1" in result.model_version
+
+
+def test_bert_policy_head_cannot_escalate_completely_benign_prompt_to_flag(monkeypatch, tmp_path):
+    _configure(monkeypatch, tmp_path, "flag", {"jailbreak": 0.05})
+
+    result = main.inspect(InspectRequest(direction="prompt", content="how do I rotate SSH keys on an Ubuntu server"))
+
+    assert result.decision == "allow"
+    assert result.findings == []
 
 
 def test_context_review_overrides_bert_allow(monkeypatch, tmp_path):

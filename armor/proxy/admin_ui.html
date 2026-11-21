@@ -2,131 +2,1506 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Armor — Proxy Providers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 16px;
-    color: #1a1a1a;
+  :root {
+    --bg: #151515;
+    --surface: #202020;
+    --surface-raised: #242424;
+    --surface-hover: #262626;
+    --border-subtle: #2C2C2C;
+    --border: #363636;
+    --border-hover: #484848;
+    --text-primary: #F5F5F5;
+    --text-secondary: #A3A3A3;
+    --text-muted: #737373;
+    --accent: #F5F5F5;
+    --accent-subtle: rgba(255, 255, 255, 0.06);
+    --accent-glow: rgba(255, 255, 255, 0.08);
+    --focus-ring: rgba(56, 189, 248, 0.5);
+    --status-online: #22C55E;
+    --status-loading: #F59E0B;
+    --status-offline: #EF4444;
+    --font-sans: 'Geist', 'Geist Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-full: 9999px;
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   }
-  nav { margin-bottom: 24px; font-size: 13px; }
-  nav a { color: #666; text-decoration: none; margin-right: 16px; }
-  nav a.active { color: #1a1a1a; font-weight: 600; }
-  nav a:hover { text-decoration: underline; }
-  h1 { font-size: 20px; margin-bottom: 4px; }
-  p.sub { color: #666; margin-top: 0; font-size: 13px; }
-  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e5e5; font-size: 14px; }
-  th { color: #666; font-weight: 600; }
-  code { background: #f2f2f2; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
-  button.del { background: none; border: 1px solid #d33; color: #d33; border-radius: 4px; padding: 3px 9px; cursor: pointer; font-size: 12px; }
-  button.del:hover { background: #fdecec; }
-  button.copy { background: none; border: 1px solid #ccc; border-radius: 4px; padding: 2px 8px; cursor: pointer; font-size: 11px; margin-left: 6px; }
-  button.copy:hover { background: #f2f2f2; }
-  .proxy-url { color: #444; }
-  form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 24px; }
-  input, select { padding: 7px 9px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-  input[name="name"] { width: 120px; }
-  input[name="base_url"] { flex: 1; min-width: 220px; }
-  button[type="submit"] { background: #1a1a1a; color: #fff; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; font-size: 14px; }
-  button[type="submit"]:hover { background: #333; }
-  #error { color: #d33; font-size: 13px; margin-top: 8px; min-height: 16px; }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--border-subtle);
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  /* Focus accessibility */
+  .focus-ring:focus-visible,
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Tactile button physics */
+  button {
+    font-family: var(--font-sans);
+    transition:
+      background-color 0.2s var(--ease-spring),
+      border-color 0.2s var(--ease-spring),
+      color 0.2s var(--ease-spring),
+      transform 0.18s var(--ease-spring),
+      box-shadow 0.2s var(--ease-spring);
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  /* Sticky Glass Topbar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(21, 21, 21, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .topbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    border-radius: var(--radius-sm);
+  }
+
+  .brand-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+  }
+
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Segmented Pill Nav */
+  nav.main-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  nav.main-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition:
+      color 0.2s var(--ease-spring),
+      background-color 0.2s var(--ease-spring),
+      border-color 0.2s var(--ease-spring);
+  }
+
+  nav.main-nav a:hover {
+    color: var(--text-primary);
+    background: var(--surface-hover);
+  }
+
+  nav.main-nav a.active {
+    color: var(--text-primary);
+    background: var(--surface-raised);
+    border-color: var(--border);
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    padding: 5px 10px;
+    border-radius: var(--radius-full);
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--status-online);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.45);
+    animation: pulseSubtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    flex-shrink: 0;
+  }
+
+  .status-pill.offline .status-dot {
+    background: var(--status-offline);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.45);
+    animation: none;
+  }
+
+  .status-pill.loading .status-dot {
+    background: var(--status-loading);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.45);
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-raised);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 5px 11px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+  }
+
+  .btn-ghost:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    background: var(--surface-hover);
+  }
+
+  /* Main Layout */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px 56px;
+  }
+
+  /* Compact Single-Row Header + Inline Telemetry Strip */
+  .hero-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .page-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .page-sub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: -0.011em;
+  }
+
+  .telemetry-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 11px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    transition: border-color 0.2s var(--ease-spring);
+  }
+
+  .stat-pill:hover {
+    border-color: var(--border);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* SpotlightCard Surface */
+  .spotlight-card {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.25s var(--ease-spring);
+  }
+
+  .spotlight-card:hover {
+    border-color: var(--border);
+  }
+
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-spring);
+    background: radial-gradient(
+      380px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      var(--accent-subtle),
+      transparent 75%
+    );
+    z-index: 0;
+  }
+
+  .spotlight-card:hover::before {
+    opacity: 1;
+  }
+
+  .spotlight-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Collapsible 1-line SmoothAccordion */
+  .accordion {
+    margin-bottom: 14px;
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .accordion-trigger:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .accordion-trigger:active:not(:disabled) {
+    transform: none;
+  }
+
+  .accordion-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .accordion-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .accordion-title {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .accordion-preview {
+    font-size: 12px;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .accordion-chevron {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform 0.28s var(--ease-spring), color 0.2s var(--ease-spring);
+  }
+
+  .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+    transform: rotate(180deg);
+    color: var(--text-primary);
+  }
+
+  .accordion-body-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s var(--ease-spring);
+  }
+
+  .accordion.open .accordion-body-wrap {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-body-inner {
+    overflow: hidden;
+  }
+
+  .accordion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 2px 16px 14px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 12px;
+  }
+
+  .guide-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .guide-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .guide-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  .guide-desc {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Panels */
+  .panel {
+    margin-bottom: 16px;
+  }
+
+  .panel-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--surface-raised);
+  }
+
+  .panel-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .panel-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .count-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    padding: 2px 7px;
+    border-radius: var(--radius-full);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  /* Search input with / kbd hint */
+  .search-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .search-input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    padding: 6px 34px 6px 30px;
+    font-size: 12.5px;
+    font-family: var(--font-sans);
+    width: 260px;
+    height: 32px;
+    transition: border-color 0.2s var(--ease-spring), background-color 0.2s var(--ease-spring);
+  }
+
+  .search-input:hover {
+    border-color: var(--border-hover);
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--border-hover);
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .kbd-hint {
+    position: absolute;
+    right: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1;
+    padding: 3px 5px;
+    border-radius: 4px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .search-input:focus + .kbd-hint {
+    opacity: 0;
+  }
+
+  /* Error & Loading Banners */
+  .banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 18px;
+    font-size: 12.5px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .banner.visible { display: flex; }
+
+  .banner-error {
+    background: rgba(239, 68, 68, 0.08);
+    color: #FCA5A5;
+    border-bottom-color: rgba(239, 68, 68, 0.25);
+  }
+
+  .loading-bar {
+    display: none;
+    padding: 28px 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    font-family: var(--font-mono);
+  }
+
+  .loading-bar.visible { display: block; }
+
+  .empty-state {
+    display: none;
+    padding: 36px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .empty-state.visible { display: block; }
+
+  /* Upstream Routes Table */
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+    vertical-align: middle;
+  }
+
+  th {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(21, 21, 21, 0.55);
+    white-space: nowrap;
+  }
+
+  th.col-name { width: 130px; }
+  th.col-adapter { width: 110px; }
+  th.col-action { width: 96px; text-align: right; }
+  td.col-action { text-align: right; }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr {
+    transition: background-color 0.16s var(--ease-spring);
+  }
+
+  tbody tr:hover {
+    background: var(--surface-hover);
+  }
+
+  .provider-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .provider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--status-online);
+    flex-shrink: 0;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    background: var(--bg);
+    border: 1px solid var(--border-subtle);
+    color: #D4D4D4;
+    padding: 3px 7px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .adapter-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--surface-raised);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .code-copy-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .env-unverified {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .env-tag-warn {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface-raised);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  button.copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--surface-raised);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    height: 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  button.copy:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    background: var(--surface-hover);
+  }
+
+  button.copy.copied {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    background: var(--surface-hover);
+  }
+
+  button.del {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    height: 28px;
+    white-space: nowrap;
+  }
+
+  button.del:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.45);
+    color: #FCA5A5;
+  }
+
+  button.del:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Add Provider Form */
+  .form-body {
+    padding: 18px;
+  }
+
+  form#add-form {
+    display: grid;
+    grid-template-columns: 180px 1fr 170px auto;
+    gap: 12px;
+    align-items: end;
+    margin: 0;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  input, select {
+    background: var(--bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 7px 11px;
+    font-size: 13px;
+    font-family: var(--font-sans);
+    height: 36px;
+    width: 100%;
+    transition: border-color 0.2s var(--ease-spring), background-color 0.2s var(--ease-spring);
+  }
+
+  input:hover, select:hover {
+    border-color: var(--border-hover);
+  }
+
+  input[name="name"], input[name="base_url"] {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+  }
+
+  input:focus, select:focus {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-color: var(--border-hover);
+  }
+
+  input::placeholder { color: var(--text-muted); }
+
+  /* Primary CTA: Monochrome #F5F5F5 bg with #151515 text */
+  button[type="submit"] {
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    height: 36px;
+    white-space: nowrap;
+  }
+
+  button[type="submit"]:hover {
+    background: #FFFFFF;
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .dirty-badge {
+    display: none;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  .dirty-badge.visible { display: inline-flex; }
+
+  #error {
+    color: #FCA5A5;
+    font-size: 12.5px;
+    margin-top: 10px;
+    min-height: 18px;
+  }
+
+  /* Toast Stack */
+  .toast-stack {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .toast {
+    pointer-events: auto;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 9px 14px;
+    border-radius: var(--radius-md);
+    font-size: 12.5px;
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: slideIn 0.22s var(--ease-spring);
+  }
+
+  .toast.success { border-left: 3px solid var(--status-online); }
+  .toast.error { border-left: 3px solid var(--status-offline); }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @media (max-width: 960px) {
+    .accordion-grid { grid-template-columns: 1fr; }
+    form#add-form { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    form#add-form { grid-template-columns: 1fr; }
+    .topbar-inner { padding: 0 14px; }
+    .container { padding: 16px 14px 48px; }
+    .brand-tag { display: none; }
+    .accordion-preview { display: none; }
+    .search-wrap, .search-input { width: 100%; }
+  }
 </style>
 </head>
 <body>
-  <nav><a href="/admin/" class="active">Providers</a><a href="/admin/logs-page">Logs</a></nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-group">
+        <a href="/admin/" class="brand">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </span>
+          <span>Armor</span>
+          <span class="brand-tag">Proxy</span>
+        </a>
+        <nav class="main-nav" aria-label="Admin navigation">
+          <a href="/admin/" class="active">Providers</a>
+          <a href="/admin/logs-page">Logs</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <div id="proxy-status" class="status-pill loading" role="status">
+          <span class="status-dot"></span>
+          <span id="proxy-status-text">Connecting…</span>
+        </div>
+        <button type="button" id="refresh-btn" class="btn-ghost" title="Reload providers">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+            <path d="M21 3v5h-5"/>
+          </svg>
+          <span>Refresh</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <h1>Proxy providers</h1>
-  <p class="sub">Add or remove upstream LLM providers. Changes apply immediately — no restart needed.</p>
-  <p class="sub">No API key setup here — Armor never stores provider keys. Point your existing client's <code>base_url</code> at the "Use this proxy URL" column below and keep using that provider's own key in your client, unchanged.</p>
-  <p class="sub">To connect an existing app with zero code changes: set the env var shown below before launching it (only shown where verified against that provider's own SDK — not guessed). No app-code edit, no certificate install.</p>
+  <main class="container">
+    <div class="hero-strip">
+      <div>
+        <span class="eyebrow">Upstream Routing</span>
+        <h1 class="page-title">Proxy providers</h1>
+        <p class="page-sub">Hot-reloaded LLM upstream routes. Changes apply immediately with zero restart.</p>
+      </div>
+      <section class="telemetry-strip" aria-label="Proxy summary">
+        <div class="stat-pill">
+          <span class="stat-label">Providers</span>
+          <span class="stat-value" id="kpi-providers">—</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Adapters</span>
+          <span class="stat-value" id="kpi-adapters">—</span>
+          <span class="stat-meta" id="kpi-adapter-list">…</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Env Overrides</span>
+          <span class="stat-value" id="kpi-env">—</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Posture</span>
+          <span class="stat-value">Zero-Key</span>
+        </div>
+      </section>
+    </div>
 
-  <table id="table">
-    <thead><tr><th>Name</th><th>Upstream base URL</th><th>Adapter</th><th>Use this proxy URL</th><th>Env var override</th><th></th></tr></thead>
-    <tbody id="rows"></tbody>
-  </table>
+    <section class="spotlight-card accordion" id="guide-accordion" aria-label="Connection guidance">
+      <button type="button" class="accordion-trigger" id="guide-toggle" aria-expanded="false" aria-controls="guide-content">
+        <span class="accordion-left">
+          <span class="accordion-tag">Guide</span>
+          <span class="accordion-title">Zero-Key Passthrough &amp; Env Overrides</span>
+          <span class="accordion-preview">Point client base_url at the proxy URL or export verified SDK env vars</span>
+        </span>
+        <svg class="accordion-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+      <div class="accordion-body-wrap" id="guide-content">
+        <div class="accordion-body-inner">
+          <div class="accordion-grid">
+            <div class="guide-item">
+              <div class="guide-icon" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/>
+                </svg>
+              </div>
+              <div>
+                <div class="guide-title">Zero-Key Passthrough</div>
+                <p class="guide-desc">Armor never stores provider keys. Point your client's <code>base_url</code> at the proxy URL below and keep using your provider key unchanged.</p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-icon" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
+                </svg>
+              </div>
+              <div>
+                <div class="guide-title">Zero-Code Env Overrides</div>
+                <p class="guide-desc">Set the verified env var shown below before launching an existing app (only shown where verified against that provider's SDK). No code edit or cert install.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <form id="add-form">
-    <input name="name" placeholder="name (e.g. groq)" required>
-    <input name="base_url" placeholder="https://api.example.com" required>
-    <select name="adapter" id="adapter-select"></select>
-    <button type="submit">Add provider</button>
-  </form>
-  <div id="error"></div>
+    <section class="spotlight-card panel" aria-label="Configured providers">
+      <div class="panel-header">
+        <div class="panel-title-group">
+          <h2 class="panel-title">Upstream routes</h2>
+          <span class="count-badge" id="provider-count">0</span>
+        </div>
+        <div class="search-wrap">
+          <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="search" id="provider-filter" class="search-input" placeholder="Filter by name, URL, or adapter…" aria-label="Filter providers">
+          <kbd class="kbd-hint" aria-hidden="true">/</kbd>
+        </div>
+      </div>
+
+      <div id="load-error" class="banner banner-error" role="alert">
+        <span id="load-error-text">Failed to load providers.</span>
+        <button type="button" id="retry-btn" class="btn-ghost">Retry</button>
+      </div>
+
+      <div id="loading-bar" class="loading-bar visible">Loading upstream providers…</div>
+      <div id="empty-state" class="empty-state">No providers match the current filter. Add one below to route traffic through Armor.</div>
+
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th class="col-name">Name</th>
+              <th>Upstream base URL</th>
+              <th class="col-adapter">Adapter</th>
+              <th>Use this proxy URL</th>
+              <th>Env var override</th>
+              <th class="col-action"></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="spotlight-card panel" aria-label="Add provider">
+      <div class="panel-header">
+        <div class="panel-title-group">
+          <h2 class="panel-title">Register upstream provider</h2>
+          <span id="dirty-badge" class="dirty-badge">Unsaved draft</span>
+        </div>
+      </div>
+      <div class="form-body">
+        <form id="add-form">
+          <div class="field">
+            <label for="input-name">Provider name</label>
+            <input id="input-name" name="name" placeholder="e.g. groq" required>
+          </div>
+          <div class="field">
+            <label for="input-base-url">Upstream base URL</label>
+            <input id="input-base-url" name="base_url" placeholder="https://api.example.com" required>
+          </div>
+          <div class="field">
+            <label for="adapter-select">Adapter</label>
+            <select name="adapter" id="adapter-select"></select>
+          </div>
+          <button type="submit" id="submit-btn">Add provider</button>
+        </form>
+        <div id="error" role="alert"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
   <script>
-    async function refresh() {
-      const res = await fetch("/admin/providers");
-      const data = await res.json();
+    let allProviders = [];
+    let allAdapters = [];
 
+    // SpotlightCard cursor-tracking radial glow
+    document.querySelectorAll(".spotlight-card").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+        card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.setProperty("--mouse-x", "-999px");
+        card.style.setProperty("--mouse-y", "-999px");
+      });
+    });
+
+    // SmoothAccordion toggle
+    const guideAccordion = document.getElementById("guide-accordion");
+    const guideToggle = document.getElementById("guide-toggle");
+    guideToggle.addEventListener("click", () => {
+      const isOpen = guideAccordion.classList.toggle("open");
+      guideToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Keyboard shortcut '/' to focus filter input, 'Escape' to blur
+    document.addEventListener("keydown", (e) => {
+      const filterEl = document.getElementById("provider-filter");
+      if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        const tag = document.activeElement ? document.activeElement.tagName : "";
+        if (tag !== "INPUT" && tag !== "TEXTAREA" && tag !== "SELECT") {
+          e.preventDefault();
+          filterEl.focus();
+        }
+      } else if (e.key === "Escape" && document.activeElement === filterEl) {
+        filterEl.blur();
+      }
+    });
+
+    function createSvgIcon(paths) {
+      const ns = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("width", "12");
+      svg.setAttribute("height", "12");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "2");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute("aria-hidden", "true");
+      for (const def of paths) {
+        const el = document.createElementNS(ns, def.tag);
+        for (const [k, v] of Object.entries(def.attrs)) {
+          el.setAttribute(k, v);
+        }
+        svg.appendChild(el);
+      }
+      return svg;
+    }
+
+    function makeCopyIcon() {
+      return createSvgIcon([
+        { tag: "rect", attrs: { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2" } },
+        { tag: "path", attrs: { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" } },
+      ]);
+    }
+
+    function makeCheckIcon() {
+      return createSvgIcon([
+        { tag: "polyline", attrs: { points: "20 6 9 17 4 12" } },
+      ]);
+    }
+
+    function showToast(message, type = "success") {
+      const stack = document.getElementById("toast-stack");
+      const toast = document.createElement("div");
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      stack.appendChild(toast);
+      setTimeout(() => {
+        toast.remove();
+      }, 2800);
+    }
+
+    function setProxyStatus(state, text) {
+      const pill = document.getElementById("proxy-status");
+      const label = document.getElementById("proxy-status-text");
+      pill.className = `status-pill ${state}`;
+      label.textContent = text;
+    }
+
+    function setCopyButtonState(btn, copied) {
+      const label = document.createElement("span");
+      label.textContent = copied ? "Copied" : "Copy";
+      btn.replaceChildren(copied ? makeCheckIcon() : makeCopyIcon(), label);
+      btn.classList.toggle("copied", copied);
+    }
+
+    function makeCopyButton(textToCopy) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "copy";
+      btn.dataset.url = textToCopy;
+      setCopyButtonState(btn, false);
+      return btn;
+    }
+
+    function renderRows() {
       const rows = document.getElementById("rows");
-      rows.innerHTML = "";
-      for (const p of data.providers) {
-        const proxyUrl = `${window.location.origin}/proxy/${p.name}`;
-        const envCell = p.env_var
-          ? `<code>export ${p.env_var}=${proxyUrl}</code><button class="copy" data-url="export ${p.env_var}=${proxyUrl}">Copy</button>`
-          : `<span class="sub">not verified for this provider — set its client's <code>base_url</code> directly</span>`;
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${p.name}</td>
-          <td><code>${p.base_url}</code></td>
-          <td>${p.adapter}</td>
-          <td class="proxy-url"><code>${proxyUrl}</code><button class="copy" data-url="${proxyUrl}">Copy</button></td>
-          <td class="proxy-url">${envCell}</td>
-          <td><button class="del" data-name="${p.name}">Remove</button></td>
-        `;
-        rows.appendChild(tr);
+      const emptyEl = document.getElementById("empty-state");
+      const tableEl = document.getElementById("table");
+      const query = document.getElementById("provider-filter").value.trim().toLowerCase();
+
+      const filtered = allProviders.filter((p) => {
+        if (!query) return true;
+        return (
+          p.name.toLowerCase().includes(query) ||
+          p.base_url.toLowerCase().includes(query) ||
+          p.adapter.toLowerCase().includes(query)
+        );
+      });
+
+      document.getElementById("provider-count").textContent = String(filtered.length);
+      rows.replaceChildren();
+
+      if (filtered.length === 0) {
+        tableEl.style.display = "none";
+        emptyEl.classList.add("visible");
+        return;
       }
 
-      const select = document.getElementById("adapter-select");
-      select.innerHTML = "";
-      for (const a of data.adapters) {
-        const opt = document.createElement("option");
-        opt.value = a;
-        opt.textContent = a;
-        select.appendChild(opt);
+      tableEl.style.display = "table";
+      emptyEl.classList.remove("visible");
+
+      for (const p of filtered) {
+        const proxyUrl = `${window.location.origin}/proxy/${p.name}`;
+        const tr = document.createElement("tr");
+
+        // Name cell
+        const tdName = document.createElement("td");
+        const nameWrap = document.createElement("span");
+        nameWrap.className = "provider-name";
+        const dot = document.createElement("span");
+        dot.className = "provider-dot";
+        const nameText = document.createElement("span");
+        nameText.textContent = p.name;
+        nameWrap.append(dot, nameText);
+        tdName.appendChild(nameWrap);
+
+        // Upstream base URL cell
+        const tdBase = document.createElement("td");
+        const baseCode = document.createElement("code");
+        baseCode.textContent = p.base_url;
+        tdBase.appendChild(baseCode);
+
+        // Adapter cell
+        const tdAdapter = document.createElement("td");
+        const adapterBadge = document.createElement("span");
+        adapterBadge.className = "adapter-badge";
+        adapterBadge.textContent = p.adapter;
+        tdAdapter.appendChild(adapterBadge);
+
+        // Proxy URL cell
+        const tdProxy = document.createElement("td");
+        tdProxy.className = "proxy-url";
+        const proxyWrap = document.createElement("div");
+        proxyWrap.className = "code-copy-wrap";
+        const proxyCode = document.createElement("code");
+        proxyCode.textContent = proxyUrl;
+        proxyWrap.append(proxyCode, makeCopyButton(proxyUrl));
+        tdProxy.appendChild(proxyWrap);
+
+        // Env var override cell
+        const tdEnv = document.createElement("td");
+        tdEnv.className = "proxy-url";
+        if (p.env_var) {
+          const envCmd = `export ${p.env_var}=${proxyUrl}`;
+          const envWrap = document.createElement("div");
+          envWrap.className = "code-copy-wrap";
+          const envCode = document.createElement("code");
+          envCode.textContent = envCmd;
+          envWrap.append(envCode, makeCopyButton(envCmd));
+          tdEnv.appendChild(envWrap);
+        } else {
+          const unverified = document.createElement("span");
+          unverified.className = "env-unverified";
+          const warnTag = document.createElement("span");
+          warnTag.className = "env-tag-warn";
+          warnTag.textContent = "manual";
+          const hint = document.createElement("span");
+          hint.textContent = "not verified — set client base_url";
+          unverified.append(warnTag, hint);
+          tdEnv.appendChild(unverified);
+        }
+
+        // Actions cell
+        const tdAction = document.createElement("td");
+        tdAction.className = "col-action";
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className = "del";
+        delBtn.dataset.name = p.name;
+        delBtn.textContent = "Remove";
+        tdAction.appendChild(delBtn);
+
+        tr.append(tdName, tdBase, tdAdapter, tdProxy, tdEnv, tdAction);
+        rows.appendChild(tr);
       }
     }
 
+    function updateSummary() {
+      document.getElementById("kpi-providers").textContent = String(allProviders.length);
+      document.getElementById("kpi-adapters").textContent = String(allAdapters.length);
+      const adapterList = allAdapters.length ? allAdapters.join(", ") : "none";
+      const adapterEl = document.getElementById("kpi-adapter-list");
+      adapterEl.textContent = adapterList;
+      adapterEl.title = adapterList;
+      const envCount = allProviders.filter((p) => Boolean(p.env_var)).length;
+      document.getElementById("kpi-env").textContent = String(envCount);
+    }
+
+    async function refresh() {
+      const loadingBar = document.getElementById("loading-bar");
+      const loadError = document.getElementById("load-error");
+      loadError.classList.remove("visible");
+      setProxyStatus("loading", "Syncing…");
+
+      try {
+        const res = await fetch("/admin/providers");
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        allProviders = Array.isArray(data.providers) ? data.providers : [];
+        allAdapters = Array.isArray(data.adapters) ? data.adapters : [];
+
+        loadingBar.classList.remove("visible");
+        setProxyStatus("", "Online");
+
+        const select = document.getElementById("adapter-select");
+        const previousAdapter = select.value;
+        select.replaceChildren();
+        for (const a of allAdapters) {
+          const opt = document.createElement("option");
+          opt.value = a;
+          opt.textContent = a;
+          select.appendChild(opt);
+        }
+        if (previousAdapter && allAdapters.includes(previousAdapter)) {
+          select.value = previousAdapter;
+        }
+
+        updateSummary();
+        renderRows();
+      } catch (err) {
+        loadingBar.classList.remove("visible");
+        setProxyStatus("offline", "Unreachable");
+        document.getElementById("load-error-text").textContent =
+          `Failed to load providers (${err.message || "network error"}).`;
+        loadError.classList.add("visible");
+      }
+    }
+
+    document.getElementById("provider-filter").addEventListener("input", renderRows);
+    document.getElementById("refresh-btn").addEventListener("click", refresh);
+    document.getElementById("retry-btn").addEventListener("click", refresh);
+
     document.getElementById("rows").addEventListener("click", async (e) => {
-      if (e.target.matches("button.del")) {
-        const name = e.target.dataset.name;
-        await fetch(`/admin/providers/${encodeURIComponent(name)}`, { method: "DELETE" });
-        refresh();
+      const delBtn = e.target.closest("button.del");
+      if (delBtn) {
+        const name = delBtn.dataset.name;
+        delBtn.disabled = true;
+        delBtn.textContent = "Removing…";
+        try {
+          const res = await fetch(`/admin/providers/${encodeURIComponent(name)}`, {
+            method: "DELETE",
+          });
+          if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            throw new Error(err.detail || `HTTP ${res.status}`);
+          }
+          showToast(`Removed provider "${name}"`, "success");
+          await refresh();
+        } catch (err) {
+          showToast(err.message || "Failed to remove provider", "error");
+          delBtn.disabled = false;
+          delBtn.textContent = "Remove";
+        }
         return;
       }
-      if (e.target.matches("button.copy")) {
-        navigator.clipboard.writeText(e.target.dataset.url);
-        const original = e.target.textContent;
-        e.target.textContent = "Copied";
-        setTimeout(() => { e.target.textContent = original; }, 1000);
+
+      const copyBtn = e.target.closest("button.copy");
+      if (copyBtn) {
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.url);
+          setCopyButtonState(copyBtn, true);
+          showToast("Copied to clipboard", "success");
+          setTimeout(() => {
+            setCopyButtonState(copyBtn, false);
+          }, 1500);
+        } catch {
+          showToast("Clipboard permission denied", "error");
+        }
       }
     });
+
+    function updateDirtyState() {
+      const nameVal = document.getElementById("input-name").value.trim();
+      const urlVal = document.getElementById("input-base-url").value.trim();
+      const badge = document.getElementById("dirty-badge");
+      if (nameVal || urlVal) {
+        badge.classList.add("visible");
+      } else {
+        badge.classList.remove("visible");
+      }
+    }
+
+    document.getElementById("input-name").addEventListener("input", updateDirtyState);
+    document.getElementById("input-base-url").addEventListener("input", updateDirtyState);
 
     document.getElementById("add-form").addEventListener("submit", async (e) => {
       e.preventDefault();
       const errorEl = document.getElementById("error");
+      const submitBtn = document.getElementById("submit-btn");
       errorEl.textContent = "";
+
       const form = new FormData(e.target);
       const body = {
         name: form.get("name"),
         base_url: form.get("base_url"),
         adapter: form.get("adapter"),
       };
-      const res = await fetch("/admin/providers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      if (!res.ok) {
-        const err = await res.json();
-        errorEl.textContent = err.detail || "failed to add provider";
-        return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Adding…";
+
+      try {
+        const res = await fetch("/admin/providers", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          errorEl.textContent = err.detail || "failed to add provider";
+          return;
+        }
+        e.target.reset();
+        updateDirtyState();
+        showToast(`Provider "${body.name}" added`, "success");
+        await refresh();
+      } catch (err) {
+        errorEl.textContent = err.message || "network error";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Add provider";
       }
-      e.target.reset();
-      refresh();
     });
 
     refresh();

@@ -13,7 +13,7 @@ class _CharTokenizer:
         size = len(text) + (2 if add_special_tokens else 0)
         return list(range(min(size, max_length) if max_length else size))
 
-    def __call__(self, texts, *, return_tensors, padding, truncation, max_length):
+    def __call__(self, texts, *, return_tensors, padding, truncation, max_length, **kwargs):
         self.batch_sizes.append(len(texts))
         encoded = [list(range(min(len(text), max_length))) for text in texts]
         width = max(map(len, encoded))

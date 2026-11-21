@@ -90,7 +90,7 @@ def merge_venn_abers(p0: float, p1: float) -> float:
     return p1 / denom if denom > 0 else 0.5
 
 
-def decision_score(p0: float, p1: float) -> float:
+def decision_score(p0: float, p1: float, raw: float | None = None) -> float:
     """The probability this system's thresholds should actually compare
     against. Verified case: jailbreak raw 0.971 (a real "pretend you are
     DAN" attack) calibrates to p0=0.667, p1=1.0 — merge_venn_abers gives
@@ -99,7 +99,14 @@ def decision_score(p0: float, p1: float) -> float:
     That's backwards here: the bandit's own reward table (false negative
     -5.0 vs false positive -1.0) already encodes that under-reacting is the
     costly mistake. Use the upper bound p1 for decisions — conservative
-    toward catching real threats — instead of the symmetric merge."""
+    toward catching real threats — instead of the symmetric merge.
+
+    When `raw` is provided and sits in the clearly-benign region (< 0.45),
+    use the symmetric merge (capped below FINDING_THRESHOLD=0.5) so a single
+    noisy isotonic step in the low-score region cannot inflate a benign raw
+    score (< 0.45) into a finding or block."""
+    if raw is not None and raw < 0.45:
+        return min(merge_venn_abers(p0, p1), raw)
     return p1
 
 
@@ -146,6 +153,7 @@ def _calibration_cases() -> list[tuple[str, str, bool]]:
     from armor.data.public import load_training_examples as public_positives
     from armor.data.synthetic_dangerous_tool_action import generate_examples as dangerous_tool_action_positives
     from armor.data.synthetic_harmful_content import generate_examples as harmful_content_positives
+    from armor.data.synthetic_harmful_content_pairs import generate_examples as harmful_content_pair_examples
     from armor.data.synthetic_long_negatives import generate_examples as long_negatives
     from armor.data.synthetic_obfuscation import generate_examples as obfuscation_positives
     from armor.data.synthetic_pii import generate_examples as pii_positives
@@ -175,7 +183,10 @@ def _calibration_cases() -> list[tuple[str, str, bool]]:
     # genuine positives were added elsewhere in this function; matching
     # global positive:negative counts wasn't enough, this source's specific
     # local density in the contested score region was.
-    for text, label_vec, mask_vec in topic_adjacent_negatives(n=900):
+    for text, label_vec, mask_vec in topic_adjacent_negatives(n=1200):
+        label_index = mask_vec.index(1.0)
+        cases.append((text, LABELS[label_index], bool(label_vec[label_index])))
+    for text, label_vec, mask_vec in harmful_content_pair_examples():
         label_index = mask_vec.index(1.0)
         cases.append((text, LABELS[label_index], bool(label_vec[label_index])))
     for generator in (coedit_negatives, aegis_negatives, oasst_negatives):
@@ -292,5 +303,5 @@ def calibrate_scores(raw_scores: dict[str, float], fingerprint: str) -> dict[str
             result[label] = {"score": raw, "p0": raw, "p1": raw, "uncertainty": 0.0}
             continue
         p0, p1 = venn_abers(x_cal, y_cal, raw)
-        result[label] = {"score": decision_score(p0, p1), "p0": p0, "p1": p1, "uncertainty": p1 - p0}
+        result[label] = {"score": decision_score(p0, p1, raw), "p0": p0, "p1": p1, "uncertainty": p1 - p0}
     return result
