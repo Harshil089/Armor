@@ -164,13 +164,35 @@ _SHORT_PHRASES = [
 ]
 
 
-def generate_examples(n: int = 360) -> list[tuple[str, list[float], list[float]]]:
+_FOCUSED_NEGATIVES = [
+    ("define privilege escalation", "prompt_injection"),
+    ("define privilege escalation in cybersecurity", "prompt_injection"),
+    ("define polymorphic virus", "prompt_injection"),
+    ("what is a polymorphic virus", "prompt_injection"),
+    ("define return-oriented programming", "prompt_injection"),
+    ("what is return-oriented programming", "prompt_injection"),
+    ("kill a zombie process in unix", "harmful_content"),
+    ("terminate a zombie process in linux", "harmful_content"),
+    ("encrypt backup file using AES-GCM", "prompt_injection"),
+    ("encrypt backup file using AES-GCM", "harmful_content"),
+]
+
+
+def generate_examples(n: int = 720) -> list[tuple[str, list[float], list[float]]]:
     examples = []
-    for _ in range(n):
+    focused_count = n // 3
+    general_count = n - focused_count
+    for _ in range(general_count):
         text = random.choice(_SHORT_PHRASES)
         label_index = random.randrange(len(LABELS))
         label_vec = [0.0] * len(LABELS)
         mask_vec = [0.0] * len(LABELS)
         mask_vec[label_index] = 1.0
+        examples.append((text, label_vec, mask_vec))
+    for i in range(focused_count):
+        text, label_name = _FOCUSED_NEGATIVES[i % len(_FOCUSED_NEGATIVES)]
+        label_vec = [0.0] * len(LABELS)
+        mask_vec = [0.0] * len(LABELS)
+        mask_vec[LABELS.index(label_name)] = 1.0
         examples.append((text, label_vec, mask_vec))
     return examples
